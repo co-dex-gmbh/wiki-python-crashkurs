@@ -1,0 +1,47 @@
+title: Spielerwechsel
+
+question: |
+  Gegeben Sei der folgende Code:
+  
+  ```{ .python }
+  jetziger_spieler = "Hans"
+  nächster_spieler = "Clara"
+   
+  while True:
+  
+      ...
+    
+      print(jetziger_spieler)
+  ```
+  
+  Ziel ist es den Code so zu erweitern, dass immer abwechselnd die Namen der beiden Spieler ausgegeben werden.
+  
+  Erwartete Ausgabe
+  
+  ```
+  Clara
+  Hans
+  Clara
+  Hans
+  Clara
+  Hans
+  ...
+  ```
+
+solution: |
+  
+  ```{ .python .pytutor_button }
+  jetziger_spieler = "Hans"
+  nächster_spieler = "Clara"
+   
+  while True:
+  
+      zwischenspeicher = jetziger_spieler
+      jetziger_spieler = nächster_spieler
+      nächster_spieler = zwischenspeicher
+      
+      print(jetziger_spieler)
+  ```
+
+tip: Errinnern Sie sich, wie man zwei Variablen miteinander vertauscht. Dazu gab es eine Übungsaufgabe namens _Variableninhalte tauschen_.
+solution_video: https://www.youtube.com/embed/QiD5-8Ni3mg?si=9HOkbTrXLh_lNjQr

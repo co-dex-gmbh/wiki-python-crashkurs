@@ -1,0 +1,52 @@
+title: Schleifen lesen
+question: |
+  Schau dir den folgenden Code an und vollziehe nach, was passiert, wenn dieser ausgeführt wird.
+  
+  Wie oft wird der Rumpf `while`-Schleife durchlaufen?
+  
+  Wie oft wird die Bedingung geprüft?
+  
+  Was erscheint auf der Konsole?
+  
+  Welchen Wert hat `a` am Ende des Programms?
+  
+  ```{ .python .pytutor_button }
+  a = 10
+  while a > 0:
+      print(a)
+      a = a - 3
+  ```
+  
+  Beantworten Sie alle Fragen noch mal aber nun sind die Zeilen 3 und 4 vertauscht!
+  
+  ```{ .python .pytutor_button }
+  a = 10
+  while a > 0:
+      a = a - 3
+      print(a)
+  ```
+solution: |
+  Die Schleiferumpf wird insgesamt 3 Mal durchlaufen.
+
+  Die Bedingung wird 4 Mal geprüft.
+  
+  Auf der Konsole erscheint
+  
+  ```python
+  10
+  7
+  4
+  1
+  ```
+  
+  `a` hat am Ende des Programms den Wert `#!python -2`
+  
+  Wenn man die Zeilen 3 und 4 vertauscht ändert sich nur die Konsolenausgabe. Alles andere bleibt gleich.
+  
+  ```python
+  7
+  4
+  1
+  -2
+  ```
+solution_video: https://www.youtube.com/embed/tnBs_p7KWJ4?si=25TL5QXpoagjIfsq

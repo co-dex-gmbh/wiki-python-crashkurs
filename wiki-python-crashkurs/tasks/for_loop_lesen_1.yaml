@@ -1,0 +1,25 @@
+title: Summen bilden
+question: |
+  Gegeben sei der folgende Code. Sagen sie voraus, was auf der Konsole erscheinen wird,
+  wenn
+  
+  * `summanden = [1,2,3,4]`
+  * `summanden = [3, -3, 4, -2]`
+  * `summanden = [1]`
+  * `summanden = []`
+    
+  ```python
+  summanden = ...
+  summe = 0
+  for s in summanden:
+      summe = summe + s
+  print(f"Die Summe von {summanden} ist {summe}.")
+  ```
+solution: |
+  | Vorraussetzung| Konsolenausgabe |
+  |-|-|
+  | `summanden = [1,2,3,4]` | `Die Summe von [1,2,3,4] ist 10.`|
+  | `summanden = [3, -3, 4, -2]` | `Die Summe von [3, -3, 4, -2] ist 2.`|
+  | `summanden = [1]` | `Die Summe von [1] ist 1.` |
+  | `summanden = []` | `Die Summe von [0] ist 0}.`|
+   

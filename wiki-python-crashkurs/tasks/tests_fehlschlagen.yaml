@@ -1,0 +1,6 @@
+title: Fehlschlagende Tests
+question: |
+  Führen Sie den Code aus dem letzten Beispiel in ihrer IDE aus und versichern Sie sich, dass alle Tests funktionieren.
+  
+  Ändern Sie dann den Code, indem Sie z.B. den Rumpf der Methode `quadrat` anpassen, sodass die Tests nicht mehr 
+  funktionieren.

@@ -1,0 +1,53 @@
+title: Marstransport
+question: |
+  Die folgende Funktion berechnet das Marsgewicht für eine einzelne Variable.
+  
+  ```{ .python .pytutor_button }
+  gewicht = 65
+  mars_faktor = 0.38
+  mars_gewicht = gewicht * mars_faktor
+  print(f'Dein Marsgewicht: {mars_gewicht}')
+  ```
+  
+  a) Passe das Programm so an, dass für eine Liste `gewichte = [100, 65, 23]` die
+  Berechnung durchgeführt wird und auf der Konsole erscheint:
+  
+  ```
+  Dein Marsgewicht: 38.0
+  Dein Marsgewicht: 24.7
+  Dein Marsgewicht: 8.74
+  ```
+  
+  b) Erweitere das Programm, sodass zusätzlich alle Marsgewichte in einer Liste 
+  gespeichert und am Ende ausgegeben werden.
+  
+  ```
+  Dein Marsgewicht: 38.0
+  Dein Marsgewicht: 24.7
+  Dein Marsgewicht: 8.74
+  Marsgewichte: [38.9, 24.7, 8.74]
+  ```
+
+solution: |
+  a)
+  
+  ```{ .python .pytutor_button }
+  gewichte = [100, 65, 23]
+  mars_faktor = 0.38
+  for gewicht in gewichte:
+      mars_gewicht = gewicht * mars_faktor
+      print(f'Dein Marsgewicht: {mars_gewicht}')
+  ```
+  
+  b)
+  
+  ```{ .python .pytutor_button }
+  gewichte = [100, 65, 23]
+  mars_gewichte = []
+  mars_faktor = 0.38
+  for gewicht in gewichte:
+      mars_gewicht = gewicht * mars_faktor
+      mars_gewichte.append(mars_gewicht)
+      print(f'Dein Marsgewicht: {mars_gewicht}')
+  print(f"Marsgewichte: {Marsgewichte:}")
+  ```

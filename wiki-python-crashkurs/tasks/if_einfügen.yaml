@@ -1,0 +1,26 @@
+title: Bedingung einfügen
+question: |
+  Ersetzten Sie die `#!python ...` im folgenden Code so, dass zunächst geprüft wird, ob die in `#!python alter` gespeicherte Zahl
+  kleiner als `#!python 18` ist und man dann eine Abfuhr erhält. Danach soll geprüft werden, ob das `#!python alter` größer oder gleich `#!python 18` ist
+  und man wird reingelassen:
+  
+  ```python
+  alter = int(input("Wie alt bist du?"))
+  
+  ... alter < 18:
+      print("Dieser Film ist nichts für dich!")
+  
+  ... alter >= 18:
+      print("Du darfst rein.")
+  ```
+solution: |
+  ```python
+  alter = int(input("Wie alt bist du?"))
+
+  if alter < 18:
+      print("Dieser Film ist nichts für dich!")
+  
+  if alter >= 18:
+      print("Du darfst rein")
+  ```
+solution_video: https://www.youtube.com/embed/yUNT8Ksq-3A?si=sJd3b6sihHzqltS3

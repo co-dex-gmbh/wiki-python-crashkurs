@@ -1,0 +1,33 @@
+title: BMI berechnen
+question: |
+  Erstellen Sie das folgenden Programm, dass den BMI einer Person berechnet.
+  
+  Der Nutzer soll seine Körpergröße in Metern angeben (z.B. `#!python 1.80`) und sein Gewicht in kg (z.B. `#!python 90`)
+  
+  Der BMI wird mit folgenden Formel berechnet:
+  
+  $$
+  \text{BMI} = \frac{\text{Gewicht in kg}}{(\text{Körpergröße in m})^2}
+  $$
+  
+  Geben Sie anschließend den BMI in einer Nachricht aus. (In diesem Beispiel $\approx 27.78$)
+  
+
+tip:  |
+  Eine Zahl zu Quadrieren heißt, sie mit sich selbst zu multiplizieren. Das heißt du kannst auch folgende Formel verwenden:
+  
+  $$
+  \text{BMI} = \frac{\text{Gewicht in kg}}{(\text{Körpergröße in m}) \cdot (\text{Körpergröße in m)}}
+  $$
+  
+  Um zwei Zahlen in Python miteinander zu dividieren nutzen Sie `#!python /`. Z.B. `a = 7 / 8`.
+solution: |
+  ``` { .python .pytutor_button }
+  gewicht = float(input('Wie viel wiegst du in kg?'))
+  größe = float(input('Wie viel wiegst du in Metern?'))
+  
+  bmi = gewicht / (größe * größe)
+  
+  print(f"Dein BMI ist {bmi}")
+  ```
+solution_video: https://www.youtube.com/embed/SHyM_Z1KC6s?si=d2ZK6PlmSnnVlMGD

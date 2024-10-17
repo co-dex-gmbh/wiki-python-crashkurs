@@ -1,0 +1,26 @@
+title: Listen manipulieren
+question: |
+  Gegeben Sei die folgende Liste:
+  
+  ```python
+  mitarbeiter = ['Anton', 'Bernd', 'Clara', 'Dennis']
+  ```
+  
+  Tauschen Sie die `Bernd` durch eine `Emil` aus. 
+  
+  Geben Sie dann jedes zweite Element der Liste aus. Die Konsolenausgabe ist also diese:
+  
+  ```
+  Emil
+  Dennis
+  ```
+solution: |
+  ```{ .python .pytutor_button }
+  mitarbeiter = ['Anton', 'Bernd', 'Clara', 'Dennis']
+  
+  mitarbeiter[1] = 'Emil'
+  
+  print(mitarbeiter[1])
+  print(mitarbeiter[3])
+  ```
+solution_video: https://www.youtube.com/embed/aw8woG1Iyv8?si=HkpR-M3aiS_1n_2D

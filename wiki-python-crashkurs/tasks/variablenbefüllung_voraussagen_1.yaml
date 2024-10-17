@@ -1,0 +1,22 @@
+title: Variablenbefüllung voraussagen
+question: |
+  Sagen Sie voraus, was auf der Konsole ausgegeben wird, wenn das Programm ausgeführt wird.
+  
+  ```python
+  a = 3
+  b = 5
+  
+  print(a)
+  print(b)
+  print(a+b)
+  ```
+solution: |
+  ``` { .python .pytutor_button }
+  a = 3
+  b = 5
+  
+  print(a) # 3
+  print(b) # 5
+  print(a+b) # 8
+  ```
+solution_video: https://www.youtube.com/embed/Hcq5NhlWRws?si=2hXezjCpstMT6_wQ

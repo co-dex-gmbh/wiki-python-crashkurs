@@ -1,0 +1,23 @@
+title: Eingabe korrigieren
+question: |
+  Ersetze die `...` in folgendem Programm so dass eine Eingabe von negativen Zahlen (z.B. `-100`) vom Programm korrigiert wird.
+  Dazu soll zunächst geprüft werden, ob das eingegeben Alter negativ ist und wenn ja, soll dieses auf `0` gesetzt werden.
+  
+  ```python
+  alter = int(input("Wie alt bist du?"))
+  if ...:
+      ...
+  
+  print(f"Du bist {alter} Jahre alt.")
+  ```
+
+tip: Um zu prüfen ob eine Zahl `a` negativ ist, kann z.B. `#!python a < 0` verwendet werden.
+solution: |
+  ``` { .python .pytutor_button }
+  alter = int(input("Wie alt bist du?"))
+  if alter < 0:
+      alter = 0
+  
+  print(f"Du bist {alter} Jahre alt.")
+  ```
+solution_video: https://www.youtube.com/embed/I_PiA3OZRRY?si=U7quEnaxzyTfGy0q

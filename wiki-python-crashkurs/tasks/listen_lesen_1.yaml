@@ -1,0 +1,29 @@
+title: Listen mit Operationen bei der Definition
+question: |
+  Was erscheint hier auf der Konsole?
+  
+  ```{ .python .pytutor_button hl_lines="4 11"}
+  list_0 = []
+  list_0.append(15)
+  list_0.append(3 * 2)
+  print(list_0)
+  
+  a = 5
+  b = 15
+  list_1 = [1 + 1, 1 / 2, a, a + b]
+  list_1.append(a * b + 7)
+  list_1.append(list_1[0])
+  print(list_1)
+  ```
+tip: |
+  `list_0 = []` beschreibt eine _leere Liste_, ohne Elemente.
+  
+  Berechne zunächst den Inhalt der Elemente in `list_1`. Die Elemente sind durch Kommas (`,`) getrennt.
+solution: |
+  Konsolenausgabe
+  
+  ```
+  [15, 6]
+  [2, 0.5, 5, 20, 15, 82, 2]
+  ```
+solution_video: https://www.youtube.com/embed/R3CJ_G6znHc?si=rnI6qpITMRTzcwvO

@@ -1,0 +1,17 @@
+title: for-Schleifen lesen
+question: |
+  Gegeben sei der folgende Code. Sagen sie voraus, was auf der Konsole erscheinen wird:
+  ```python
+  print("Meine Freunde heißen:")
+  for name in ["Karl", "Jannik", "Alexa"]:
+      print(f"{name}, ")
+  print("und mein bester Freund heißt Max.")
+  ```
+solution: |
+  ```
+  Meine Freunde heißen:
+  Karl,
+  Jannik,
+  Alexa,
+  und mein bester Freund heißt Max.
+  ```

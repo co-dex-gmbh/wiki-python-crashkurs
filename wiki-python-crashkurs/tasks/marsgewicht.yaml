@@ -1,0 +1,24 @@
+title: Marsgewicht
+question: |
+  Erstellen Sie das folgenden Programm:
+  
+  * In der Variablen `#!python gewicht` steht ein Gewicht (z.B. $65$ kg)
+  * In einer zweiten Variablen `#!python mars_faktor` steht die Zahl `#!python 0.38`.
+  * In einer dritten Variablen `#!python mars_gewicht` soll das Gewicht auf dem Markt gespeichert werden. Dies wird berechnet, indem `#!python gewicht` und `#!python mars_faktor` miteinander multipliziert werden.  
+  * Auf der Konsole soll nun das `#!python mars_gewicht` ausgegeben werden. (In diesem Beispiel $24.7$)
+  
+  Hier ist [Schwerkraftrechner](https://astrokramkiste.de/schwerkraft/index.php) mit dem Sie ihr Programm überprüfen können.
+  
+  🚀Bonus: Erweitern Sie Ihr Programm gerne um weitere Planeten.
+
+tip:  |
+  Kommazahlen wie $0,38$ werden in Python mit einem Punkt, statt einem Komma geschrieben, also `#!python 0.38`
+  
+  Um zwei Zahlen in Python miteinander zu multiplizieren nutzen sie `#!python *`. Z.B. `a = 7 * 8`.
+solution: |
+  ``` { .python .pytutor_button }
+  gewicht = 65
+  mars_faktor = 0.38
+  mars_gewicht = gewicht * mars_faktor
+  ```
+solution_video: https://www.youtube.com/embed/G7MsP2Mg6ik?si=R_noJ4RU8E2oQRhc

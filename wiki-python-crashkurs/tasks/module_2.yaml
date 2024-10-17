@@ -1,0 +1,22 @@
+title: Abzocke ausdenken
+question: |
+  Erstelle eine neue Datei namens `casino_games.py`.
+  Erstelle darin eine Funktion `bet_under_squares(my_bet, faktor)`.
+  Die Funktion erwartet zwei Integer, `my_bet` und `faktor`. Der `faktor` soll hier die Risikobereitschaft des Spielers darstellen um höhre Gewinne zu bekommen.
+
+  In der Funktion soll eine quadratische Zufallszahl zwischen `1` und `faktor * faktor`
+  gewürfelt werden. Importiere und nutze dazu die Funktion `random_squares`
+
+  Um den späteren Spielern unseres Casino-Games das Geld aus der Tasche zu ziehen müssen wir jetzt die Gewinnbedingung setzen.
+  Wenn die quadratische Zufallszahl kleiner oder gleich `my_bet` ist,
+  soll `faktor * my_bet` returned werden, andernfalls `0`.
+
+  Der Spieler verliert also alles, falls die Zufallszahl kleiner als sein gebot ist (was mit höherem Risiko (`faktor`) exponentiell wahrscheinlicher wird).
+solution: |
+  ``` { .python .pytutor_button }
+  def bet_under_squares(my_bet, faktor):
+    random_square = random_squares(faktor)
+    print(f"Randomly roled:{random_square}")
+    return 0 if my_bet < random_square else faktor * my_bet
+  ```
+# solution_video: https://www.youtube.com/embed/QUfGLsf-a8w?si=MK975qYupEcN91Od

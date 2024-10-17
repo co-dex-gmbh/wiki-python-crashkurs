@@ -1,0 +1,44 @@
+title: Summe von Eingaben bilden
+question: |
+  Schreibe ein Programm, dass den Nutzer nach einer Zahl fragt.
+  Das Programm hat intern in einer Variablen namens `summe` die Summe 
+  aller bisher abgefragten Zahlen bilden und ausgeben.
+  
+  Die Konsolenausgabe soll also etwa so aussehen:
+  
+  ```
+  Bisherige Summe: 0
+  Gib eine Zahl ein: 3
+  Bisherige Summe: 3
+  Gib eine Zahl ein: 10
+  Bisherige Summe: 13
+  Gib eine Zahl ein: -20
+  Bisherige Summe: -7
+  Gib eine Zahl ein: 
+  ```
+tip: |
+  === "Tipps ohne Code"
+      
+      * Lege dir zunächst eine Variable `summe` an, in der du die Summenden zusammenzählen wirst. Was ist ein sinnvoller Startwert?
+      * Um eine Schleife dauerhaft für immer zu durchlaufen kann als Bedingung `True` genutzt werden.
+      * Mit `int(input("Gib eine Zahl ein: "))` kann man den Nutzer um eine Zahl bitten.
+      * Addiere die Eingabe zu `summe` und speichere diese. 
+      
+  === "Codevorlage mit Schleife"
+      
+      ```{ .python }
+      summe = ...
+      while ...: 
+          print(f"Bisherige Summe: {summe}")
+          eingabe = ...
+          summe = ...
+      ```
+solution: |
+  ```{ .python .pytutor_button }
+  summe = 0
+  while True:
+      print(f"Bisherige Summe: {summe}")
+      eingabe = int(input("Gib eine Zahl ein: "))
+      summe = summe + eingabe
+  ```
+solution_video: https://www.youtube.com/embed/KIdszhY_6EE?si=OrAqA9R-RltHbGFx

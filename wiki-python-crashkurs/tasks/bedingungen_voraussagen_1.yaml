@@ -1,0 +1,32 @@
+title: Boolsche Werte voraussagen
+question: |
+  Sagen Sie voraus, was auf der Konsole ausgegeben wird, wenn das Programm ausgeführt wird.
+  
+  ```python
+  a = 3
+  b = 5
+  
+  print(a > 5)
+  print(b <= 5)
+  print(a + b >= 5)
+  print(a > b)
+  print(a + 2 == b)  
+  print(a)
+  print(b)
+  ```
+solution: |
+  ``` { .python .pytutor_button }
+  a = 3
+  b = 5
+  
+  print(a > 5) # False
+  print(b <= 5) # True
+  print(a + b >= 5) # True
+  print(a > b) # False
+  print(a + 2 == b) # True
+  print(a) # 3
+  print(b) # 5
+  ```
+  
+  Man beachte, dass `a` und `b` in diesem Code niemals geändert wurden.
+solution_video: https://www.youtube.com/embed/ztl5eYDvXEA?si=Mic4BX_CiMnkSBLF

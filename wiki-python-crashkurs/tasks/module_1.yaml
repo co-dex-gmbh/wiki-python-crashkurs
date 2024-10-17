@@ -1,0 +1,27 @@
+title: Zufälle gibts...
+question: |
+  Erstelle eine Datei namens `my_random.py`.
+  Erstelle in dieser eine Funktion `random_squares`,
+  die eine Zahl `n` als Parameter erwartet.
+  Sie gibt dann eine zufällige Quadratzahl zwischen `1` und `n * n` zurück.
+
+  Beim Aufruf `random_squares(5)` könnten also `1`, `4`, `9`, `16` oder `25` zurückgegeben werden.
+
+  Importiere dazu eine passende Funktion aus dem Modul `random`.
+
+  Erstelle jetzt eine zweite Datei `main.py` und importiere deine `random_squares` Funktion aus `my_random.py`. Nutze ein `print()` um deine Methode zu testen.
+solution: |
+  ``` { .python .pytutor_button }
+  from random import randint
+
+
+  def random_squares(n):
+      return randint(1, n) ** 2
+  ```
+
+  ```python
+  from my_random import random_squares
+
+  print(random_squares(5))
+  ```
+# solution_video: https://www.youtube.com/embed/QUfGLsf-a8w?si=MK975qYupEcN91Od

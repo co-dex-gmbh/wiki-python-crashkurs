@@ -1,0 +1,92 @@
+title: Variable Durchlaufzahl
+question: |
+  Ersetzen Sie die `...` mit den verschiedenen Operatoren `+`, `-`, `*` und `/`.
+  
+  Was kannst du beobachten? Wie oft wird die Schleife den Rumpf durchlaufen?
+  
+  Ersetze in der letzten Zeile die `...`, sodass auf der Konsole ausgegeben wird `Die Schleife wurde x-Mal durchlaufen`, 
+  wobei `x` durch die richtige Zahl ersetzt wird.
+  
+  ```{ .python .pytutor_button }
+  z = 10
+  counter = 0
+  while z > 0 and z < 20:
+      print(z)
+      z = z ... 2
+      counter = counter + 1
+  
+  print(...)
+  ```
+tip: |
+  Was tut die Variable `counter`?
+  
+  Manche Schleifen enden nie...
+solution: |
+  Die Variable `counter` zählt mit, wie oft der Schleifenrumpf durchlaufen wurde.
+  
+  die letzte Zeile lautet:
+  
+  ```python
+  print(f"Die Schleife wurde {counter}-Mal durchlaufen"
+  ```
+  
+  === "`+`:"
+  
+      ```
+      10
+      12
+      14
+      16
+      18
+      Die Schleife wurde 5-Mal durchlaufen.
+      ```  
+  
+  === "`-`:"
+  
+      ```
+      10
+      8
+      6
+      4
+      2
+      Die Schleife wurde 5-Mal durchlaufen.
+      ```
+  
+  === "`*`:"
+    
+      ```
+      10
+      Die Schleife wurde 1-Mal durchlaufen.
+      ```
+  
+  === "`/`:"
+    
+      ```
+      10
+      5.0
+      2.5
+      1.25
+      0.625
+      0.3125
+      0.15625
+      0.078125
+      0.0390625
+      0.01953125
+      0.009765625
+      0.0048828125
+      0.00244140625
+      0.001220703125
+      0.0006103515625
+      0.00030517578125
+      0.000152587890625
+      ...
+      5e-323
+      2.5e-323
+      1e-323
+      5e-324
+      Die Schleife wurde 1078-mal durchlaufen.
+      ```
+      
+      Die Schleife bricht ab, als die kleinsten `float`-Zahlen durch `2` geteilt wurde und `0` errechnet wurde (was mathematsich nicht korrekt ist).
+      Könnte Python Kommazahlen mathematisch korrekt berechnen würden wir hier in eine Endlosschleife geraten.
+solution_video: https://www.youtube.com/embed/offcBIwL7jY?si=QFN_eQvBHUOCYggZ

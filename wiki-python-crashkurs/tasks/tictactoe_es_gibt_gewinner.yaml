@@ -1,0 +1,119 @@
+title: Implementiere `es_gibt_gewinner`
+question: |
+  Die Methode `es_gibt_gewinner` prüft, ob in irgendeiner Zeile, Spalte oder Diagonalen ein Symbol drei mal auftaucht.
+  
+  Hier sind ein Haufen Unittests, mit denen du die Korrektheit deiner Funktion prüfen kannst.
+  
+  ```python hl_lines="5"
+  import unittest
+  
+  
+  def es_gibt_gewinner(spielbrett):
+    return ...
+  
+  
+  class TestEsGibtGewinner(unittest.TestCase):
+      def test_es_gibt_gewinner_alles_leer(self):
+          spielbrett = [0, 1, 2,
+                        3, 4, 5,
+                        6, 7, 8]
+          self.assertEqual(False, es_gibt_gewinner(spielbrett))
+
+      def test_es_gibt_gewinner_erste_zug(self):
+          spielbrett = [0, "x", 2,
+                        3, 4, 5,
+                        6, 7, 8]
+          self.assertEqual(False, es_gibt_gewinner(spielbrett))
+  
+      def test_es_gibt_gewinner_zweiter_zug(self):
+          spielbrett = [0, "x", 2,
+                        3, "o", 5,
+                        6, 7, 8]
+          self.assertEqual(False, es_gibt_gewinner(spielbrett))
+  
+      def test_es_gibt_gewinner_dritter_zug(self):
+          spielbrett = [0, "x", 2,
+                        3, "o", 5,
+                        6, "x", 8]
+          self.assertEqual(False, es_gibt_gewinner(spielbrett))
+  
+      def test_es_gibt_gewinner_zeile_0(self):
+          spielbrett = ["x", "x", "x",
+                        "o", "o", 5,
+                        6, 7, 8]
+          self.assertEqual(True, es_gibt_gewinner(spielbrett))
+  
+      def test_es_gibt_gewinner_zeile_1(self):
+          spielbrett = ["x", "x", "o",
+                        "o", "o", "o",
+                        6, 7, 8]
+          self.assertEqual(True, es_gibt_gewinner(spielbrett))
+  
+      def test_es_gibt_gewinner_zeile_2(self):
+          spielbrett = [0, "x", "o",
+                        "x", "o", "o",
+                        "x", "x", "x"]
+          self.assertEqual(True, es_gibt_gewinner(spielbrett))
+  
+      def test_es_gibt_gewinner_spalte_0(self):
+          spielbrett = ["x", 1, 2,
+                        "x", 4, 5,
+                        "x", 7, 8]
+          self.assertEqual(True, es_gibt_gewinner(spielbrett))
+  
+      def test_es_gibt_gewinner_spalte_1(self):
+          spielbrett = [0, "o", 2,
+                        3, "o", 5,
+                        6, "o", 8]
+          self.assertEqual(True, es_gibt_gewinner(spielbrett))
+  
+      def test_es_gibt_gewinner_spalte_2(self):
+          spielbrett = [0, 1, "x",
+                        3, 4, "x",
+                        6, 7, "x"]
+          self.assertEqual(True, es_gibt_gewinner(spielbrett))
+  
+      def test_es_gibt_gewinner_diagonale_links_nach_rechts(self):
+          spielbrett = ["x", 1, 2,
+                        3, "x", 5,
+                        6, 7, "x"]
+          self.assertEqual(True, es_gibt_gewinner(spielbrett))
+  
+      def test_es_gibt_gewinner_diagonale_rechts_nach_links(self):
+          spielbrett = [0, 1, "x",
+                        3, "x", 5,
+                        "x", 7, 8]
+          self.assertEqual(True, es_gibt_gewinner(spielbrett))
+  
+      def test_es_gibt_gewinner_unentschieden(self):
+          spielbrett = ["x", "o", "x",
+                        "x", "x", "o",
+                        "o", "x", "o"]
+          self.assertEqual(False, es_gibt_gewinner(spielbrett))
+
+  if __name__ == '__main__':
+      unittest.main()
+  ```
+
+tip: |
+  Überlege dir zunächst, wie du für die erste Zeile prüften kannst, ob alle drei Symbole gleich sind.
+  
+  Überlege dir dann so eine Prüfung für jede Zeile, Spalte und Diagonale.
+  
+  Überlege dir dann, wie du diese Bedingungen verknüpfen kannst.
+
+  Schreiben Sie die Tests in eine seperate Datei. Wenn alles funktiniert, kopieren sie die korrekte Implementierung. Das ist zwar nicht die feine englische Art, aber für den moment ok so.
+
+solution: |
+  ```python
+  def es_gibt_gewinner(spielbrett):
+      return (spielbrett[0] == spielbrett[1] == spielbrett[2]
+              or spielbrett[3] == spielbrett[4] == spielbrett[5]
+              or spielbrett[6] == spielbrett[7] == spielbrett[8]
+              or spielbrett[0] == spielbrett[3] == spielbrett[6]
+              or spielbrett[1] == spielbrett[4] == spielbrett[7]
+              or spielbrett[2] == spielbrett[5] == spielbrett[8]
+              or spielbrett[0] == spielbrett[4] == spielbrett[8]
+              or spielbrett[2] == spielbrett[4] == spielbrett[6])
+  ```
+solution_video: https://www.youtube.com/embed/TDYXZY49cBA?si=kfrH-gYu4_c9nSiS

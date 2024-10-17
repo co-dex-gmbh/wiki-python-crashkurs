@@ -1,0 +1,50 @@
+title: Implementiere `symbol_schreiben`
+question: |
+  In der Methode `symbol_schreiben` wird implementiert, wie ein neues Symbol auf das Spielfeld eingetragen wird.
+  Implementieren Sie dies. Hier sind Unittest, mit denen sie überprüfen können, ob ihre Funktion richtig ist:
+  
+  ```python hl_lines="5"
+  import unittest
+  
+  
+  def symbol_schreiben(spilbrett, position, symbol):
+      ...
+  
+  
+  class TestSymbolSchreiben(unittest.TestCase):
+      def test_symbol_schreiben_0(self): # (1)!
+          spielbrett = [0, 1, 2, 3, 4, 5, 6, 7, 8] # (2)!
+          symbol = "x" # (3)!
+          position = 4 # (4)!
+          erwartet = [0, 1, 2, 3, "x", 5, 6, 7, 8] # (5)!
+          symbol_schreiben(spielbrett, position, symbol) # (6)!
+          self.assertEqual(spielbrett, erwartet) # (7)!
+  
+      def test_symbol_schreiben_1(self):
+          spielbrett = ["x", "o", 2, "x", 4, 5, 6, 7, "o"]
+          symbol = "o"
+          position = 2
+          erwartet = ["x", "o", "o", "x", 4, 5, 6, 7, "o"]
+          symbol_schreiben(spielbrett, position, symbol)
+          self.assertEqual(spielbrett, erwartet)  
+    
+  if __name__ == '__main__':
+      unittest.main()
+  ```
+  
+  1. Der erste Test wird definiert.
+  2. Das "leere" Spielfeld wird erstellt.
+  3. Das Symbol wird festgelegt.
+  4. Die Position wird festgelegt.
+  5. Die erwartete Lösung wird definiert.
+  6. Die Funktion wird ausgeführt.
+  7. Nun wird geprüft, ob die liste `spielbrett` korrekt geändert wurde.
+
+tip: |
+  Schreiben Sie die Tests in eine seperate Datei. Wenn alles funktiniert, kopieren sie die korrekte Implementierung. Das ist zwar nicht die feine englische Art, aber für den moment ok so.
+solution: |
+  ```python
+  def symbol_schreiben(spielbrett, position, symbol):
+      spielbrett[position] = symbol
+  ```
+solution_video: https://www.youtube.com/embed/zBFt2HOFDAw?si=bV0isnPBSSX3bqAv

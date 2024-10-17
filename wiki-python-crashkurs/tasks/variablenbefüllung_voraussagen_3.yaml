@@ -1,0 +1,48 @@
+title: Variablenbefüllung voraussagen mit vielen Fallen
+question: |
+  Sagen Sie voraus, was auf der Konsole ausgegeben wird, wenn das Programm ausgeführt wird.
+  
+  ```python
+  a = 3
+  b = 2
+  c = a + b
+  b = a
+  a = a - b * c
+  
+  print(a)
+  print(b)
+  print(c)
+  ```
+tip: |
+  * Erstellen Sie eine Tabelle, in der Sie für jede Zeile sagen, welchen Wert jede Variable nach dieser Zeile hat:
+  
+  | Code | a | b | c |
+  |------|---|---|---|
+  | `#!python a = 3` |  |  |  |
+  | `#!python b = 2` |  |  |  |
+  | `#!python c = a+b` |  |  |  |
+  | `#!python b = a` |  |  |  |
+  | `#!python a = a - b * c` |  |  |  |
+  
+  
+  * `b = a` bedeutet, dass `b` nun den Wert von `a` hat.
+  
+  * `#!python *` beschreibt das Multiplizieren.
+  
+  * Denken Sie an die Punkt- vor Strichrechnung.
+solution: |
+  | Code | a | b | c |
+  |------|---|---|---|
+  | `#!python a = 3` | `#!python 3` |  |  |
+  | `#!python b = 2` | `#!python 3` | `#!python 2` |  |
+  | `#!python c = a+b` | `#!python 3` | `#!python 2` | `#!python 5` |
+  | `#!python b = a` | `#!python 3` | `#!python 3` | `#!python 5` |
+  | `#!python a = a - b * c` | `#!python -12` | `#!python 3` | `#!python 5` |
+  
+  Auf der Console erscheint:
+  ```python
+  -12
+  3
+  5
+  ```
+solution_video: https://www.youtube.com/embed/_hVoeuV-75o?si=GF4k2eNckDWYXATd

@@ -1,0 +1,22 @@
+
+title: Erstellung eines Einkaufsladens
+question: |
+  Erstelle ein Programm, welches einen online Einkaufladen in der Konsole abbildet.
+
+  - Der Einkaufsladen soll mindestens 5 Produkte anbieten (am Besten ein Dictionary)
+      - Preis
+      - Name
+      - Kategorie
+      - Menge
+      - Einheit
+  - Der Benutzer soll die Möglichkeit haben, Produkte in den Warenkorb zu legen (Liste)
+  - Der Benutzer soll die Möglichkeit haben, den Warenkorb einzusehen
+  - Der Benutzer soll die Möglichkeit haben, den Warenkorb zu leeren
+  - Der Benutzer soll die Möglichkeit haben, den Warenkorb zu kaufen
+  - Der Benutzer soll die Möglichkeit haben, den Einkaufsladen zu verlassen
+    
+
+solution: |
+  ``` { .python .pytutor_button }
+  Siehe Live Coding
+  ```

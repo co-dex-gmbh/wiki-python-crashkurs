@@ -1,0 +1,15 @@
+title: for-Schleife schreiben
+question: |
+  Schreiben Sie mithilfe der `for`-Schleife ein Programm, dass alle Elemente einer Liste
+  miteinander multipliziert und Diese Produkt am Ende ausgibt.
+solution: |
+  ```{ .python .pytutor_button }
+  factors = [2, 3, 2]
+  product = 1
+  for f in factors:
+      product = product * f
+  
+  print(f"Das Produkt von {factors} ist {product}") 
+  ```
+tip: | 
+  Erstellen Sie eine Variable `product = 1`, in der Sie die Lösung speichern wollen.

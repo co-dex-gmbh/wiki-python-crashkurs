@@ -1,0 +1,39 @@
+title: Usernamen überprüfen
+question: |
+  In einem Onlineportal dürfen Nutzer ihren Username frei wählen, jedoch gibt es bestimmte
+  Begriffe, die nicht als Teil des Namens auftauchen dürfen. Diese sind in der folgenden
+  Liste verbotener Wörter notiert:
+  
+  ```python
+  verboten = ['admin', 'super', 'user']
+  ```
+  
+  Folgende Nutzernamen währen hier also verboten:
+  
+  * **super**man
+  * **admin**istrator
+  * R**admin**ister
+  * Hä**user**
+  * **superadmin**
+  * **admin**
+  
+  Schreibe ein Programm, das den Nutzer um einen Namen bitten und eine Warnmeldung gibt, wenn der Name verboten ist.
+
+solution: |
+  ```{ .python .pytutor_button }
+  username = input('Nutzername eingeben: ')
+  verboten = ['admin', 'super', 'user']
+  
+  for v in verboten:
+      if v in username:
+          print("Nutzername nicht erlaubt!")
+  ```
+tip: |
+  ```python
+  username = input('Nutzername eingeben: ')
+  verboten = ['admin', 'super', 'user']
+  
+  for ...:
+      if ...:
+          print("Nutzername nicht erlaubt!")
+  ```

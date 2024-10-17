@@ -1,0 +1,36 @@
+title: Tische bereit machen 
+question: |
+  Füge dem Modul `casino_game` eine neue Methode `play_game(rounds, money)` hinzu.
+  Diese Methode dient dazu, dass mehrere Runden (`rounds`) gespielt werden kann. Hier wird dann mehrfach `bet_under_square` ausgeführt.
+
+  Diese Methode `play_game` bittet den
+  Nutzer um einen Einsatz (der maximal die Höhe
+  seines Geldes `money` betragen darf).
+
+  Dann fragt `play_game` und um einen vom
+  Nutzer gewählten Faktor. Mit diesem Einsatz und Faktor wird die `bet_under_square` Methode ausgeführt und das Ergebnis
+  mit zum momentanen Geld hinzugefügt.
+
+  `rounds` soll defaultmäßig auf 5 gesetzt sein.
+  `money` soll defaultmäßig auf 10 gesetzt sein.
+solution: |
+  ``` { .python .pytutor_button }
+  from secure_input import input_int_in_between
+  from my_random import random_squares
+
+  def play_game(rounds=5, money=10):
+      for i in range(rounds):
+          print(f"Round {i}. Money={money}")
+          bet = input_int_in_between("Wie viel Geld willst du setzen?", 0, money)
+          money -= bet
+          faktor = input_int_in_between("Welchen Faktor willst du?", 1, 10 ** 100)
+          money += bet_under_squares(bet, faktor)
+          if not money:
+              break
+      else:
+          print(f"Du hast {money} gewonnen")
+          return
+
+      print("Leider alles verzockt")
+  ```
+# solution_video: https://www.youtube.com/embed/QUfGLsf-a8w?si=MK975qYupEcN91Od

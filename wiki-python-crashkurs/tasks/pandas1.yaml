@@ -1,0 +1,8 @@
+title: Höchsten Preis finden
+question: |
+  Finden Sie den höchsten Preis für einen BicMac
+  ```
+solution: |
+  ``` { .python .pytutor_button }
+  df["Price in US Dollars"].max()
+  ```

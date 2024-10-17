@@ -1,0 +1,28 @@
+title: Sicherheit muss sein
+question: |
+  Erstelle eine weitere Funktion `input_int_in_between(prompt, minimum, maximum)` 
+  in wieder einem neuen Modul `secure_input`.
+
+  In der Funktion wird ein `input` als Integer vom Nutzer abgefragt, der zwischen `minimum` und `maximum` liegt. Dabei wird
+  der übergebene `prompt` auf dem Bildschirm angezeigt.
+  Dieser Input wird von der Funktion als Integer zurückgegeben.
+
+  Wenn die Eingabe ungültig ist, soll
+  (z.B. mithilfe von Exceptionhandling)
+  erneut um eine gültige Eingabe gebeten werden.
+solution: |
+  ``` { .python .pytutor_button }
+  def input_int_in_between(prompt, minimum, maximum):
+    user_input = 0
+    while True:
+        try:
+            user_input = int(input(prompt))
+        except ValueError:
+            print(f"Eingabe ist nicht vom Typ int")
+
+        if minimum <= user_input <= maximum:
+            return user_input
+        else:
+            print(f"Eingabe ist nicht gültig.")
+  ```
+# solution_video: https://www.youtube.com/embed/QUfGLsf-a8w?si=MK975qYupEcN91Od

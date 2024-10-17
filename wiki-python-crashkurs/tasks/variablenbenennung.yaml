@@ -1,0 +1,30 @@
+title: Variablenbenennung
+question: |
+  In Python darf ein Variablenname nur aus Buchstaben, Ziffern und Unterstrichen bestehen. Und Sie darf nicht mit einer Ziffer
+  beginnen.
+  
+  Welche der folgenden sind erlaubte Variablennamen?
+  
+  * `name_1`
+  * `1name`
+  * `name!`
+  * `_alter`
+  * `Alter`
+  * `€in$`
+  * `euro_in_dollar`
+  * `z`
+  * `_`
+  * `__init__`
+
+solution: |
+  * `name_1` ✅
+  * `1name` ❌
+  * `name!` ❌
+  * `_alter` ✅
+  * `Alter` ✅
+  * `€in$` ❌
+  * `euro_in_dollar` ✅
+  * `z` ✅
+  * `_` ✅
+  * `__init__` ✅
+solution_video: https://www.youtube.com/embed/PZgh53gmo7I?si=oDuAiSVURf7hIkGX

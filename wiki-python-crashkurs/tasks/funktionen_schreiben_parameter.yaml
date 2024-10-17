@@ -1,0 +1,16 @@
+title: Eigene Funktion mit Parameter schreiben
+question: |
+  Erstellen Sie eine Funktion `countdown_from(n)`, die auf der Konsole die Zahlen von `#!python n` bis `#!python 0`
+  ausgibt.
+
+solution: |
+  ```{ .python .pytutor_button }
+  def countdown_from(n):
+      counter = n
+      while counter >= 0:
+          print(counter)
+          counter = counter - 1
+  
+  countdown_from(7)
+  ```
+solution_video: https://www.youtube.com/embed/n0NM4xbNzyE?si=VtGnkT2LiBNYdRq0

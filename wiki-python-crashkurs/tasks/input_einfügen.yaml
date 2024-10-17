@@ -1,0 +1,15 @@
+title: Nutzereingabe erwarten
+question: |
+  Ersetzten Sie die `#!python ...` im folgenden Code so, dass es einer Variable `#!python vorname` der Name des Nutzers gespeichert wird.
+  Danach soll in der Variable `#!python alter` das Alter des Nutzers gespeichert werden.
+  
+  ```python
+  ... = ...('Wie heißt du?')
+  ... = ...('Wie alt bist du?')
+  ```
+solution: |
+  ``` { .python .pytutor_button }
+  vorname = input('Wie heißt du?')
+  alter = input('Wie alt bist du?')
+  ```
+solution_video: https://www.youtube.com/embed/RaIQUkbJipA?si=rCuevE4qG3eJYbHE

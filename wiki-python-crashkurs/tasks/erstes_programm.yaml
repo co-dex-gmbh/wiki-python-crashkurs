@@ -1,0 +1,23 @@
+title: Dein erstes Programm
+question: |
+  <div class="annotate" markdown>
+  
+  * Erstelle einen Leeren Ordner "python-schulung".
+  * Starte Visual Studio Code.
+  * Gehe auf "File" > "Open Folder" und wähle den von dir erstellten Ordner aus. (1)
+  * Bestätige, dass du dem Projekt vertraust. (5)
+  * Erstelle eine neue Python-Datei namens "hallo.py", indem du auf das :material-file-plus: neben dem Ordnernamen klickst. (2)
+  * Schreibe `print("Hallo Welt")` in die Datei.
+  * Aktiviere das automtische Speichern, indem du auf "File" > "Auto Save" klickst. (3)
+  * Klicke auf das die :material-play-outline:-Taste oben rechts, um die Datei auszuführen. (4)
+  * Ein Terminal öffnen sich unten und auf dieser erscheint die Ausgabe `Hallo Welt`. 🎉🎉🎉 
+  
+  ![Ausgeführtes Programm](ausführung.png)
+  </div>
+  
+  1. ![Ordner wird in VSCode ausgewählt](ordner_auswählen.png)
+  2. Das Symbol taucht erst auf, wenn man mit der Maus darüber ist.🙄<br/>![Neue Datei anlegen](neue_datei.png)
+  3. ![Automatisches Speichern aktivieren](autosave.png)
+  4. ![Python Datei starten](start_python.png)
+  5. ![Vertrauen bestätigen](vertrauen_bestätigen.png)
+question_video: https://www.youtube.com/embed/_i5uqQ-y2yg?si=n2su8czNV8qzc77I

@@ -1,0 +1,35 @@
+title: Programmausführung voraussagen
+question: |
+  Abhängig von der Variablen `alter`, hat die Variable `preis` einen anderen Inhalt.
+  
+  Sagen sie nunächst voraus, was auf der Konsole erscheint, wenn `alter` mit `#!python 20`, `#!python 70` und `#!python 2` befüllt ist.
+  
+  Wie lässt sich also die Bestimmung des Preises allgemein beschreiben?
+  
+  ```python
+  preis = 3.50
+  alter = ...
+  
+  if alter >= 65:
+      preis = preis - 2
+  
+  if alter < 7:
+      preis = 0.0
+  
+  print(f"Mit {alter} Jahren zahlst du: {preis} €.")
+  ```
+
+tip: Die Zeile `preis = preis - 2` bedeutet, dass der Wert in der Variablen `preis` um `#!python 2` reduziert wird und dieses nun als neuer Wert in `preis` gespeichert wird.
+solution: |
+  |`alter`| `preis` | Konsolenausgabe |
+  |-|-|-|
+  |`#!python 20`|`#!python 3.5`| `Mit 20 Jahren zahlst du: 3.5 €` |
+  |`#!python 70`|`#!python 1.5`| `Mit 70 Jahren zahlst du: 1.5 €` |
+  |`#!python 2` |`#!python 0.0`| `Mit 2 Jahren zahlst du: 0 €` |
+  
+  Der Preis ist wie folgt aufgebaut:
+  
+  * Kinder bis einschließlich 6 Jahren zahlen nichts.
+  * Erwachsene ab 65 Jahren zahlen den reduzierten Preis von 1,50 €.
+  * Alle anderen Zahlen 3,50 €.
+solution_video: https://www.youtube.com/embed/wr06KinK0Xc?si=T96giVYDpaCXK62W

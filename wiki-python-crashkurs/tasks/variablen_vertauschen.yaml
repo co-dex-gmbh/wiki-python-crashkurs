@@ -1,0 +1,33 @@
+title: Variableninhalte tauschen
+
+question: |
+  Ersetzen Sie die `...` im folgendne Code so, dass `preis_a` und `preis_b` den Inhalt tauschen.
+  
+  ```{ .python }
+  preis_a = 10
+  preis_b = 5
+  
+  ...
+  ...
+  ...
+  
+  print(preis_a) # 5
+  print(preis_b) # 10
+  ```
+
+solution: |
+  
+  ```{ .python .pytutor_button }
+  preis_a = 10
+  preis_b = 5
+  
+  z = preis_b
+  preis_b = preis_a
+  preis_a = z
+  
+  print(preis_a) # 5
+  print(preis_b) # 10
+  ```
+
+tip: Nutzen Sie eine Variable `z` als Zwischenspeicher.
+solution_video: https://www.youtube.com/embed/GV31IUjapwg?si=7OCX6D623tKt1nOp

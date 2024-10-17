@@ -1,0 +1,34 @@
+title: Listen lesen
+question: |
+  Was erscheint hier auf der Konsole?
+  
+  ```{ .python .pytutor_button }
+  produkte = ['Milch', 'Butter', 'Käse']
+  
+  print(produkte[2])
+  print(produkte[1])
+  print(produkte[0])
+  
+  produkte[1] = 'Magarine'
+  
+  print(produkte[0])
+  print(produkte[1])
+  print(produkte[1+1])
+  
+  pos = 2
+  print(produkte[pos])
+  ```
+
+solution: |
+  Konsolenausgabe
+  
+  ```
+  Käse
+  Butter
+  Milch
+  Milch
+  Magarine
+  Käse
+  Käse
+  ```
+solution_video: https://www.youtube.com/embed/GEimrVK6Cgk?si=k1SbKJIzhOk

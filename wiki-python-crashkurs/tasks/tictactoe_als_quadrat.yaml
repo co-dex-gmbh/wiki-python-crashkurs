@@ -1,0 +1,58 @@
+title: Implementiere `als_quadrat`
+question: |
+  Die Liste `spielbrett` soll auf der Konsole schön dargestellt werden.
+  
+  **Beispiele**
+  
+  Für die Liste `[0, 1, 2, 3, 4, 5, 6, 7, 8]`: 
+  
+  ```
+  0 | 1 | 2
+  3 | 4 | 5
+  6 | 7 | 8
+  ```
+  Für die Liste `["x", "o", 2, "x", 4, 5, 6, 7, "o"]`: 
+  
+  ```
+  x | o | 2
+  x | 4 | 5
+  6 | 7 | o
+  ```
+  
+   
+  Diese Darstellung wird in der Funktion `als_quadrat` erstellt. 
+  
+  Mit `\n` kann in einem String ein Zeilenumbruch gesetzt werden.
+
+  Implementieren Sie dies. Hier sind Unittest, mit denen sie überprüfen können, ob ihre Funktion richtig ist:
+  
+  ```python hl_lines="5"
+  import unittest
+  
+  
+  def als_quadrat(spielbrett):
+      return ...
+  
+  
+  class TestAlsQuadrat(unittest.TestCase):
+      def test_als_quadrat_0(self):
+          spielbrett = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+          erwartet = "0 | 1 | 2\n3 | 4 | 5\n6 | 7 | 8"
+          self.assertEqual(als_quadrat(spielbrett), erwartet)
+  
+      def test_als_quadrat_1(self):
+          spielbrett = ["x", "o", 2, "x", 4, 5, 6, 7, "o"]
+          erwartet = "x | o | 2\nx | 4 | 5\n6 | 7 | o"
+          self.assertEqual(als_quadrat(spielbrett), erwartet)
+  
+  if __name__ == '__main__':
+      unittest.main()
+  ```
+tip: |
+  Schreiben Sie die Tests in eine seperate Datei. Wenn alles funktiniert, kopieren sie die korrekte Implementierung. Das ist zwar nicht die feine englische Art, aber für den moment ok so.
+solution: |
+  ```python
+  def als_quadrat(spielbrett):
+      return f"{spielbrett[0]} | {spielbrett[1]} | {spielbrett[2]}\n{spielbrett[3]} | {spielbrett[4]} | {spielbrett[5]}\n{spielbrett[6]} | {spielbrett[7]} | {spielbrett[8]}"
+  ```
+solution_video: https://www.youtube.com/embed/-HLU3RETWS8?si=vaD2qmteDn9p-4S1

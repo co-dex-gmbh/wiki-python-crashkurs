@@ -1,0 +1,35 @@
+title: Seid gegrüßt!
+question: |
+  Gegeben sei der folgende Code. Beschreiben Sie, auf der Konsole erscheint, wenn dieser durchgeführt wird:
+  
+  ```{ .python .pytutor_button }
+  def gruß_nord():
+      print('Moin')
+  
+  def gruß_süd():
+      print('Grüß Gott')
+  
+  gruß_nord()
+  gruß_süd()
+  gruß_süd()
+  gruß_nord()
+  ```
+  
+  Wie müsste man den Code anpassen, damit alle norddeutschen Grüße `Moin moin!` sind? 
+
+solution: |
+  Auf der Konsole erscheint:
+  ```
+  Moin
+  Grüß Gott
+  Grüß Gott
+  Moin
+  ```
+  
+  Zeile 2 muss wie folgt geändert werden, für einen veränderten Gruß:
+  
+  ``` { .python hl_lines="2"}
+  def gruß_nord():
+      print('Moin moin!')
+  ```
+solution_video: https://www.youtube.com/embed/52w0-oHcKlw?si=FFElhsrHUWs1TcH6

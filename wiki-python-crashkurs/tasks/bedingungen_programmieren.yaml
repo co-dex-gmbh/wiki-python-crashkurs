@@ -1,0 +1,25 @@
+title: Preisberechnung basierend auf Alter und Mitgliedschaft
+question: |
+  Schreibe einen kleinen Python-Code, der den Eintrittspreis berechnet. Es gelten folgende Regeln:
+  
+  - Personen unter 18 Jahren zahlen 5 €.
+  - Personen ab 65 Jahren zahlen 5 €.
+  - Alle anderen zahlen 10 €.
+  - Mitglieder eines Clubs erhalten 50 % Rabatt auf den Eintrittspreis.
+
+solution: |
+  ``` { .python .pytutor_button }
+  alter = 30
+  mitglied = True
+  
+  preis = 10
+
+  if alter < 18 or alter >= 65:
+      preis = 5
+
+  if mitglied:
+      preis = preis / 2
+
+  print(f"Der Preis beträgt {preis} €.")
+  ```
+solution_video: https://www.youtube.com/embed/QUfGLsf-a8w?si=MK975qYupEcN91Od

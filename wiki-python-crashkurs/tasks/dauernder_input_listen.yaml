@@ -1,0 +1,44 @@
+title: Listen fortlaufend erweitern
+question: |
+  Schreibe ein Programm, dass den Nutzer wiederholt nach einer Zahl fragt.
+  Das Programm hat intern eine Liste namens `eingaben`, in der alle bisher eingegebenen Zahlen gespeichert werden.
+  Es soll vor der Eingabe immer die bisher gespeicherten Elemente eingeblendet werden.
+  
+  Die Konsolenausgabe soll also etwa so aussehen:
+  
+  ```
+  Bisherige Zahlen: []
+  Gib eine Zahl ein: 3
+  Bisherige Zahlen: [3]
+  Gib eine Zahl ein: 10
+  Bisherige Zahlen: [3, 10]
+  Gib eine Zahl ein: -20
+  Bisherige Zahlen: [3, 10, -20]
+  Gib eine Zahl ein: 
+  ```
+tip: |
+  === "Tipps ohne Code"
+      
+      * Lege dir zunächst eine Variable `eingaben` an, in der du die Eingaben sammeln wirst. Zunächst ist `eingabe` eine leere Liste.
+      * Um eine Schleife dauerhaft für immer zu durchlaufen kann als Bedingung `True` genutzt werden.
+      * Mit `int(input("Gib eine Zahl ein: "))` kann man den Nutzer um eine Zahl bitten.
+      * Füge neue Elemente in eine Liste mit `append` ein.
+      
+  === "Codevorlage mit Schleife"
+      
+      ```{ .python }
+      eingaben = ...
+      while ...: 
+          print(f"Bisherige Zahlen: {eingaben}")
+          eingabe = ...
+          eingaben. ...
+      ```
+solution: |
+  ```{ .python .pytutor_button }
+  eingaben = []
+  while True:
+      print(f"Bisherige Zahlen: {eingaben}")
+      eingabe = int(input("Gib eine Zahl ein: "))
+      eingaben.append(eingabe)
+  ```
+solution_video: https://www.youtube.com/embed/xzoBk3Y2pn4?si=KzuLfLUPg0pcx8rN

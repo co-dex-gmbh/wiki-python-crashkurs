@@ -1,0 +1,29 @@
+title: Variablenbefüllung voraussagen mit Falle
+question: |
+  Sagen Sie voraus, was auf der Konsole ausgegeben wird, wenn das Programm ausgeführt wird.
+  
+  ```python
+  preis = 3
+  print(preis)
+  
+  preis = preis + 4
+  print(preis)
+  
+  print(preis + 5)
+  
+  print(preis)
+  ```
+tip: Der Inhalt einer Variablen wird nur dann neu befüllt, wenn auch der Zuordnungsoperator `#!python =` aufgerufen wird.
+solution: |
+  ``` { .python .pytutor_button }
+  preis = 3
+  print(preis) # 3
+  
+  preis = preis + 4
+  print(preis) # 7
+  
+  print(preis + 5) # 12
+  
+  print(preis) # 7
+  ```
+solution_video: https://www.youtube.com/embed/iZFQVJP875k?si=ra2JP6QMAPnarZO0

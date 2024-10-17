@@ -1,0 +1,130 @@
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+
+site_name: Python Crashkurs
+
+nav:
+  - Übersicht: index.md
+  - Installation: content/installation/installation.md
+  - Variablen:
+      - Was sind Variablen?: content/variables/variablen.md
+      - Datentypen: content/variables/datentypen.md
+      - Nutzereingaben: content/variables/nutzereingaben.md
+  - Bedingter Code:
+      - if-Blöcke: content/bedingter_code/bedingter_code.md
+      - Bedingungen: content/bedingter_code/bedingung.md
+      - Bedingungen verknüpfen: content/bedingter_code/bedingungen_verknüpfen.md
+  - Codewiederholung: content/loops/loops.md
+  - Collections:
+      - Listen: content/collections/lists.md
+      - Listen erweitern: content/collections/lists_append.md
+      - Listen durchlaufen: content/collections/for_loop.md
+      - Weiter Datenstrukturen: content/collections/weitere_datenstrukturen.md
+  - Funktionen:
+      - Funktionen definieren: content/functions/functions.md
+      - Parameter: content/functions/functions_with_parameters.md
+      - Rückgabewerte: content/functions/functions_with_returns.md
+  - Module & Pakete: 
+      - Module: content/packages/moduls.md
+      - Pakete: content/packages/packages.md
+  - Virtuelle Umgebung: content/_venv/_venv.md
+  - Pandas:
+      - Einführung: content/pandas/pandas.md
+      - Series & DataFrames: content/pandas/series_dataframes.md
+      - Lesen von DataFrames: content/pandas/read_dataframes.md
+      - Export von DataFrames: content/pandas/export_dataframes.md
+      - Filtern von DataFrames: content/pandas/filter_dataframes.md
+      - Statistik mit DataFrames: content/pandas/statistic_dataframes.md
+      - Daten entfernen & hinzufügen: content/pandas/add_and_remove_data.md
+      - DataFrames zusammenfügen: content/pandas/merge_dataframes.md
+      - Nützliche Funktionen: content/pandas/useful_functions.md
+      - DataFrames bereinigen: content/pandas/clean_dataframes.md
+  - Plotting & Dashboards:
+      - Einführung: content/visualization/visualization.md
+      - Matplotlib : content/visualization/matplotlib.md
+      - Seaborn: content/visualization/seaborn.md
+      - Plotly: content/visualization/plotly.md
+      - Streamlit: content/visualization/streamlit.md
+  - OOP: 
+    - Einführung: content/oop/oop.md
+    - Methoden, Klassen und Objekte: content/oop/methods_classes_objects.md
+    - Fortgeschrittene Themen: content/oop/advanced.md
+  - Unit Tests: content/unit_tests/unit_tests.md
+  - Projekt: content/project/project.md
+
+
+theme:
+  name: material
+  palette:
+    primary: amber
+    accent: indigo
+  logo: assets/logo.png
+  favicon: assets/favicon.png
+  features:
+    - navigation.tracking
+    - navigation.path
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - toc.integrate
+    - content.code.copy
+    - content.code.annotate
+
+markdown_extensions:
+  - pymdownx.keys
+  - admonition
+  - pymdownx.details
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - md_in_html
+  - attr_list
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      linenums: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+
+plugins:
+  - search
+  - macros
+
+extra_css:
+  - stylesheets/logo.css
+  - stylesheets/grid.css
+  - stylesheets/video_admonition.css
+  - stylesheets/python_tutor_admonition.css
+  - stylesheets/mermaid.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - javascripts/pytutor_button.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
+  - https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js
+  - https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js
+
+extra:
+  social:
+    - icon: fontawesome/solid/k
+      link: https://www.kununu.com/de/qualidy
+    - icon: fontawesome/brands/linkedin
+      link: https://de.linkedin.com/company/qualidy
+    - icon: material/google
+      link: https://www.google.com/search?sca_esv=7e6ba2047fcb60f3&uds=AMwkrPtyB8MsmozA4Lwzqy2G2HCu-abqzc6moOG48q3gP5dtjTRzC2Ws0eSwcyLXDfZNuYCrZ7ByIreHLG9th3vKLekPoVeey0tumAbet4cVLQRLzdRFhUbOGbnyp3xo1V0hzzaNmkCN&si=AKbGX_rcuucMgom2rba1cdwsvM2SVoIkP2btyqGMV4t0GuHIs4sGV_1tpuqR0YHG4Rzd9SdJcL-lW6E-2aJA5azZLTKkIOrZ2j2aWwoBkVbdEJ0o0GPcQhs%3D&q=Qualidy+GmbH+Rezensionen&sa=X&ved=2ahUKEwibsbnSgcmFAxXNQvEDHaVYCiAQ3PALegQIRxAF
+    - icon: fontawesome/solid/globe
+      link: https://qualidy.de
+
+watch:
+  - tasks
+
+copyright: Copyright &copy; 2024 Qualidy GmbH

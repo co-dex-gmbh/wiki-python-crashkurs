@@ -1,0 +1,17 @@
+title: Listen manipulieren
+question: |
+  Karl hat eine Liste mit 4 Elementen erstellt und versucht nun ein neues Element mit der folgenden Syntax hinzuzufügen.
+  
+  Beschreibe den Fehler der Auftritt und wie man ihn korrigiert.
+  
+  ```{ .python .pytutor_button }
+  freunde = ['Anna', 'Bernd']
+  freunde[2] = 'Clara'
+  ```
+solution: |
+  Es 
+  
+  ```{ .python .pytutor_button }
+  freunde = ['Anna', 'Bernd']
+  freunde.append('Clara')
+  ```

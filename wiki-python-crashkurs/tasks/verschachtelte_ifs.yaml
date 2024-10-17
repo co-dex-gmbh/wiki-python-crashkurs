@@ -1,0 +1,62 @@
+title: Verschachtelte `if`s
+question: |
+  Sagen Sie voraus, was auf der Konsole ausgegeben wird, wenn das Programm ausgeführt wird.
+  
+  Was passiert, wenn `#!python alter = 15` ist? 
+  
+  Was passiert, wenn `#!python alter = 15` und `#!python film_genre = "Märchen"` ist? 
+  
+  ```python
+  alter = 25
+  film_genre = "Horror"
+  
+  if film_genre == "Horror":
+      print("Wie alt bist du denn?")
+    
+      if alter >= 18:
+          print("Viel Spaß beim Film!")
+    
+      if alter < 18:
+          print("Das wird nichts!")
+  
+  print("Tschüss!")
+  ```
+solution: |
+  ``` { .python .pytutor_button }
+  alter = 25
+  film_genre = "Horror"
+  
+  if film_genre == "Horror":
+      print("Wie alt bist du denn?")
+  
+      if alter >= 18:
+          print("Viel Spaß beim Film!")
+    
+      if alter < 18:
+          print("Das wird nichts!")
+  
+  print("Tschüss!")
+  ```
+  
+  Bei der gegebenen Variablenbelegung erscheint auf der Konsole:
+  
+  ```
+  Wie alt bist du denn?
+  Viel Spaß beim Film!
+  Tschüss!
+  ```
+  
+  Ist `#!python alter = 15` und `#!python alter = "Horror"` erscheint:
+
+  ```
+  Wie alt bist du denn?
+  Das wird nichts!
+  Tschüss!
+  ```
+  
+  Ist `#!python alter = 15` und `#!python alter = "Märchen"` erscheint:
+  
+  ```
+  Tschüss!
+  ```
+solution_video: https://www.youtube.com/embed/5ZrxtcUb_vo?si=LW2gIUVaHKF2YKUS

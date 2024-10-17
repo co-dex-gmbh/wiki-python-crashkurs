@@ -1,0 +1,30 @@
+title: Implementiere den Spielerwechsel
+question: |
+  Nach jedem Zug müssen `aktiver_spieler` und `nächster_spieler` wechseln.
+  Dazu muss der Inhalt der Variablen getauscht werden.
+  Fügen Sie den Code in die Vorlage ein.
+tip: |
+  Schauen Sie sich Übungsaufgabe _Variableninhalte tauschen_ an.
+solution: |
+  ```{ .python hl_lines="14-16" }
+  def gameloop():
+      spielbrett = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+  
+      aktiver_spieler = 'x'
+      nächster_spieler = 'o'
+      while not es_gibt_gewinner(spielbrett):
+          print(als_quadrat(spielbrett))
+    
+          position = int(input(f"Spieler {aktiver_spieler}, wo willst du setzen? "))
+    
+          symbol_schreiben(spielbrett, position, aktiver_spieler)
+    
+          # Wechsle Spieler
+          zwischenspeicher = aktiver_spieler
+          aktiver_spieler = nächster_spieler
+          nächster_spieler = zwischenspeicher
+  
+      print(als_quadrat(spielbrett))
+      print(f"Herzlichen Glückwunsch!")
+  ```
+solution_video: https://www.youtube.com/embed/1sWNBpwFT80?si=WBguQvqMHmEqyfci
