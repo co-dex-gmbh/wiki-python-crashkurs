@@ -1,6 +1,7 @@
 .idea
 .venv
 venv
+.venv/
 .DS_Store
 site
 __pycache__
