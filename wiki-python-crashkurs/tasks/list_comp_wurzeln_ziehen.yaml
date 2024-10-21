@@ -1,0 +1,8 @@
+title: Wurzeln ziehen
+question: |
+  Berechne die Quadratwurzel jeder Zahl in einer Liste von Zahlen.
+solution: |
+  ```python
+  wurzeln = [i ** 0.5 for i in [1, 4, 9, 16, 25]]
+  print(wurzeln)
+  ```

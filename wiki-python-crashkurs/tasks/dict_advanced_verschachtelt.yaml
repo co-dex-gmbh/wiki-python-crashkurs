@@ -1,0 +1,22 @@
+title: Verschachteltes Dictionary analysieren
+question: |
+  Gegeben sei ein verschachteltes Dictionary, das Daten von Studenten und ihren Noten in verschiedenen Fächern enthält. Schreibe ein Programm, das für jeden Studenten den Durchschnitt seiner Noten berechnet und diesen ausgibt. Nutze Schleifen, um durch das Dictionary zu iterieren.
+
+  Beispiel für das Dictionary:
+  ```python
+  studenten = {
+      "Anna": {"Mathe": 1, "Englisch": 2},
+      "Max": {"Mathe": 3, "Englisch": 2}
+  }
+  ```
+solution: |
+  ```python
+  studenten = {
+      "Anna": {"Mathe": 1, "Englisch": 2},
+      "Max": {"Mathe": 3, "Englisch": 2}
+  }
+
+  for name, faecher in studenten.items():
+      durchschnitt = sum(faecher.values()) / len(faecher)
+      print(f"{name}: Durchschnittsnote = {durchschnitt:.2f}")
+  ```

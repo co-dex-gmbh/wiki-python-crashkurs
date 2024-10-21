@@ -1,0 +1,8 @@
+title: Set Mitgliedschaftstest
+question: |
+  Überprüfe, ob ein bestimmtes Element in einem Set vorhanden ist.
+solution: |
+  ```python
+  mein_set = {1, 2, 3, 4, 5}
+  print(3 in mein_set)
+  ```

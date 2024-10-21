@@ -1,0 +1,54 @@
+title: Welche Fehler kann man so machen?
+question: |
+  Baue für die folgenden Fehler ein Beispiel, in dem sie geworfen werden.
+  Hier ist die [Liste aller in Python vorimplementierten Exceptions](https://docs.python.org/3/library/exceptions.html).
+
+  * IndexError
+  * OverflowError
+  * StopIteration
+  * ValueError
+  * ZeroDivisionsError
+  * KeyboardInterrupt
+solution: |
+  ```python
+  # IndexError
+  my_list = [1,2,3,4]
+  try:
+      print(my_list[10])
+  except IndexError as e:
+      print(f"IndexError: {e}")
+
+  # OverflowError
+  try:
+      print(2.0 ** 10000)
+  except OverflowError as e:
+      print(f"OverflowError: {e}")
+
+  # StopIteration
+  z = zip([1], [1])
+  try:
+      next(z)
+      next(z)
+  except StopIteration as e:
+      print(f"StopIteration: {e}")
+
+  # ValueError
+  try:
+      int("Hallo")
+  except ValueError as e:
+      print(f"ValueError: {e}")
+
+  # ZeroDivisionError
+  try:
+      10 / 0
+  except ZeroDivisionError as e:
+      print(f"ZeroDivisionError: {e}")
+
+  # KeyboardInterrupt
+  print("Drücke Strg+C, um eine KeyboardInterrupt auszulösen")
+  try:
+      while True:
+          pass
+  except KeyboardInterrupt:
+      print("KeyboardInterrupt wurde ausgelöst")
+  ```

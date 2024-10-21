@@ -1,0 +1,48 @@
+title: Metaphorisch gesprochen
+question: |
+  In dem Text unten tauchen die folgenden Objekte auf:
+
+  * Bücherregal
+  * Erster Tisch
+  * Zweiter Tisch mit Kamera
+  * Foto vom zweiten Tisch
+  * Zettel auf aktuellem Foto
+
+  Diese symbolisieren eines der folgenden Dinge aus dem git-Universium. Welches Objekt gehört zu welchem?
+
+  * Repository
+  * Index/Staging Area
+  * Branch
+  * Commit
+  * Working Tree
+
+        <div style="background-color: #f0f0f0; padding: 15px; border-radius: 10px;">
+        Man stelle sich ein leeres Bücherregal vor.
+        
+        Auf dem Tisch arbeiten wir an einem Projekt (z.B. einer Motion Cutout Animation).
+        Auf diesem Tisch befindet sich unsere aktuelle Projektversion.
+        
+        Es gibt einen zweiten Tisch. Über diesen Tisch schwebt eine Kamera.
+        Auf diesem zweiten Tisch können wir eine alles, was auf dem ersten Tisch
+        liegt, mit einem magischen Knopf herüber kopieren. Wir können aber auch sagen,
+        dass nur bestimmte Dinge auf den zweiten Tisch mit der Kamera kopiert werden.
+        Alles, was wir mit dem magischen Knopf auf den zweiten Tisch gepackt haben,
+        erscheint übrigens auch im Bücherregal und ordnet sich da schön ein.
+        
+        Wir können jederzeit ein Foto vom zweiten Tisch machen. Dieses Foto können wir
+        ins Regal legen. Das Projekt ist nun in einer neuen Version gesichert.
+        Solange dieser Schrank existiert, ist sie für immer sicher.
+        
+        Wir können nun jederzeit unseren Tisch wieder auf den im Bild gespeicherten Zustand bringen.
+        
+        Auf dem aktuellsten Foto kleben wir einen Zettel, damit wir es später besser wiederfinden.
+        </div>
+solution: |
+  | Metapher                  | git                  |
+  |---------------------------|----------------------|
+  | Bücherregal               | Repository           |
+  | Erster Tisch              | Working Tree         |
+  | Zweiter Tisch mit Kamera  | Index / Staging Area |
+  | Foto vom zweiten Tisch    | Commit               |
+  | Zettel auf aktuellem Foto | Branch               |
+

@@ -1,0 +1,9 @@
+title: Ändern eines Wertes
+question: |
+  Ändere den Wert eines bestehenden Eintrags in einem Dictionary.
+solution: |
+  ```python
+  mein_dict = {"Name": "Anna", "Alter": 30, "Beruf": "Ingenieurin"}
+  mein_dict["Alter"] = 31
+  print(mein_dict)
+  ```

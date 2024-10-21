@@ -1,0 +1,9 @@
+title: Hinzufügen eines Eintrags zum Dictionary
+question: |
+  Füge einem bestehenden Dictionary einen neuen Schlüssel-Wert-Eintrag hinzu.
+solution: |
+  ```python
+  mein_dict = {"Name": "Anna", "Alter": 30, "Beruf": "Ingenieurin"}
+  mein_dict["Stadt"] = "Berlin"
+  print(mein_dict)
+  ```

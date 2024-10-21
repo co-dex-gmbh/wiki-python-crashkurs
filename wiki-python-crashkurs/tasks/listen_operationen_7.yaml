@@ -1,0 +1,7 @@
+title: Liste umkehren
+question: |
+  Kehre die Reihenfolge der Elemente in der Liste `zahlen` um.
+solution: |
+  ```python
+  zahlen.reverse()
+  ```

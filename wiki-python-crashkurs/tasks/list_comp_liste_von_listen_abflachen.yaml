@@ -1,0 +1,9 @@
+title: Liste von Listen abflachen
+question: |
+  Flache eine Liste von Listen zu einer einzigen Liste ab. 
+  Also z.B. aus `[[1, 2], [3, 4], [5, 6]]` zu `[1, 2, 3, 4, 5, 6]`.
+solution: |
+  ```python
+  abgeflacht = [element for sublist in [[1, 2], [3, 4], [5, 6]] for element in sublist]
+  print(abgeflacht)
+  ```

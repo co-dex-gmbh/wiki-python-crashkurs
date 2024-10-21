@@ -1,0 +1,8 @@
+title: Teile von Strings
+question: |
+  Erstelle eine Liste der ersten Zeichen jedes Wortes in einer Liste von Wörtern.
+solution: |
+  ```python
+  erste_zeichen = [wort[0] for wort in ["Hallo", "Welt", "Python"]]
+  print(erste_zeichen)
+  ```

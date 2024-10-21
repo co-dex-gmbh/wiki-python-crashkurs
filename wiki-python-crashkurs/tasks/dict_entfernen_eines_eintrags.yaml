@@ -1,0 +1,9 @@
+title: Entfernen eines Eintrags
+question: |
+  Entferne einen Eintrag aus einem Dictionary.
+solution: |
+  ```python
+  mein_dict = {"Name": "Anna", "Alter": 30, "Beruf": "Ingenieurin"}
+  del mein_dict["Beruf"]
+  print(mein_dict)
+  ```

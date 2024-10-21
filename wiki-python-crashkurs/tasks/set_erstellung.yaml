@@ -1,0 +1,8 @@
+title: Set Erstellung
+question: |
+  Erstelle ein Set aus den Zahlen 1 bis 5 und gib es aus.
+solution: |
+  ```python
+  mein_set = {1, 2, 3, 4, 5}
+  print(mein_set)
+  ```

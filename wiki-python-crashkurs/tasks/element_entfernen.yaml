@@ -1,0 +1,9 @@
+title: Element Entfernen
+question: |
+  Entferne die Zahl 5 aus dem Set, das du in Aufgabe 3 erstellt hast.
+solution: |
+  ```python
+  mein_set = {1, 2, 3, 4, 5, 6, 7, 8}
+  mein_set.remove(5)
+  print(mein_set)
+  ```

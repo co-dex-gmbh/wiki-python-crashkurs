@@ -1,0 +1,8 @@
+title: Filtern nach Bedingung
+question: |
+  Erzeuge eine Liste aller Zahlen von 1 bis 20, die durch 3 teilbar sind.
+solution: |
+  ```python
+  teilbar_durch_3 = [i for i in range(1, 21) if i % 3 == 0]
+  print(teilbar_durch_3)
+  ```

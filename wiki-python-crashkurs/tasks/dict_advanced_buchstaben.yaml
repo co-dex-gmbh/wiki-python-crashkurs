@@ -1,0 +1,25 @@
+title: Häufigster Buchstabe in einem String
+question: |
+  Schreibe ein Python-Programm, das den häufigsten Buchstaben in einem gegebenen String findet. Falls mehrere Buchstaben gleich häufig vorkommen, sollen alle diese Buchstaben zurückgegeben werden. Beachte Groß- und Kleinschreibung nicht.
+
+  Beispiel:
+  Für den String "Mississippi" soll das Programm ausgeben: "Die häufigsten Buchstaben sind ['i', 's'], die jeweils 4 mal vorkommen."
+
+solution: |
+  ```python
+  text = "Mississippi"
+  text = text.lower()  # Konvertiere zu Kleinbuchstaben
+
+  # Zähle die Häufigkeit jedes Buchstabens
+  buchstaben_zaehler = {}
+  for buchstabe in text:
+      buchstaben_zaehler[buchstabe] = buchstaben_zaehler.get(buchstabe, 0) + 1
+
+  # Finde die höchste Häufigkeit
+  max_haeufigkeit = max(buchstaben_zaehler.values())
+
+  # Finde alle Buchstaben mit der höchsten Häufigkeit
+  haeufigste_buchstaben = [buchstabe for buchstabe, anzahl in buchstaben_zaehler.items() if anzahl == max_haeufigkeit]
+
+  print(f"Die häufigsten Buchstaben sind {haeufigste_buchstaben}, die jeweils {max_haeufigkeit} mal vorkommen.")
+  ```

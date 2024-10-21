@@ -1,0 +1,78 @@
+title: CSV als Speicherformat nutzen
+question: |
+  Erweitere die folgende Klasse um zwei Methoden:
+
+  * `create_persons_from_csv(cls, file_path)` ist eine Klassenmethode, die aus einer csv-Datei Personen ausliest und
+    erstellt.
+  * `def save_to_csv(self, file_path, mode='a')` speichert die `Person`-Instanz in einer CSV.
+
+  ```python
+  class Person:
+      def __init__(self, name, age):
+          self.name = name
+          self.age = age
+
+      def __eq__(self, other):
+          return isinstance(other, Person) and self.name == other.name and self.age == other.age
+  ```
+
+  CSV-Datei:
+
+  ```text
+  Swantje,32
+  Maja,12
+  Niko,31
+  Sven,38
+  ```
+
+tip: |
+  Nutze das `csv`-Modul für das Lesen und Schreiben von CSV-Dateien. Die `@classmethod`-Dekoration wird für die Klassenmethode benötigt.
+
+solution: |
+  ```python
+  from csv import reader, writer
+
+  class Person:
+      def __init__(self, name, age):
+          self.name = name
+          self.age = age
+
+      def __eq__(self, other):
+          return isinstance(other, Person) and self.name == other.name and self.age == other.age
+
+      def __str__(self):
+          return f"Person: {self.name}, {self.age}"
+
+      @classmethod
+      def create_persons_from_csv(cls, file_path):
+          result = list()
+          with open(file_path) as csv_file:
+              for zeile in reader(csv_file):
+                  name, age = zeile
+                  result.append(cls(name, int(age)))
+
+          return result
+
+      def save_to_csv(self, file_path, mode="a"):
+          with open(file_path, mode, newline="") as csv_file:
+              writer(csv_file).writerow([self.name, self.age])
+
+  # Beispielnutzung:
+  csv_file_path = "persons.csv"
+  persons = Person.create_persons_from_csv(csv_file_path)
+
+  for person in persons:
+      print(person)
+
+  Person("Gustav", 32).save_to_csv(csv_file_path)
+  ```
+
+  Diese Lösung implementiert die beiden geforderten Methoden:
+
+  1. `create_persons_from_csv(cls, file_path)` ist eine Klassenmethode, die die CSV-Datei liest und für jede Zeile eine neue `Person`-Instanz erstellt.
+
+  2. `save_to_csv(self, file_path, mode="a")` ist eine Instanzmethode, die die aktuelle `Person`-Instanz als neue Zeile an die CSV-Datei anhängt.
+
+  Zusätzlich wurde eine `__str__`-Methode hinzugefügt, um eine schöne String-Repräsentation der `Person`-Objekte zu erhalten.
+
+  Beachten Sie, dass das Alter in der `create_persons_from_csv`-Methode zu einem Integer konvertiert wird, da es in der CSV-Datei als String gespeichert ist.

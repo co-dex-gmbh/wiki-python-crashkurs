@@ -1,0 +1,7 @@
+title: Zugreifen auf ein Listenelement
+question: |
+  Greife auf das dritte Element in der Liste `zahlen` zu und speichere es in der Variable `drittes_element`.
+solution: |
+  ```python
+  drittes_element = zahlen[2]
+  ```

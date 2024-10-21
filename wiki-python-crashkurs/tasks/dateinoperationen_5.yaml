@@ -1,0 +1,39 @@
+title: Binäres Lesen von Dateien
+question: |
+  Erstelle ein Programm, das die Dateien "beispiel.txt" und "mein_passwort.png" mit den Modi `r`, `rt` und `rb` öffnet und liest. 
+  Gib für jeden Modus und jede Datei aus, ob das Lesen erfolgreich war oder ob ein Fehler aufgetreten ist.
+  
+  ```python
+  # Vervollständige den Code hier
+  files = ["beispiel.txt", "mein_passwort.png"]
+  modes = ["r", "rt", "rb"]
+  
+  # Öffne und lies die Dateien in verschiedenen Modi
+  ```
+
+tip: |
+  Verwende eine verschachtelte Schleife, um durch die Dateien und Modi zu iterieren. 
+  Nutze try-except, um Fehler abzufangen und zu melden.
+
+solution: |
+  ```python
+  files = ["beispiel.txt", "mein_passwort.png"]
+  modes = ["r", "rt", "rb"]
+
+  for file in files:
+      for mode in modes:
+          try:
+              with open(file, mode) as f:
+                  content = f.read()
+                  print(f"Erfolgreich gelesen: {file} im Modus {mode}")
+          except Exception as e:
+              print(f"Fehler beim Lesen von {file} im Modus {mode}: {str(e)}")
+  ```
+
+  Dieses Programm versucht, beide Dateien in allen drei Modi zu öffnen und zu lesen. Es gibt für jede Kombination aus Datei und Modus an, ob das Lesen erfolgreich war oder ob ein Fehler aufgetreten ist.
+
+  Erwartetes Ergebnis:
+  - "beispiel.txt" kann in allen Modi gelesen werden.
+  - "mein_passwort.png" kann nur im Modus "rb" ohne Fehler gelesen werden.
+
+  Dies demonstriert, dass Textdateien in allen Modi gelesen werden können, während Binärdateien wie Bilder nur im Binärmodus ("rb") korrekt gelesen werden können.

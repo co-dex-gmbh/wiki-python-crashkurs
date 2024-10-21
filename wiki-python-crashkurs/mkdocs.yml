@@ -4,6 +4,7 @@ site_name: Python Crashkurs
 
 nav:
   - Übersicht: index.md
+  - Einführung: content/python_grundlagen/python_grundlagen.md
   - Installation: content/installation/installation.md
   - Variablen:
       - Was sind Variablen?: content/variables/variablen.md
@@ -13,16 +14,21 @@ nav:
       - if-Blöcke: content/bedingter_code/bedingter_code.md
       - Bedingungen: content/bedingter_code/bedingung.md
       - Bedingungen verknüpfen: content/bedingter_code/bedingungen_verknüpfen.md
-  - Codewiederholung: content/loops/loops.md
+  - Schleifen: content/loops/loops.md
   - Collections:
       - Listen: content/collections/lists.md
       - Listen erweitern: content/collections/lists_append.md
       - Listen durchlaufen: content/collections/for_loop.md
       - Weiter Datenstrukturen: content/collections/weitere_datenstrukturen.md
+      - Sets: content/collections/sets.md
+      - Dictionaries: content/collections/dictionaries.md
+  - List Comprehension: content/list_comp/list_comp.md
   - Funktionen:
       - Funktionen definieren: content/functions/functions.md
       - Parameter: content/functions/functions_with_parameters.md
       - Rückgabewerte: content/functions/functions_with_returns.md
+  - Error Handling:
+      - try-except: content/try_except/try_except.md
   - Module & Pakete: 
       - Module: content/packages/moduls.md
       - Pakete: content/packages/packages.md
@@ -49,7 +55,10 @@ nav:
     - Methoden, Klassen und Objekte: content/oop/methods_classes_objects.md
     - Fortgeschrittene Themen: content/oop/advanced.md
   - Unit Tests: content/unit_tests/unit_tests.md
-  - Projekt: content/project/project.md
+  - Dateioperationen: content/dateioperationen/dateioperationen.md
+  - Versionskontrolle: 
+    - Git: content/git/git.md
+  - Projekt: content/project/tic_tac_toe.md
 
 
 theme:

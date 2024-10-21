@@ -1,0 +1,7 @@
+title: Elemente zählen
+question: |
+  Zähle, wie oft die Zahl 2 in der Liste `zahlen` vorkommt und speichere das Ergebnis in `anzahl_zweien`.
+solution: |
+  ```python
+  anzahl_zweien = zahlen.count(2)
+  ```

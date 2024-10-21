@@ -1,0 +1,10 @@
+title: Absolute Werte
+question: |
+  Wandele eine Liste von Zahlen in eine Liste ihrer absoluten Werte um.
+  Z.B. `[-1, -2, 3, -4, 5]` zu `[1,2,3,4,5]`. 
+  Verwende dazu die Funktion `abs`.
+solution: |
+  ```python
+  absolute = [abs(i) for i in [-1, -2, 3, -4, 5]]
+  print(absolute)
+  ```

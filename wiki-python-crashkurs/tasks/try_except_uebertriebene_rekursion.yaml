@@ -1,0 +1,32 @@
+title: Übertriebene Rekursion
+question: |
+  Zu welchem Fehler führt der folgende Code und warum?
+
+  ```python
+  def fak(n):
+      return 1 if n <= 1 else n * fak(n-1)
+
+  print(fak(1000))
+  ```
+solution: |
+  Der Code führt zu einem `RecursionError`. 
+
+  Erklärung:
+  Die Funktion `fak` ruft sich immer wieder selbst auf (das nennt man eine rekursive Funktion).
+  Der Callstack wird damit immer größer, bis dieser irgendwann die maximale Größe überschreitet.
+  Dann wird ein `RecursionError` geworfen.
+
+  Um dies zu demonstrieren und abzufangen, können wir den Code wie folgt anpassen:
+
+  ```python
+  def fak(n):
+      return 1 if n <= 1 else n * fak(n-1)
+
+  try:
+      print(fak(1000))
+  except RecursionError as e:
+      print(f"RecursionError aufgetreten: {e}")
+      print("Die Rekursionstiefe war zu groß für diese Berechnung.")
+  ```
+
+  Eine bessere Implementierung für große Zahlen wäre eine iterative Lösung oder die Verwendung des `math.factorial()` Moduls.

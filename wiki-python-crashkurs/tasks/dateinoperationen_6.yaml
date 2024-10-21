@@ -1,0 +1,26 @@
+title: Inhalte in Datei schreiben
+question: |
+  Erstelle ein Programm, das den Nutzer wiederholt nach einer Eingabe fragt und diese in eine Datei schreibt. Das Programm soll so lange laufen, bis der Nutzer 'quit' eingibt. Am Ende soll die Datei geöffnet werden.
+tip: |
+  Nutze `os.system()` zum Öffnen der Datei am Ende.
+solution: |
+  ```python
+  from os import system
+
+  path = "meintext.txt"
+  with open(path, "wt") as file:
+      while True:
+          user_input = input("Gib etwas ein (oder 'quit' zum Beenden): ")
+          if user_input == "quit":
+              break
+          file.write(user_input + "\n")
+
+  # Öffne die Datei am Ende
+  system("open -a TextEdit " + path)  # MacOS
+  system("notepad.exe " + path)  # Windows
+  ```
+
+  Dieses Programm öffnet die Datei "meintext.txt" im Schreibmodus. Es fragt den Benutzer wiederholt nach Eingaben und schreibt diese in die Datei, bis der Benutzer 'quit' eingibt. Jede Eingabe wird in einer neuen Zeile gespeichert. Am Ende versucht das Programm, die Datei zu öffnen.
+
+  Hinweis: Die Methode zum Öffnen der Datei am Ende hängt vom Betriebssystem ab. Dieser Code versucht, beide gängigen Methoden abzudecken.
+

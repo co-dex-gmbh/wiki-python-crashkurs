@@ -1,0 +1,7 @@
+title: Tuple Comprehension
+question: |
+  Erstelle ein Tuple von Quadratzahlen mit Comprehension.
+solution: |
+  ```python
+  a = tuple(i ** 2 for i in range(11))
+  ```

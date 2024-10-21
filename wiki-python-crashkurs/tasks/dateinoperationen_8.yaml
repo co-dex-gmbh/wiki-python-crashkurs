@@ -1,0 +1,19 @@
+title: Umkehrung einer Datei
+question: |
+  Schreibe eine Funktion `reverse_file_content(file_path, save_file_path)`, die den Inhalt einer Textdatei ausliest, sie umkehrt und in eine andere Datei speichert. Das heißt, die erste Zeile wird zur letzten, die zweite zur vorletzten, usw.
+tip: |
+  Zum Umkehren von Listen lässt sich `reversed()` nutzen.
+solution: |
+  ```python
+  def reverse_file_content(file_path, save_file_path):
+      with open(file_path, 'r') as file_in, open(save_file_path, 'w') as file_out:
+          lines = file_in.readlines()
+          file_out.writelines(reversed(lines))
+
+  # Beispielaufruf
+  reverse_file_content("beispiel.txt", "beispiel_reversed.txt")
+  ```
+
+  Diese Funktion öffnet die Eingabedatei im Lesemodus und die Ausgabedatei im Schreibmodus. Sie liest alle Zeilen der Eingabedatei, kehrt ihre Reihenfolge mit `reversed()` um und schreibt sie dann in die Ausgabedatei. 
+
+  Hinweis: Diese Methode lädt den gesamten Dateiinhalt in den Speicher. Für sehr große Dateien könnte eine speichereffizientere Methode erforderlich sein.

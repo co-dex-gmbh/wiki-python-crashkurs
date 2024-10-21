@@ -1,0 +1,30 @@
+title: Fremdes Repository untersuchen
+question: |
+  Lade [diesen Ordner herunter](dateien/Bewerbung.zip).
+  Er enthält ein Git-Repository. Untersuche es mit Hilfe des Befehls:
+  
+  ```
+  git log --all [--oneline] --graph
+  ```
+  
+  Beantworte folgende Fragen:
+
+  * Wie viele Commits gibt es?
+  * Wie viele Branches gibt es?
+  * Wie viele Tags gibt es?
+
+tip: |
+  Denk daran, dass du das Repository zuerst entpacken und in das Verzeichnis wechseln musst, bevor du Git-Befehle ausführen kannst.
+
+solution: |
+  Um die Informationen zu erhalten, führe folgende Schritte aus:
+
+  1. Entpacke die ZIP-Datei
+  2. Öffne ein Terminal und navigiere in das entpackte Verzeichnis
+  3. Führe den Befehl `git log --all --oneline --graph` aus
+  4. Analysiere die Ausgabe:
+     - Jede Zeile, die mit einem * beginnt, repräsentiert einen Commit
+     - Branches werden in Klammern angezeigt, z.B. (HEAD -> master)
+     - Tags werden ebenfalls in Klammern angezeigt, z.B. (tag: v1.0)
+
+  Diese Aufgabe hilft dir, die Struktur und Geschichte eines Git-Repositories zu verstehen und wichtige Git-Befehle zur Analyse zu üben.

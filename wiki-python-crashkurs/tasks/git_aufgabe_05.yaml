@@ -1,0 +1,36 @@
+title: Hilfe zur Selbsthilfe
+question: |
+  Untersuche, was der Befehl `git help` tut.
+
+  Was passiert, wenn du die folgenden Befehle ausführst:
+  ```console
+  $ git --help init
+  $ git help init
+  $ git init --help
+  $ git help -g
+  ```
+
+  Erkläre, was die Bedeutung der verschiedenen Klammern bei Anzeigen von `git help` bedeuten.
+  Welche Bedeutung haben
+
+  * die spitzen Klammern `<...>`?
+  * die eckigen Klammern `[..]`?
+  * die eckigen Klammern mit Pipes `[..|..|..]`?
+  * die runden Klammern mit Pipes `(..|..)`?
+  * Warum wird der untersuchte Befehl mehrfach bei "usage" aufgeführt?
+
+solution: |
+  Der Befehl `git help` zeigt eine Übersicht der Git-Befehle und deren Verwendung an.
+
+  Die ersten drei Befehle (`git --help init`, `git help init`, `git init --help`) rufen alle die Hilfe für den Befehl `init` auf und zeigen detaillierte Informationen zu diesem Befehl an.
+
+  `git help -g` zeigt eine Liste der verfügbaren Git-Anleitungen an.
+
+  Bedeutung der Klammern in der Git-Hilfe:
+
+  * Spitze Klammern `<...>`: Platzhalter für erforderliche Inhalte, wie Branchnamen oder Dateipfade.
+  * Eckige Klammern `[..]`: Optionale Parameter, die verwendet werden können, aber nicht müssen.
+  * Eckige Klammern mit Pipes `[..|..|..]`: Optionale Parameter, von denen nur einer gewählt werden kann.
+  * Runde Klammern mit Pipes `(..|..)`: Parameter, von denen einer gewählt werden muss.
+
+  Der untersuchte Befehl wird mehrfach bei "usage" aufgeführt, weil sich nur so in dieser Syntax alle möglichen Aufrufmöglichkeiten und Kombinationen von Optionen darstellen lassen.

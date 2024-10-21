@@ -1,0 +1,17 @@
+title: Wortzähler
+question: |
+  Schreibe ein Programm, das einen Text (String) entgegennimmt und ein Dictionary zurückgibt, das die Häufigkeit jedes Wortes im Text zählt. Wörter sollen unabhängig von Groß- und Kleinschreibung gezählt werden. Verwende `input()` zur Eingabe des Textes.
+solution: |
+  ```python
+  text = input("Gib einen Text ein: ")
+  text = text.lower()
+  wort_haeufigkeit = {}
+
+  for wort in text.split():
+      if wort in wort_haeufigkeit:
+          wort_haeufigkeit[wort] += 1
+      else:
+          wort_haeufigkeit[wort] = 1
+
+  print(wort_haeufigkeit)
+  ```

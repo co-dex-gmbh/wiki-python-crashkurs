@@ -1,0 +1,9 @@
+title: Durchlaufen eines Dictionaries mit Schleifen
+question: |
+  Durchlaufe ein Dictionary und gib alle Schlüssel und deren zugehörige Werte aus.
+solution: |
+  ```python
+  mein_dict = {"Name": "Anna", "Alter": 30, "Beruf": "Ingenieurin"}
+  for key, value in mein_dict.items():
+      print(f"{key}: {value}")
+  ```

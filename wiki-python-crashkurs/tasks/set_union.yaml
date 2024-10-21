@@ -1,0 +1,10 @@
+title: Set Union
+question: |
+  Erstelle zwei Sets, `set1 = {1, 2, 3}` und `set2 = {3, 4, 5}`, und finde ihre Vereinigung.
+solution: |
+  ```python
+  set1 = {1, 2, 3}
+  set2 = {3, 4, 5}
+  union_set = set1 | set2
+  print(union_set)
+  ```

@@ -1,0 +1,10 @@
+title: Durchschnittswerte
+question: |
+  Berechne den Durchschnitt von jedem Paar aufeinanderfolgender Zahlen in einer Liste.
+  Also z.B. `[1,2,5,5,2,-2]` wird zu `[1.5, 3.5, 5.0, 3.5, 0]`
+solution: |
+  ```python
+  liste = [1, 2, 5, 5, 2, -2]
+  durchschnitt = [(liste[i] + liste[i + 1]) / 2 for i in range(len(liste) - 1)]
+  print(durchschnitt)
+  ```

@@ -1,0 +1,9 @@
+title: Nur Werte eines Dictionaries durchlaufen
+question: |
+  Durchlaufe ein Dictionary und gib nur die Werte aus.
+solution: |
+  ```python
+  mein_dict = {"Name": "Anna", "Alter": 30, "Beruf": "Ingenieurin"}
+  for value in mein_dict.values():
+      print(value)
+  ```

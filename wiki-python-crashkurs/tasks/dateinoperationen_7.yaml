@@ -1,0 +1,17 @@
+title: Anhängen an eine Datei
+question: |
+  Erstelle ein Programm, das den Text "Hallo" in eine Datei namens "greetings.txt" schreibt. Das Programm soll so funktionieren, dass bei jeder Ausführung ein neuer Absatz mit "Hallo" an das Ende der Datei angehängt wird, anstatt den vorherigen Inhalt zu überschreiben.
+tip: |
+  Schaue in die Modus-Tabelle und finde den richtigen Modus zum Anhängen von Inhalten an eine Datei.
+solution: |
+  ```python
+  filename = "greetings.txt"
+  with open(filename, "a") as file:
+      file.write("Hallo\n")
+  
+  print(f"'Hallo' wurde an {filename} angehängt.")
+  ```
+
+  Dieses Programm öffnet die Datei "greetings.txt" im Anhänge-Modus ("a" für append). Es schreibt dann "Hallo" gefolgt von einem Zeilenumbruch ("\n") ans Ende der Datei. Bei jeder Ausführung des Programms wird ein neues "Hallo" in einer neuen Zeile hinzugefügt, ohne den vorherigen Inhalt zu überschreiben.
+
+  Hinweis: Wenn die Datei noch nicht existiert, wird sie automatisch erstellt.

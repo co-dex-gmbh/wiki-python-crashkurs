@@ -1,0 +1,50 @@
+title: Sichere Benutzereingabe
+question: |
+  Implementiere einen interaktiven Taschenrechner. 
+  Lass den Benutzer nacheinander zwei Zahlen und einen Operator (+, -, *, /) eingeben.
+  Verwende `try`- und `except`-Blöcke, um mögliche `ValueError`-Ausnahmen und unbekannte Operationen zu behandeln. 
+  Gib das Ergebnis aus.
+solution: |
+  ```python
+  def get_number(prompt="Gib eine Ganzzahl ein: "):
+      while True:
+          try:
+              return int(input(prompt))
+          except ValueError:
+              print("Das war keine erlaubte Zahl. Erneut bitte:")
+
+  def get_operation(prompt="Gebe Operation ein: "):
+      operations = {"+": add, "-": subtract, "*": multiply, "/": divide}
+      while True:
+          op = input(prompt)
+          if op in operations:
+              return operations[op]
+          print(f"{op} ist keine der erlaubten Operationen {list(operations.keys())}. Erneut bitte:")
+
+  def add(a, b):
+      return a + b
+
+  def subtract(a, b):
+      return a - b
+
+  def multiply(a, b):
+      return a * b
+
+  def divide(a, b):
+      return a / b
+
+  while True:
+      num1 = get_number("Gib erste Ganzzahl ein: ")
+      num2 = get_number("Gib zweite Ganzzahl ein: ")
+      operation = get_operation()
+
+      try:
+          result = operation(num1, num2)
+      except Exception as e:
+          print(f"Operation nicht möglich: {e}")
+      else:
+          print(f"Das Ergebnis ist: {result}")
+
+      if input("Möchtest du eine weitere Berechnung durchführen? (j/n): ").lower() != 'j':
+          break
+  ```

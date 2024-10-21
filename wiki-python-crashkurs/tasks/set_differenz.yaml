@@ -1,0 +1,10 @@
+title: Set Differenz
+question: |
+  Ermittle die Differenz zwischen `set1` und `set2` und umgekehrt.
+solution: |
+  ```python
+  set1 = {1, 2, 3}
+  set2 = {3, 4, 5}
+  differenz = set1 - set2
+  print(differenz)
+  ```

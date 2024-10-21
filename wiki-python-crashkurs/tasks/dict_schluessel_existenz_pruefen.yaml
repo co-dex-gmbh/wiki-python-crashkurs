@@ -1,0 +1,12 @@
+title: Schlüssel-Existenz prüfen
+question: |
+  Überprüfe, ob ein bestimmter Schlüssel in einem Dictionary existiert.
+solution: |
+  ```python
+  mein_dict = {"Name": "Anna", "Alter": 30, "Beruf": "Ingenieurin"}
+  key = "Name"
+  if key in mein_dict:
+     print(f"{key} ist im Dictionary vorhanden.")
+  else:
+     print(f"{key} ist nicht im Dictionary vorhanden.")
+  ```

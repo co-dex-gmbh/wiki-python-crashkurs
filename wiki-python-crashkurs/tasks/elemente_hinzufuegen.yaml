@@ -1,0 +1,9 @@
+title: Elemente Hinzufügen
+question: |
+  Füge die Zahlen 6, 7 und 8 zu dem Set aus Aufgabe 1 hinzu.
+solution: |
+  ```python
+  mein_set = {1, 2, 3, 4, 5}
+  mein_set.update([6, 7, 8])
+  print(mein_set)
+  ```

@@ -1,0 +1,10 @@
+title: Symmetrische Differenz
+question: |
+  Finde die symmetrische Differenz zwischen `set1` und `set2`.
+solution: |
+  ```python
+  set1 = {1, 2, 3}
+  set2 = {3, 4, 5}
+  sym_differenz = set1 ^ set2
+  print(sym_differenz)
+  ```

@@ -1,0 +1,24 @@
+title: Zeilenweise Datei lesen
+question: |
+  Erstelle ein Programm, das eine Datei ausliest und die erste Zeile der Datei ausgibt. Dann wartet das Programm auf eine Nutzereingabe (z.B. das Drücken von `enter`) und gibt dann die nächste Zeile aus. Dies wird so lange wiederholt, bis die ganze Datei gelesen wurde. Das Programm endet dann.
+
+  ```python
+  # Vervollständige den Code hier
+  path = "beispiel.txt"
+  # Öffne die Datei und lies zeilenweise
+  ```
+tip: |
+  Verwende eine Schleife mit `readline()` und `input()` für die Nutzereingabe.
+solution: |
+  ```python
+  path = "beispiel.txt"
+  with open(path) as file:
+      while True:
+          line = file.readline()
+          if not line:
+              break
+          print(line, end='')
+          input("Drücke Enter für die nächste Zeile...")
+  ```
+
+  Dieses Programm öffnet die Datei "beispiel.txt", liest sie zeilenweise aus und gibt jede Zeile aus. Nach jeder Zeile wartet es auf eine Benutzereingabe (Enter-Taste), bevor es zur nächsten Zeile übergeht. Wenn keine Zeilen mehr zu lesen sind, beendet sich das Programm.

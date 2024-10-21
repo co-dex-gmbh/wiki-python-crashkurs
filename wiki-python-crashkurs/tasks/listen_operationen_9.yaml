@@ -1,0 +1,7 @@
+title: Listen verschachteln
+question: |
+  Erstelle eine neue Liste `verschachtelt`, die zwei Listen enthält: die ursprüngliche Liste `zahlen` und eine Liste mit den Buchstaben ['a', 'b', 'c'].
+solution: |
+  ```python
+  verschachtelt = [zahlen, ['a', 'b', 'c']]
+  ```

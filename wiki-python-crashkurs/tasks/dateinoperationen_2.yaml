@@ -1,0 +1,25 @@
+title: Fehler beim Dateizugriff abfangen
+question: |
+  Welcher Fehler wird geworfen, wenn eine Datei nicht existiert? Schreibe Code, der diesen Fehler bewusst auslöst und auffängt. Gib eine Nachricht auf der Konsole aus und lies den Namen der nicht existierenden Datei aus der Exception aus.
+
+  ```python
+  # Vervollständige den Code hier
+  datei = open("nicht_existierende_datei.txt", "r")
+  inhalt = datei.read()
+  print(inhalt)
+  datei.close()
+  ```
+tip: |
+  Verwende `try` und `except` um den Fehler abzufangen.
+solution: |
+  ```python
+  try:
+      datei = open("nicht_existierende_datei.txt", "r")
+      inhalt = datei.read()
+      print(inhalt)
+      datei.close()
+  except FileNotFoundError as e:
+      print(f"Datei existiert nicht: {e.filename}")
+  ```
+
+  Der geworfene Fehler ist `FileNotFoundError`. Durch das Auffangen der Exception mit `except FileNotFoundError as e` können wir auf die Eigenschaften des Fehlers zugreifen, wie z.B. den Dateinamen mit `e.filename`.

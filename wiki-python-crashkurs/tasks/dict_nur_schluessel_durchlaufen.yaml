@@ -1,0 +1,9 @@
+title: Nur Schlüssel eines Dictionaries durchlaufen
+question: |
+  Durchlaufe ein Dictionary und gib nur die Schlüssel aus.
+solution: |
+  ```python
+  mein_dict = {"Name": "Anna", "Alter": 30, "Beruf": "Ingenieurin"}
+  for key in mein_dict.keys():
+      print(key)
+  ```

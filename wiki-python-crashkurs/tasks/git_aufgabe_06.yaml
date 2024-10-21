@@ -1,0 +1,66 @@
+title: Untersuche die Git-Objekte
+question: |
+  Mit dem Befehl `git cat-file -p <hash>` und `git show <hash>` können die Inhalte der Dateien im
+  Ordner `.git/objects` angezeigt werden. Untersuche das Repository von oben.
+  Erstelle ein Bild, das zeigt, wie die Dateien voneinander abhängen.
+
+solution: |
+  ```mermaid
+  flowchart TD
+    C0["0f3c214<br>Commit"] -->
+    T0["5ef8d03<br>Tree"] --Lebenslauf.txt-->
+    B0["168730b<br>Blob<br><br>Alter: 33 Jahre<br>Beruf: Boss<br><br>Vorheriger Arbeitgeber: Geheim"] 
+
+    C1["0fb8da7<br>Commit"] --> C0
+    C1 -->
+    T1["012b7e8<br>Tree"] --Lebenslauf.txt--> B0
+    T1 --Bewerbungsschreiben.txt-->
+    B1["7e65d0f<br>Blob<br><br>Sehr geeehrte Damen und Herren,<br><br>warum ich der richtige für euch bin? Hier sind meine 3 besten Gründe:<br><br>1. Ich bin der schönste<br>2. Ich bin der klügste<br>3. Ich bin, ehrlich gesagt, auch der demütigste."]
+
+    C2["03ddaff<br>Commit"] --> C0
+    C2 -->
+    T2["09cc0f2<br>Tree"] --Lebenslauf.txt--> B0
+    T2 --Zeugnis.txt-->
+    B2["641eef5<br>Blob<br><br>Mathe: 1<br>Bio: 1<br>Latein: 5<br>Beauty: 1+<br>HSU: 2"]
+
+    C3["a5a60d4<br>Commit"] --> C2
+    C3 -->
+    T3["c8ba3ee<br>Tree"] --Lebenslauf.txt--> B0
+    T3 --Zeugnis.txt-->
+    B3["32f54f8<br>Blob<br><br>Mathe: 1<br>Bio: 1<br>Latein: 5<br>Beauty: 1+<br>HSU: 2<br><br><br>Führerschein Klasse A und B"]
+
+
+    C4["1842726<br/>Commit"] --> C3
+    C4 --> C1
+    C4 -->
+    T4["d276800<br/>Tree"] --Bewerbungsschreiben.txt--> B1
+    T4 --Lebenslauf.txt--> B0
+    T4 --Zeugnis.txt--> B3
+
+    subgraph Commits
+    C0
+    C1
+    C2
+    C3
+    C4
+    end
+
+    subgraph Trees
+    T0
+    T1
+    T2
+    T3
+    T4
+    end
+
+    subgraph Blobs
+    B0
+    B1
+    B2
+    B3
+    end
+
+    subgraph Tags
+    Tag1["c96c504<br>Tag<br>Anfang"] --> C0
+    end
+  ```

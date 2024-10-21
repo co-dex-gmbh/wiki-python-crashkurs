@@ -1,0 +1,10 @@
+title: Set Schnittmenge
+question: |
+  Finde die Schnittmenge von `set1` und `set2` aus der vorherigen Aufgabe.
+solution: |
+  ```python
+  set1 = {1, 2, 3}
+  set2 = {3, 4, 5}
+  schnittmenge = set1 & set2
+  print(schnittmenge)
+  ```

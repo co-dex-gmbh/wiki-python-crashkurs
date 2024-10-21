@@ -1,0 +1,41 @@
+title: Zwischen Projektversionen wechseln
+question: |
+  Verwende das Repository aus der vorherigen Aufgabe (Bewerbung.zip).
+
+  1. Wechsle zwischen verschiedenen Projektversionen mit `git checkout` oder `git switch`.
+  2. Springe zu mindestens einem Commit über den Hash, zu einem Tag und zu einem Branch.
+  3. Untersuche die Unterschiede zwischen den Projektversionen.
+
+  Beantworte folgende Fragen:
+
+  * Welche Unterschiede kannst du zwischen den verschiedenen Projektversionen erkennen?
+  * Inwiefern sind die Commit-Messages hilfreich, um zu verstehen, was in den jeweiligen Commits passiert ist?
+  * Welche Methode (Hash, Tag, Branch) findest du am einfachsten zu verwenden und warum?
+
+solution: |
+  1. Unterschiede zwischen Projektversionen:
+      - Änderungen im Inhalt von Dateien
+      - Hinzugefügte oder gelöschte Dateien
+      - Strukturelle Änderungen (z.B. Verschieben von Dateien)
+
+  2. Nützlichkeit der Commit-Messages:
+      - Gute Commit-Messages sollten kurz und prägnant beschreiben, was geändert wurde
+      - Sie helfen, den Zweck und Kontext der Änderungen zu verstehen
+      - Qualität der Messages kann variieren (einige könnten informativer sein als andere)
+
+  3. Methoden zum Wechseln zwischen Versionen:
+      - Hash: Präzise, aber schwer zu merken
+      - Tag: Einfach für wichtige Meilensteine oder Releases
+      - Branch: Praktisch für aktive Entwicklungslinien
+
+  ```mermaid
+  gitGraph
+      commit id: "0f3c214"
+      commit id: "0fb8d7"
+      branch zeugnisse
+      checkout zeugnisse
+      commit id: "03ddaff"
+      commit id: "a5a60d4"
+      checkout main
+      merge zeugnisse id: "1842726"
+  ```

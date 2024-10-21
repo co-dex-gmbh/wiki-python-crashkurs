@@ -1,0 +1,75 @@
+title: Lagerbestandsverwaltung
+question: |
+  Implementiere ein Lagerbestandsverwaltungssystem. Erstelle ein Dictionary, das Produkte und ihre Mengen enthält. Das Programm soll es dem Benutzer ermöglichen, neue Produkte hinzuzufügen, vorhandene zu aktualisieren und Produkte zu löschen. Zusätzlich soll das Programm eine Übersicht über alle Produkte und Mengen anzeigen können.
+
+  Implementiere folgende Funktionen:
+  - hinzufügen: Füge ein neues Produkt hinzu oder erhöhe die Menge eines vorhandenen Produkts
+  - aktualisieren: Ändere die Menge eines bestehenden Produkts
+  - löschen: Entferne ein Produkt aus dem Lager
+  - anzeigen: Zeige alle Produkte und ihre Mengen im Lager an
+  - beenden: Beende das Programm
+
+  Verwende die folgende Grundstruktur für dein Programm:
+
+  ```python
+  lager = {}
+
+  while True:
+      aktion = input("Aktion wählen: hinzufügen, aktualisieren, löschen, anzeigen, beenden: ")
+
+      if aktion == "beenden":
+          ...
+      elif aktion == "hinzufügen":
+          ...
+      elif aktion == "aktualisieren":
+          ...
+      elif aktion == "löschen":
+          ...
+      elif aktion == "anzeigen":
+          ...
+      else:
+          ...
+  ```
+
+solution: |
+  ```python
+  lager = {}
+
+  while True:
+      aktion = input("Aktion wählen: hinzufügen, aktualisieren, löschen, anzeigen, beenden: ")
+
+      if aktion == "beenden":
+          print("Programm wird beendet. Auf Wiedersehen!")
+          break
+      elif aktion == "hinzufügen":
+          produkt = input("Produktname: ")
+          menge = int(input("Menge: "))
+          lager[produkt] = lager.get(produkt, 0) + menge
+          print(f"{menge} {produkt} wurde(n) zum Lager hinzugefügt.")
+      elif aktion == "aktualisieren":
+          produkt = input("Produktname: ")
+          if produkt in lager:
+              menge = int(input("Neue Menge: "))
+              lager[produkt] = menge
+              print(f"Menge von {produkt} wurde auf {menge} aktualisiert.")
+          else:
+              print(f"{produkt} nicht im Lager gefunden.")
+      elif aktion == "löschen":
+          produkt = input("Produktname: ")
+          if produkt in lager:
+              del lager[produkt]
+              print(f"{produkt} wurde aus dem Lager entfernt.")
+          else:
+              print(f"{produkt} nicht im Lager gefunden.")
+      elif aktion == "anzeigen":
+          if lager:
+              print("Aktueller Lagerbestand:")
+              for produkt, menge in lager.items():
+                  print(f"{produkt}: {menge}")
+          else:
+              print("Das Lager ist leer.")
+      else:
+          print("Ungültige Aktion. Bitte wähle eine der angegebenen Aktionen.")
+
+      print()  # Leerzeile für bessere Lesbarkeit
+  ```

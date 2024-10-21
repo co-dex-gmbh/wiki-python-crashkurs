@@ -1,0 +1,8 @@
+title: String in Großbuchstaben
+question: |
+  Konvertiere jede Zeichenkette in einer Liste in Großbuchstaben.
+solution: |
+  ```python
+  grossbuchstaben = [s.upper() for s in ["hallo", "welt", "python"]]
+  print(grossbuchstaben)
+  ```

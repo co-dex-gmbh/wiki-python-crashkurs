@@ -1,0 +1,9 @@
+title: Set Leeren
+question: |
+  Entferne alle Elemente aus einem Set.
+solution: |
+  ```python
+  mein_set = {1, 2, 3, 4, 5}
+  mein_set.clear()
+  print(mein_set)
+  ```

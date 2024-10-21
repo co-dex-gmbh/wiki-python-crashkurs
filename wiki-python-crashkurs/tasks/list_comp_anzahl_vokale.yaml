@@ -1,0 +1,9 @@
+title: Anzahl der Vokale zählen
+question: |
+  Schreibe Code, der alle Vokale in einem Text zählt.
+solution: |
+  ```python
+  text = "Python ist großartig."
+  anzahl_vokale = sum(1 for char in text if char.lower() in "aeiou")
+  print(anzahl_vokale)
+  ```

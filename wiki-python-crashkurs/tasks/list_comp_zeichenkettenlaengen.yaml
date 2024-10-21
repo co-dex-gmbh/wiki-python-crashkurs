@@ -1,0 +1,8 @@
+title: Zeichenkettenlängen
+question: |
+  Erstelle eine Liste mit den Längen jedes Wortes in einer vorgegebenen Liste von Wörtern.
+solution: |
+  ```python
+  wortlaengen = [len(wort) for wort in ["Hallo", "Welt", "Python"]]
+  print(wortlaengen)
+  ```

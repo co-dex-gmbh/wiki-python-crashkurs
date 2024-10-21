@@ -1,0 +1,82 @@
+title: Telefonbuch
+question: |
+  Erstelle ein einfaches Telefonbuch-Programm, das es dem Benutzer ermöglicht, Namen und Telefonnummern hinzuzufügen, zu suchen, zu ändern und zu löschen. Verwende ein Dictionary zur Speicherung der Daten. Das Programm soll fortlaufend laufen, bis der Benutzer sich entscheidet, es zu beenden. Achte darauf, dass es nicht bei Fehleingaben abstürzt.
+
+  Implementiere folgende Funktionen:
+  - hinzufügen: Füge einen neuen Kontakt hinzu
+  - suchen: Suche nach einer Telefonnummer anhand des Namens
+  - ändern: Ändere die Telefonnummer eines bestehenden Kontakts
+  - löschen: Lösche einen Kontakt aus dem Telefonbuch
+  - anzeigen: Zeige alle Kontakte im Telefonbuch an
+  - beenden: Beende das Programm
+
+  Verwende die folgende Grundstruktur für dein Programm:
+
+  ```python
+  telefonbuch = {}
+
+  while True:
+      aktion = input("Wähle eine Aktion: anzeigen, hinzufügen, suchen, ändern, löschen, beenden: ")
+
+      if aktion == "beenden":
+          ...
+      elif aktion == "hinzufügen":
+          ...
+      elif aktion == "suchen":
+          ...
+      elif aktion == "ändern":
+          ...
+      elif aktion == "löschen":
+          ...
+      elif aktion == "anzeigen":
+          ...
+      else:
+          ...
+  ```
+
+solution: |
+  ```python
+  telefonbuch = {}
+
+  while True:
+      aktion = input("Wähle eine Aktion: anzeigen, hinzufügen, suchen, ändern, löschen, beenden: ")
+
+      if aktion == "beenden":
+          print("Programm wird beendet. Auf Wiedersehen!")
+          break
+      elif aktion == "hinzufügen":
+          name = input("Name: ")
+          nummer = input("Telefonnummer: ")
+          telefonbuch[name] = nummer
+          print(f"{name} wurde zum Telefonbuch hinzugefügt.")
+      elif aktion == "suchen":
+          name = input("Name: ")
+          nummer = telefonbuch.get(name, "Nicht gefunden")
+          print(f"Telefonnummer von {name}: {nummer}")
+      elif aktion == "ändern":
+          name = input("Name: ")
+          if name in telefonbuch:
+              nummer = input("Neue Telefonnummer: ")
+              telefonbuch[name] = nummer
+              print(f"Telefonnummer von {name} wurde aktualisiert.")
+          else:
+              print(f"{name} nicht im Telefonbuch gefunden.")
+      elif aktion == "löschen":
+          name = input("Name: ")
+          if name in telefonbuch:
+              del telefonbuch[name]
+              print(f"{name} wurde aus dem Telefonbuch gelöscht.")
+          else:
+              print(f"{name} nicht im Telefonbuch gefunden.")
+      elif aktion == "anzeigen":
+          if telefonbuch:
+              print("Aktuelles Telefonbuch:")
+              for name, nummer in telefonbuch.items():
+                  print(f"{name}: {nummer}")
+          else:
+              print("Das Telefonbuch ist leer.")
+      else:
+          print("Ungültige Aktion. Bitte wähle eine der angegebenen Aktionen.")
+
+      print()  # Leerzeile für bessere Lesbarkeit
+  ```

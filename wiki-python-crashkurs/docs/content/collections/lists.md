@@ -11,6 +11,17 @@ Die wichtigste Möglichkeit zum Speichern großer Datenmengen in einer Variable 
 Eine Liste kann man sich vorstellen, wie eine Variable mit mehrere Schubladen und diese Schubladen sind
 durchnummeriert. Die Nummerierung startet mit `0`, geht dann weiter zu `1`, weiter zu `2` usw.
 
+## Eigenschaften von Listen
+
+1. **Geordnet**: Listen speichern Elemente in einer festgelegten Reihenfolge.
+2. **Veränderlich (Mutable)**: Die Inhalte einer Liste können nach ihrer Erstellung verändert werden.
+3. **Vielseitig**: Listen können verschiedene Datentypen enthalten, einschließlich Zahlen, Strings und andere Listen.
+4. **Dynamisch**: Listen können in ihrer Größe wachsen oder schrumpfen.
+5. **Duplikate erlaubt**: Listen können Duplikate von Elementen enthalten.
+
+## Listenoperationen
+
+### Erstellung und Zugriff
 Wir können eine Liste definieren, indem wir die Elemente, die gespeichert werden sollen in eckige Klammern (`[...]`)
 schreiben:
 
@@ -37,11 +48,13 @@ print(f'Samstag: {trinkgeld[5]}')
 print(f'Sonntag: {trinkgeld[6]}')
 """) }}
 
-Andererseits können wir über die Notation Werte überschreiben:
+### Elemente ändern
+
+Wir können Werte in der Liste überschreiben:
 
 ```python
-trinkgeld[0] = 10 # (2)!
-print(trinkgeld[0]) # (1)!
+trinkgeld[0] = 10
+print(trinkgeld[0])  # Gibt 10 aus
 ```
 
 1. Konsolenausgabe: `10`
@@ -52,6 +65,42 @@ supremes[2] = 'Cindy'
 print(supremes)
 """) }}
 
+### Häufige Listenmethoden
+
+| Methode               | Beschreibung                                                 | Beispiel                                                                   |
+|-----------------------|--------------------------------------------------------------|----------------------------------------------------------------------------|
+| `append(x)`           | Fügt ein Element am Ende der Liste hinzu                     | `lst.append(5)` - Fügt `5` zu `lst` hinzu                                  |
+| `extend([x, y, ...])` | Erweitert die Liste um die Elemente in der angegebenen Liste | `lst.extend([6, 7])` - Fügt `6` und `7` zu `lst` hinzu                     |
+| `insert(i, x)`        | Fügt an Position `i` das Element `x` ein                     | `lst.insert(2, 'a')` - Fügt `'a'` an der Position 2 in `lst` ein           |
+| `remove(x)`           | Entfernt das erste Vorkommen von `x` aus der Liste           | `lst.remove('a')` - Entfernt das erste Vorkommen von `'a'` aus `lst`       |
+| `pop(i)`              | Entfernt und gibt das Element an der Position `i` zurück     | `lst.pop(3)` - Entfernt und gibt das Element an Position 3 in `lst` zurück |
+| `clear()`             | Entfernt alle Elemente aus der Liste                         | `lst.clear()` - Entfernt alle Elemente aus `lst`                           |
+| `index(x)`            | Gibt den Index des ersten Vorkommens von `x` zurück          | `lst.index('a')` - Gibt den Index von `'a'` in `lst` zurück                |
+| `count(x)`            | Zählt, wie oft `x` in der Liste vorkommt                     | `lst.count(5)` - Zählt, wie oft `5` in `lst` vorkommt                      |
+| `sort()`              | Sortiert die Elemente der Liste                              | `lst.sort()` - Sortiert die Elemente in `lst`                              |
+| `reverse()`           | Kehrt die Reihenfolge der Elemente in der Liste um           | `lst.reverse()` - Kehrt die Reihenfolge der Elemente in `lst`              |
+
+### Slicing
+
+Mit Slices kann man auf mehrere Elemente zugreifen:
+
+```python
+fruechte = ["Apfel", "Banane", "Zitrone", "Birne"]
+print(fruechte[0:2])  # gibt ['Apfel', 'Banane'] aus
+```
+
+Slices werden mit 3 Werten angegeben: `[inclusive_start_value:exclusive_stop_value:stepsize]`
+
+### Verkettung von Listen
+
+Listen können einfach miteinander verkettet werden:
+
+```python
+liste1 = [1,2,3,4,5]
+liste2 = [4,3,2,1]
+finale_liste = liste1 + liste2
+print(finale_liste)  # gibt [1,2,3,4,5,4,3,2,1] aus
+```
 <!-- Laden der model-viewer Bibliothek -->
 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
@@ -127,3 +176,22 @@ my_list[0] = 10 # (2)!
 
 {{ task(file="tasks/listen_manipulieren.yaml") }}
 
+{{ task(file="tasks/listen_operationen_0.yaml") }}
+
+{{ task(file="tasks/listen_operationen_1.yaml") }}
+
+{{ task(file="tasks/listen_operationen_2.yaml") }}
+
+{{ task(file="tasks/listen_operationen_3.yaml") }}
+
+{{ task(file="tasks/listen_operationen_4.yaml") }}
+
+{{ task(file="tasks/listen_operationen_5.yaml") }}
+
+{{ task(file="tasks/listen_operationen_6.yaml") }}
+
+{{ task(file="tasks/listen_operationen_7.yaml") }}
+
+{{ task(file="tasks/listen_operationen_8.yaml") }}
+
+{{ task(file="tasks/listen_operationen_9.yaml") }}

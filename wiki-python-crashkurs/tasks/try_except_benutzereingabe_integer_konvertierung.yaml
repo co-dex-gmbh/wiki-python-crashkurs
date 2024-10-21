@@ -1,0 +1,23 @@
+title: Benutzereingabe und Integer-Konvertierung
+question: |
+  Passe das folgende Programm an, sodass es bei einer fehlerhaften Eingabe nicht mehr zum Absturz kommt, sondern
+  erneut nach einer Eingabe gefragt wird:
+
+  ```python
+  a = int(input("Erste Zahl: "))
+  b = int(input("Zweite Zahl: "))
+
+  print(f"Der Durchschnitt ist: {(a + b) / 2}")
+  ```
+solution: |
+  ```python
+  a, b = None, None
+  while not a or not b:
+      try:
+          a = int(input("Erste Zahl: "))
+          b = int(input("Zweite Zahl: "))
+      except ValueError:
+          print("Das war keine Zahl. Bitte erneut.")
+  else:
+      print(f"Der Durchschnitt ist: {(a + b) / 2}")
+  ```

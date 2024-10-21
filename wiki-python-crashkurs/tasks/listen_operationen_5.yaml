@@ -1,0 +1,7 @@
+title: Slicing
+question: |
+  Erstelle eine neue Liste `erste_drei`, die die ersten drei Elemente von `zahlen` enthält.
+solution: |
+  ```python
+  erste_drei = zahlen[:3]
+  ```

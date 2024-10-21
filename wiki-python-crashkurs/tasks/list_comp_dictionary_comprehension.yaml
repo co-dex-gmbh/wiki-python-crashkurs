@@ -1,0 +1,23 @@
+title: Dictionary Comprehension
+question: |
+  Schreibe Code, der die folgenden Dictionaries mit Comprehension erzeugt:
+
+  ```python
+  a = {1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81, 10: 100}
+
+  b = {'Hase': ['H', 'a', 's', 'e'], 'Hund': ['H', 'u', 'n', 'd']}
+
+  # Tausche die Keys und Values in folgendem Dicitonary
+  my_dict = {'A': 1, 'B': 2, 'C': 3}
+  swapped_my_dict = {1: 'A', 2: 'B', 3: 'C'}
+  ```
+solution: |
+  ```python
+  a = {i: i * i for i in range(1, 11)}
+
+  words = ['Hase', 'Hund']
+  b = {word: [letter for letter in word] for word in words}
+
+  my_dict = {'A': 1, 'B': 2, 'C': 3}
+  swapped_my_dict = {v: k for k, v in my_dict.items()}
+  ```

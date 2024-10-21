@@ -1,0 +1,28 @@
+title: Alternativen zu read
+question: |
+  Ändere das folgende Beispiel ab, sodass statt `read` die Methoden `readline` und `readlines` verwendet werden. Was liefern diese Methoden und wie kann man sie nutzen? Was passiert, wenn man `readline` mehrfach hintereinander ausführt?
+
+  ```python
+  with open("beispiel.txt", "r") as datei:
+      inhalt = datei.read()
+      print(inhalt)
+  ```
+
+solution: |
+  ```python
+  # Mit readline
+  with open("beispiel.txt", "r") as datei:
+      erste_zeile = datei.readline()
+      zweite_zeile = datei.readline()
+      print("Erste Zeile:", erste_zeile)
+      print("Zweite Zeile:", zweite_zeile)
+
+  # Mit readlines
+  with open("beispiel.txt", "r") as datei:
+      alle_zeilen = datei.readlines()
+      print("Alle Zeilen:", alle_zeilen)
+  ```
+
+  `readline()` gibt jeweils eine einzelne Zeile zurück. Bei mehrfachem Aufruf werden nacheinander die Zeilen der Datei gelesen.
+  `readlines()` gibt eine Liste mit allen Zeilen der Datei zurück.
+

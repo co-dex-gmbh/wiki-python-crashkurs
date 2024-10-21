@@ -1,0 +1,26 @@
+title: Nutzer korrekt einstellen
+question: |
+  Starte git und stelle sicher, dass der richtige Nutzername und E-Mail eingestellt ist.
+
+  Hinweis: Verwende den Befehl `git config` mit der Option `--global`, um die Einstellungen für alle Repositories des aktuellen Nutzers festzulegen.
+
+tip: |
+  Denke daran, sowohl den Nutzernamen als auch die E-Mail-Adresse zu konfigurieren.
+
+solution: |
+  Um den Nutzernamen und die E-Mail-Adresse korrekt einzustellen, verwende die folgenden Befehle:
+
+  ```commandline
+  git config --global user.name "Paul Kenntner"
+  git config --global user.email "paul@co-dex.de"
+  ```
+
+  Diese Befehle setzen den Nutzernamen auf "Paul Kenntner" und die E-Mail-Adresse auf "paul@co-dex.de" für alle Git-Repositories des aktuellen Benutzers.
+
+  Um zu überprüfen, ob die Einstellungen korrekt vorgenommen wurden, kannst du folgenden Befehl ausführen:
+
+  ```commandline
+  git config --global --list | grep user
+  ```
+
+  Dies sollte die eingestellten Werte für user.name und user.email anzeigen.

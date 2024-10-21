@@ -1,0 +1,22 @@
+title: Zeichen in Datei zählen
+question: |
+  Erstelle ein Programm, das die Anzahl der Zeichen in einer Textdatei zählt und ausgibt.
+  Berücksichtige dabei auch Leerzeichen und Sonderzeichen.
+
+  ```python
+  # Vervollständige den Code hier
+  path = "beispiel.txt"
+  # Öffne die Datei und zähle die Zeichen
+  ```
+tip: |
+  Wie erhält man die Anzahl der Zeichen in einem String?
+solution: |
+  ```python
+  path = "beispiel.txt"
+  with open(path, 'r') as file:
+      content = file.read()
+      character_count = len(content)
+      print(f"Die Datei enthält {character_count} Zeichen.")
+  ```
+
+  Dieses Programm öffnet die Datei "beispiel.txt", liest den gesamten Inhalt in einen String ein und zählt dann die Anzahl der Zeichen in diesem String mithilfe der `len()` Funktion. Das Ergebnis wird anschließend ausgegeben.

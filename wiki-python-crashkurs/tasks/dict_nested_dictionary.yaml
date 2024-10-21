@@ -1,0 +1,11 @@
+title: Nested Dictionary
+question: |
+  Erstelle ein verschachteltes Dictionary (ein Dictionary innerhalb eines anderen Dictionaries) und greife auf ein Element des inneren Dictionaries zu.
+solution: |
+  ```python
+  mein_nested_dict = {
+      "person1": {"Name": "Max", "Alter": 25},
+      "person2": {"Name": "Lisa", "Alter": 28}
+  }
+  print(mein_nested_dict["person1"]["Name"])  # Gibt "Max" aus
+  ```
