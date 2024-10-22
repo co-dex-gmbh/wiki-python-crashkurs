@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../../project/wordle/">
-      
-      
-        <link rel="next" href="../../packages/moduls/">
       
       
       <link rel="icon" href="../../../assets/favicon.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>try-except - Python Crashkurs</title>
+        <title>Lösungen - Python Crashkurs</title>
       
     
     
@@ -80,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#exception-handling-in-python" class="md-skip">
+        <a href="#losungen" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              try-except
+              Lösungen
             
           </span>
         </div>
@@ -479,7 +475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../loops/loops/" class="md-nav__link">
+      <a href="../loops/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -873,19 +869,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
         
           
           <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
@@ -899,7 +893,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             Error Handling
@@ -910,30 +904,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    try-except
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../try_except/try_except/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -942,113 +916,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#grundlagen-des-exception-handlings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Grundlagen des Exception Handlings
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Grundlagen des Exception Handlings">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#try-except-block" class="md-nav__link">
-    <span class="md-ellipsis">
-      Try-Except-Block
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#mehrere-except-blocke" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mehrere Except-Blöcke
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#finally-block" class="md-nav__link">
-    <span class="md-ellipsis">
-      Finally-Block
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#eigene-ausnahmen" class="md-nav__link">
-    <span class="md-ellipsis">
-      Eigene Ausnahmen
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#else-block" class="md-nav__link">
-    <span class="md-ellipsis">
-      Else-Block
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#achtung-exception-handling-und-ablaufsteuerung" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚠ Achtung: Exception Handling und Ablaufsteuerung
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hierarchien-von-exceptions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Hierarchien von Exceptions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#aufgaben" class="md-nav__link">
-    <span class="md-ellipsis">
-      Aufgaben
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1871,17 +1738,91 @@
                   
 
 
-<h1 id="exception-handling-in-python">Exception Handling in Python<a class="headerlink" href="#exception-handling-in-python" title="Permanent link">&para;</a></h1>
-<p>Beim Programmieren in Python ist es wichtig, Ausnahmen ordnungsgemäß zu behandeln, 
-um robusten und fehlerresistenten Code zu schreiben. Ausnahmen sind Ereignisse, 
-die während der Ausführung eines Programms auftreten und den normalen Ablauf unterbrechen. </p>
-<p>Du kannst durch korrektes Handling von Ausnahmen Fehler auf elegante Weise bewältigen
-und so die Gesamtzuverlässigkeit deines Codes verbessern.</p>
-<h2 id="grundlagen-des-exception-handlings">Grundlagen des Exception Handlings<a class="headerlink" href="#grundlagen-des-exception-handlings" title="Permanent link">&para;</a></h2>
-<h3 id="try-except-block">Try-Except-Block<a class="headerlink" href="#try-except-block" title="Permanent link">&para;</a></h3>
-<p>Die Blöcke <code>try</code> und <code>except</code> werden verwendet, um Ausnahmen in Python zu behandeln. 
-Der <code>try</code>-Block enthält den Code, der eine Ausnahme auslösen könnte, 
-und der <code>except</code>-Block gibt an, wie die Ausnahme behandelt werden soll.</p>
+<h1 id="losungen">Lösungen<a class="headerlink" href="#losungen" title="Permanent link">&para;</a></h1>
+<h1 id="for-schleifen">for-Schleifen<a class="headerlink" href="#for-schleifen" title="Permanent link">&para;</a></h1>
+<p>Natürlich, hier sind die Lösungen zu den Übungsaufgaben zu <code>for</code>-Schleifen:</p>
+<h3 id="1-zahlen">1. Zählen<a class="headerlink" href="#1-zahlen" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">for</span> <span class="n">zahl</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">zahl</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="2-stadtetrip">2. Städtetrip<a class="headerlink" href="#2-stadtetrip" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">staedte</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Berlin&quot;</span><span class="p">,</span> <span class="s2">&quot;Paris&quot;</span><span class="p">,</span> <span class="s2">&quot;London&quot;</span><span class="p">,</span> <span class="s2">&quot;New York&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">stadt</span> <span class="ow">in</span> <span class="n">staedte</span><span class="p">:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">stadt</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="3-summierung">3. Summierung<a class="headerlink" href="#3-summierung" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">summe</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">zahl</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]:</span>
+   <span class="n">summe</span> <span class="o">+=</span> <span class="n">zahl</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">summe</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="4-langster-name">4. Längster Name<a class="headerlink" href="#4-langster-name" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">namen</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Anna&quot;</span><span class="p">,</span> <span class="s2">&quot;Max&quot;</span><span class="p">,</span> <span class="s2">&quot;Benjamin&quot;</span><span class="p">,</span> <span class="s2">&quot;Alexandra&quot;</span><span class="p">]</span>
+<span class="n">laengster_name</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">namen</span><span class="p">:</span>
+   <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">laengster_name</span><span class="p">):</span>
+       <span class="n">laengster_name</span> <span class="o">=</span> <span class="n">name</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Längster Name:&quot;</span><span class="p">,</span> <span class="n">laengster_name</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="5-quadratzahlen">5. Quadratzahlen<a class="headerlink" href="#5-quadratzahlen" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">for</span> <span class="n">zahl</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
+   <span class="n">quadrat</span> <span class="o">=</span> <span class="n">zahl</span> <span class="o">**</span> <span class="mi">2</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">quadrat</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="6-verdreht">6. Verdreht<a class="headerlink" href="#6-verdreht" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">wort</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+<span class="k">for</span> <span class="n">buchstabe</span> <span class="ow">in</span> <span class="n">wort</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+   <span class="nb">print</span><span class="p">(</span><span class="n">buchstabe</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="7-fakultat">7. Fakultät<a class="headerlink" href="#7-fakultat" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">faktor</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">zahl</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="n">faktor</span> <span class="o">*=</span> <span class="n">zahl</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fakultät von </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> ist </span><span class="si">{</span><span class="n">faktor</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="8-thermometer-fur-amerikaner">8. Thermometer für Amerikaner<a class="headerlink" href="#8-thermometer-fur-amerikaner" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">temperaturen_celsius</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">celsius</span> <span class="ow">in</span> <span class="n">temperaturen_celsius</span><span class="p">:</span>
+    <span class="n">fahrenheit</span> <span class="o">=</span> <span class="p">(</span><span class="n">celsius</span> <span class="o">*</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span> <span class="o">+</span> <span class="mi">32</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">celsius</span><span class="si">}</span><span class="s2">°C entspricht </span><span class="si">{</span><span class="n">fahrenheit</span><span class="si">}</span><span class="s2">°F&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="9-vokale">9. Vokale<a class="headerlink" href="#9-vokale" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">wort</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+<span class="n">anzahl_vokale</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">buchstabe</span> <span class="ow">in</span> <span class="n">wort</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">buchstabe</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="s2">&quot;aeiou&quot;</span><span class="p">:</span>
+        <span class="n">anzahl_vokale</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Anzahl der Vokale im Wort &#39;</span><span class="si">{</span><span class="n">wort</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">anzahl_vokale</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="10-haufigkeit">10. Häufigkeit<a class="headerlink" href="#10-haufigkeit" title="Permanent link">&para;</a></h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -1889,61 +1830,89 @@ und der <code>except</code>-Block gibt an, wie die Ausnahme behandelt werden sol
 <span class="normal">5</span>
 <span class="normal">6</span>
 <span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">try</span><span class="p">:</span>
-    <span class="c1"># Code, der eine Ausnahme auslösen könnte</span>
-    <span class="n">ergebnis</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="mi">0</span>
-<span class="k">except</span> <span class="ne">ZeroDivisionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="c1"># Behandlung der spezifischen Ausnahme</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fehler: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ich lebe noch und kann weiter machen&quot;</span><span class="p">)</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Python ist eine Programmiersprache, und Python ist großartig.&quot;</span>
+<span class="n">gesuchtes_wort</span> <span class="o">=</span> <span class="s2">&quot;Python&quot;</span>
+<span class="n">anzahl</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">woerter</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">wort</span> <span class="ow">in</span> <span class="n">woerter</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">wort</span> <span class="o">==</span> <span class="n">gesuchtes_wort</span><span class="p">:</span>
+        <span class="n">anzahl</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Anzahl von &#39;</span><span class="si">{</span><span class="n">gesuchtes_wort</span><span class="si">}</span><span class="s2">&#39; im Text: </span><span class="si">{</span><span class="n">anzahl</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<p>Der gleiche Code ohne Exceptionhandling bricht die Durchführung
-des Programms ab:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">ergebnis</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="mi">0</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Das wirst du niemals sehen&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<h3 id="mehrere-except-blocke">Mehrere Except-Blöcke<a class="headerlink" href="#mehrere-except-blocke" title="Permanent link">&para;</a></h3>
-<p>Du kannst mehrere <code>except</code>-Blöcke verwenden, um verschiedene Arten von Ausnahmen zu behandeln.</p>
+<h1 id="aufgaben-ranges">Aufgaben Ranges<a class="headerlink" href="#aufgaben-ranges" title="Permanent link">&para;</a></h1>
+<h3 id="aufgabe-ranges-vorhersagen">Aufgabe: Ranges vorhersagen<a class="headerlink" href="#aufgabe-ranges-vorhersagen" title="Permanent link">&para;</a></h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">try</span><span class="p">:</span>
-    <span class="n">wert</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Gib eine Zahl ein: &quot;</span><span class="p">))</span>
-    <span class="n">ergebnis</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="n">wert</span>
-<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ungültige Eingabe. Bitte gib eine gültige Zahl ein.&quot;</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">ZeroDivisionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fehler: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span> <span class="c1"># [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">))</span> <span class="c1"># [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span> <span class="c1"># [0, 5, 10, 15, 20, 25]</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span> <span class="c1"># [0, 3, 6, 9]</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># [0, -1, -2, -3, -4, -5, -6, -7, -8, -9]</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># []</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="c1"># []</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="finally-block">Finally-Block<a class="headerlink" href="#finally-block" title="Permanent link">&para;</a></h3>
-<p>Der <code>finally</code>-Block wird unabhängig davon ausgeführt, ob eine Ausnahme auftritt oder nicht. 
-Er wird oft für Aufräumarbeiten verwendet.</p>
+<h1 id="while-schleifen">while-Schleifen<a class="headerlink" href="#while-schleifen" title="Permanent link">&para;</a></h1>
+<h3 id="1-summe-von-1-bis-100">1. Summe von 1 bis 100<a class="headerlink" href="#1-summe-von-1-bis-100" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">summe</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="n">summe</span> <span class="o">+=</span> <span class="n">i</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Summe von 1 bis </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> ist </span><span class="si">{</span><span class="n">summe</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="2-input-erfragen">2. Input erfragen<a class="headerlink" href="#2-input-erfragen" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">summe</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">next</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Bitte gib eine Zahl ein: &quot;</span><span class="p">)</span>
+    <span class="n">summe</span> <span class="o">+=</span> <span class="nb">next</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;In der Summe bisher insgesamt: </span><span class="si">{</span><span class="n">summe</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="3-fakultat">3. Fakultät<a class="headerlink" href="#3-fakultat" title="Permanent link">&para;</a></h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">try</span><span class="p">:</span>
-    <span class="n">ergebnis</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="mi">0</span>
-<span class="k">except</span> <span class="ne">ZeroDivisionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Verbotene Operation.&quot;</span><span class="p">)</span>
-<span class="k">finally</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;Jetzt können aufräumarbeiten durchgeführt werden,</span>
-<span class="s2">     wie das Schließen von Dateien&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">at_least</span> <span class="o">=</span> <span class="mi">100_000</span>
+<span class="n">fakultaet</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">fakultaet</span> <span class="o">&lt;=</span> <span class="n">at_least</span><span class="p">:</span>
+    <span class="n">fakultaet</span> <span class="o">*=</span> <span class="n">i</span>
+    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Das kleinste n, sodass n! &gt; </span><span class="si">{</span><span class="n">at_least</span><span class="si">}</span><span class="s2"> ist </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> und zwar </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">! = </span><span class="si">{</span><span class="n">fakultaet</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="eigene-ausnahmen">Eigene Ausnahmen<a class="headerlink" href="#eigene-ausnahmen" title="Permanent link">&para;</a></h3>
-<p>Du kannst benutzerdefinierte Ausnahmen erstellen, indem du eine neue Klasse definierst,
-die von der Klasse <code>Exception</code> erbt. Was genau Klassen sind, werden wir noch besprechen, jetzt nehmen
-wir das erstmal hin. Eine solche Exception kann mit dem Keyword <code>raise</code> geworfen werden.
-Wenn das innerhalb einer Methode passiert, ist dass so, als ob eine Exceptions als Rückgabe der Methode</p>
+<h3 id="4-fast-endlose-schleife">4. Fast endlose Schleife<a class="headerlink" href="#4-fast-endlose-schleife" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">zahl</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">zahl</span> <span class="o">!=</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="n">zahl</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">zahl</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Das wars!&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="5-fibonacci">5. Fibonacci<a class="headerlink" href="#5-fibonacci" title="Permanent link">&para;</a></h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -1956,124 +1925,38 @@ Wenn das innerhalb einer Methode passiert, ist dass so, als ob eine Exceptions a
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">PhoneNumberNotFoundError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
-    <span class="k">pass</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">f_1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">f_2</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">at_least</span> <span class="o">=</span> <span class="mi">100</span>
 
+<span class="k">while</span> <span class="n">f_2</span> <span class="o">&lt;</span> <span class="n">at_least</span><span class="p">:</span>
+    <span class="c1"># Berechne die nächste Fibonaccizahl</span>
+    <span class="n">f_3</span> <span class="o">=</span> <span class="n">f_1</span> <span class="o">+</span> <span class="n">f_2</span>
 
-<span class="n">phone_numbers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Jürgen&#39;</span><span class="p">:</span> <span class="s1">&#39;01234-5678&#39;</span><span class="p">,</span> <span class="s1">&#39;Monika&#39;</span><span class="p">:</span> <span class="s1">&#39;+49-156-89345&#39;</span><span class="p">}</span>
+    <span class="c1"># Setze die aktuelle und letzte Fibonaccizahl fest.</span>
+    <span class="n">f_1</span> <span class="o">=</span> <span class="n">f_2</span>
+    <span class="n">f_2</span> <span class="o">=</span> <span class="n">f_3</span>
 
-
-<span class="k">def</span> <span class="nf">call_by_phone_number</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">phone_numbers</span><span class="p">:</span>
-        <span class="k">raise</span> <span class="n">PhoneNumberNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;There is no Phonenumber for </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Call </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> by </span><span class="si">{</span><span class="n">phone_numbers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-
-
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Wen willst du anrufen?&#39;</span><span class="p">)</span>
-    <span class="n">call_by_phone_number</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-<span class="k">except</span> <span class="n">PhoneNumberNotFoundError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Etwas ist schief gegangen: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Zahl </span><span class="si">{</span><span class="n">f_3</span><span class="si">}</span><span class="s2"> ist die erste Fibonaccizahl, die größer als  </span><span class="si">{</span><span class="n">at_least</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<h3 id="else-block">Else-Block<a class="headerlink" href="#else-block" title="Permanent link">&para;</a></h3>
-<p>Der <code>else</code>-Block wird ausgeführt, wenn keine Ausnahmen im <code>try</code>-Block ausgelöst werden.</p>
+<h1 id="verschachtelte-schleifen">Verschachtelte Schleifen<a class="headerlink" href="#verschachtelte-schleifen" title="Permanent link">&para;</a></h1>
+<h3 id="aufgabe-produktsummen">Aufgabe: Produktsummen<a class="headerlink" href="#aufgabe-produktsummen" title="Permanent link">&para;</a></h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">try</span><span class="p">:</span>
-    <span class="n">wert</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Gib eine Zahl ein: &quot;</span><span class="p">))</span>
-    <span class="n">ergebnis</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="n">wert</span>
-<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ungültige Eingabe. Bitte gib eine gültige Zahl ein.&quot;</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">ZeroDivisionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fehler: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Ergebnis: </span><span class="si">{</span><span class="n">ergebnis</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">result</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">sub_list</span> <span class="ow">in</span> <span class="p">[[</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]]:</span>
+    <span class="n">subsum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">sub_list</span><span class="p">:</span>
+        <span class="n">subsum</span> <span class="o">+=</span> <span class="n">element</span>
+    <span class="n">result</span> <span class="o">*=</span> <span class="n">subsum</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<h2 id="achtung-exception-handling-und-ablaufsteuerung">⚠ Achtung: Exception Handling und Ablaufsteuerung<a class="headerlink" href="#achtung-exception-handling-und-ablaufsteuerung" title="Permanent link">&para;</a></h2>
-<p>Es ist wichtig zu betonen, dass Exception Handling nicht als Mechanismus zur Ablaufsteuerung 
-genutzt werden sollte. Ausnahmen sollten nicht für die Kontrolle des normalen 
-Programmflusses verwendet werden, sondern ausschließlich für 
-die Behandlung von unerwarteten Ereignissen und Fehlerzuständen.</p>
-<h2 id="hierarchien-von-exceptions">Hierarchien von Exceptions<a class="headerlink" href="#hierarchien-von-exceptions" title="Permanent link">&para;</a></h2>
-<p>Es muss nicht immer genau der Typ aufgefangen werden, der geworfen wird. Es kanna auch eine Oberklasse
-genutzt werden. Im folgenden beiden Beispiele fungieren also identisch:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">try</span><span class="p">:</span>
-    <span class="n">ergebnis</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="mi">0</span>
-<span class="k">except</span> <span class="ne">ZeroDivisionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fehler: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">try</span><span class="p">:</span>
-    <span class="n">ergebnis</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">/</span> <span class="mi">0</span>
-<span class="k">except</span> <span class="ne">ArithmeticError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fehler: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<pre class="mermaid"><code>graph TD;
-    BaseException --&gt; Excptions --&gt; AE["ArithmeticError"]
-    AE --&gt; FloatingPointError
-    AE --&gt; OverflowError
-    AE --&gt; ZeroDivisionError</code></pre>
-<p><a href="https://docs.python.org/3/library/exceptions.html#exception-hierarchy">Hier ist die komplete Hierarchie der Exceptions</a>.</p>
-<h2 id="aufgaben">Aufgaben<a class="headerlink" href="#aufgaben" title="Permanent link">&para;</a></h2>
-<details class="question" open="open">
-<summary>Benutzereingabe und Integer-Konvertierung</summary>
-<p>Passe das folgende Programm an, sodass es bei einer fehlerhaften Eingabe nicht mehr zum Absturz kommt, sondern
-erneut nach einer Eingabe gefragt wird:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Erste Zahl: &quot;</span><span class="p">))</span>
-<span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Zweite Zahl: &quot;</span><span class="p">))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Der Durchschnitt ist: </span><span class="si">{</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<details class="success">
-<summary>Lösung</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
-<span class="k">while</span> <span class="ow">not</span> <span class="n">a</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">b</span><span class="p">:</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Erste Zahl: &quot;</span><span class="p">))</span>
-        <span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Zweite Zahl: &quot;</span><span class="p">))</span>
-    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Das war keine Zahl. Bitte erneut.&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Der Durchschnitt ist: </span><span class="si">{</span><span class="p">(</span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-</details>
-</details>
-<details class="question" open="open">
-<summary>Benutzerdefinierte Ausnahme</summary>
-<p>Erstelle eine benutzerdefinierte Ausnahme mit dem Namen <code>NegativeZahlFehler</code>.
-Schreibe eine Funktion, die eine Liste von Zahlen durchläuft und wenn eine Zahl negativ ist,
-einen <code>NegativeZahlFehler</code> wirft.</p>
-<details class="success">
-<summary>Lösung</summary>
+<div class="arithmatex">\[1 ⋅ (4+3+2) ⋅ (5+6+7) = 1 ⋅ 9 ⋅ 18 = 162\]</div>
+<h3 id="aufgabe-summenprodukt">Aufgabe: Summenprodukt<a class="headerlink" href="#aufgabe-summenprodukt" title="Permanent link">&para;</a></h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2083,41 +1966,50 @@ einen <code>NegativeZahlFehler</code> wirft.</p>
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">NegativeNumberError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
-    <span class="k">pass</span>
-
-<span class="k">def</span> <span class="nf">check_positive</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="n">NegativeNumberError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Zahl </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2"> ist negativ&quot;</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Zahl </span><span class="si">{</span><span class="n">number</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="c1"># Beispielaufruf</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="n">check_positive</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-<span class="k">except</span> <span class="n">NegativeNumberError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">super_list</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[]]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">sub_list</span> <span class="ow">in</span> <span class="n">super_list</span><span class="p">:</span>
+    <span class="n">subprodukt</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">sub_list</span><span class="p">:</span>
+        <span class="n">subprodukt</span> <span class="o">*=</span> <span class="n">element</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sub_list</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># Wenn keine Elemente in der Liste sind, soll 0 als Summand genutzt werden, nicht 1.</span>
+        <span class="n">subprodukt</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">result</span> <span class="o">+=</span> <span class="n">subprodukt</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-</details>
-</details>
-<details class="question" open="open">
-<summary>Welche Fehler kann man so machen?</summary>
-<p>Baue für die folgenden Fehler ein Beispiel, in dem sie geworfen werden.
-Hier ist die <a href="https://docs.python.org/3/library/exceptions.html">Liste aller in Python vorimplementierten Exceptions</a>.</p>
-<ul>
-<li>IndexError</li>
-<li>OverflowError</li>
-<li>StopIteration</li>
-<li>ValueError</li>
-<li>ZeroDivisionsError</li>
-<li>KeyboardInterrupt</li>
-</ul>
-<details class="success">
-<summary>Lösung</summary>
+<div class="arithmatex">\[0 + (1⋅1⋅2⋅3) + (1⋅(-3)⋅4⋅6⋅9⋅3) + (1⋅0)+ (1⋅4⋅4) + 0 = 0 + 6 + 648 + 0 + 8 + 0 = 662\]</div>
+<h1 id="anspruchsvolle-aufgaben">Anspruchsvolle Aufgaben<a class="headerlink" href="#anspruchsvolle-aufgaben" title="Permanent link">&para;</a></h1>
+<h3 id="aufgabe-1-finden">Aufgabe 1: Finden<a class="headerlink" href="#aufgabe-1-finden" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Schreibe ien Programm, das in einem Text das erste Wort findet, länger als 8 Buchstaben ist und dieses zurückgibt.&quot;</span>
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">:</span>
+        <span class="k">break</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">word</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erstes Wort mit mehr als 8 Buchstaben: </span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Code ohne  <code>continue</code>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;Schreibe ien Programm, das in einem Text das erste Wort findet, länger als 8 Buchstaben ist und dieses zurückgibt.&quot;</span>
+<span class="n">first_word</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">first_word</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">8</span><span class="p">:</span>
+        <span class="n">first_word</span> <span class="o">=</span> <span class="n">word</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erstes Wort mit mehr als 8 Buchstaben: </span><span class="si">{</span><span class="n">first_word</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div></p>
+<h3 id="aufgabe-2-benutzerdefinierte-passwortuberprufung">Aufgabe 2: Benutzerdefinierte Passwortüberprüfung<a class="headerlink" href="#aufgabe-2-benutzerdefinierte-passwortuberprufung" title="Permanent link">&para;</a></h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2147,67 +2039,38 @@ Hier ist die <a href="https://docs.python.org/3/library/exceptions.html">Liste a
 <span class="normal">27</span>
 <span class="normal">28</span>
 <span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># IndexError</span>
-<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">my_list</span><span class="p">[</span><span class="mi">10</span><span class="p">])</span>
-<span class="k">except</span> <span class="ne">IndexError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;IndexError: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">password</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Bitte gib ein Passwort ein: &quot;</span><span class="p">)</span>
 
-<span class="c1"># OverflowError</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="mf">2.0</span> <span class="o">**</span> <span class="mi">10000</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">OverflowError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;OverflowError: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># Prüfe, ob String lang genug ist</span>
+<span class="n">min_length_ok</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">password</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">8</span>
 
-<span class="c1"># StopIteration</span>
-<span class="n">z</span> <span class="o">=</span> <span class="nb">zip</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="nb">next</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-    <span class="nb">next</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">StopIteration</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;StopIteration: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># Prüfe, ob wenigstens eine Zahl enthalten ist</span>
+<span class="n">digit_found</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">password</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">char</span><span class="o">.</span><span class="n">isdigit</span><span class="p">():</span>
+        <span class="n">digit_found</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">break</span>
 
-<span class="c1"># ValueError</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="nb">int</span><span class="p">(</span><span class="s2">&quot;Hallo&quot;</span><span class="p">)</span>
-<span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ValueError: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># Prüfe, ob wenigstens ein Buchstabe enthalten ist</span>
+<span class="n">char_found</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">password</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">char</span><span class="o">.</span><span class="n">isalpha</span><span class="p">():</span>
+        <span class="n">char_found</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">break</span>
 
-<span class="c1"># ZeroDivisionError</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="mi">10</span> <span class="o">/</span> <span class="mi">0</span>
-<span class="k">except</span> <span class="ne">ZeroDivisionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ZeroDivisionError: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">min_length_ok</span> <span class="ow">and</span> <span class="n">digit_found</span> <span class="ow">and</span> <span class="n">char_found</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Password ok💚&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Password not ok😰&quot;</span><span class="p">)</span>
 
-<span class="c1"># KeyboardInterrupt</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Drücke Strg+C, um eine KeyboardInterrupt auszulösen&quot;</span><span class="p">)</span>
-<span class="k">try</span><span class="p">:</span>
-    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="k">pass</span>
-<span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;KeyboardInterrupt wurde ausgelöst&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">min_length_ok</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Es ist zu kurz.&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">digit_found</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Es fehlt mindestens eine Ziffer.&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">char_found</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Es fehlt mindestens ein Buchstabe.&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-</details>
-</details>
-<details class="question" open="open">
-<summary>Sichere Benutzereingabe</summary>
-<p>Implementiere einen interaktiven Taschenrechner. 
-Lass den Benutzer nacheinander zwei Zahlen und einen Operator (+, -, *, /) eingeben.
-Verwende <code>try</code>- und <code>except</code>-Blöcke, um mögliche <code>ValueError</code>-Ausnahmen und unbekannte Operationen zu behandeln. 
-Gib das Ergebnis aus.</p>
-<details class="success">
-<summary>Lösung</summary>
+<h3 id="aufgabe-3-einfacher-zahlenraten">Aufgabe 3: Einfacher Zahlenraten<a class="headerlink" href="#aufgabe-3-einfacher-zahlenraten" title="Permanent link">&para;</a></h3>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -2228,108 +2091,71 @@ Gib das Ergebnis aus.</p>
 <span class="normal">18</span>
 <span class="normal">19</span>
 <span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span>
-<span class="normal">23</span>
-<span class="normal">24</span>
-<span class="normal">25</span>
-<span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span>
-<span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span>
-<span class="normal">37</span>
-<span class="normal">38</span>
-<span class="normal">39</span>
-<span class="normal">40</span>
-<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_number</span><span class="p">(</span><span class="n">prompt</span><span class="o">=</span><span class="s2">&quot;Gib eine Ganzzahl ein: &quot;</span><span class="p">):</span>
-    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">))</span>
-        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Das war keine erlaubte Zahl. Erneut bitte:&quot;</span><span class="p">)</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
 
-<span class="k">def</span> <span class="nf">get_operation</span><span class="p">(</span><span class="n">prompt</span><span class="o">=</span><span class="s2">&quot;Gebe Operation ein: &quot;</span><span class="p">):</span>
-    <span class="n">operations</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;+&quot;</span><span class="p">:</span> <span class="n">add</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">:</span> <span class="n">subtract</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">:</span> <span class="n">multiply</span><span class="p">,</span> <span class="s2">&quot;/&quot;</span><span class="p">:</span> <span class="n">divide</span><span class="p">}</span>
-    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-        <span class="n">op</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">op</span> <span class="ow">in</span> <span class="n">operations</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">operations</span><span class="p">[</span><span class="n">op</span><span class="p">]</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">op</span><span class="si">}</span><span class="s2"> ist keine der erlaubten Operationen </span><span class="si">{</span><span class="nb">list</span><span class="p">(</span><span class="n">operations</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span><span class="si">}</span><span class="s2">. Erneut bitte:&quot;</span><span class="p">)</span>
+<span class="n">zahl</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="n">versuch</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">max_versuche</span> <span class="o">=</span> <span class="mi">10</span>
 
-<span class="k">def</span> <span class="nf">subtract</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+<span class="k">while</span> <span class="n">versuch</span> <span class="o">&lt;</span> <span class="n">max_versuche</span><span class="p">:</span>
+    <span class="n">raten</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Rate die Zahl: &quot;</span><span class="p">))</span>
 
-<span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+    <span class="k">if</span> <span class="n">raten</span> <span class="o">==</span> <span class="n">zahl</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Richtig! Du hast die Zahl in </span><span class="si">{</span><span class="n">versuch</span><span class="si">}</span><span class="s2"> Versuchen erraten.&quot;</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="k">elif</span> <span class="n">raten</span> <span class="o">&lt;</span> <span class="n">zahl</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die gesuchte Zahl ist höher.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die gesuchte Zahl ist niedriger.&quot;</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">divide</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+    <span class="n">versuch</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Leider falsch. Die gesuchte Zahl war </span><span class="si">{</span><span class="n">zahl</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="aufgabe-4-bestellung-in-einem-virtuellen-cafe">Aufgabe 4: Bestellung in einem virtuellen Café<a class="headerlink" href="#aufgabe-4-bestellung-in-einem-virtuellen-cafe" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">menu</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Kaffee&quot;</span><span class="p">:</span> <span class="mf">2.50</span><span class="p">,</span> <span class="s2">&quot;Tee&quot;</span><span class="p">:</span> <span class="mf">2.00</span><span class="p">,</span> <span class="s2">&quot;Kuchen&quot;</span><span class="p">:</span> <span class="mf">3.00</span><span class="p">}</span>
+<span class="n">bestellung</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">summe</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Menü:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">artikel</span><span class="p">,</span> <span class="n">preis</span> <span class="ow">in</span> <span class="n">menu</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">artikel</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">preis</span><span class="si">}</span><span class="s2"> Euro&quot;</span><span class="p">)</span>
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="n">num1</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;Gib erste Ganzzahl ein: &quot;</span><span class="p">)</span>
-    <span class="n">num2</span> <span class="o">=</span> <span class="n">get_number</span><span class="p">(</span><span class="s2">&quot;Gib zweite Ganzzahl ein: &quot;</span><span class="p">)</span>
-    <span class="n">operation</span> <span class="o">=</span> <span class="n">get_operation</span><span class="p">()</span>
-
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">result</span> <span class="o">=</span> <span class="n">operation</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="n">num2</span><span class="p">)</span>
-    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Operation nicht möglich: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Das Ergebnis ist: </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Möchtest du eine weitere Berechnung durchführen? (j/n): &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="s1">&#39;j&#39;</span><span class="p">:</span>
+    <span class="n">artikel</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Wähle einen Artikel (oder &#39;fertig&#39; zum Abschließen): &quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">artikel</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;fertig&quot;</span><span class="p">:</span>
         <span class="k">break</span>
-</code></pre></div></td></tr></table></div>
-</details>
-</details>
-<details class="question" open="open">
-<summary>Übertriebene Rekursion</summary>
-<p>Zu welchem Fehler führt der folgende Code und warum?</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">fak</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">n</span> <span class="o">*</span> <span class="n">fak</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">artikel</span> <span class="ow">in</span> <span class="n">menu</span><span class="p">:</span>
+        <span class="n">menge</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Wie viele von </span><span class="si">{</span><span class="n">artikel</span><span class="si">}</span><span class="s2"> möchtest du? &quot;</span><span class="p">))</span>
+        <span class="n">summe</span> <span class="o">+=</span> <span class="n">menu</span><span class="p">[</span><span class="n">artikel</span><span class="p">]</span> <span class="o">*</span> <span class="n">menge</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Artikel nicht im Menü.&quot;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">fak</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Gesamtsumme: </span><span class="si">{</span><span class="n">summe</span><span class="si">}</span><span class="s2"> Euro&quot;</span><span class="p">)</span>
+<span class="n">zahlung</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Zahlst du bar oder mit Karte? &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Bezahlt mit </span><span class="si">{</span><span class="n">zahlung</span><span class="si">}</span><span class="s2">. Vielen Dank für deine Bestellung!&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<details class="success">
-<summary>Lösung</summary>
-<p>Der Code führt zu einem <code>RecursionError</code>. </p>
-<p>Erklärung:
-Die Funktion <code>fak</code> ruft sich immer wieder selbst auf (das nennt man eine rekursive Funktion).
-Der Callstack wird damit immer größer, bis dieser irgendwann die maximale Größe überschreitet.
-Dann wird ein <code>RecursionError</code> geworfen.</p>
-<p>Um dies zu demonstrieren und abzufangen, können wir den Code wie folgt anpassen:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">fak</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">n</span> <span class="o">&lt;=</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">n</span> <span class="o">*</span> <span class="n">fak</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="k">try</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">fak</span><span class="p">(</span><span class="mi">1000</span><span class="p">))</span>
-<span class="k">except</span> <span class="ne">RecursionError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RecursionError aufgetreten: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Die Rekursionstiefe war zu groß für diese Berechnung.&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<p>Eine bessere Implementierung für große Zahlen wäre eine iterative Lösung oder die Verwendung des <code>math.factorial()</code> Moduls.</p>
-</details>
-</details>
 
 
 
@@ -2360,44 +2186,6 @@ Dann wird ein <code>RecursionError</code> geworfen.</p>
       
         <footer class="md-footer">
   
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Footer" >
-        
-          
-          <a href="../../project/wordle/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Wordle">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              <div class="md-ellipsis">
-                Wordle
-              </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../../packages/moduls/" class="md-footer__link md-footer__link--next" aria-label="Next: Module">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Module
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
     
   
   <div class="md-footer-meta md-typeset">
