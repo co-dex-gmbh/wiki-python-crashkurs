@@ -1,0 +1,34 @@
+title: Mehrere Instanzen erzeugen
+question: |
+  Erstelle eine leere Klasse `Car` und erzeuge drei verschiedene Instanzen von `Car`. 
+  Wie kannst du überprüfen, dass die Instanzen wirklich verschieden sind?
+
+  Schreibe den Code, der die Klasse definiert, die Instanzen erzeugt und überprüft, ob sie verschieden sind.
+
+solution: |
+  Hier ist eine mögliche Lösung:
+
+  ```python
+  class Car:
+      pass
+
+  a = Car()
+  b = Car()
+  c = Car()
+
+  print(id(a))
+  print(id(b))
+  print(id(c))
+  ```
+
+  Die `id()`-Funktion gibt die eindeutige Identität eines Objekts zurück. Wenn die ausgegebenen IDs unterschiedlich sind, bedeutet das, dass die Instanzen tatsächlich verschieden sind.
+
+  Alternativ könnten wir auch den `is`-Operator verwenden:
+
+  ```python
+  print(a is b)  # False
+  print(a is c)  # False
+  print(b is c)  # False
+  ```
+
+  Wenn alle diese Vergleiche `False` ergeben, sind die Instanzen verschieden.

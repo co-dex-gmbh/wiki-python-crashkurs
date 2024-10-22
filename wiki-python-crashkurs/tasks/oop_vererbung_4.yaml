@@ -1,0 +1,83 @@
+title: Composition over Inheritance
+question: |
+  Betrachte das folgende Beispiel von gefärbten Formen:
+
+  ```python
+  class Shape:
+      pass
+
+  class RedCircle(Shape):
+      pass
+
+  class RedSquare(Shape):
+      pass
+
+  class BlueCircle(Shape):
+      pass
+
+  class BlueSquare(Shape):
+      pass
+  ```
+
+  ![img_1.png](img_1.png)
+
+  1. Angenommen eine neue Farbe wird hinzugefügt, welche neuen Klassen würde das erzeugen?
+  2. Angenommen es wird dann noch eine neue Form hinzugefügt, wie viele neue Klassen müssen dann erzeugt werden?
+
+  Betrachte nun diesen Code:
+
+  ```python
+  class Shape:
+      def __init__(self, color):
+          self.color = color
+          
+  class Circle(Shape):
+      pass
+
+  class Square(Shape):
+      pass
+      
+  class Color:
+      pass
+
+  class Red(Color):
+      pass
+
+  class Blue(Color):
+      pass
+  ```
+
+  ![img_2.png](img_2.png)
+
+  Wir stellen nun dieselben Fragen erneut:
+  3. Angenommen eine neue Farbe wird hinzugefügt, welche neuen Klassen würde das erzeugen?
+  4. Angenommen es wird dann noch eine neue Form hinzugefügt, wie viele neue Klassen müssen dann erzeugt werden?
+
+  Erkläre den Unterschied zwischen den beiden Ansätzen und diskutiere die Vor- und Nachteile.
+
+solution: |
+  1. Im ersten Fall müssen bei einer neuen Farbe zwei neue Klassen erstellt werden, z.B. `GreenCircle` und `GreenSquare`.
+  
+  2. Um eine neue Form hinzuzufügen, müssen im ersten Fall drei neue Klassen hinzugefügt werden, z.B. `RedTriangle`, `BlueTriangle` und `GreenTriangle`.
+
+  3. Im zweiten Fall muss bei einer neuen Farbe nur eine neue Klasse erstellt werden, z.B. einfach `Green`.
+
+  4. Um eine neue Form hinzuzufügen, muss im zweiten Fall nur eine neue Klasse hinzugefügt werden, z.B. `Triangle`.
+
+  Erklärung:
+  - Im ersten Ansatz (Vererbung) wächst die Anzahl der Klassen exponentiell mit jeder neuen Farbe oder Form.
+  - Im zweiten Ansatz (Composition) wächst die Anzahl der Klassen nur linear.
+
+  Vorteile des zweiten Ansatzes (Composition):
+  - Flexibler und einfacher zu erweitern
+  - Weniger redundanter Code
+  - Bessere Trennung von Zuständigkeiten (Farbe und Form sind getrennt)
+
+  Nachteile des ersten Ansatzes (Vererbung):
+  - Schnell wachsende Komplexität
+  - Viele Klassen, die möglicherweise nie verwendet werden
+  - Schwieriger zu warten und zu erweitern
+
+  Schlussfolgerung:
+  Man sollte immer überlegen, ob Vererbung tatsächlich notwendig ist. In vielen Fällen ist Composition (wie im zweiten Beispiel) die bessere Wahl, da es zu flexiblerem und wartbarerem Code führt.
+

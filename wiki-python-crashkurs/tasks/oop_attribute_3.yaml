@@ -1,0 +1,47 @@
+title: Instanz als Parameter übergeben
+question: |
+  Erstelle eine Klasse `Person`.
+  Erzeuge `Person` Instanzen und setze einen Namen.
+  Erstelle eine Funktion `getInitials(person)`, die eine Klasse der Instanz `Person` erwartet
+  und die ersten Buchstaben des Namens zurückliefert. Z.B.:
+
+  ```python
+  anna = Person()
+  anna.name = "Anna Lena Zitrova"
+
+  karl = Person()
+  karl.name = "Karl Gustav"
+
+
+  def getInitials(person):
+      ...
+
+
+  print(getInitials(anna)) # 'ALZ'
+  print(getInitials(karl)) # 'KG'
+  ```
+
+tip: |
+  Nutze die Methoden `split` und `join`. Am einfachsten ist das mit List-Comprehension. Ja, tatsächlich.
+
+solution: |
+  ```python
+  class Person:
+      pass
+
+  anna = Person()
+  anna.name = "Anna Lena Zitrova"
+
+  karl = Person()
+  karl.name = "Karl Gustav"
+
+
+  def getInitials(person):
+      return "".join(word[0] for word in person.name.split())
+
+  print(getInitials(anna)) # 'ALZ'
+  print(getInitials(karl)) # 'KG'
+  ```
+
+  Dieser Code definiert eine `Person` Klasse, erstellt Instanzen mit Namen und implementiert die `getInitials` Funktion,
+  die die Initialen einer Person zurückgibt.

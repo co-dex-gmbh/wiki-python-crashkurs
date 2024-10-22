@@ -1,0 +1,23 @@
+title: Durchschnittsnote berechnen
+question: |
+  Erstelle eine Klasse `Student`. Erzeuge eine `Student` Instanz.
+  Setze bei der Instanz die Attribute `Mathenote`, `Englischnote` und `Deutschnote`.
+  Schreibe dann Code, der diese Attribute ausließt und die Durchschnittsnote berechnet.
+
+solution: |
+  ```python
+  class Student:
+      pass
+
+
+  anna = Student()
+  anna.Mathenote = 2
+  anna.Englischnote = 1
+  anna.Deutschnote = 1
+
+  durchschnitt = (anna.Mathenote + anna.Englischnote + anna.Deutschnote) / 3
+  print(durchschnitt)
+  ```
+
+  Dieser Code definiert eine `Student` Klasse, erstellt eine Instanz namens `anna`, 
+  setzt ihre Noten als Attribute und berechnet dann den Durchschnitt dieser Noten.

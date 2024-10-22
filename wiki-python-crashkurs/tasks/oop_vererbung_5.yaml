@@ -1,0 +1,63 @@
+title: Composition über Vererbung bei Sportlern
+question: |
+  Untersuche den folgenden Code. Teile die Klassen analog zum letzten Beispiel auf:
+
+  ```python
+  class Sportler:
+      pass
+
+  class DeutscherHandballer(Sportler):
+      pass
+
+  class DeutscherFussballer(Sportler):
+      pass
+
+  class EnglischerHandballer(Sportler):
+      pass
+
+  class EnglischerFussballer(Sportler):
+      pass
+  ```
+
+  1. Wie viele neue Klassen müssten erstellt werden, wenn eine neue Sportart hinzugefügt wird?
+  2. Wie viele neue Klassen müssten erstellt werden, wenn eine neue Nationalität hinzugefügt wird?
+  3. Strukturiere den Code um, indem du Composition statt Vererbung verwendest.
+  4. Erkläre die Vorteile dieser neuen Struktur.
+
+solution: |
+  1. Bei der aktuellen Struktur müssten zwei neue Klassen erstellt werden, eine für jede Nationalität.
+  
+  2. Bei der aktuellen Struktur müssten drei neue Klassen erstellt werden, eine für jede Sportart.
+
+  3. Hier ist die umstrukturierte Version des Codes:
+
+     ```python
+     class Sportler:
+         def __init__(self, nation, sportart):
+             self.nation = nation
+             self.sportart = sportart
+
+     class Sportart:
+         pass
+
+     class Handballer(Sportart):
+         pass
+
+     class Fussballer(Sportart):
+         pass
+
+     class Nation:
+         pass
+
+     class Deutsch(Nation):
+         pass
+
+     class Englisch(Nation):
+         pass
+     ```
+
+  4. Vorteile der neuen Struktur:
+     - Flexibilität: Neue Sportarten oder Nationalitäten können einfach hinzugefügt werden, ohne viele neue Klassen zu erstellen.
+     - Wartbarkeit: Änderungen an einer Sportart oder Nationalität müssen nur an einer Stelle vorgenommen werden.
+     - Skalierbarkeit: Die Anzahl der Klassen wächst linear statt exponentiell mit neuen Sportarten oder Nationalitäten.
+     - Bessere Trennung von Zuständigkeiten: Sportart und Nationalität sind getrennte Konzepte und können unabhängig voneinander entwickelt werden.

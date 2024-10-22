@@ -1,0 +1,40 @@
+title: Passende Attribute finden
+question: |
+  Im folgenden Code soll die Summe aller Felder berechnet werden, die das Wort `spending` enthalten.
+  Dazu soll `__dict__` und eine Schleife verwendet werden. Wie sieht die Lösung mit einer Listcomprehension aus?
+
+  ```python
+  class Buchhaltung:
+      pass
+
+  booking = Buchhaltung()
+  booking.food_spending = 100
+  booking.car_spending = 230
+  booking.february_income = 200
+  ```
+
+solution: |
+  ```python
+  class Buchhaltung:
+      pass
+
+
+  booking = Buchhaltung()
+  booking.food_spending = 100
+  booking.car_spending = 230
+  booking.february_income = 200
+
+  # Lösung mit Schleife
+  summe = 0
+  for name, value in booking.__dict__.items():
+      if 'spending' in name:
+          summe += value
+
+  print(summe)
+
+  # Lösung mit Listcomprehension
+  print(sum(value for name, value in booking.__dict__.items() if 'spending' in name))
+  ```
+
+  Die erste Lösung verwendet eine Schleife, um durch alle Attribute zu iterieren und die Summe zu berechnen.
+  Die zweite Lösung nutzt eine Listcomprehension, um dasselbe Ergebnis in einer kompakteren Form zu erzielen.

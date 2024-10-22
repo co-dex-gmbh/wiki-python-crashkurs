@@ -1,0 +1,32 @@
+title: Auch Funktionen sind Instanzen
+question: |
+  Im Folgenden ist eine Funktion `say_hello` definiert. Führe den folgenden Code aus und erkläre das Verhalten.
+  Was ist der Typ von `say_hello`?
+
+  ```python
+  def say_hello():
+      if not hasattr(say_hello, "count"):
+          say_hello.count = 0
+      
+      say_hello.count += 1
+      
+      print(f"Hallo zum {say_hello.count}-ten Mal.")
+
+  say_hello()
+  say_hello()
+  say_hello()
+  ```
+
+solution: |
+  Innerhalb der Funktion wird ein Attribut `count` von der Funktion selbst angelegt, beschrieben und ausgelesen.
+  Der Output ändert sich bei jedem Aufruf:
+
+  ```
+  Hallo zum 1-ten Mal.
+  Hallo zum 2-ten Mal.
+  Hallo zum 3-ten Mal.
+  ```
+
+  Der Typ von `say_hello` ist `function`. In Python sind Funktionen auch Objekte und können Attribute haben.
+
+solution_video: https://www.youtube.com/embed/0JlOqTwW90g?si=s_5C7QW5Ib0Ox9Ue

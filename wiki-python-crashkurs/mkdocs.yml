@@ -51,9 +51,13 @@ nav:
       - Plotly: content/visualization/plotly.md
       - Streamlit: content/visualization/streamlit.md
   - OOP: 
-    - Einführung: content/oop/oop.md
-    - Methoden, Klassen und Objekte: content/oop/methods_classes_objects.md
-    - Fortgeschrittene Themen: content/oop/advanced.md
+    - Einführung: content/oop/define_classes/define_classes.md
+    - Attribute: content/oop/attributes/attributes.md
+    - Methoden: content/oop/methods/methods.md
+    - Vererbung: content/oop/vererbung/vererbung.md
+    - Magic Methods: content/oop/magic_methods/magic_methods.md
+    - Getter & Setter: content/oop/getter_setter/getter_setter.md
+    - Class- & Static Methods: content/oop/class_static_methods/class_static_methods.md
   - Unit Tests: content/unit_tests/unit_tests.md
   - Dateioperationen: content/dateioperationen/dateioperationen.md
   - Versionskontrolle: 

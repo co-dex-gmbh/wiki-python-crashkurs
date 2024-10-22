@@ -1,0 +1,19 @@
+title: Typen erkennen
+question: |
+  Erstelle eine Instanz `s` von `Square`. Beantworte dann folgende Fragen:
+  
+    1. Was ist `type(s)`?
+    2. Was ist `type(s).__mro__` bzw. `Square.__mro__`?
+    3. Was ist das Ergebnis von `isinstance(s, Square)`?
+    4. Was ist das Ergebnis von `isinstance(s, Rectangle)`?
+
+solution: |
+  Hier sind die Antworten:
+
+  1. `type(s)` ist `<class '__main__.Square'>`.
+  2. `type(s).__mro__` bzw. `Square.__mro__` ist `(<class '__main__.Square'>, <class '__main__.Rectangle'>, <class 'object'>)`.
+  3. `isinstance(s, Square)` ergibt `True`.
+  4. `isinstance(s, Rectangle)` ergibt ebenfalls `True`.
+
+  Es werden bei `__mro__` also alle Obertypen aufgelistet, von der spezifischsten zur allgemeinsten Klasse.
+

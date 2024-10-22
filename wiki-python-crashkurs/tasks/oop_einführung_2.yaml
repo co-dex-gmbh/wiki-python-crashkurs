@@ -1,0 +1,35 @@
+title: Identitätsvergleich
+question: |
+  Finde heraus, was `is` und `is not` in Python tun und an welcher Stelle wir sie im Beispielcode hätten nutzen können.
+
+  ```python
+  class Roboter:
+      pass
+
+  x = Roboter()
+  y = Roboter()
+  y2 = y
+  ```
+
+  Schreibe einen kurzen Absatz, der erklärt, was `is` und `is not` machen, und füge dann ein Codebeispiel hinzu, das zeigt, wie man sie mit den Variablen aus dem obigen Code verwenden könnte.
+
+solution: |
+  `is` und `is not` sind Identitätsoperatoren in Python. Sie vergleichen, ob zwei Objekte genau dasselbe Objekt im Speicher sind, nicht nur, ob sie den gleichen Wert haben. `is` gibt `True` zurück, wenn beide Operanden auf dasselbe Objekt verweisen, während `is not` `True` zurückgibt, wenn sie auf unterschiedliche Objekte verweisen.
+
+  In unserem Beispielcode könnten wir `is` und `is not` wie folgt verwenden:
+
+  ```python
+  class Roboter:
+      pass
+
+  x = Roboter()
+  y = Roboter()
+  y2 = y
+
+  print(x is y)      # False, da x und y verschiedene Instanzen sind
+  print(y is y2)     # True, da y und y2 auf dieselbe Instanz verweisen
+  print(x is not y)  # True, da x und y verschiedene Instanzen sind
+  print(y is not y2) # False, da y und y2 auf dieselbe Instanz verweisen
+  ```
+
+  Dieser Code demonstriert, dass `x` und `y` verschiedene Instanzen sind, während `y` und `y2` auf dieselbe Instanz verweisen.

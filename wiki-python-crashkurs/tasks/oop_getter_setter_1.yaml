@@ -1,0 +1,46 @@
+title: Notendurchschnitt
+question: |
+  Erstelle eine Klasse `Student`, mit drei Attributen `mathe`, `python`, `englisch`.
+
+  Erstelle eine Methode `get_durchschnitt`, die den Durchschnitt der drei Attribute berechnet.
+
+  Erstelle eine Property `durchschnitt`, die nur einen Getter hat und zwar `get_durchschnitt`.
+
+  Die folgenden Tests sollen nach der Implementierung erfolgreich sein:
+
+  ```python
+  from unittest import TestCase
+
+  class StudentTest(TestCase):
+      def test_durchschnitt(self):
+          s = Student(1, 2, 3)
+          self.assertAlmostEqual(2.0, s.durchschnitt)
+
+      def test_durchschnitt_property(self):
+          s = Student(1, 2, 3)
+          self.assertRaises(AttributeError, setattr, s, "durchschnitt", 5)
+  ```
+
+tip: |
+  - Verwende die `property`-Funktion, um den Getter zu definieren.
+  - Der Durchschnitt wird berechnet, indem man die Summe der drei Noten durch 3 teilt.
+
+solution: |
+  ```python
+  class Student:
+      def __init__(self, mathe, python, englisch):
+          self.mathe = mathe
+          self.python = python
+          self.englisch = englisch
+
+      def get_durchschnitt(self):
+          return (self.mathe + self.python + self.englisch) / 3
+
+      durchschnitt = property(get_durchschnitt)
+  ```
+
+  In dieser Lösung:
+  
+  1. Die Klasse `Student` wird mit den drei Attributen `mathe`, `python` und `englisch` initialisiert.
+  2. Die Methode `get_durchschnitt` berechnet den Durchschnitt der drei Noten.
+  3. Die Property `durchschnitt` wird mit der `property`-Funktion erstellt und verwendet `get_durchschnitt` als Getter.

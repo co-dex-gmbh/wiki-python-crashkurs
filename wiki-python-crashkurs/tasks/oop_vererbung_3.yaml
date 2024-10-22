@@ -1,0 +1,272 @@
+title: Geometry
+question: |
+  Erstelle die folgenden Klassen:
+
+  * `Form` hat zwei Methoden `inhalt` und `umfang`, die beide einen `NotImplementedError` werfen, wenn sie aufgerufen werden.
+  * `Kreis` erbt von `Form` und hat ein Klassenatrribut `PI = 3.14159265358979323846` und ein Attribut `radius`. `inhalt` und `umfang` sind implementiert.
+  * `Dreieck` erbt von `Form` und hat drei Seiten `sizeA`, `sizeB` und `sizeC`. Weiterhin gibt es eine Methode `hat_90_grad_winkel`, die mit dem Satz des Pythagoras prüft, ob es einen 90°-Winkel im Dreieck gibt. `inhalt` und `umfang` sind implementiert.
+  * `Viereck` erbt von `Form` und hat vier Seiten `sizeA`, `sizeB`, `sizeC` und `sizeD`. Diese implementiert die Methode `umfang`.
+  * `Parallelogram` erbt von `Viereck` ist über zwei Seiten festgelegt. Diese implementiert die Methode `inhalt`.
+  * Entwickle selbst mindestens zwei Methoden, die prüfen, ob die Formen bestimmte Eigenschaften erfüllen und implementiere eigene Tests dazu (jeweils mindestens 4). 
+
+  Das folgende Diagramm zeigt, dir die Struktur der Klassen:
+
+  ```mermaid
+  classDiagram
+      Form <|-- Kreis
+      Form <|-- Dreieck
+      Form <|-- Viereck
+      Viereck <|-- Parallelogramm
+
+      class Form{
+          umfang(self)
+          inhalt(self)
+      }
+      class Dreieck{
+          __init__(self, size_a, size_b, size_c)
+          umfang(self)
+          inhalt(self)
+          hat_90_grad_winkel(self)
+      }
+      class Kreis{
+          PI = 3.14159265358979323846
+          __init__(self, radius)
+          umfang(self)
+          inhalt(self)
+      }
+      class Viereck{
+          __init__(self, size_a, size_b, size_c, size_d)
+          umfang(self)
+      }
+      class Parallelogramm{
+          __init__(self, size_a, size_b)
+          inhalt(self)
+      }
+  ```
+
+  Nutze dazu die folgenden Klassenköpfe:
+
+  ```python
+  # Nutze isclose, um zu prüfen, ob zwei Floats gleich sind
+  from math import isclose
+
+
+  class Form:
+      ...
+
+
+  class Dreieck():
+      ...
+
+
+  class Kreis():
+      ...
+
+
+  class Viereck():
+      ...
+
+
+  class Parallelogramm():
+      ...
+  ```
+
+  Implementiere alle Methoden so, sodass die folgenden Tests erfolgreich sind:
+
+  ```python
+  from unittest import TestCase
+
+
+  class FormsTest(TestCase):
+
+      def test_dreieck_type(self):
+          d = Dreieck(0.3, 0.2, 0.1)
+          self.assertIsInstance(d, Form)
+
+      def test_dreieck_umfang_0(self):
+          d = Dreieck(0.3, 0.2, 0.1)
+          self.assertAlmostEqual(d.umfang(), 0.6)
+
+      def test_dreieck_umfang_1(self):
+          d = Dreieck(1, 12, 23)
+          self.assertAlmostEqual(d.umfang(), 36)
+
+      def test_dreieck_umfang_2(self):
+          d = Dreieck(3, 3.0, 3)
+          self.assertAlmostEqual(d.umfang(), 9.0)
+
+      def test_dreieck_inhalt_0(self):
+          d = Dreieck(1, 1, 1)
+          self.assertAlmostEqual(d.inhalt(), 0.4330127018922193)
+
+      def test_dreieck_inhalt_1(self):
+          d = Dreieck(1, 1, 2 ** 0.5)
+          self.assertAlmostEqual(d.inhalt(), 0.5)
+
+      def test_dreieck_inhalt_2(self):
+          d = Dreieck(3, 4, 5)
+          self.assertAlmostEqual(d.inhalt(), 6)
+
+      def test_dreieck_hat_90_grad_winkel_0(self):
+          d = Dreieck(4, 3, 5)
+          self.assertTrue(d.hat_90_grad_winkel())
+
+      def test_dreieck_hat_90_grad_winkel_1(self):
+          d = Dreieck(4, 3, 6)
+          self.assertFalse(d.hat_90_grad_winkel())
+
+      def test_dreieck_hat_90_grad_winkel_2(self):
+          d = Dreieck(1, 1, 2 ** 0.5)
+          self.assertTrue(d.hat_90_grad_winkel())
+
+      def test_dreieck_hat_90_grad_winkel_3(self):
+          d = Dreieck(1, 2 ** 0.5, 1)
+          self.assertTrue(d.hat_90_grad_winkel())
+
+      def test_kreis_type(self):
+          k = Kreis(1)
+          self.assertIsInstance(k, Form)
+
+      def test_kreis_pi_0(self):
+          self.assertTrue(hasattr(Kreis, 'PI'))
+
+      def test_kreis_umfang_0(self):
+          k = Kreis(1)
+          self.assertAlmostEqual(k.umfang(), 6.2831853)
+
+      def test_kreis_umfang_1(self):
+          k = Kreis(0.5)
+          self.assertAlmostEqual(k.umfang(), 3.14159265)
+
+      def test_kreis_umfang_2(self):
+          k = Kreis(15)
+          self.assertAlmostEqual(k.umfang(), 94.2477796)
+
+      def test_kreis_inhalt_0(self):
+          k = Kreis(1)
+          self.assertAlmostEqual(k.inhalt(), 3.14159265)
+
+      def test_kreis_inhalt_1(self):
+          k = Kreis(0.5)
+          self.assertAlmostEqual(k.inhalt(), 0.785398163)
+
+      def test_kreis_inhalt_2(self):
+          k = Kreis(15)
+          self.assertAlmostEqual(k.inhalt(), 706.85834705)
+
+      def test_viereck_type(self):
+          v = Viereck(1, 2, 3, 4)
+          self.assertIsInstance(v, Form)
+
+      def test_viereck_inhalt_fail_0(self):
+          with self.assertRaises(NotImplementedError):
+              v = Viereck(1, 2, 3, 4)
+              v.inhalt()
+
+      def test_viereck_umfang_0(self):
+          v = Viereck(1, 2, 3, 4)
+          self.assertAlmostEqual(v.umfang(), 10)
+
+      def test_viereck_umfang_1(self):
+          v = Viereck(1, 1, 1, 1)
+          self.assertAlmostEqual(v.umfang(), 4)
+
+      def test_parallelogramm_type(self):
+          p = Parallelogramm(1, 2)
+          self.assertIsInstance(p, Viereck)
+
+      def test_parallelogramm_umfang_0(self):
+          p = Parallelogramm(1, 2)
+          self.assertAlmostEqual(p.umfang(), 6)
+
+      def test_parallelogramm_inhalt_0(self):
+          p = Parallelogramm(1, 2)
+          self.assertAlmostEqual(p.inhalt(), 2)
+
+      def test_parallelogramm_inhalt_1(self):
+          p = Parallelogramm(1, 1)
+          self.assertAlmostEqual(p.inhalt(), 1)
+
+      def test_parallelogramm_inhalt_2(self):
+          p = Parallelogramm(0.5, 0.5)
+          self.assertAlmostEqual(p.inhalt(), .25)
+
+      def test_form_inhalt_fail_0(self):
+          with self.assertRaises(NotImplementedError):
+              f = Form()
+              f.inhalt()
+
+      def test_form_umfang_fail_0(self):
+          with self.assertRaises(NotImplementedError):
+              f = Form()
+              f.umfang()
+  ```
+
+solution: |
+  Hier ist eine mögliche Lösung:
+
+  ```python
+  from math import isclose
+
+
+  class Form:
+      def umfang(self):
+          raise NotImplementedError("Kann nicht für diese Allgemeine Form bestimmt werden")
+
+      def inhalt(self):
+          raise NotImplementedError("Kann nicht für diese Allgemeine Form bestimmt werden")
+
+
+  class Dreieck(Form):
+      def __init__(self, size_a, size_b, size_c):
+          self.size_a = size_a
+          self.size_b = size_b
+          self.size_c = size_c
+
+      def umfang(self):
+          return self.size_a + self.size_b + self.size_c
+
+      def inhalt(self):
+          s = self.umfang() / 2
+          result = (s * (s - self.size_a) * (s - self.size_b) * (s - self.size_c)) ** 0.5
+          return result
+
+      def hat_90_grad_winkel(self):
+          squared_sizes = [s ** 2 for s in (self.size_a, self.size_b, self.size_c)]
+          squared_sizes.sort()
+          return isclose(squared_sizes[0] + squared_sizes[1], squared_sizes[2])
+
+
+  class Kreis(Form):
+      PI = 3.14159265358979323846
+
+      def __init__(self, radius):
+          self.radius = radius
+
+      def umfang(self):
+          return 2 * self.PI * self.radius
+
+      def inhalt(self):
+          return self.PI * self.radius ** 2
+
+
+  class Viereck(Form):
+      def __init__(self, size_a, size_b, size_c, size_d):
+          self.size_a = size_a
+          self.size_b = size_b
+          self.size_c = size_c
+          self.size_d = size_d
+
+      def umfang(self):
+          return self.size_a + self.size_b + self.size_c + self.size_d
+
+
+  class Parallelogramm(Viereck):
+      def __init__(self, size_a, size_b):
+          super().__init__(size_a, size_b, size_a, size_b)
+
+      def inhalt(self):
+          return self.size_a * self.size_b
+  ```
+
+  Diese Implementierung erfüllt alle Anforderungen der Aufgabe und sollte alle gegebenen Tests bestehen.

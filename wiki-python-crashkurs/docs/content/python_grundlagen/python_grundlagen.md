@@ -1,6 +1,6 @@
 # Einführung
 
-# Was ist Programmierung?
+## Was ist Programmierung?
 
 Programmierung ist für uns der Prozess der Erstellung von Anweisungen, die von einem Computer ausgeführt werden, um
 bestimmte Aufgaben zu erfüllen oder Probleme zu lösen.
@@ -13,7 +13,7 @@ entwickeln.
 Im professionellen Umfeld steht die Wertschöpfung durch Software-Entwicklung an erster Stelle. Mit Programmierung werden
 Probleme gelöst, die ein Unternehmen oder dessen Kunden haben.
 
-## Kernaspekte der Programmierung
+### Kernaspekte der Programmierung
 
 - **Algorithmisches Denken**: Programmierung basiert auf der Entwicklung von Algorithmen –
    Schritt-für-Schritt-Anweisungen zur Lösung eines Problems oder zur Durchführung einer Aufgabe.
@@ -31,7 +31,7 @@ Probleme gelöst, die ein Unternehmen oder dessen Kunden haben.
    ein wichtiger Teil der Entwicklung einer benutzerfreundlichen Software.
 
 
-## Die Rolle von Python in der Programmierung
+### Die Rolle von Python in der Programmierung
 
 Python ist eine weit verbreitete und vielseitige Programmiersprache, die sich durch ihre klare Syntax und Lesbarkeit
 auszeichnet.
@@ -56,9 +56,9 @@ die es zu einer der beliebtesten Sprachen in der modernen Programmierung machen.
 
 ---
 
-# Programmierumgebungen und IDEs
+## Programmierumgebungen und IDEs
 
-## Was ist ein IDE?
+### Was ist ein IDE?
 
 Eine Integrated Development Environment (IDE) ist eine Softwareanwendung, die umfangreiche Werkzeuge für Programmierer
 bereitstellt, um die Entwicklung von Software zu erleichtern. Ein typisches IDE umfasst einen Code-Editor,
@@ -68,11 +68,10 @@ Das Hauptziel einer IDE ist die Vereinfachung des Entwicklungsprozesses, sodass 
 Kernaufgaben
 konzentrieren können.
 
-Auf euren Rechnern sind sowohl VSCode als auch PyCharm vorinstalliert, sodass wir direkt loslegen können.
 
-## Beliebte Tools für Python
+### Beliebte Tools für Python
 
-### 1. Visual Studio Code (VSCode)
+#### 1. Visual Studio Code (VSCode)
 
 ![VSCode](vscode.png)
 
@@ -88,7 +87,7 @@ macht.
 VSCode kann durch die Python-Erweiterung, die Features wie IntelliSense, Debugging, Jupyter Notebooks und mehr umfasst,
 effektiv für Python-Entwicklung genutzt werden.
 
-### 2. PyCharm
+#### 2. PyCharm
 
 ![PyCharm](pycharm.png)
 
@@ -106,7 +105,7 @@ die besonders für größere Projekte nützlich ist.
 
 Pycharm besitzt eine kostenfreie "Community Edition" und eine kostenpflichtige "Professional Edition".
 
-### 3. Jupyter Notebooks
+#### 3. Jupyter Notebooks
 
 ![Jupyter Lab](jupyter.png)
 
@@ -126,7 +125,7 @@ Sowohl VSCode als auch PyCharm bieten die Möglichkeit direkt mit .ipynb Dateien
 ähnliches Nutzererlebnis. Statt PyCharm würde man aber die Nutzung von **DataSpell** von Jetbrains empfehlen,
 da dieses speziell auf dieses Dateiformat ausgelegt ist.  
 
-### 4. Python-Interpreter als interaktive Umgebung
+#### 4. Python-Interpreter als interaktive Umgebung
 
 ![Python](py_console.png)
 
@@ -138,7 +137,7 @@ verwenden.
 
 {{ task(file='tasks/einleitung_aufgabe.yaml') }}
 
-## Zusammenfassung
+### Zusammenfassung
 
 IDEs sind ein wesentlicher Bestandteil des Werkzeugkastens eines jeden Entwicklers.
 Während VSCode und PyCharm umfassende Entwicklungsplattformen bieten, eignen sich Jupyter Notebooks hervorragend für

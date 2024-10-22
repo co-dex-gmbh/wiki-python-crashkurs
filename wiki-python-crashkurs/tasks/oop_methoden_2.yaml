@@ -1,0 +1,30 @@
+title: Koordinaten von vornherein setzen
+question: |
+  Erweitere die Klasse `Point` aus der vorherigen Aufgabe um eine `__init__` Methode, sodass direkt `x` und `y` Wert gesetzt werden können. Der folgende Code soll also ausführbar sein:
+
+  ```python
+  point = Point(4, 7)
+  x, y = point.get_coordinates()
+  print(f"Punkt hat den x-Wert {x} und den y-Wert {y}")
+  ```
+
+solution: |
+  ```python
+  class Point:
+      def __init__(self, x, y):
+          self.x = x
+          self.y = y
+      def set_coordinates(self, x, y):
+          self.x = x
+          self.y = y
+
+      def get_coordinates(self):
+          return self.x, self.y
+
+
+  point = Point(4, 7)
+  x, y = point.get_coordinates()
+  print(f"Punkt hat den x-Wert {x} und den y-Wert {y}")
+  ```
+
+solution_video: https://www.youtube.com/embed/LGtuDOss4bM?si=eo4CxwZS8mxFX-EE

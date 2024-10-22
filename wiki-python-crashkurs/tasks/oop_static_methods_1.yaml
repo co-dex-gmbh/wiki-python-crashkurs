@@ -1,0 +1,93 @@
+title: "Statische Methoden für String-Operationen"
+question: |
+  Implementiere eine Klasse `StringUtil` mit folgenden statischen Methoden:
+  1. `count_words(string)`: Zählt die Anzahl der Wörter in einem String.
+  2. `count_vowels(string)`: Zählt die Vokale in einem String (Tipp: Nutze `sum` und List-Comprehension).
+  3. `is_palindrome(string)`: Prüft, ob ein Wort ein Palindrom ist (z.B. "Otto", unabhängig von Groß-/Kleinschreibung).
+  4. `count_substring(substring, string)`: Zählt, wie oft `substring` in `string` vorkommt (z.B. "ana" kommt 2 mal in "Banana" vor).
+
+  Jede Methode soll mit einem Docstring und mindestens 3 Doctests versehen werden.
+
+tip: |
+  - `count_words`: Nutze `split()` und `len()`.
+  - `count_vowels`: Verwende `in` für String-Vergleiche.
+  - `is_palindrome`: Nutze String-Slicing zum Umdrehen.
+  - `count_substring`: Die `find()`-Methode hat zusätzliche Parameter.
+
+solution: |
+  ```python
+  class StringUtil:
+      @staticmethod
+      def count_words(string):
+          """
+          Zählt die Anzahl der Wörter in einem String.
+
+          >>> StringUtil.count_words("Hello world")
+          2
+          >>> StringUtil.count_words("Python is awesome")
+          3
+          >>> StringUtil.count_words("  Spaces \t between words ")
+          3
+          """
+          return len(string.split())
+
+      @staticmethod
+      def count_vowels(string):
+          """
+          Zählt die Vokale in einem String.
+
+          >>> StringUtil.count_vowels("Hallo")
+          2
+          >>> StringUtil.count_vowels("ZDF")
+          0
+          >>> StringUtil.count_vowels("Eulenspiegel")
+          6
+          """
+          return sum(1 for char in string.lower() if char in 'aeiou')
+
+      @staticmethod
+      def is_palindrome(string):
+          """
+          Testet, ob ein Wort ein Palindrom ist.
+
+          >>> StringUtil.is_palindrome("Otto")
+          True
+          >>> StringUtil.is_palindrome("banana")
+          False
+          >>> StringUtil.is_palindrome("A man, a plan, a canal, Panama!")
+          True
+          """
+          clean_string = ''.join(char.lower() for char in string if char.isalnum())
+          return clean_string == clean_string[::-1]
+
+      @staticmethod
+      def count_substring(substring, string):
+          """
+          Zählt, wie oft `substring` in `string` auftaucht.
+
+          >>> StringUtil.count_substring("ana", "Banana")
+          2
+          >>> StringUtil.count_substring("test", "This is a test. Another test. But not this Test")
+          2
+          >>> StringUtil.count_substring("abc", "defghi")
+          0
+          """
+          count = 0
+          start_index = 0
+          while True:
+              start_index = string.find(substring, start_index)
+              if start_index == -1:
+                  break
+              count += 1
+              start_index += 1
+          return count
+
+  # Doctests ausführen
+  if __name__ == "__main__":
+      import doctest
+      doctest.testmod()
+  ```
+
+  Diese Lösung implementiert die `StringUtil`-Klasse mit den geforderten statischen Methoden.
+  Jede Methode enthält einen Docstring mit Erklärung und mindestens drei Doctests.
+  Die Implementierungen nutzen effiziente Python-Techniken wie List Comprehensions und die `find()`-Methode.

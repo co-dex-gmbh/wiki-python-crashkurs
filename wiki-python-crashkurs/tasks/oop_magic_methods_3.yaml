@@ -1,0 +1,107 @@
+title: Zugriff wie bei Listen
+question: |
+  Implementiere in der `Punkt` Klasse die richtigen Methoden, damit es möglich ist, auf den `x`-Wert über den Index `0` oder `-2` und auf den `y`-Wert über den Index `1` oder `-1` zuzugreifen. 
+  
+  Folgende Funktionalitäten sollen implementiert werden:
+  - Lesen der Werte über die Indizes
+  - Setzen der Werte über die Indizes
+  - Fehlerbehandlung für ungültige Indizes
+
+  Die folgenden Tests sollen nach der Implementierung erfolgreich sein:
+
+  ```python
+  from unittest import TestCase
+
+  class PunktTest(TestCase):
+      def test_read_0(self):
+          a = Punkt(2, 1)
+          self.assertEqual(2, a[0])
+
+      def test_read_1(self):
+          a = Punkt(2, 1)
+          self.assertEqual(1, a[1])
+
+      def test_read_2(self):
+          a = Punkt(2, 1)
+          with self.assertRaises(IndexError):
+              b = a[2]
+
+      def test_read_4(self):
+          a = Punkt(2, 1)
+          self.assertEqual(2, a[-2])
+
+      def test_read_5(self):
+          a = Punkt(2, 1)
+          self.assertEqual(1, a[-1])
+
+      def test_read_6(self):
+          a = Punkt(2, 1)
+          with self.assertRaises(IndexError):
+              b = a[-3]
+
+      def test_set_0(self):
+          a = Punkt(2, 1)
+          a[0] = 0
+          self.assertEqual(a, Punkt(0,1))
+
+      def test_set_1(self):
+          a = Punkt(2, 1)
+          a[1] = 0
+          self.assertEqual(a, Punkt(2,0))
+
+      def test_set_2(self):
+          a = Punkt(2, 1)
+          with self.assertRaises(IndexError):
+              a[3] = 4
+
+      def test_set_4(self):
+          a = Punkt(2, 1)
+          a[-1] = 0
+          self.assertEqual(a, Punkt(2, 0))
+
+      def test_set_5(self):
+          a = Punkt(2, 1)
+          a[-2] = 0
+          self.assertEqual(a, Punkt(0,1))
+
+      def test_set_6(self):
+          a = Punkt(2, 1)
+          with self.assertRaises(IndexError):
+              a[-3] = 4
+  ```
+
+tip: |
+  - Implementiere die Methoden `__getitem__` für das Lesen und `__setitem__` für das Setzen von Werten.
+  - Beachte die verschiedenen Indexmöglichkeiten (0, 1, -2, -1) für x und y.
+  - Wirf einen `IndexError` für ungültige Indizes.
+
+solution: |
+  ```python
+  class Punkt:
+      def __init__(self, x, y):
+          self.x = x
+          self.y = y
+
+      def __getitem__(self, item):
+          if item in [0, -2]:
+              return self.x
+          elif item in [1, -1]:
+              return self.y
+          else:
+              raise IndexError("Index muss 0 oder -2 für x, 1 oder -1 für y sein.")
+
+      def __setitem__(self, key, value):
+          if key in [0, -2]:
+              self.x = value
+          elif key in [1, -1]:
+              self.y = value
+          else:
+              raise IndexError("Index muss 0 oder -2 für x, 1 oder -1 für y sein.")
+  ```
+
+  In dieser Lösung wurden zwei Magic Methods implementiert:
+
+  1. `__getitem__`: Diese Methode ermöglicht den Zugriff auf die x- und y-Werte des Punktes über Indizes.
+  2. `__setitem__`: Diese Methode ermöglicht das Setzen der x- und y-Werte des Punktes über Indizes.
+
+  Beide Methoden berücksichtigen die verschiedenen Indexmöglichkeiten und werfen einen `IndexError` bei ungültigen Indizes.

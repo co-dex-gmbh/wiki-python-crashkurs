@@ -1,0 +1,79 @@
+title: Multiplizieren von Punkten
+question: |
+  Implementieren Sie die Möglichkeit, einen Punkt mit einer Zahl zu skalieren,
+  sodass z.B. `Punkt(1,2) * 4` als Ergebnis `Punkt(4,8)` ergibt.
+  Wenn mit einem anderen Typ als `int` oder `float` multipliziert wird,
+  so werfen Sie einen `TypeError`.
+
+  Passen Sie außerdem `__sub__` so an, dass die 
+  Multiplikation und die Addition verwendet wird:
+
+  P - Q = P + Q * (-1)
+
+  Achten Sie darauf, dass die bisherigen Tests funktionieren
+  und diese neuen Tests ebenfalls bestehen:
+
+  ```python
+  def test_mul_0(self):
+      self.assertEqual(Punkt(1, 2) * 4, Punkt(4, 8))
+
+  def test_mul_1(self):
+      self.assertEqual(Punkt(0, 0) * 4, Punkt(0, 0))
+
+  def test_mul_2(self):
+      self.assertEqual(Punkt(1, 4) * 0, Punkt(0, 0))
+
+  def test_mul_3(self):
+      self.assertEqual(Punkt(3, -2) * -1, Punkt(-3, 2))
+
+  def test_mul_4(self):
+      self.assertEqual(Punkt(3.5, 0.5) * 2, Punkt(7, 1))
+
+  def test_mul_5(self):
+      self.assertEqual(Punkt(0.1, 0.2) * 1.5, Punkt(0.15, 0.3))
+
+  def test_mul_6(self):
+      a = Punkt(2, 1)
+      a *= 0.2
+      self.assertEqual(a, Punkt(0.4, 0.2))
+      
+  def test_mul_7(self):
+      with self.assertRaises(TypeError):
+          Punkt(2, 1) * "Hallo"
+          
+  def test_sub_3(self):
+      with self.assertRaises(TypeError):
+          Punkt(2, 1) - 1
+  ```
+
+tip: |
+  - Nutzen Sie `__mul__` für die Multiplikation.
+  - Um Fließkommazahlen auf Gleichheit zu prüfen, nutzen Sie `isclose` aus dem `math` Modul.
+
+solution: |
+  ```python
+  from math import isclose
+
+  class Punkt:
+      def __eq__(self, other):
+          return (isinstance(other, Punkt) 
+                  and isclose(self.x, other.x) 
+                  and isclose(self.y, other.y))
+
+      def __sub__(self, other):
+          return self + other * (-1)
+
+      def __mul__(self, other):
+          if isinstance(other, (int, float)):
+              return Punkt(self.x * other, self.y * other)
+          else:
+              raise TypeError("Unsupported operand type. Use int or float")
+  ```
+
+  In dieser Lösung haben wir folgende Änderungen vorgenommen:
+
+  1. `__eq__`: Wir verwenden `isclose` für den Vergleich von Fließkommazahlen.
+  2. `__sub__`: Die Subtraktion wird nun durch Addition und Multiplikation implementiert.
+  3. `__mul__`: Diese neue Methode ermöglicht die Skalierung eines Punktes mit einer Zahl.
+
+  Alle Methoden prüfen den Typ des übergebenen Objekts, um TypeErrors zu vermeiden.

@@ -1,0 +1,131 @@
+title: "Radius oder Durchmesser"
+question: |
+  Erstelle eine Klasse `Kreis` mit zwei Properties: `radius` und `diameter`.
+  Erstelle die Properties so, dass immer `diameter = 2 * radius` gilt.
+
+  * Die Properties sollen auf `0` gesetzt werden, wenn einer der Properties negativ wird.
+
+  * Wenn versucht wird die Properties mit einem Wert zu füllen, der nicht `int` oder `float` ist,
+    soll eine passende Exception geworfen werden.
+
+  * Implementiere weiterhin die Möglichkeit den Radius eines Kreises zu vergrößern und zu skalieren,
+    indem man ihn mit Zahlen multipliziert. Z.B.:
+
+  ```python
+  k = Kreis(5)
+  print(f"Radius: {k.radius}, Durchmesser: {k.diameter}") # Radius: 5, Durchmesser: 10
+
+  k2 = k * 2
+  print(f"Radius: {k2.radius}, Durchmesser: {k2.diameter}") # Radius: 10, Durchmesser: 20
+  ```
+
+  * Schreibe mindestens 7 Unittest, die die Anforderungen prüfen.
+
+tip: |
+  ```python
+  import unittest
+
+  class KreisTest(unittest.TestCase):
+      def test_no_negativ_radius(self):
+          ...
+
+      def test_no_negativ_radius_from_setting(self):
+          ...
+
+      def test_diameter_is_ready_automatically(self):
+          ...
+
+      def test_radius_connected_to_diameter(self):
+          ...
+
+      def test_diameter_is_connected_to_radius(self):
+          ...
+
+      def test_multiply_kreis_with_positiv_number(self):
+          ...
+
+      def test_multiply_kreis_with_negativ_number(self):
+          ...
+  ```
+
+  Implementierung der Klasse:
+  Überlege dir, wie viele Attribute es tatsächlich brauch, um
+  Radius und Durchmesser zu speichern. 
+  Für das Multiplizieren nutze `__mul__`.
+
+solution: |
+  <details><summary>Lösung Tests</summary>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/3mH44DRp4Eo?si=S0jMli8t9yiXE5_c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <pre><code>import unittest
+
+
+  class KreisTest(unittest.TestCase):
+      def test_no_negativ_radius(self):
+          kreis = Kreis(-5)
+          self.assertEqual(kreis.diameter, 0)
+          self.assertEqual(kreis.radius, 0)
+
+      def test_no_negativ_radius_from_setting(self):
+          kreis = Kreis(5)
+          kreis.diameter = -3
+          self.assertEqual(kreis.diameter, 0)
+          self.assertEqual(kreis.radius, 0)
+
+      def test_diameter_is_ready_automatically(self):
+          kreis = Kreis(5)
+          self.assertEqual(kreis.diameter, 10)
+
+      def test_radius_connected_to_diameter(self):
+          kreis = Kreis(5)
+          kreis.radius = 7
+          self.assertEqual(kreis.diameter, 14)
+
+      def test_diameter_is_connected_to_radius(self):
+          kreis = Kreis(5)
+          kreis.diameter = 3
+          self.assertAlmostEqual(1.5, kreis.radius)
+
+      def test_multiply_kreis_with_positiv_number(self):
+          kreis = Kreis(5) * 3
+          self.assertEqual(kreis.diameter, 30)
+
+      def test_multiply_kreis_with_negativ_number(self):
+          kreis = Kreis(5) * -3
+          self.assertEqual(kreis.diameter, 0)
+
+      # Es können noch Tests hinzugefügt werden, die prüfen,
+      # dass die richtigen Exceptions geworfen werden.
+  </code></pre>
+  </details>
+
+  <details><summary>Lösung Implementierung der Klasse</summary>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/LzCGoGBIoks?si=4zW3Wcw2XzMb0Hif" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <pre><code>class Kreis:
+      def __init__(self, radius):
+          self.radius = radius
+
+      def get_radius(self):
+          return self.__radius
+
+      def set_radius(self, radius):
+          if isinstance(radius, int | float):
+              self.__radius = max(0, radius)
+          else:
+              raise TypeError()
+
+      def get_diameter(self):
+          return self.radius * 2
+
+      def set_diameter(self, diameter):
+          self.radius = diameter / 2
+
+      def __mul__(self, other):
+          if isinstance(other, int | float):
+              return Kreis(self.radius * other)
+          else:
+              raise TypeError()
+
+      diameter = property(get_diameter, set_diameter)
+      radius = property(get_radius, set_radius)
+  </code></pre>
+  </details>

@@ -1,0 +1,82 @@
+title: Weiter mit Punkten
+question: |
+  Implementiere die passende Methode, sodass die Subtraktion `A - B` zweier Punkte möglich ist.
+
+  Implementiere außerdem die passende Methode, um die Prüfung `A == B` durchzuführen,
+  mit der man zwei Punkte auf Gleichheit prüfen kann. Zwei Punkte sind gleich,
+  wenn alle Attribute (`x` und `y`) übereinstimmen.
+
+  Wenn alles richtig implementiert wurde, müsste dieser Test funktionieren:
+
+  ```python
+  from unittest import TestCase
+
+
+  class PunktTest(TestCase):
+
+      def test_equality_0(self):
+          self.assertEqual(Punkt(1, 2), Punkt(1, 2))
+
+      def test_equality_1(self):
+          self.assertNotEqual(Punkt(1, 2), Punkt(2, 1))
+
+      def test_equality_2(self):
+          self.assertNotEqual(Punkt(1, 2), (1, 2))
+
+      def test_sub_0(self):
+          a, b = Punkt(2, 1), Punkt(-1, 2)
+          self.assertEqual(a - b, Punkt(3, -1))
+
+      def test_sub_1(self):
+          a = Punkt(2, 1)
+          self.assertEqual(a - a, Punkt(0, 0))
+
+      def test_sub_2(self):
+          a = Punkt(2, 1)
+          a -= Punkt(-1, 2)
+          self.assertEqual(a, Punkt(3, -1))
+      
+      def test_sub_3(self):
+          with self.assertRaises(TypeError):
+              Punkt(3, 2) - 4
+  ```
+
+tip: |
+  - Nutze `__eq__` für die Gleichheitsprüfung
+  - Nutze `__sub__` für die Subtraktion
+
+solution: |
+  ```python
+  class Punkt:
+      def __init__(self, x, y):
+          self.x = x
+          self.y = y
+
+      def __str__(self):
+          return f"({self.x}, {self.y})"
+
+      def __add__(self, other):
+          if isinstance(other, Punkt):
+              return Punkt(self.x + other.x, self.y + other.y)
+          else:
+              raise TypeError("Unsupported operand type. Use with another Punkt object.")
+
+      def __eq__(self, other):
+          return (isinstance(other, Punkt)
+                  and self.x == other.x
+                  and self.y == other.y)
+
+      def __sub__(self, other):
+          if isinstance(other, Punkt):
+              return Punkt(self.x - other.x, self.y - other.y)
+          else:
+              raise TypeError("Unsupported operand type. Use with another Punkt object.")
+  ```
+
+  In dieser Lösung haben wir zwei neue Magic Methods implementiert:
+
+  1. `__eq__`: Diese Methode ermöglicht den Vergleich zweier Punkt-Objekte auf Gleichheit. Sie prüft, ob das andere Objekt ebenfalls ein Punkt ist und ob beide Koordinaten übereinstimmen.
+
+  2. `__sub__`: Diese Methode implementiert die Subtraktion zweier Punkte. Sie erstellt einen neuen Punkt, dessen Koordinaten die Differenz der Koordinaten der beiden Ausgangspunkte sind.
+
+  Beide Methoden prüfen zunächst, ob das übergebene Objekt vom Typ `Punkt` ist, um TypeErrors zu vermeiden.

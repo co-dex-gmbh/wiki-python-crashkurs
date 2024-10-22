@@ -1,0 +1,46 @@
+title: Klassenattribute gelten für alle Instanzen
+question: |
+  Sage voraus, was bei folgendem Code auf der Konsole erscheint.
+  Führe den Code aus und begründe die Ausgabe.
+
+  ```python
+  class Roboter:
+      marke = 'VW'
+
+  x = Roboter()
+  y = Roboter()
+
+  print(x.marke)
+  print(y.marke)
+  print(Roboter.marke)
+
+  Roboter.marke = 'Porsche'
+
+  print(x.marke) 
+  print(y.marke)
+  print(Roboter.marke)
+  ```
+
+  [Link zum Onlinecompiler💻](https://pythontutor.com/render.html#code=class%20Roboter%3A%0A%20%20%20%20marke%20%3D%20'VW'%0A%0Ax%20%3D%20Roboter%28%29%0Ay%20%3D%20Roboter%28%29%0A%0Aprint%28x.marke%29%0Aprint%28y.marke%29%0Aprint%28Roboter.marke%29%0A%0ARoboter.marke%20%3D%20'Porsche'%0A%0Aprint%28x.marke%29%20%0Aprint%28y.marke%29%0Aprint%28Roboter.marke%29&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false)
+
+solution: |
+  Ein Klassenattribut gilt für alle Instanzen einer Klasse.
+  Wenn man es ändert, ändert man es für alle, da sie alle das Attribut an einer Stelle nachlesen.
+
+  Die Ausgabe wird sein:
+
+  ```
+  VW
+  VW
+  VW
+  Porsche
+  Porsche
+  Porsche
+  ```
+
+  Erklärung:
+  - Zuerst wird das Klassenattribut 'marke' mit 'VW' initialisiert.
+  - Alle Instanzen (x und y) sowie die Klasse selbst greifen auf diesen Wert zu.
+  - Nach der Änderung des Klassenattributs auf 'Porsche' wird dieser neue Wert für alle Instanzen und die Klasse sichtbar.
+
+solution_video: https://www.youtube.com/embed/A7N1sua2L7s?si=-dlmHpWy1n_eBTbS

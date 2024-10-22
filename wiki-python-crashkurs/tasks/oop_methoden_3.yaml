@@ -1,0 +1,63 @@
+title: Auf in den Kampf!
+question: |
+  Erstelle eine Klasse Gladiator nach der folgenden Vorlage:
+
+  ```python
+  class Gladiator:
+      def __init__(self,name, hitpoints, attackpower):
+          ...
+      
+      def attack(self, enemy):
+          ...
+          
+      def is_alive(self):
+          ...
+          
+      def health_check(self):
+          ... # Nutze hier is_alive
+
+
+  attacker = Gladiator(name="Glassy", hitpoints=10, attackpower=20)
+  defender = Gladiator(name="Tanky", hitpoints=30, attackpower=5)
+
+  print(defender.health_check()) # Tanky hat noch 30 HP
+  attacker.attack(defender)
+  print(defender.health_check()) # Tanky hat noch 10 HP
+  attacker.attack(defender)
+  print(defender.health_check()) # Tanky liegt am Boden
+  ```
+
+  Sorge dafür, dass die richtigen Konsolentexte erscheinen. ⚔️
+
+solution: |
+  ```python
+  class Gladiator:
+      def __init__(self,name, hitpoints, attackpower):
+          self.name = name
+          self.hitpoints = hitpoints
+          self.attackpower = attackpower
+
+      def attack(self, enemy):
+          enemy.hitpoints -= self.attackpower
+          
+      def is_alive(self):
+          return self.hitpoints > 0
+      
+      def health_check(self):
+          if self.is_alive():
+              return f"{self.name} hat noch {self.hitpoints} HP."
+          else:
+              return f"{self.name} liegt am Boden." 
+
+
+  attacker = Gladiator(name="Glassy", hitpoints=10, attackpower=20)
+  defender = Gladiator(name="Tanky", hitpoints=30, attackpower=5)
+
+  print(defender.health_check()) # Tanky hat noch 30 HP
+  attacker.attack(defender)
+  print(defender.health_check()) # Tanky hat noch 10 HP
+  attacker.attack(defender)
+  print(defender.health_check()) # Tanky liegt am Boden
+  ```
+
+solution_video: https://www.youtube.com/embed/DBbwtUOTqko?si=746ca74y-0LiZFgS

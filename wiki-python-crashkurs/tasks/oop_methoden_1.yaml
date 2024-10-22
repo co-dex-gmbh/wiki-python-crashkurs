@@ -1,0 +1,33 @@
+title: Koordinaten setzen
+question: |
+  Erstelle in der folgenden Klasse `Point` zwei Methoden `set_coordinates(self, x, y)` und `get_coordinates(self)`.
+
+  * `set_coordinates` setzt das `x` und das `y` Attribut des Objektes.
+  * `get_coordinates` gibt die beiden Punkte als zwei Rückgabewerte zurück.
+
+  Der folgende Code soll dann funktionieren: 
+  ```python
+  point = Point()
+  point.set_coordinates(3, 5)
+  x, y = point.get_coordinates()
+  print(f"Punkt hat den x-Wert {x} und den y-Wert {y}")
+  ```
+
+solution: |
+  ```python
+  class Point:
+      def set_coordinates(self, x, y):
+          self.x = x
+          self.y = y
+
+      def get_coordinates(self):
+          return self.x, self.y
+
+
+  point = Point()
+  point.set_coordinates(3, 5)
+  x, y = point.get_coordinates()
+  print(f"Punkt hat den x-Wert {x} und den y-Wert {y}")
+  ```
+
+solution_video: https://www.youtube.com/embed/9ZYOFONkGF4?si=hN8OTjXWYgTrtb0J

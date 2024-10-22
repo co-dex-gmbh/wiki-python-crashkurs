@@ -1,0 +1,57 @@
+title: Verschiedene Tiere
+question: |
+  Erstellen Sie eine Python-Anwendung, die folgende Klassen für verschiedene Arten von Tieren implementiert:
+
+  1. Die Basisklasse `Tier` mit der Eigenschaft `name` und der Methode `bewegen()`.
+     Die Methode `bewegen()` soll den Namen des Tiers gefolgt von "bewegt sich" ausgeben.
+
+  2. Die abgeleitete Klasse `Hund`, die von `Tier` erbt und zusätzlich die Methode `bellen()` hat.
+     Die Methode `bellen()` soll den Namen des Hundes gefolgt von "bellt" ausgeben.
+
+  3. Die abgeleitete Klasse `Katze`, die von `Tier` erbt und zusätzlich die Methode `miauen()` hat.
+     Die Methode `miauen()` soll den Namen der Katze gefolgt von "miaut" ausgeben.
+
+  Der folgende Code soll durchführbar sein:
+
+  ```python
+  tier1 = Tier("Tier1")
+  tier1.bewegen()
+
+  hund1 = Hund("Bello")
+  hund1.bewegen()
+  hund1.bellen()
+
+  katze1 = Katze("Minka")
+  katze1.bewegen()
+  katze1.miauen()
+  ```
+
+  Implementieren Sie die Klassen `Tier`, `Hund` und `Katze` entsprechend der Anforderungen.
+
+solution: |
+  Hier ist eine mögliche Lösung:
+
+  ```python
+  class Tier:
+      def __init__(self, name):
+          self.name = name
+
+      def bewegen(self):
+          print(f"{self.name} bewegt sich.")
+
+
+  class Hund(Tier):
+      def bellen(self):
+          print(f"{self.name} bellt.")
+
+
+  class Katze(Tier):
+      def miauen(self):
+          print(f"{self.name} miaut.")
+  ```
+
+  Diese Implementierung erfüllt alle Anforderungen der Aufgabe:
+  - Die Basisklasse `Tier` hat eine `name` Eigenschaft und eine `bewegen()` Methode.
+  - Die `Hund` Klasse erbt von `Tier` und fügt die `bellen()` Methode hinzu.
+  - Die `Katze` Klasse erbt von `Tier` und fügt die `miauen()` Methode hinzu.
+  - Alle Methoden geben die entsprechenden Nachrichten aus, wie in der Aufgabenstellung beschrieben.

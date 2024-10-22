@@ -1,0 +1,114 @@
+title: Was ist nötig?
+question: |
+  Für die folgende Klasse sollen die Magic Methods definiert werden, sodass die Tests grün werden.
+  Versuche hier so wenig wie möglich Magic Methods zu definieren.
+
+  ```python
+  class Person:
+      def __init__(self, name, age):
+          self.name = name
+          self.age = age
+
+      ...
+  ```
+
+  ```python
+  import unittest
+
+
+  class PersonTest(unittest.TestCase):
+      def setUp(self):
+          self.anton_alt = Person("Anton", 65)
+          self.jutta_jung = Person("Jutta", 12)
+          self.jut_jung = Person("Jut", 12)
+
+      def test_lt_0(self):
+          self.assertTrue(self.jutta_jung < self.anton_alt)
+
+      def test_lt_1(self):
+          self.assertTrue(self.jutta_jung < 60)
+
+      def test_lt_2(self):
+          self.assertFalse(self.jutta_jung < 11)
+
+      def test_lt_error(self):
+          with self.assertRaises(TypeError):
+              r = self.jutta_jung < ""
+
+      def test_gt_0(self):
+          self.assertTrue(self.anton_alt > self.jutta_jung)
+
+      def test_gt_1(self):
+          self.assertTrue(30 > self.jutta_jung)
+
+      def test_ge_0(self):
+          self.assertTrue(self.anton_alt >= self.jutta_jung)
+
+      def test_ge_1(self):
+          self.assertTrue(50 >= self.jutta_jung)
+
+      def test_ge_error(self):
+          with self.assertRaises(TypeError):
+              r = self.jutta_jung <= ""
+
+      def test_le_0(self):
+          self.assertTrue(self.jutta_jung <= self.anton_alt)
+
+      def test_le_1(self):
+          self.assertTrue(self.jutta_jung <= 50)
+
+      def test_contains_0(self):
+          self.assertTrue("Jutta" in self.jutta_jung)
+
+      def test_contains_1(self):
+          self.assertTrue("Jut" in self.jutta_jung)
+
+      def test_contains_2(self):
+          self.assertFalse("Juttata" in self.jutta_jung)
+
+      def test_contains_3(self):
+          self.assertTrue("" in self.jutta_jung)
+
+      def test_contains_error(self):
+          with self.assertRaises(TypeError):
+              self.assertTrue(self.jut_jung in self.jutta_jung)
+
+  ```
+
+tip: |
+  Es werden 3 Methoden benötigt.
+
+solution: |
+  ```python
+  class Person:
+      def __init__(self, name, age):
+          self.name = name
+          self.age = age
+
+      def __lt__(self, other):
+          if isinstance(other, Person):
+              return self.age < other.age
+          if isinstance(other, int | float):
+              return self.age < other
+          raise TypeError(f"Comperator operation only allowed for Persons and float and int")
+
+      def __le__(self, other):
+          if isinstance(other, Person):
+              return self.age <= other.age
+          if isinstance(other, int | float):
+              return self.age <= other
+          raise TypeError(f"Comperator operation only allowed for Persons and float and int")
+
+      def __contains__(self, item):
+          if not isinstance(item, str):
+              raise TypeError(f"Item ist darf nicht vom Type {type(item)}, sondern muss vom Typ str sein.")
+          return item in self.name
+  ```
+
+  In dieser Lösung haben wir drei Magic Methods implementiert:
+
+  1. `__lt__`: Diese Methode ermöglicht den "kleiner als" Vergleich (<).
+  2. `__le__`: Diese Methode ermöglicht den "kleiner oder gleich" Vergleich (<=).
+  3. `__contains__`: Diese Methode ermöglicht die Überprüfung, ob ein String im Namen enthalten ist.
+
+  Mit diesen drei Methoden können alle Tests bestanden werden. Die Methoden `__gt__` und `__ge__` werden automatisch aus `__lt__` und `__le__` abgeleitet.

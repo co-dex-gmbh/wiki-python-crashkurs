@@ -1,7 +1,6 @@
 title: "Das erste Programm"
 question: |
   1. Führe den folgenden Code mit der Python-Konsole aus
-  2. Führe den folgenden Code in VSCode aus
 
   ```python
   print("Hello Wolfsburg! Das ist mein erstes Programm!")

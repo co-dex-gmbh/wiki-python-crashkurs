@@ -1,0 +1,18 @@
+title: Typ untersuchen
+question: |
+  Untersuche mithilfe von `type` die Typen von `x`, `y`, `y2` und `Roboter` aus dem folgenden Beispiel:
+
+  ```python
+  class Roboter:
+      pass
+
+  x = Roboter()
+  y = Roboter()
+  y2 = y
+  ```
+
+  Gib die Typen in der angegebenen Reihenfolge aus.
+
+solution: |
+  `Roboter` ist vom Typ <code>type</code> und `x`, `y`, `y2` sind vom Typ <code>__main__.Roboter</code>. Das <code>__main__</code> entsteht hier nur, da wir die Datei direkt ausführen. Wenn wir Roboter importiert hätten, wären diese einfach vom Typ <code>Roboter</code>.
+

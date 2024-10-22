@@ -1,0 +1,34 @@
+title: Ab in die Arena!
+question: |
+  Erstelle eine Klasse `Arena`, bei der als Attribute zwei Gladiatoren festgelegt werden.
+  Die beiden Gladiatoren sollen sich hier gegenseitig angreifen, bis nur noch einer steht.
+
+  Um den Kampf zu starten, soll eine Methode `fight` implementiert werden. Du kannst gerne Print-Messages
+  hinzufügen, die den Kampf spannend und nachvollziehbar gestalten. Der folgende Code soll durchführbar sein:
+
+  ```python
+  a = Gladiator(name="Glassy", hitpoints=10, attackpower=20)
+  d = Gladiator(name="Tanky", hitpoints=30, attackpower=5)
+
+  arena = Arena(a, d)
+  arena.fight()
+  ```
+
+solution: |
+  ```python
+  class Arena:
+      def __init__(self, attacker: Gladiator, defender: Gladiator):
+          self.attacker = attacker
+          self.defender = defender
+
+      def fight(self):
+          while self.attacker.is_alive() and self.defender.is_alive():
+              self.attacker, self.defender = self.defender, self.attacker
+              self.attacker.attack(self.defender)
+
+          winner = self.attacker if self.attacker.is_alive() else self.defender
+
+          print(f"The winner is {winner.name}!🎉🎉🎉")
+  ```
+
+solution_video: https://www.youtube.com/embed/I9BhX2cqoR8?si=wjzPC0gQxRwE_OPE

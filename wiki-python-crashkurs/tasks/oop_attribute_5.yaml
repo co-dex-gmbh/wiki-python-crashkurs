@@ -1,0 +1,50 @@
+title: Bei Unklarheit nachfragen
+question: |
+  Was tut die `hasattr` Methode in diesem Codebeispiel? Was passiert, wenn man den if-Block entfernt?
+
+  ```python
+  class Roboter:
+      marke = "VW"
+
+  x = Roboter()
+
+  if not hasattr(x, "speed"):
+      x.speed = 0
+
+  print(f"Roboter fährt {x.speed} km/h")
+
+  if hasattr(x, "marke"):
+      print(f"Roboter hat die Marke {x.marke}")
+  ```
+
+  Neben `hasattr` gibt es die vorimplementierten Funktionen `getattr` und `setattr`. 
+  Finde heraus, was diese Funktionen tun und ändere den obigen Code so, dass diese Funktionen verwendet werden.
+
+  Was macht der dritte Parameter von `getattr`?
+
+solution: |
+  `hasattr` prüft, ob die Instanz ein Attribut oder Klassenattribut besitzt.
+
+  `setattr` setzt ein Attribut.
+
+  `getattr` gibt einem das Attribut mit dem gegebenen Namen zurück. Der dritte Parameter ist optional und wird 
+  zurückgegeben, wenn kein Attribut des angegebenen Namens gefunden wurde.
+
+  Der geänderte Code sieht wie folgt aus:
+
+  ```python
+  class Roboter:
+      marke = "VW"
+
+  x = Roboter()
+
+  if not hasattr(x, "speed"):
+      setattr(x, "speed", 0)
+
+  print(f"Roboter fährt {getattr(x, 'speed')} km/h")
+
+  if hasattr(x, "marke"):
+      print(f"Roboter hat die Marke {getattr(x, 'marke')}")
+  ```
+
+solution_video: https://www.youtube.com/embed/isqU3A8-9a0?si=l_lWXQCJHFr8ug2D
