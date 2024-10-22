@@ -1,0 +1,2339 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>Unittest - Python Crashkurs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/python_tutor_admonition.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unittest" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Python Crashkurs" class="md-header__button md-logo" aria-label="Python Crashkurs" data-md-component="logo">
+      
+  <img src="../../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Crashkurs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Unittest
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Python Crashkurs" class="md-nav__button md-logo" aria-label="Python Crashkurs" data-md-component="logo">
+      
+  <img src="../../../../assets/logo.png" alt="logo">
+
+    </a>
+    Python Crashkurs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Übersicht
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python_grundlagen/python_grundlagen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einführung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Variablen
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Variablen
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../variables/variablen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Was sind Variablen?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../variables/datentypen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datentypen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../variables/nutzereingaben/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nutzereingaben
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bedingter Code
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Bedingter Code
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bedingter_code/bedingter_code/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    if-Blöcke
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bedingter_code/bedingung/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bedingungen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../bedingter_code/bedingungen_verkn%C3%BCpfen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bedingungen verknüpfen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../loops/loops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schleifen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Collections
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Collections
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../collections/lists/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Listen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../collections/lists_append/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Listen erweitern
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../collections/for_loop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Listen durchlaufen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../collections/weitere_datenstrukturen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Weiter Datenstrukturen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../collections/sets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../collections/dictionaries/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dictionaries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../list_comp/list_comp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    List Comprehension
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Funktionen
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Funktionen
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../functions/functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Funktionen definieren
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../functions/functions_with_parameters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parameter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../functions/functions_with_returns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rückgabewerte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Error Handling
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Error Handling
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../try_except/try_except/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    try-except
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Module & Pakete
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Module & Pakete
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../packages/moduls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../packages/packages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pakete
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../_venv/_venv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtuelle Umgebung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Pandas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Pandas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pandas/pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einführung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pandas/series_dataframes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Series & DataFrames
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pandas/read_dataframes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lesen von DataFrames
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pandas/export_dataframes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Export von DataFrames
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pandas/filter_dataframes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Filtern von DataFrames
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pandas/statistic_dataframes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Statistik mit DataFrames
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pandas/add_and_remove_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Daten entfernen & hinzufügen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pandas/merge_dataframes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DataFrames zusammenfügen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pandas/useful_functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nützliche Funktionen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../pandas/clean_dataframes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DataFrames bereinigen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Plotting & Dashboards
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            Plotting & Dashboards
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visualization/visualization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einführung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visualization/matplotlib/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Matplotlib
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visualization/seaborn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Seaborn
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visualization/plotly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plotly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../visualization/streamlit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Streamlit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    OOP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            OOP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../define_classes/define_classes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einführung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../attributes/attributes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Attribute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../methods/methods/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Methoden
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vererbung/vererbung/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vererbung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../magic_methods/magic_methods/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Magic Methods
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getter_setter/getter_setter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getter & Setter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../class_static_methods/class_static_methods/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class- & Static Methods
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../unit_tests/unit_tests/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unit Tests
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dateioperationen/dateioperationen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dateioperationen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
+        
+          
+          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Versionskontrolle
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_18">
+            <span class="md-nav__icon md-icon"></span>
+            Versionskontrolle
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../git/git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../project/tic_tac_toe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projekt
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="unittest">Unittest<a class="headerlink" href="#unittest" title="Permanent link">&para;</a></h1>
+<details>
+<summary>
+🎦 Video
+</summary>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hnd6Fs2L0do?si=MfhPW2wgUOiN8qel" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</details>
+
+<p>Wir haben im <a href="../../docstring/docstring.md#unittests-in-der-dokumentation">Kapitel Docstring</a> gesehen,
+wie man Unittests in den Docstring einbauen kann. Das ist nützlich, um sicherzustellen, dass der Nutzer
+Codebeispiele besitzt und diese auch immer Funktionieren.</p>
+<p>Eine weitere Möglichkeit Unittests zu schreiben ist mittels des Pakets <code>unittest</code>.
+Der offensichtlichste Unterschied zum Modul <code>doctest</code> besteht darin, dass die
+Testfälle bei dem Modul <code>unittest</code> außerhalb des eigentlichen Programmcodes definiert werden,
+d.h. normalerweise in einer eigenen Datei. Der Vorteil besteht unter anderem
+darin, dass die Programmdokumentation und die ausführliche Testung voneinander getrennt sind.
+Der Preis dafür besteht jedoch in einem erhöhten Aufwand
+für die Erstellung der Tests. Doch dieser lohnt sich.</p>
+<p>Wir wollen nun für unser Modul <code>fibonacci.py</code> einen Test mit <code>unittest</code> erstellen.</p>
+<p><a href="https://pythontutor.com/render.html#code=def%20fib%28n%29%3A%0A%20%20%20%20%22%22%22%20%0A%20%20%20%20Die%20Fibonacci-Zahl%20f%C3%BCr%20die%20n-te%20%0A%20%20%20%20Generation%20wird%20iterativ%20berechnet%0A%20%20%20%20%22%22%22%0A%20%20%20%20a,%20b%20%3D%200,%201%0A%20%20%20%20for%20_%20in%20range%28n%29%3A%0A%20%20%20%20%20%20%20%20a,%20b%20%3D%20b,%20a%20%2B%20b%0A%20%20%20%20return%20a%0A%20%20%20%20%0Aprint%28fib%286%29%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false">Link zum Onlinecompiler💻</a></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot; </span>
+<span class="sd">    Die Fibonacci-Zahl für die n-te </span>
+<span class="sd">    Generation wird iterativ berechnet</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+    <span class="k">return</span> <span class="n">a</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">fib</span><span class="p">(</span><span class="mi">6</span><span class="p">))</span>
+</code></pre></div></td></tr></table></div>
+<p>In einer Datei, z.B. <code>fibonacci_unittest.py</code>, müssen wir das Modul <code>unittest</code> und
+das zu testende Modul, also in unserem Fall <code>fibonacci</code>, importieren.</p>
+<p><strong>Hinweis:</strong> Es empfiehlt sich eine einheitliche Konvention innerhalb des Projekts
+für die Dateinamen die Tests enthalten zu wählen.
+Wird <em>Visual Studio Code</em> verwendet so sollte für die Ausführungserkennung das Wort <code>test</code> im Dateinamen vorkommen.
+Entweder <code>fibonacci_test.py</code> oder <code>test_fibonacci.py</code> abhängig davon, ob bevorzugt wird alle Testdateien im Dateibaum
+nebeneinandern zu haben, oder alternativ die Testdatei neben der Codedatei, die sie testet, liegen zu haben.</p>
+<p>Außerdem müssen wir eine Klasse mit beliebigem Namen - wir wählen in unserem Beispiel <code>FibonacciTest</code> - erstellen,
+die von <code>unittest.TestCase</code> erbt. Wir werden das Konzept von Vererbung später genauer betrachtet; kurz gesagt
+sorgen wir so dafür, dass unsere neue Klasse schon jede Menge Funktionen bereithält.</p>
+<p>In dieser Klasse werden die nötigen Testfälle in Methoden definiert.
+<strong>Der Name dieser Methoden ist nicht beliebig, denn er muss mit <strong>test</strong> beginnen.</strong>
+In den Methoden benutzen wir die Methode <code>assertEqual</code> der Klasse
+<code>TestCase</code>. <code>assertEqual(first, second, msg = None)</code> prüft, ob der Ausdruck <code>first</code> gleich dem Ausdruck <code>second</code> ist.
+Falls die beiden Ausdrücke ungleich
+sind, wird <code>msg</code> ausgegeben, wenn <code>msg</code> ungleich <code>None</code> ist.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">unittest</span>
+<span class="kn">from</span> <span class="nn">fibonacci</span> <span class="kn">import</span> <span class="n">fib</span>
+
+
+<span class="k">class</span> <span class="nc">FibonacciTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">test_calculation_0</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">fib</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_calculation_1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">fib</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_calculation_2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">fib</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="mi">5</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_calculation_3</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">fib</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="mi">55</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_calculation_4</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">fib</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span> <span class="mi">6765</span><span class="p">)</span>
+
+
+<span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+
+<span class="c1"># Für Jupyter/IPython Sessions:</span>
+<span class="c1"># unittest.main(argv=[&#39;&#39;], verbosity=2, exit=False) </span>
+</code></pre></div></td></tr></table></div>
+<p>Rufen wir obigen Test auf, erhalten wir folgende Ausgabe:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code>Launching<span class="w"> </span>pytest<span class="w"> </span>with<span class="w"> </span>arguments<span class="w"> </span>python_programm.py::FibonacciTest<span class="w"> </span>--no-header<span class="w"> </span>--no-summary<span class="w"> </span>-q<span class="w"> </span><span class="k">in</span><span class="w"> </span>C:<span class="se">\U</span>sers<span class="se">\V</span>ikto<span class="se">\P</span>ycharmProjects<span class="se">\w</span>iki-python
+
+<span class="o">=============================</span><span class="w"> </span><span class="nb">test</span><span class="w"> </span>session<span class="w"> </span><span class="nv">starts</span><span class="w"> </span><span class="o">=============================</span>
+collecting<span class="w"> </span>...<span class="w"> </span>collected<span class="w"> </span><span class="m">5</span><span class="w"> </span>items
+
+python_programm.py::FibonacciTest::test_calculation_0<span class="w"> </span>
+python_programm.py::FibonacciTest::test_calculation_1<span class="w"> </span>
+python_programm.py::FibonacciTest::test_calculation_2<span class="w"> </span>
+python_programm.py::FibonacciTest::test_calculation_3<span class="w"> </span>
+python_programm.py::FibonacciTest::test_calculation_4<span class="w"> </span>
+
+<span class="o">==============================</span><span class="w"> </span><span class="m">5</span><span class="w"> </span>passed<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.03s<span class="w"> </span><span class="o">==============================</span>
+PASSED<span class="w">                   </span><span class="o">[</span><span class="w"> </span><span class="m">20</span>%<span class="o">]</span>PASSED<span class="w">                   </span><span class="o">[</span><span class="w"> </span><span class="m">40</span>%<span class="o">]</span>PASSED<span class="w">                   </span><span class="o">[</span><span class="w"> </span><span class="m">60</span>%<span class="o">]</span>PASSED<span class="w">                   </span><span class="o">[</span><span class="w"> </span><span class="m">80</span>%<span class="o">]</span>PASSED<span class="w">                   </span><span class="o">[</span><span class="m">100</span>%<span class="o">]</span>
+Process<span class="w"> </span>finished<span class="w"> </span>with<span class="w"> </span><span class="nb">exit</span><span class="w"> </span>code<span class="w"> </span><span class="m">0</span>
+</code></pre></div></td></tr></table></div>
+<p>Bei der normalen Programmentwicklung ist dies das von uns gewünschte Ergebnis.</p>
+<h3 id="methoden-der-klasse-testcase">Methoden der Klasse TestCase<a class="headerlink" href="#methoden-der-klasse-testcase" title="Permanent link">&para;</a></h3>
+<p>Wir wollen nun näher auf die Klasse TestCase eingehen. Wir stellen dazu einige
+wichtige Methoden dieser Klasse vor.</p>
+<table>
+<thead>
+<tr>
+<th>Methode</th>
+<th>Bedeutung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>setUp()</code></td>
+<td>Bei der Methode <code>setUp</code> handelt es sich um eine sogenannte Hook-Methode. Sie wird vor jedem Aufruf der implementierten Testmethoden aufgerufen. Wird in der Methode setUp eine Ausnahme generiert, so wird diese auch als Error in der Testausgabe ausgegeben. Selbstverständlich wird auch bei einer Ausnahme im <code>setUp</code>-Code der Test abgebrochen.</td>
+</tr>
+<tr>
+<td><code>tearDown()</code></td>
+<td>Die Methode <code>tearDown</code> wird nach dem Aufruf einer Testmethode gestartet. Ebenso wie bei setUp gilt, dass im Code von tearDown generierte Ausnahmen auch in der Testausgabe ausgegeben werden.</td>
+</tr>
+<tr>
+<td><code>assertAlmostEqual(self, first, second, places=None, msg=None, delta=None)</code></td>
+<td>Diese Methode schlägt fehl, wenn die Differenz der beiden Parameter <code>first</code> und <code>second</code> gleich <code>0</code> ist, nachdem man sie vor dem Vergleich auf <code>places</code> Nachkommastellen gerundet hatte. Der Default-Wert für <code>places</code> ist <code>7</code>.</td>
+</tr>
+<tr>
+<td><code>assertCountEqual(self, first, second, msg=None)</code></td>
+<td>Die Parameter <code>first</code> und <code>second</code> müssen hierbei sequentielle Datentypen sein. Es muss folgendes gelten:<br>Alle Elemente müssen genauso oft in <code>first</code> wie in <code>second</code> vorkommen.<br><br>Beispiel:<br><br><code>[0, 1, 1]</code> und <code>[1, 0, 1]</code> gelten in obigem Sinne als gleich, weil die 0 und die 1 jeweils gleich oft vorkommen.<br><br>[0, 0, 1] und [0, 1] sind verschieden, weil die <code>0</code> in der ersten Liste zweimal vorkommt und in der zweiten Liste nur einmal.</td>
+</tr>
+<tr>
+<td><code>assertDictEqual(self, d1, d2, msg=None)</code></td>
+<td>Betrachtet die beiden Argumente als Dictionaries und prüft auf Gleichheit.</td>
+</tr>
+<tr>
+<td><code>assertEqual(self, first, second, msg=None)</code></td>
+<td>Der Test schlägt fehl, wenn die Parameter "first" und "second" nicht gleich sind. Dabei ist Gleichheit im Sinne von "==" gemeint, also Wertegleichheit und nicht nur reine Objektgleichheit.</td>
+</tr>
+<tr>
+<td><code>assertTrue(self, expr, msg=None)</code></td>
+<td>Prüft, ob der Ausdruck <code>expr</code> <code>True</code> ist.</td>
+</tr>
+<tr>
+<td><code>assertGreater(self, a, b, msg=None)</code></td>
+<td>Prüft, ob a &gt; b gilt.</td>
+</tr>
+<tr>
+<td><code>assertGreaterEqual(self, a, b, msg=None)</code></td>
+<td>Prüft, ob a ≥ b gilt.</td>
+</tr>
+<tr>
+<td><code>assertFalse(self, expr, msg=None)</code></td>
+<td>Prüft, ob der Ausdruck <code>expr</code> <code>False</code> ist.</td>
+</tr>
+<tr>
+<td><code>assertLess(self, a, b, msg=None)</code></td>
+<td>Prüft, ob a &lt; b gilt.</td>
+</tr>
+<tr>
+<td><code>assertLessEqual(self, a, b, msg=None)</code></td>
+<td>Prüft, ob a ≤ b gilt.</td>
+</tr>
+<tr>
+<td><code>assertIn(self, member, container, msg=None)</code></td>
+<td>Prüft, ob a in b gilt.</td>
+</tr>
+<tr>
+<td><code>assertIs(self, expr1, expr2, msg=None)</code></td>
+<td>Prüft, ob "a is b" gilt.</td>
+</tr>
+<tr>
+<td><code>assertIsInstance(self, obj, cls, msg=None)</code></td>
+<td>Prüft, ob isinstance(obj, cls) gilt.</td>
+</tr>
+<tr>
+<td><code>assertIsNone(self, obj, msg=None)</code></td>
+<td>Prüft, ob "obj is None" gilt.</td>
+</tr>
+<tr>
+<td><code>assertIsNot(self, expr1, expr2, msg=None)</code></td>
+<td>Prüft, ob "a is not b" gilt.</td>
+</tr>
+<tr>
+<td><code>assertIsNotNone(self, obj, msg=None)</code></td>
+<td>Prüft, ob obj nicht None ist.</td>
+</tr>
+<tr>
+<td><code>assertListEqual(self, list1, list2, msg=None)</code></td>
+<td>Listen werden auf Gleichheit geprüft.</td>
+</tr>
+<tr>
+<td><code>assertMultiLineEqual(self, first, second, msg=None)</code></td>
+<td>Mehrzeilige Strings werden auf Gleichheit geprüft.</td>
+</tr>
+<tr>
+<td><code>assertNotRegexpMatches(self, text, unexpected_regexp, msg=None)</code></td>
+<td>Schlägt fehl, wenn der Text "text" den regulären Ausdruck unexpected_regexp matched.</td>
+</tr>
+<tr>
+<td><code>assertRaises(exception, callable, msg=None)</code></td>
+<td>Prüft, ob die angegebene Exception geworfen wird, wenn das <code>callable</code> aufgerufen wird. Wird gerne in einem <code>with</code>-Block verwendet.</td>
+</tr>
+<tr>
+<td><code>assertTupleEqual(self, tuple1, tuple2, msg=None)</code></td>
+<td>Analog zu assertListEqual</td>
+</tr>
+</tbody>
+</table>
+<p>Sie dazu <a href="https://docs.python.org/3/library/unittest.html">die Dokumentation</a>.</p>
+<h3 id="aufgabe-eigene-test-schreiben">Aufgabe: Eigene Test schreiben🌶🌶<a class="headerlink" href="#aufgabe-eigene-test-schreiben" title="Permanent link">&para;</a></h3>
+<p>Schreibe Tests für die folgende Funktion, die alle positiven Zahlen in einer Liste aufsummiert:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">sum_positives</span><span class="p">(</span><span class="n">mylist</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">mylist</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+Schreibe dabei Tests für folgende Fälle:</p>
+<ul>
+<li>leere Liste wird übergeben.</li>
+<li>Liste mit einem Element wird übergeben.</li>
+<li>Liste mit mehr als einem Element wird übergeben.</li>
+<li>Eine Liste mit den Zahlen von 1 bis 1000 übergeben wird</li>
+<li>Liste nur aus negativen Zahlen wird übergeben.</li>
+<li>Liste mit nur positiven Zahlen verhält sich genauso wie <code>sum</code>.</li>
+<li>Exception wird geworfen, wenn z.B. ein Integer übergeben wird (Recherche nötig).</li>
+<li>Wenn die Liste <code>float</code> enthält, ist der Rückgabetyp auch float.</li>
+<li>der Output für <code>[0.1, 0.2, -0.5]</code> ist fast <code>0.3</code>.</li>
+</ul>
+<details>
+<summary>Lösung</summary>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LJ-_kWTeNW0?si=jB99blO-z4ay1KKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<pre><code>import unittest
+
+def sum_positives(mylist):
+    return sum(i for i in mylist if i > 0)
+
+class SumTest(unittest.TestCase):
+    # * leere Liste wird übergeben.
+    def test_sum_empty(self):
+        self.assertEqual(sum_positives([]), 0)
+
+    # * Liste mit einem Element wird übergeben.
+    def test_sum_singleton(self):
+        self.assertEqual(sum_positives([5]), 5)
+
+    # * Liste mit mehr als einem Element wird übergeben.
+    def test_sum_multiple_elements(self):
+        self.assertEqual(sum_positives([5, -5, 12]), 17)
+
+    # * Eine Liste mit den Zahlen von 1 bis 1000 übergeben wird
+    def test_big_sum(self):
+        n = 1000
+        big_list = list(range(1, n + 1))
+        expected = (n * (n+1)) // 2
+        self.assertEqual(sum_positives(big_list), expected)
+
+    # * Liste nur aus negativen Zahlen wird übergeben.
+    def test_only_negative_numbers(self):
+        self.assertEqual(sum_positives([-1, -3, -4]), 0)
+
+    # * Liste mit nur positiven Zahlen verhält sich genauso wie `sum`.
+    def test_sum_equal_to_sum_positive_when_only_positive(self):
+        my_list = [3, 5, 29, 4, 2]
+        self.assertEqual(sum_positives(my_list), sum(my_list))
+
+    # * Exception wird geworfen, wenn z.B. ein Integer übergeben wird (Recherche nötig).
+    def test_exception_when_wrong_type(self):
+        with self.assertRaises(TypeError):
+            sum_positives(2)
+
+    # * Wenn die Liste `float` enthält, ist der Rückgabetyp auch float.
+    def test_return_float_when_input_float(self):
+        self.assertIsInstance(sum_positives([0.3]), float)
+
+    # * der Output für `[0.1, 0.2, -0.5]` ist fast `0.3`.
+    def test_floaty_example(self):
+        self.assertAlmostEqual(sum_positives([0.1, 0.2, -0.5]), 0.3)
+
+unittest.main()</code></pre>
+</details>
+
+<h3 id="aufgabe-erst-die-tests">Aufgabe: Erst die Tests🌶🌶<a class="headerlink" href="#aufgabe-erst-die-tests" title="Permanent link">&para;</a></h3>
+<p>Erstelle fünf Tests für die Funktion <code>get_capital_letters(string)</code>.
+Diese Funktion gibt einem aus einem String alle Großbuchstaben zurück.
+Zum Beispiel: </p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">get_capital_letters</span><span class="p">(</span><span class="s2">&quot;Ich liebe den BVB&quot;</span><span class="p">)</span> <span class="c1"># &quot;IBVB&quot; </span>
+</code></pre></div></td></tr></table></div>
+Überlege dir, dass die Tests verschiedene Szenarien abfragen.
+Erst nachdem du die Tests geschrieben hast, implementiere die Funktion!</p>
+<details>
+<summary>Lösung</summary>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZADHeZo9sJo?si=1DOdbMzqSA-td31w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<pre><code>import unittest
+
+
+def get_capital_letters(string):
+    return "".join(letter for letter in string if letter.isupper())
+
+
+
+class TestCapitalLetters(unittest.TestCase):
+    def test_empty(self):
+        self.assertEqual(get_capital_letters(""), "")
+
+    def test_normalen_satz(self):
+        self.assertEqual(get_capital_letters("Hallo. Ich bin in Kiel."), "HIK")
+
+    def test_only_capital_letters(self):
+        string = "ABCEDGEFGHDDSE"
+        self.assertEqual(get_capital_letters(string), string)
+
+    def test_no_capital_letters(self):
+        self.assertEqual(get_capital_letters("abcdefg"), "")
+
+    def test_correct_return_type(self):
+        self.assertIsInstance(get_capital_letters("Hallo du"), str)
+</code></pre></details>
+
+<h3 id="aufgabe-wie-viele-tests">Aufgabe: Wie viele Tests<a class="headerlink" href="#aufgabe-wie-viele-tests" title="Permanent link">&para;</a></h3>
+<p>Wie viele Tests sind im folgenden Programmcode notwendig,
+um alle Fälle zu testen? Schreibe die dazugehörigen Tests.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_price</span><span class="p">(</span><span class="n">age</span><span class="p">,</span> <span class="n">is_weekend</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">is_weekend</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">5</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">age</span> <span class="o">&lt;</span> <span class="mi">12</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">2</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="mi">7</span>
+</code></pre></div></td></tr></table></div>
+<details>
+<summary>Lösung</summary>
+
+<pre><code>import unittest
+
+
+class PriceTest(unittest.TestCase):
+    def test_get_price_0(self):
+        self.assertEqual(get_price(11, True), 0)
+
+    def test_get_price_1(self):
+        self.assertEqual(get_price(12, True), 5)
+
+    def test_get_price_2(self):
+        self.assertEqual(get_price(11, False), 2)
+
+    def test_get_price_3(self):
+        self.assertEqual(get_price(12, False), 7)
+</code></pre>
+</details>
+
+<h3 id="aufgabe-den-wald-vor-lauter-baumen">Aufgabe: Den Wald vor lauter Bäumen🌶🌶🌶🌶<a class="headerlink" href="#aufgabe-den-wald-vor-lauter-baumen" title="Permanent link">&para;</a></h3>
+<p>Diese Aufgabe dient den Selbststudium zu Hause.</p>
+<p>Wir wollen nun einen Suchbaum implementieren. Erstelle also eine Klasse <code>Suchbaum</code>.
+Instanzen der Klasse haben drei Attribute:</p>
+<ul>
+<li><code>value</code>, in dem der Wert des Knotens gespeichert wird.</li>
+<li><code>left</code>, in dem ein anderer Suchbaum oder <code>None</code> gespeichert ist.</li>
+<li><code>right</code>, in dem ein anderer Suchbaum oder <code>None</code> gespeichert ist.</li>
+</ul>
+<p>Weiterhin soll es folgende Funktionen geben:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Suchbaum</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">new_value</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Fügt dem Suchbaum ein neues Element hinzu. Wenn *new_value* &lt; *self.value* ist,</span>
+<span class="sd">        so wird es dem linken Teilbaum hinzugefügt. Andernfalls dem rechten.</span>
+
+<span class="sd">        Wenn der jeweilige Teilbaum nicht existiert, wird er erstellt.&quot;&quot;&quot;</span>
+        <span class="o">...</span>
+
+    <span class="k">def</span> <span class="nf">contains</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Prüft, ob das *element* im Suchbaum ist und gibt True zurück, wenn ja.&quot;&quot;&quot;</span>
+        <span class="o">...</span>
+</code></pre></div></td></tr></table></div>
+<p>Füllen die Funktionsrümpfe, sodass die folgenden Unit-Tests grün werden:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">unittest</span>
+
+<span class="k">class</span> <span class="nc">SuchbaumTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span> <span class="o">=</span> <span class="n">Suchbaum</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test_contains_0</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">test_contains_1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">test_contains_2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">test_contains_3</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertFalse</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tree</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">test_contains_4</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">Suchbaum</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">test_contains_5</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertFalse</span><span class="p">(</span><span class="n">Suchbaum</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+
+
+<span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<details>
+<summary>Lösung</summary>
+
+<pre><code>class Suchbaum:
+
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+
+    def add(self, new_value):
+        if new_value < self.value:
+            if self.left is None:
+                self.left = Suchbaum(new_value)
+            else:
+                self.left.add(new_value)
+        else:
+            if self.right is None:
+                self.right = Suchbaum(new_value)
+            else:
+                self.right.add(new_value)
+
+    def contains(self, value_to_find):
+        if self.value == value_to_find:
+            return True
+
+        if self.left is not None and value_to_find < self.value:
+            return self.left.contains(value_to_find)
+
+        if self.right is not None and self.value < value_to_find:
+            return self.right.contains(value_to_find)
+
+        return False</code></pre>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.kununu.com/de/qualidy" target="_blank" rel="noopener" title="www.kununu.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M311 86.3c12.3-12.7 12-32.9-.7-45.2s-32.9-12-45.2.7l-155.2 160L64 249V64c0-17.7-14.3-32-32-32S0 46.3 0 64v384c0 17.7 14.3 32 32 32s32-14.3 32-32V341l64.7-66.7 133 192c10.1 14.5 30 18.1 44.5 8.1s18.1-30 8.1-44.5L174.1 227.4z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.google.com/search?sca_esv=7e6ba2047fcb60f3&uds=AMwkrPtyB8MsmozA4Lwzqy2G2HCu-abqzc6moOG48q3gP5dtjTRzC2Ws0eSwcyLXDfZNuYCrZ7ByIreHLG9th3vKLekPoVeey0tumAbet4cVLQRLzdRFhUbOGbnyp3xo1V0hzzaNmkCN&si=AKbGX_rcuucMgom2rba1cdwsvM2SVoIkP2btyqGMV4t0GuHIs4sGV_1tpuqR0YHG4Rzd9SdJcL-lW6E-2aJA5azZLTKkIOrZ2j2aWwoBkVbdEJ0o0GPcQhs%3D&q=Qualidy+GmbH+Rezensionen&sa=X&ved=2ahUKEwibsbnSgcmFAxXNQvEDHaVYCiAQ3PALegQIRxAF" target="_blank" rel="noopener" title="www.google.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.35 11.1h-9.17v2.73h6.51c-.33 3.81-3.5 5.44-6.5 5.44C8.36 19.27 5 16.25 5 12c0-4.1 3.2-7.27 7.2-7.27 3.09 0 4.9 1.97 4.9 1.97L19 4.72S16.56 2 12.1 2C6.42 2 2.03 6.8 2.03 12c0 5.05 4.13 10 10.22 10 5.35 0 9.25-3.67 9.25-9.09 0-1.15-.15-1.81-.15-1.81"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.4c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64h185.3c2.2 20.4 3.3 41.8 3.3 64m28.8-64h123.1c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64m112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6 78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7 10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5 11.6 26 20.9 58.2 27 94.7m-209 0H18.6c30-74.1 93.6-130.9 172-151.6-25.5 34.2-45.3 87.7-55.3 151.6M8.1 192h123.1c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64m186.6 254.6c-11.6-26-20.9-58.2-27-94.6h176.6c-6.1 36.4-15.5 68.6-27 94.6-10.5 23.6-22.2 40.7-33.5 51.5-11.2 10.7-20.5 13.9-27.8 13.9s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6-78.4-20.7-142-77.5-172-151.6zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6 25.5-34.2 45.2-87.7 55.3-151.6h116.7z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="../../../../javascripts/pytutor_button.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+      
+        <script src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+      
+    
+  </body>
+</html>

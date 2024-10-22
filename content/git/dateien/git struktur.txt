@@ -1,0 +1,126 @@
+# git Struktur
+
+# Lernziele dieses Kapitels:
+    # Du verstehst wofür GIT da ist.
+    # Du hast dein eigenes Repository erzeugt.
+    # Du hast ein Repository geclont, bearbeitet und wieder hochgeladen.
+    # Du hast den Workflow verinnerlicht, wenn du alleine arbeitest.
+    # Du hast verstanden, wie man gemeinsam an einem Projekt arbeitet.
+    # Du hast gesehen, was schief gehen kann und kannst im Internet nach passenden Lösungen suchen.
+
+# Wofür braucht man git?
+# Was ist git?
+
+    - Speicherung, Einsicht und Wiederherstellung von verschiedenen Projektversionen. (Wie viele Projektversionen?)
+    Für Übersicht sorgen.
+    Nachverfolgbarkeit (Wer erstellte welche Änderung?) mit Begründung
+    Identitätskontrolle (der Autorenschaft von Versionen)
+    Sicherheit (Zugang gegenüber Dritten sichern)
+    Paralleles Arbeiten erlauben
+    Einzelnes Arbeiten erlauben (ungestört)
+    Offline Arbeiten ermöglichen (Unabhängigkeit vom Internet)
+    Umgang mit Speicherplatz klein halten
+    Zwischenspeichern von Versionen, an denen später gearbeitet werden soll
+    Grüne Wiesen
+    Teamgrößenunabhängigkeit
+    Kein Verlust von Dateien
+    Differenz zwischen zwei Projektversion ansehen
+
+# Beispiel ohne code
+    # Ein Bild malen.
+        # Leeres Canvas nehmen... drauf malen.... wenns gefällt zwischenspeichern.
+        # Später woanders rummalen.
+        # Eventuell eine Änderung wieder zurück nehmen.
+        # Verschiedene Versionen malen und nebeneinander Zwischenspeichern.
+        # Mit mehreren Personen malen.
+            # Jeder malt in seinem Bereich.
+            # Jeder mal wie er will.... Die Kunstwerke überschneiden sich. Danach müssen die Bilder zusammengeführt werden. 
+                # Aber wie? Bitte keine Konflikte untereinander! :)
+            
+
+    - siehe Bilder
+
+# Git Grundkonzepte:
+    - , das viele der Ziele sehr gut erfüllt. Git ist ein Versionsverwaltungssystem
+Git ist dezentral und kann lokal ohne Internetanbindung genutzt werden.
+In einem Repository werden alle Versionen des Projektes gespeichert.
+Dieses Repository liegt bei jedem lokal vor (und wird meist auf einem Server gespiegelt). D.h. jeder hat alle Projektversionen vorliegen!
+Prinzipiell kann alles Versioniert werden.
+Git eignet sich am besten für Quelltexte. Weniger gut für binäre Dateien.
+
+# Verstehe die Struktur von Git
+    - Working Tree
+    - Index
+    - Repository
+
+# git setup
+    # installation, erste befehle usw
+    # lokal vs remote
+
+
+# Kleine Übungsaufgabe
+Aufgaben:
+Neues Repository anlegen.
+Dateien erstellen, bearbeiten und dem Index hinzufügen.
+Mindestens zwei Commits erstellen.
+Den Zustand eines alten Commits wiederherstellen.
+Von diesem aus neue Commits erstellen.
+Untersuche Strucktur der Commits mit git log --all --graph --oneline
+Passiert es dir, dass Commits plötzlich nicht mehr sichtbar sind?
+Warum gibt es den Zwischenschritt der Staging-Area? Warum nicht direkt speichern?
+Nutze git help <befehl> oder git <befehl> -h um mehr informationen zu den Befehlen zu erhalten.
+
+
+#############################
+#############################
+
+Was speichert GIT?
+Es gibt drei Hauptarten von Objekten in git:
+Blobs (Dateien mit Inhalt)
+Trees (Bildet Ordnerstrukturen ab. Hat Referenzen zu Blobs und Trees)
+Commits (Wird bei einem Commit erstellt, hat verschiedene Metainfos und Referenz zu einem Tree)
+Annotatet Tags
+Alle Objekte sind im .git/objects Ordner gespeichert.
+
+
+
+
+
+Wie ist GIT strukturiert?
+Git speichert bei jeder Änderung ein Objekt komplett neu.
+Wenn sich nichts verändert, wird auch nichts neues gespeichert, sondern einfach erneut referenziert.
+
+
+
+
+
+# Zwei Workflows: Alleine arbeiten vs Zusammen arbeiten
+# Workflow 1 - alleine arbeiten:
+    # programmieren -> änderungen auswählen -> änderungen commiten
+    # im großen Bild
+
+# Workflow 2 - zusammen arbeiten:
+    # programmieren -> änderungen auswählen -> änderungen commiten
+    # im großen Bild
+
+
+
+#############################
+#############################
+
+Es gibt verschiedene Möglichkeiten verschiedene Commits zusammenzuführen:
+git merge
+git cherry-pick
+git rebase
+
+ÜBUNGSBLOCK:
+Szenario 1: alleine arbeiten
+Szenario 2: gemeinsam arbeiten
+
+
+# gitignore
+# weitere git Befehle
+# git cheat sheet
+# tools und addons
+
+# beliebte Fehler und Vollkatastrophen

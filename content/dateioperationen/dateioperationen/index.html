@@ -1,0 +1,2707 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../unit_tests/unit_tests/">
+      
+      
+        <link rel="next" href="../../git/git/">
+      
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>Dateioperationen - Python Crashkurs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/python_tutor_admonition.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dateioperationen" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Python Crashkurs" class="md-header__button md-logo" aria-label="Python Crashkurs" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Crashkurs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dateioperationen
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Python Crashkurs" class="md-nav__button md-logo" aria-label="Python Crashkurs" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    Python Crashkurs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Übersicht
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python_grundlagen/python_grundlagen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einführung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Variablen
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Variablen
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../variables/variablen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Was sind Variablen?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../variables/datentypen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datentypen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../variables/nutzereingaben/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nutzereingaben
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bedingter Code
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Bedingter Code
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bedingter_code/bedingter_code/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    if-Blöcke
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bedingter_code/bedingung/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bedingungen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bedingter_code/bedingungen_verkn%C3%BCpfen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bedingungen verknüpfen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../loops/loops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schleifen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Collections
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Collections
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collections/lists/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Listen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collections/lists_append/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Listen erweitern
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collections/for_loop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Listen durchlaufen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collections/weitere_datenstrukturen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Weiter Datenstrukturen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collections/sets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collections/dictionaries/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dictionaries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../list_comp/list_comp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    List Comprehension
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Funktionen
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Funktionen
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functions/functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Funktionen definieren
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functions/functions_with_parameters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parameter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functions/functions_with_returns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rückgabewerte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Error Handling
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Error Handling
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../try_except/try_except/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    try-except
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Module & Pakete
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Module & Pakete
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../packages/moduls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../packages/packages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pakete
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../_venv/_venv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtuelle Umgebung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Pandas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Pandas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pandas/pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einführung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pandas/series_dataframes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Series & DataFrames
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pandas/read_dataframes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lesen von DataFrames
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pandas/export_dataframes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Export von DataFrames
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pandas/filter_dataframes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Filtern von DataFrames
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pandas/statistic_dataframes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Statistik mit DataFrames
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pandas/add_and_remove_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Daten entfernen & hinzufügen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pandas/merge_dataframes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DataFrames zusammenfügen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pandas/useful_functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nützliche Funktionen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pandas/clean_dataframes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DataFrames bereinigen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Plotting & Dashboards
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            Plotting & Dashboards
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visualization/visualization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einführung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visualization/matplotlib/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Matplotlib
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visualization/seaborn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Seaborn
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visualization/plotly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plotly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visualization/streamlit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Streamlit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    OOP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            OOP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop/define_classes/define_classes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einführung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop/attributes/attributes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Attribute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop/methods/methods/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Methoden
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop/vererbung/vererbung/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vererbung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop/magic_methods/magic_methods/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Magic Methods
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop/getter_setter/getter_setter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getter & Setter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop/class_static_methods/class_static_methods/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class- & Static Methods
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unit_tests/unit_tests/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unit Tests
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Dateioperationen
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Dateioperationen
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#dateien-manuell-offnen-und-schlieen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dateien manuell öffnen und schließen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dateien-mit-with-open-nutzen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dateien mit with open nutzen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zugriffsmodi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zugriffsmodi
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-dateien-schreiben" class="md-nav__link">
+    <span class="md-ellipsis">
+      In Dateien schreiben
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mehrere-dateien-offnen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mehrere Dateien öffnen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#csv-dateien" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSV-Dateien
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
+        
+          
+          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Versionskontrolle
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_18">
+            <span class="md-nav__icon md-icon"></span>
+            Versionskontrolle
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/tic_tac_toe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projekt
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="dateioperationen">Dateioperationen<a class="headerlink" href="#dateioperationen" title="Permanent link">&para;</a></h1>
+<h2 id="dateien-manuell-offnen-und-schlieen">Dateien manuell öffnen und schließen<a class="headerlink" href="#dateien-manuell-offnen-und-schlieen" title="Permanent link">&para;</a></h2>
+<p><a href="../beispiel.txt">Lade die Datei <code>beispiel.txt</code> herunter🔽</a> und lese sie mit folgendem Code aus:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">datei</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;beispiel.txt&quot;</span><span class="p">)</span>
+<span class="n">inhalt</span> <span class="o">=</span> <span class="n">datei</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">inhalt</span><span class="p">)</span>
+<span class="n">datei</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<p><code>open</code> öffnet die Datei, <code>read</code> liest sie aus und <code>close</code> schließt sie wieder.</p>
+<p>Beim Arbeiten mit Dateien ohne <code>with open</code> musst du darauf achten,
+die Datei manuell zu öffnen und zu schließen. Das kann zu Problemen führen, wenn ein Fehler auftritt,
+bevor die Datei geschlossen wird. Daher wird dieser Weg nicht empfohlen, sondern man sollte immer
+mit <code>with</code> arbeiten.</p>
+<details class="question" open="open">
+<summary>Alternativen zu read</summary>
+<p>Ändere das folgende Beispiel ab, sodass statt <code>read</code> die Methoden <code>readline</code> und <code>readlines</code> verwendet werden. Was liefern diese Methoden und wie kann man sie nutzen? Was passiert, wenn man <code>readline</code> mehrfach hintereinander ausführt?</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;beispiel.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">datei</span><span class="p">:</span>
+    <span class="n">inhalt</span> <span class="o">=</span> <span class="n">datei</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">inhalt</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<details class="success">
+<summary>Lösung</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Mit readline</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;beispiel.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">datei</span><span class="p">:</span>
+    <span class="n">erste_zeile</span> <span class="o">=</span> <span class="n">datei</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+    <span class="n">zweite_zeile</span> <span class="o">=</span> <span class="n">datei</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Erste Zeile:&quot;</span><span class="p">,</span> <span class="n">erste_zeile</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Zweite Zeile:&quot;</span><span class="p">,</span> <span class="n">zweite_zeile</span><span class="p">)</span>
+
+<span class="c1"># Mit readlines</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;beispiel.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">datei</span><span class="p">:</span>
+    <span class="n">alle_zeilen</span> <span class="o">=</span> <span class="n">datei</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Alle Zeilen:&quot;</span><span class="p">,</span> <span class="n">alle_zeilen</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p><code>readline()</code> gibt jeweils eine einzelne Zeile zurück. Bei mehrfachem Aufruf werden nacheinander die Zeilen der Datei gelesen.
+<code>readlines()</code> gibt eine Liste mit allen Zeilen der Datei zurück.</p>
+</details>
+</details>
+<details class="question" open="open">
+<summary>Fehler beim Dateizugriff abfangen</summary>
+<p>Welcher Fehler wird geworfen, wenn eine Datei nicht existiert? Schreibe Code, der diesen Fehler bewusst auslöst und auffängt. Gib eine Nachricht auf der Konsole aus und lies den Namen der nicht existierenden Datei aus der Exception aus.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Vervollständige den Code hier</span>
+<span class="n">datei</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;nicht_existierende_datei.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">inhalt</span> <span class="o">=</span> <span class="n">datei</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">inhalt</span><span class="p">)</span>
+<span class="n">datei</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<details class="info">
+<summary>Tipp</summary>
+<p>Verwende <code>try</code> und <code>except</code> um den Fehler abzufangen.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">try</span><span class="p">:</span>
+    <span class="n">datei</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;nicht_existierende_datei.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+    <span class="n">inhalt</span> <span class="o">=</span> <span class="n">datei</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">inhalt</span><span class="p">)</span>
+    <span class="n">datei</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="k">except</span> <span class="ne">FileNotFoundError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Datei existiert nicht: </span><span class="si">{</span><span class="n">e</span><span class="o">.</span><span class="n">filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Der geworfene Fehler ist <code>FileNotFoundError</code>. Durch das Auffangen der Exception mit <code>except FileNotFoundError as e</code> können wir auf die Eigenschaften des Fehlers zugreifen, wie z.B. den Dateinamen mit <code>e.filename</code>.</p>
+</details>
+</details>
+<h2 id="dateien-mit-with-open-nutzen">Dateien mit <code>with open</code> nutzen<a class="headerlink" href="#dateien-mit-with-open-nutzen" title="Permanent link">&para;</a></h2>
+<p>Um sicherzustellen, dass Dateien immer geschlossen werden (auch bei Fehlern),
+sollten Dateien mit <code>with open</code> geöffnet und gelesen werden:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;beispiel.txt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">datei</span><span class="p">:</span>
+    <span class="n">inhalt</span> <span class="o">=</span> <span class="n">datei</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">inhalt</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Die <code>with open</code>-Anweisung ist eine sicherere Methode, um mit Dateien umzugehen.
+Sie stellt sicher, dass die Datei ordnungsgemäß geschlossen wird, selbst wenn ein Fehler auftritt.</p>
+<details class="question" open="open">
+<summary>Zeilenweise Datei lesen</summary>
+<p>Erstelle ein Programm, das eine Datei ausliest und die erste Zeile der Datei ausgibt. Dann wartet das Programm auf eine Nutzereingabe (z.B. das Drücken von <code>enter</code>) und gibt dann die nächste Zeile aus. Dies wird so lange wiederholt, bis die ganze Datei gelesen wurde. Das Programm endet dann.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Vervollständige den Code hier</span>
+<span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;beispiel.txt&quot;</span>
+<span class="c1"># Öffne die Datei und lies zeilenweise</span>
+</code></pre></div></td></tr></table></div>
+<details class="info">
+<summary>Tipp</summary>
+<p>Verwende eine Schleife mit <code>readline()</code> und <code>input()</code> für die Nutzereingabe.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;beispiel.txt&quot;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Drücke Enter für die nächste Zeile...&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Dieses Programm öffnet die Datei "beispiel.txt", liest sie zeilenweise aus und gibt jede Zeile aus. Nach jeder Zeile wartet es auf eine Benutzereingabe (Enter-Taste), bevor es zur nächsten Zeile übergeht. Wenn keine Zeilen mehr zu lesen sind, beendet sich das Programm.</p>
+</details>
+</details>
+<details class="question" open="open">
+<summary>Zeichen in Datei zählen</summary>
+<p>Erstelle ein Programm, das die Anzahl der Zeichen in einer Textdatei zählt und ausgibt.
+Berücksichtige dabei auch Leerzeichen und Sonderzeichen.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Vervollständige den Code hier</span>
+<span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;beispiel.txt&quot;</span>
+<span class="c1"># Öffne die Datei und zähle die Zeichen</span>
+</code></pre></div></td></tr></table></div>
+<details class="info">
+<summary>Tipp</summary>
+<p>Wie erhält man die Anzahl der Zeichen in einem String?</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;beispiel.txt&quot;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">character_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Die Datei enthält </span><span class="si">{</span><span class="n">character_count</span><span class="si">}</span><span class="s2"> Zeichen.&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Dieses Programm öffnet die Datei "beispiel.txt", liest den gesamten Inhalt in einen String ein und zählt dann die Anzahl der Zeichen in diesem String mithilfe der <code>len()</code> Funktion. Das Ergebnis wird anschließend ausgegeben.</p>
+</details>
+</details>
+<h2 id="zugriffsmodi">Zugriffsmodi<a class="headerlink" href="#zugriffsmodi" title="Permanent link">&para;</a></h2>
+<p>Es gibt verschiedene Zugriffsmodi auf Dateien, die mit dem zweiten Parameter von <code>open</code> ausgewählt werden.</p>
+<p><a href="https://docs.python.org/3/library/functions.html#open">Link zur Dokumentation von open</a></p>
+<table>
+<thead>
+<tr>
+<th>Modus</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>"r"</code></td>
+<td>Lesen (default)</td>
+</tr>
+<tr>
+<td><code>"w"</code></td>
+<td>Schreiben</td>
+</tr>
+<tr>
+<td><code>"x"</code></td>
+<td>Exklusives Schreiben</td>
+</tr>
+<tr>
+<td><code>"a"</code></td>
+<td>Anhängen</td>
+</tr>
+<tr>
+<td><code>"b"</code></td>
+<td>Binärmodus</td>
+</tr>
+<tr>
+<td><code>"t"</code></td>
+<td>Textmodus (default)</td>
+</tr>
+<tr>
+<td><code>"+"</code></td>
+<td>Aktualisieren (Lesen/Schreiben)</td>
+</tr>
+</tbody>
+</table>
+<p>Es können auch mehrere dieser Modi auf ein mal gewählt werden, indem man diese in einem String zusammenstellt.
+Z.B. erlaubt <code>"rw"</code> das Lesen und Schreiben der Datei.</p>
+<details class="question" open="open">
+<summary>Binäres Lesen von Dateien</summary>
+<p>Erstelle ein Programm, das die Dateien "beispiel.txt" und "mein_passwort.png" mit den Modi <code>r</code>, <code>rt</code> und <code>rb</code> öffnet und liest. 
+Gib für jeden Modus und jede Datei aus, ob das Lesen erfolgreich war oder ob ein Fehler aufgetreten ist.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># Vervollständige den Code hier</span>
+<span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;beispiel.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;mein_passwort.png&quot;</span><span class="p">]</span>
+<span class="n">modes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">]</span>
+
+<span class="c1"># Öffne und lies die Dateien in verschiedenen Modi</span>
+</code></pre></div></td></tr></table></div>
+<details class="info">
+<summary>Tipp</summary>
+<p>Verwende eine verschachtelte Schleife, um durch die Dateien und Modi zu iterieren. 
+Nutze try-except, um Fehler abzufangen und zu melden.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">files</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;beispiel.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;mein_passwort.png&quot;</span><span class="p">]</span>
+<span class="n">modes</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">file</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">mode</span> <span class="ow">in</span> <span class="n">modes</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+                <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Erfolgreich gelesen: </span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> im Modus </span><span class="si">{</span><span class="n">mode</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fehler beim Lesen von </span><span class="si">{</span><span class="n">file</span><span class="si">}</span><span class="s2"> im Modus </span><span class="si">{</span><span class="n">mode</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Dieses Programm versucht, beide Dateien in allen drei Modi zu öffnen und zu lesen. Es gibt für jede Kombination aus Datei und Modus an, ob das Lesen erfolgreich war oder ob ein Fehler aufgetreten ist.</p>
+<p>Erwartetes Ergebnis:
+- "beispiel.txt" kann in allen Modi gelesen werden.
+- "mein_passwort.png" kann nur im Modus "rb" ohne Fehler gelesen werden.</p>
+<p>Dies demonstriert, dass Textdateien in allen Modi gelesen werden können, während Binärdateien wie Bilder nur im Binärmodus ("rb") korrekt gelesen werden können.</p>
+</details>
+</details>
+<h2 id="in-dateien-schreiben">In Dateien schreiben<a class="headerlink" href="#in-dateien-schreiben" title="Permanent link">&para;</a></h2>
+<p>Mit dem folgenden Code wird in eine Datei geschrieben</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;save_file&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">datei</span><span class="p">:</span>
+    <span class="n">datei</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Hallo&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Beachte, dass die Datei automatisch erstellt wird, wenn sie nicht existiert. Das ist doch nett 😉</p>
+<details class="question" open="open">
+<summary>Inhalte in Datei schreiben</summary>
+<p>Erstelle ein Programm, das den Nutzer wiederholt nach einer Eingabe fragt und diese in eine Datei schreibt. Das Programm soll so lange laufen, bis der Nutzer 'quit' eingibt. Am Ende soll die Datei geöffnet werden.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Nutze <code>os.system()</code> zum Öffnen der Datei am Ende.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">system</span>
+
+<span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;meintext.txt&quot;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;wt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">user_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Gib etwas ein (oder &#39;quit&#39; zum Beenden): &quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">user_input</span> <span class="o">==</span> <span class="s2">&quot;quit&quot;</span><span class="p">:</span>
+            <span class="k">break</span>
+        <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">user_input</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Öffne die Datei am Ende</span>
+<span class="n">system</span><span class="p">(</span><span class="s2">&quot;open -a TextEdit &quot;</span> <span class="o">+</span> <span class="n">path</span><span class="p">)</span>  <span class="c1"># MacOS</span>
+<span class="n">system</span><span class="p">(</span><span class="s2">&quot;notepad.exe &quot;</span> <span class="o">+</span> <span class="n">path</span><span class="p">)</span>  <span class="c1"># Windows</span>
+</code></pre></div></td></tr></table></div>
+<p>Dieses Programm öffnet die Datei "meintext.txt" im Schreibmodus. Es fragt den Benutzer wiederholt nach Eingaben und schreibt diese in die Datei, bis der Benutzer 'quit' eingibt. Jede Eingabe wird in einer neuen Zeile gespeichert. Am Ende versucht das Programm, die Datei zu öffnen.</p>
+<p>Hinweis: Die Methode zum Öffnen der Datei am Ende hängt vom Betriebssystem ab. Dieser Code versucht, beide gängigen Methoden abzudecken.</p>
+</details>
+</details>
+<details class="question" open="open">
+<summary>Anhängen an eine Datei</summary>
+<p>Erstelle ein Programm, das den Text "Hallo" in eine Datei namens "greetings.txt" schreibt. Das Programm soll so funktionieren, dass bei jeder Ausführung ein neuer Absatz mit "Hallo" an das Ende der Datei angehängt wird, anstatt den vorherigen Inhalt zu überschreiben.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Schaue in die Modus-Tabelle und finde den richtigen Modus zum Anhängen von Inhalten an eine Datei.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;greetings.txt&quot;</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Hallo</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;Hallo&#39; wurde an </span><span class="si">{</span><span class="n">filename</span><span class="si">}</span><span class="s2"> angehängt.&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Dieses Programm öffnet die Datei "greetings.txt" im Anhänge-Modus ("a" für append). Es schreibt dann "Hallo" gefolgt von einem Zeilenumbruch ("\n") ans Ende der Datei. Bei jeder Ausführung des Programms wird ein neues "Hallo" in einer neuen Zeile hinzugefügt, ohne den vorherigen Inhalt zu überschreiben.</p>
+<p>Hinweis: Wenn die Datei noch nicht existiert, wird sie automatisch erstellt.</p>
+</details>
+</details>
+<h2 id="mehrere-dateien-offnen">Mehrere Dateien öffnen<a class="headerlink" href="#mehrere-dateien-offnen" title="Permanent link">&para;</a></h2>
+<p>Wir können natürlich auch den Inhalt der einen Datei in die andere Schreiben und
+ggf. auf dem Weg manipulieren. Hier werden alle <code>"e"</code> durch <code>"*"</code> ersetzt:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;beispiel.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">org</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;censored_text.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;wt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">censored</span><span class="p">:</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">org</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="n">censored</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">))</span>
+</code></pre></div></td></tr></table></div>
+<details class="question" open="open">
+<summary>Umkehrung einer Datei</summary>
+<p>Schreibe eine Funktion <code>reverse_file_content(file_path, save_file_path)</code>, die den Inhalt einer Textdatei ausliest, sie umkehrt und in eine andere Datei speichert. Das heißt, die erste Zeile wird zur letzten, die zweite zur vorletzten, usw.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Zum Umkehren von Listen lässt sich <code>reversed()</code> nutzen.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">reverse_file_content</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">save_file_path</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_in</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="n">save_file_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_out</span><span class="p">:</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="n">file_in</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+        <span class="n">file_out</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">lines</span><span class="p">))</span>
+
+<span class="c1"># Beispielaufruf</span>
+<span class="n">reverse_file_content</span><span class="p">(</span><span class="s2">&quot;beispiel.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;beispiel_reversed.txt&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Diese Funktion öffnet die Eingabedatei im Lesemodus und die Ausgabedatei im Schreibmodus. Sie liest alle Zeilen der Eingabedatei, kehrt ihre Reihenfolge mit <code>reversed()</code> um und schreibt sie dann in die Ausgabedatei. </p>
+<p>Hinweis: Diese Methode lädt den gesamten Dateiinhalt in den Speicher. Für sehr große Dateien könnte eine speichereffizientere Methode erforderlich sein.</p>
+</details>
+</details>
+<details class="question" open="open">
+<summary>ZENSUR!!!</summary>
+<p>Schreibe eine Klasse <code>Censorer</code> mit einer statischen Methode
+<code>create_censored_file(org_file_path, censored_file_path, censored_words, symbol)</code>,
+die die angegebenen Strings mit einem Symbol ersetzt. Dieses Symbol soll standardmäßig <code>*</code> sein.</p>
+<p>Wenn alles richtig gemacht wurde, dann wird der folgende Unittest
+funktionieren:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">unittest</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">tempfile</span> <span class="kn">import</span> <span class="n">NamedTemporaryFile</span>
+
+
+<span class="k">class</span> <span class="nc">TestCensorer</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">test_create_censored_file</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">original_text</span> <span class="o">=</span> <span class="s2">&quot;Dies ist ein Test, um zu überprüfen, ob bestimmte Wörter zensiert werden.&quot;</span>
+        <span class="n">censored_words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span> <span class="s2">&quot;Wörter&quot;</span><span class="p">]</span>
+        <span class="n">expected_censored_text</span> <span class="o">=</span> <span class="s2">&quot;Dies ist ein ****, um zu überprüfen, ob bestimmte ****** zensiert werden.&quot;</span>
+
+        <span class="c1"># Erstelle temporäre Dateien</span>
+        <span class="k">with</span> <span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">delete</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">org_file</span><span class="p">,</span> <span class="n">NamedTemporaryFile</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">,</span> <span class="n">delete</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">as</span> <span class="n">censored_file</span><span class="p">:</span>
+            <span class="n">org_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">original_text</span><span class="p">)</span>
+            <span class="n">org_file_path</span> <span class="o">=</span> <span class="n">org_file</span><span class="o">.</span><span class="n">name</span>
+            <span class="n">censored_file_path</span> <span class="o">=</span> <span class="n">censored_file</span><span class="o">.</span><span class="n">name</span>
+
+        <span class="c1"># Zensiere die Datei</span>
+        <span class="n">Censorer</span><span class="o">.</span><span class="n">create_censored_file</span><span class="p">(</span><span class="n">org_file_path</span><span class="p">,</span> <span class="n">censored_file_path</span><span class="p">,</span> <span class="n">censored_words</span><span class="p">)</span>
+
+        <span class="c1"># Überprüfe, ob die zensierte Datei existiert</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">censored_file_path</span><span class="p">))</span>
+
+        <span class="c1"># Überprüfe den Inhalt der zensierten Datei</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">censored_file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">censored_file</span><span class="p">:</span>
+            <span class="n">actual_censored_text</span> <span class="o">=</span> <span class="n">censored_file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">actual_censored_text</span><span class="p">,</span> <span class="n">expected_censored_text</span><span class="p">)</span>
+
+        <span class="c1"># Bereinige die temporären Dateien</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">org_file_path</span><span class="p">)</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">censored_file_path</span><span class="p">)</span>
+
+<span class="c1"># Starte den Test</span>
+<span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">(</span><span class="n">argv</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">],</span> <span class="n">exit</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<details class="info">
+<summary>Tipp</summary>
+<p>Eine statische Methode wird mit <code>@staticmethod</code> dekoriert.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Censorer</span><span class="p">:</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">create_censored_file</span><span class="p">(</span><span class="n">org_file_path</span><span class="p">,</span> <span class="n">censored_file_path</span><span class="p">,</span> <span class="n">censored_words</span><span class="p">,</span> <span class="n">symbol</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">org_file_path</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">org</span><span class="p">,</span> <span class="nb">open</span><span class="p">(</span><span class="n">censored_file_path</span><span class="p">,</span> <span class="s2">&quot;wt&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">censored</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">org</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+            <span class="k">for</span> <span class="n">word_to_censor</span> <span class="ow">in</span> <span class="n">censored_words</span><span class="p">:</span>
+                <span class="n">replacement</span> <span class="o">=</span> <span class="n">symbol</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">word_to_censor</span><span class="p">)</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">word_to_censor</span><span class="p">,</span> <span class="n">replacement</span><span class="p">)</span>
+            <span class="n">censored</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Diese Lösung definiert die Klasse <code>Censorer</code> mit der statischen Methode <code>create_censored_file</code>. Die Methode liest den Inhalt der Originaldatei, ersetzt die zu zensierenden Wörter durch das angegebene Symbol (standardmäßig "*") und schreibt den zensierten Text in eine neue Datei.</p>
+<p>Die Methode funktioniert wie folgt:
+1. Öffnet die Originaldatei im Lesemodus und die Zieldatei im Schreibmodus.
+2. Liest den gesamten Inhalt der Originaldatei.
+3. Iteriert durch die Liste der zu zensierenden Wörter.
+4. Für jedes Wort wird ein Ersatzstring erstellt, der aus dem Zensursymbol besteht und die gleiche Länge wie das Originalwort hat.
+5. Ersetzt jedes Vorkommen des zu zensierenden Wortes im Text durch den Ersatzstring.
+6. Schreibt den zensierten Text in die Zieldatei.</p>
+<p>Diese Implementierung erfüllt die Anforderungen der Aufgabe und sollte den bereitgestellten Unittest bestehen.</p>
+</details>
+</details>
+<h2 id="csv-dateien">CSV-Dateien<a class="headerlink" href="#csv-dateien" title="Permanent link">&para;</a></h2>
+<p>CSV-Dateien dienen dazu tabulare Daten zu speichern.
+In diesen werden Zeilen einer Tabelle gespeichert. Meist sind
+Zeilen mit einem Absatz getrennt und Einträge in einer Zeile mit einem <code>,</code>.</p>
+<p>Fülle eine Exceltabelle mit Inhalt und speichere dann die
+Datei als <code>.csv</code>. Öffne die Datei dann mit einem Texteditor,
+um die Struktur einer CSV zu sehen.</p>
+<p>Das <code>csv</code>-Modul ermöglicht das Lesen von CSV-Dateien.
+Mit der <code>csv.reader</code>-Funktion kannst du die Zeilen der CSV-Datei durchgehen.
+Der folgende Code zeigt, wie man die CSV-Datei
+<a href="../persons.csv">persons.csv🔽</a> öffnen und lesen kann:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;persons.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_datei</span><span class="p">:</span>
+    <span class="n">csv_reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csv_datei</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">zeile</span> <span class="ow">in</span> <span class="n">csv_reader</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">zeile</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Wenn du Daten in eine CSV-Datei schreiben möchtest,
+kannst du auch die <code>csv</code>-Bibliothek ebenfalls verwenden.
+Hier ist ein Beispiel:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="c1"># Daten, die in die CSV-Datei geschrieben werden sollen</span>
+<span class="n">daten</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Alter&quot;</span><span class="p">,</span> <span class="s2">&quot;Stadt&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Max&quot;</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;Berlin&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Anna&quot;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="s2">&quot;München&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Tom&quot;</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="s2">&quot;Hamburg&quot;</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="c1"># Öffne die CSV-Datei im Schreib-Modus</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;ausgabe.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_datei</span><span class="p">:</span>
+    <span class="c1"># Erstelle einen CSV-Writer</span>
+    <span class="n">csv_writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">csv_datei</span><span class="p">)</span>
+
+    <span class="c1"># Schreibe die Daten in die CSV-Datei</span>
+    <span class="k">for</span> <span class="n">zeile</span> <span class="ow">in</span> <span class="n">daten</span><span class="p">:</span>
+        <span class="n">csv_writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">zeile</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<details class="question" open="open">
+<summary>CSV als Speicherformat nutzen</summary>
+<p>Erweitere die folgende Klasse um zwei Methoden:</p>
+<ul>
+<li><code>create_persons_from_csv(cls, file_path)</code> ist eine Klassenmethode, die aus einer csv-Datei Personen ausliest und
+  erstellt.</li>
+<li><code>def save_to_csv(self, file_path, mode='a')</code> speichert die <code>Person</code>-Instanz in einer CSV.</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Person</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">name</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">age</span>
+</code></pre></div></td></tr></table></div>
+<p>CSV-Datei:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>Swantje,32
+Maja,12
+Niko,31
+Sven,38
+</code></pre></div></td></tr></table></div>
+<details class="info">
+<summary>Tipp</summary>
+<p>Nutze das <code>csv</code>-Modul für das Lesen und Schreiben von CSV-Dateien. Die <code>@classmethod</code>-Dekoration wird für die Klassenmethode benötigt.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">csv</span> <span class="kn">import</span> <span class="n">reader</span><span class="p">,</span> <span class="n">writer</span>
+
+<span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Person</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">name</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">age</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Person: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_persons_from_csv</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file_path</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">zeile</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">(</span><span class="n">csv_file</span><span class="p">):</span>
+                <span class="n">name</span><span class="p">,</span> <span class="n">age</span> <span class="o">=</span> <span class="n">zeile</span>
+                <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">cls</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">age</span><span class="p">)))</span>
+
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="k">def</span> <span class="nf">save_to_csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;a&quot;</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
+            <span class="n">writer</span><span class="p">(</span><span class="n">csv_file</span><span class="p">)</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">])</span>
+
+<span class="c1"># Beispielnutzung:</span>
+<span class="n">csv_file_path</span> <span class="o">=</span> <span class="s2">&quot;persons.csv&quot;</span>
+<span class="n">persons</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">create_persons_from_csv</span><span class="p">(</span><span class="n">csv_file_path</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">persons</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+
+<span class="n">Person</span><span class="p">(</span><span class="s2">&quot;Gustav&quot;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span><span class="o">.</span><span class="n">save_to_csv</span><span class="p">(</span><span class="n">csv_file_path</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Diese Lösung implementiert die beiden geforderten Methoden:</p>
+<ol>
+<li>
+<p><code>create_persons_from_csv(cls, file_path)</code> ist eine Klassenmethode, die die CSV-Datei liest und für jede Zeile eine neue <code>Person</code>-Instanz erstellt.</p>
+</li>
+<li>
+<p><code>save_to_csv(self, file_path, mode="a")</code> ist eine Instanzmethode, die die aktuelle <code>Person</code>-Instanz als neue Zeile an die CSV-Datei anhängt.</p>
+</li>
+</ol>
+<p>Zusätzlich wurde eine <code>__str__</code>-Methode hinzugefügt, um eine schöne String-Repräsentation der <code>Person</code>-Objekte zu erhalten.</p>
+<p>Beachten Sie, dass das Alter in der <code>create_persons_from_csv</code>-Methode zu einem Integer konvertiert wird, da es in der CSV-Datei als String gespeichert ist.</p>
+</details>
+</details>
+<details class="question" open="open">
+<summary>CSV-Datei filtern</summary>
+<p>Erweitere die Funktion <code>create_persons_from_csv</code> um einen Parameter
+<code>csv_filter</code>, mit dem man einen Teil der Elemente aus der CSV herausgefiltert wird.
+Achte darauf, dass die Funktion auch noch funktioniert, wenn kein <code>csv_filter</code> gesetzt ist.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">no_underaged</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span>
+
+
+<span class="n">persons</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">create_persons_from_csv</span><span class="p">(</span><span class="s2">&quot;persons.csv&quot;</span><span class="p">,</span> <span class="n">no_underaged</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">persons</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+<span class="c1"># Swantje,32</span>
+<span class="c1"># Niko,31</span>
+<span class="c1"># Sven,38</span>
+</code></pre></div></td></tr></table></div>
+<details class="info">
+<summary>Tipp</summary>
+<p>Erinnere dich, wie man Funktionen als Parameter übergeben hat
+und diese dann ausgeführt hat.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">csv</span> <span class="kn">import</span> <span class="n">reader</span><span class="p">,</span> <span class="n">writer</span>
+
+<span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+
+    <span class="k">def</span> <span class="fm">__eq__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Person</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">name</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">==</span> <span class="n">other</span><span class="o">.</span><span class="n">age</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Person: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="si">}</span><span class="s2">&quot;</span>
+
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span> <span class="nf">create_persons_from_csv</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">file_path</span><span class="p">,</span> <span class="n">csv_filter</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">zeile</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">(</span><span class="n">csv_file</span><span class="p">):</span>
+                <span class="n">name</span><span class="p">,</span> <span class="n">age</span> <span class="o">=</span> <span class="n">zeile</span>
+                <span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">age</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">csv_filter</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">csv_filter</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+                    <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">cls</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">result</span>
+
+    <span class="k">def</span> <span class="nf">save_to_csv</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file_path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;a&quot;</span><span class="p">):</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csv_file</span><span class="p">:</span>
+            <span class="n">writer</span><span class="p">(</span><span class="n">csv_file</span><span class="p">)</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">])</span>
+
+<span class="c1"># Beispielnutzung:</span>
+<span class="k">def</span> <span class="nf">no_underaged</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span>
+
+<span class="n">csv_file_path</span> <span class="o">=</span> <span class="s2">&quot;persons.csv&quot;</span>
+<span class="n">persons</span> <span class="o">=</span> <span class="n">Person</span><span class="o">.</span><span class="n">create_persons_from_csv</span><span class="p">(</span><span class="n">csv_file_path</span><span class="p">,</span> <span class="n">no_underaged</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">person</span> <span class="ow">in</span> <span class="n">persons</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">person</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Diese Lösung erweitert die <code>create_persons_from_csv</code>-Methode um den optionalen <code>csv_filter</code>-Parameter. Wenn ein Filter übergeben wird, wird er auf jede Zeile der CSV-Datei angewendet. Nur wenn der Filter <code>True</code> zurückgibt (oder wenn kein Filter gesetzt ist), wird eine neue <code>Person</code>-Instanz erstellt und zur Ergebnisliste hinzugefügt.</p>
+<p>Beachten Sie, dass das Alter zu einem Integer konvertiert wird, bevor es an den Filter übergeben oder zur Erstellung einer <code>Person</code>-Instanz verwendet wird. Dies stellt sicher, dass der Vergleich im <code>no_underaged</code>-Filter korrekt funktioniert.</p>
+</details>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../unit_tests/unit_tests/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Unit Tests">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Unit Tests
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../git/git/" class="md-footer__link md-footer__link--next" aria-label="Next: Git">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Git
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.kununu.com/de/qualidy" target="_blank" rel="noopener" title="www.kununu.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M311 86.3c12.3-12.7 12-32.9-.7-45.2s-32.9-12-45.2.7l-155.2 160L64 249V64c0-17.7-14.3-32-32-32S0 46.3 0 64v384c0 17.7 14.3 32 32 32s32-14.3 32-32V341l64.7-66.7 133 192c10.1 14.5 30 18.1 44.5 8.1s18.1-30 8.1-44.5L174.1 227.4z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.google.com/search?sca_esv=7e6ba2047fcb60f3&uds=AMwkrPtyB8MsmozA4Lwzqy2G2HCu-abqzc6moOG48q3gP5dtjTRzC2Ws0eSwcyLXDfZNuYCrZ7ByIreHLG9th3vKLekPoVeey0tumAbet4cVLQRLzdRFhUbOGbnyp3xo1V0hzzaNmkCN&si=AKbGX_rcuucMgom2rba1cdwsvM2SVoIkP2btyqGMV4t0GuHIs4sGV_1tpuqR0YHG4Rzd9SdJcL-lW6E-2aJA5azZLTKkIOrZ2j2aWwoBkVbdEJ0o0GPcQhs%3D&q=Qualidy+GmbH+Rezensionen&sa=X&ved=2ahUKEwibsbnSgcmFAxXNQvEDHaVYCiAQ3PALegQIRxAF" target="_blank" rel="noopener" title="www.google.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.35 11.1h-9.17v2.73h6.51c-.33 3.81-3.5 5.44-6.5 5.44C8.36 19.27 5 16.25 5 12c0-4.1 3.2-7.27 7.2-7.27 3.09 0 4.9 1.97 4.9 1.97L19 4.72S16.56 2 12.1 2C6.42 2 2.03 6.8 2.03 12c0 5.05 4.13 10 10.22 10 5.35 0 9.25-3.67 9.25-9.09 0-1.15-.15-1.81-.15-1.81"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.4c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64h185.3c2.2 20.4 3.3 41.8 3.3 64m28.8-64h123.1c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64m112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6 78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7 10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5 11.6 26 20.9 58.2 27 94.7m-209 0H18.6c30-74.1 93.6-130.9 172-151.6-25.5 34.2-45.3 87.7-55.3 151.6M8.1 192h123.1c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64m186.6 254.6c-11.6-26-20.9-58.2-27-94.6h176.6c-6.1 36.4-15.5 68.6-27 94.6-10.5 23.6-22.2 40.7-33.5 51.5-11.2 10.7-20.5 13.9-27.8 13.9s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6-78.4-20.7-142-77.5-172-151.6zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6 25.5-34.2 45.2-87.7 55.3-151.6h116.7z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="../../../javascripts/pytutor_button.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+      
+        <script src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+      
+    
+  </body>
+</html>

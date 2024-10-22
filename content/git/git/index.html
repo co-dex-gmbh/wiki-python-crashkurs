@@ -1,0 +1,3287 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../dateioperationen/dateioperationen/">
+      
+      
+        <link rel="next" href="../../project/tic_tac_toe/">
+      
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>Git - Python Crashkurs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/logo.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/grid.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/video_admonition.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/python_tutor_admonition.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/mermaid.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="amber" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#einfuhrung-in-git-lokales-arbeiten" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Python Crashkurs" class="md-header__button md-logo" aria-label="Python Crashkurs" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Python Crashkurs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Git
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Python Crashkurs" class="md-nav__button md-logo" aria-label="Python Crashkurs" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    Python Crashkurs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Übersicht
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python_grundlagen/python_grundlagen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einführung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/installation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Variablen
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Variablen
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../variables/variablen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Was sind Variablen?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../variables/datentypen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Datentypen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../variables/nutzereingaben/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nutzereingaben
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Bedingter Code
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Bedingter Code
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bedingter_code/bedingter_code/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    if-Blöcke
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bedingter_code/bedingung/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bedingungen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bedingter_code/bedingungen_verkn%C3%BCpfen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bedingungen verknüpfen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../loops/loops/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Schleifen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Collections
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Collections
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collections/lists/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Listen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collections/lists_append/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Listen erweitern
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collections/for_loop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Listen durchlaufen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collections/weitere_datenstrukturen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Weiter Datenstrukturen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collections/sets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../collections/dictionaries/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dictionaries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../list_comp/list_comp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    List Comprehension
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Funktionen
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Funktionen
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functions/functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Funktionen definieren
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functions/functions_with_parameters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parameter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../functions/functions_with_returns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rückgabewerte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Error Handling
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Error Handling
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../try_except/try_except/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    try-except
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Module & Pakete
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Module & Pakete
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../packages/moduls/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Module
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../packages/packages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pakete
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../_venv/_venv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Virtuelle Umgebung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Pandas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Pandas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pandas/pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einführung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pandas/series_dataframes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Series & DataFrames
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pandas/read_dataframes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lesen von DataFrames
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pandas/export_dataframes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Export von DataFrames
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pandas/filter_dataframes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Filtern von DataFrames
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pandas/statistic_dataframes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Statistik mit DataFrames
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pandas/add_and_remove_data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Daten entfernen & hinzufügen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pandas/merge_dataframes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DataFrames zusammenfügen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pandas/useful_functions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nützliche Funktionen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pandas/clean_dataframes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DataFrames bereinigen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Plotting & Dashboards
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            Plotting & Dashboards
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visualization/visualization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einführung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visualization/matplotlib/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Matplotlib
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visualization/seaborn/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Seaborn
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visualization/plotly/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plotly
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../visualization/streamlit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Streamlit
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    OOP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            OOP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop/define_classes/define_classes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Einführung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop/attributes/attributes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Attribute
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop/methods/methods/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Methoden
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop/vererbung/vererbung/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vererbung
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop/magic_methods/magic_methods/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Magic Methods
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop/getter_setter/getter_setter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getter & Setter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oop/class_static_methods/class_static_methods/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Class- & Static Methods
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../unit_tests/unit_tests/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Unit Tests
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dateioperationen/dateioperationen/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dateioperationen
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Versionskontrolle
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_18">
+            <span class="md-nav__icon md-icon"></span>
+            Versionskontrolle
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Git
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#losung-versionieren-mit-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lösung: Versionieren mit Git!
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-aufbau-von-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Aufbau von Git:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Aufbau von Git:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-installation-von-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Installation von GIT
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-die-konfiguration-von-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Die Konfiguration von GIT
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Die Konfiguration von GIT">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-lokales-repository-erstellen" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 Lokales Repository erstellen
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-dateien-erstellen-und-zum-speichern-markieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Dateien erstellen und zum speichern markieren
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Dateien erstellen und zum speichern markieren">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-ersten-commit-erstellen" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Ersten Commit erstellen
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-weitere-commits-erstellen" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Weitere Commits erstellen.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-zwischen-projektversionencommits-wechseln" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Zwischen Projektversionen/Commits wechseln
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-was-speichert-git" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Was speichert GIT?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-git-clone-kopiere-ein-externes-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. git clone – Kopiere ein externes Repository
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-git-workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Git Workflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-anderungen-machen" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Änderungen machen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#81-git-status-aktuelle-anderungen-anzeigen" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.1 git status – Aktuelle Änderungen anzeigen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#82-git-add-verfolgen-sie-die-anderungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2 git add – Verfolgen Sie die Änderungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#83-git-restore-gitignore-verfolgen-sie-die-anderungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3 Git Restore &amp; Gitignore – Verfolgen Sie die Änderungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#84-git-commit-speichern-sie-die-anderungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.4 git commit – Speichern Sie die Änderungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#85-git-log-git-show-commits-prufen" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.5 git log &amp; git show – Commits prüfen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#86-git-stash-die-anderungen-auf-eis-legen" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.6 git stash – Die Änderungen auf Eis legen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-die-commit-historie-manipulieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Die Commit-Historie manipulieren
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#91-git-commit-amend-zusatzliche-anderungen-zum-commit-hinzufugen" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1 git commit –amend – Zusätzliche Änderungen zum Commit hinzufügen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#92-git-rebase-commits-erneut-anwenden" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2 git rebase – Commits erneut anwenden
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93-git-reset-rollback-in-den-spezifischen-zustand" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3 git reset – Rollback in den spezifischen Zustand
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-das-repository-mit-dem-remote-synchronisieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Das Repository mit dem Remote synchronisieren
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#101-git-fetch-referenzen-aktualisieren" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.1 git fetch – Referenzen aktualisieren
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#102-git-merge-eingehende-anderungen-anwenden" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.2 git merge – Eingehende Änderungen anwenden
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#103-git-pull-sofort-aktualisieren-und-anwenden" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.3 git pull – Sofort aktualisieren und anwenden
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#104-git-push-lokale-commits-veroffentlichen" class="md-nav__link">
+    <span class="md-ellipsis">
+      10.4 git push – Lokale Commits veröffentlichen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-branches" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Branches
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#111-git-branch-branches-verwalten" class="md-nav__link">
+    <span class="md-ellipsis">
+      11.1 git branch – Branches verwalten
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#112-git-checkout-aktuellen-branch-andern" class="md-nav__link">
+    <span class="md-ellipsis">
+      11.2 git checkout – Aktuellen Branch ändern
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-fazit" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. Fazit
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aufgaben" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aufgaben:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Aufgaben:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-branch-erzeugen" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Branch erzeugen. 🌶️️
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-branches-zusammenfuhren" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Branches zusammenführen. 🌶️️
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-ein-externes-repository-klonen" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Ein externes Repository klonen 🌶️️🌶️️
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-konflikt-auflosen" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Konflikt auflösen. 🌶️️🌶️️
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-provuziere-unterschiedliche-konflikte" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Provuziere unterschiedliche Konflikte. 🌶️️🌶️️
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-arbeitet-gemeinsam" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Arbeitet gemeinsam. 🌶️️🌶️️
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../project/tic_tac_toe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projekt
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="einfuhrung-in-git-lokales-arbeiten">Einführung in Git: Lokales Arbeiten<a class="headerlink" href="#einfuhrung-in-git-lokales-arbeiten" title="Permanent link">&para;</a></h1>
+<h3 id="problem">Problem<a class="headerlink" href="#problem" title="Permanent link">&para;</a></h3>
+<p>Stell dir vor, du arbeitest, mit anderen an einem Projekt. Wie arbeitet ihr zusammen?</p>
+<ul>
+<li>Kommunikation über E-Mail (Dateien als Anhänge austauschen).</li>
+<li>Gemeinsames Laufwerk, auf das alle Projektbeteiligten Zugreifen können.</li>
+<li>Paralleles Arbeiten an einer Datei, die in der Cloud liegt, wie mit Google Docs oder Microsoft Word.</li>
+</ul>
+<p><img alt="" src="../un%C3%BCbersichtlich.png" width="50%" /></p>
+<h3 id="losung-versionieren-mit-git">Lösung: Versionieren mit Git!<a class="headerlink" href="#losung-versionieren-mit-git" title="Permanent link">&para;</a></h3>
+<p>Git ist ein Versionsverwaltungssystem, um im Team gemeinsam einfach und sicher an Projekten zu arbeiten.</p>
+<p>Git ermöglicht:</p>
+<ul>
+<li>Speicherung, Einsicht und Wiederherstellung von verschiedenen Projektversionen. </li>
+<li>Eine beliebige Anzahl von Projektversionen.</li>
+<li>Übersicht über alle verschiedenen Projektversionen.</li>
+<li>Die Differenz zwischen zwei Projektversionen ansehen.</li>
+<li>Verschiedene Projektversionen zu einer zusammenführen.</li>
+<li>Neue Projektversionen basierend auf beliebigen alten Projektversionen zu erstellen.</li>
+<li>Nachverfolgbarkeit (Wer erstellte welche Änderung?) mit Begründung.</li>
+<li>Paralleles Arbeiten.</li>
+<li>Einzelnes Arbeiten (ungestört).</li>
+<li>Offline Arbeiten (Unabhängigkeit vom Internet).</li>
+</ul>
+<h2 id="1-aufbau-von-git">1. Aufbau von Git:<a class="headerlink" href="#1-aufbau-von-git" title="Permanent link">&para;</a></h2>
+<p>Ein Projekt wird dabei in einem <strong>Repository</strong> gespeichert. In einem Repository liegen <strong>alle</strong> Versionen
+des Projektes vor, die jemals von gespeichert wurden.</p>
+<p>Eine einzelne Projektversion wird in einem <strong>Commit</strong> gespeichert. Man kann es sich wie ein Bild vorstellen,
+dass man vom Projekt zu einem gewissen Zeitpunkt erstellt hat. Man kann dann immer wieder den Zustand vom Projekt
+auf den im Commit festgehaltenen Zustand wieder herstellen. (Man stellt also den Zustand auf dem Bild wieder her.)</p>
+<p>Der <strong>Working Tree</strong> ist die Version deines Projektes, die im Moment auf deinem Computer verfügbar ist und
+betrachtet und bearbeitet werden kann.</p>
+<p>Der <strong>Index/Staging Area</strong> ist eine Datei von git, in der hinterlegt ist, welche Inhalte beim Erstellen eines
+neuen Commits tatsächlich gespeichert werden sollen. Bei git müssen nämlich alle Änderungen, die du in einem
+Projekt vornimmt auch in einer neuen Projektversion (Commit) gespeichert werden. Es ist nämlich möglich auch nur
+bestimmte Änderungen auszuwählen, indem man nur diese der Staging Area hinzufügt. Dann werden auch nur diese 
+Änderungen im neuen Commit gespeichert.</p>
+<p>Ein <strong>Branch</strong> ist ein Zeiger auf eine Projektversion. Dieser ist nützlich, um bei den vielen Projektversionen
+die Übersicht zu behalten, was die aktuellsten Projektversionen sind. Mehr dazu später</p>
+<details class="question" open="open">
+<summary>Metaphorisch gesprochen</summary>
+<p>In dem Text unten tauchen die folgenden Objekte auf:</p>
+<ul>
+<li>Bücherregal</li>
+<li>Erster Tisch</li>
+<li>Zweiter Tisch mit Kamera</li>
+<li>Foto vom zweiten Tisch</li>
+<li>Zettel auf aktuellem Foto</li>
+</ul>
+<p>Diese symbolisieren eines der folgenden Dinge aus dem git-Universium. Welches Objekt gehört zu welchem?</p>
+<ul>
+<li>Repository</li>
+<li>Index/Staging Area</li>
+<li>Branch</li>
+<li>Commit</li>
+<li>
+<p>Working Tree</p>
+<p><div style="background-color: #f0f0f0; padding: 15px; border-radius: 10px;">
+  Man stelle sich ein leeres Bücherregal vor.</p>
+<p>Auf dem Tisch arbeiten wir an einem Projekt (z.B. einer Motion Cutout Animation).
+  Auf diesem Tisch befindet sich unsere aktuelle Projektversion.</p>
+<p>Es gibt einen zweiten Tisch. Über diesen Tisch schwebt eine Kamera.
+  Auf diesem zweiten Tisch können wir eine alles, was auf dem ersten Tisch
+  liegt, mit einem magischen Knopf herüber kopieren. Wir können aber auch sagen,
+  dass nur bestimmte Dinge auf den zweiten Tisch mit der Kamera kopiert werden.
+  Alles, was wir mit dem magischen Knopf auf den zweiten Tisch gepackt haben,
+  erscheint übrigens auch im Bücherregal und ordnet sich da schön ein.</p>
+<p>Wir können jederzeit ein Foto vom zweiten Tisch machen. Dieses Foto können wir
+  ins Regal legen. Das Projekt ist nun in einer neuen Version gesichert.
+  Solange dieser Schrank existiert, ist sie für immer sicher.</p>
+<p>Wir können nun jederzeit unseren Tisch wieder auf den im Bild gespeicherten Zustand bringen.</p>
+<p>Auf dem aktuellsten Foto kleben wir einen Zettel, damit wir es später besser wiederfinden.
+  </div></p>
+</li>
+</ul>
+<details class="success">
+<summary>Lösung</summary>
+<table>
+<thead>
+<tr>
+<th>Metapher</th>
+<th>git</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bücherregal</td>
+<td>Repository</td>
+</tr>
+<tr>
+<td>Erster Tisch</td>
+<td>Working Tree</td>
+</tr>
+<tr>
+<td>Zweiter Tisch mit Kamera</td>
+<td>Index / Staging Area</td>
+</tr>
+<tr>
+<td>Foto vom zweiten Tisch</td>
+<td>Commit</td>
+</tr>
+<tr>
+<td>Zettel auf aktuellem Foto</td>
+<td>Branch</td>
+</tr>
+</tbody>
+</table>
+</details>
+</details>
+<h3 id="11-installation-von-git">1.1 Installation von GIT<a class="headerlink" href="#11-installation-von-git" title="Permanent link">&para;</a></h3>
+<p>Wir können Git auf den gängigsten Betriebssystemen wie Windows, Mac und Linux installieren.
+Tatsächlich ist Git auf den meisten Mac- und Linux-Rechnern standardmäßig installiert.</p>
+<p>Falls git bei dir nicht installiert ist, folge dieser <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Anleitung</a>.</p>
+<p>Um zu sehen, ob Git bereits installiert ist, öffnen wir ein Terminal und führen Folgendes aus:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>version
+<span class="go">git version 2.24.3 (Apple Git-128)</span>
+</code></pre></div></td></tr></table></div>
+Darüber hinaus verfügt Git über integrierte GUI-Tools zum Festschreiben (git-gui)
+und Durchsuchen (gitk). Es gibt auch zahlreiche Tools oder IDE-Plugins von Drittanbietern,
+die das Arbeiten vereinfachen. Wir lernen es in diesem Kurs aber von Grund auf mit der Konsole zu bedienen.</p>
+<h2 id="2-die-konfiguration-von-git">2. Die Konfiguration von GIT<a class="headerlink" href="#2-die-konfiguration-von-git" title="Permanent link">&para;</a></h2>
+<p>Sobald wir Git installiert haben, können wir es einfach mit dem Befehl <code>git config</code> konfigurieren.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Qualidy User&quot;</span>
+</code></pre></div></td></tr></table></div>
+Mit diesem Befehl legen wir den Nutzernamen fest, der bei allen Commits, die wir Erstellen als Autor hinterlegt
+werden soll. Die Option <code>--global</code> legt fest, dass diese Option für alle Repositories des aktuellen Nutzers
+des Betriebssystems gilt.</p>
+<p>Um die Liste der wirksamen Optionen auszugeben, tippen wir:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>config<span class="w"> </span>-l
+<span class="go">user.name=Qualidy User</span>
+</code></pre></div></td></tr></table></div>
+<details class="question" open="open">
+<summary>Nutzer korrekt einstellen</summary>
+<p>Starte git und stelle sicher, dass der richtige Nutzername und E-Mail eingestellt ist.</p>
+<p>Hinweis: Verwende den Befehl <code>git config</code> mit der Option <code>--global</code>, um die Einstellungen für alle Repositories des aktuellen Nutzers festzulegen.</p>
+<details class="info">
+<summary>Tipp</summary>
+<p>Denke daran, sowohl den Nutzernamen als auch die E-Mail-Adresse zu konfigurieren.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Um den Nutzernamen und die E-Mail-Adresse korrekt einzustellen, verwende die folgenden Befehle:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>git config --global user.name &quot;Paul Kenntner&quot;
+git config --global user.email &quot;paul@co-dex.de&quot;
+</code></pre></div></td></tr></table></div>
+<p>Diese Befehle setzen den Nutzernamen auf "Paul Kenntner" und die E-Mail-Adresse auf "paul@co-dex.de" für alle Git-Repositories des aktuellen Benutzers.</p>
+<p>Um zu überprüfen, ob die Einstellungen korrekt vorgenommen wurden, kannst du folgenden Befehl ausführen:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git config --global --list | grep user
+</code></pre></div></td></tr></table></div>
+<p>Dies sollte die eingestellten Werte für user.name und user.email anzeigen.</p>
+</details>
+</details>
+<h3 id="21-lokales-repository-erstellen">2.1 Lokales Repository erstellen<a class="headerlink" href="#21-lokales-repository-erstellen" title="Permanent link">&para;</a></h3>
+<p>Um ein neues Repository zu initialisieren, müssen wir den Befehl git init verwenden. 
+Es verwandelt das aktuelle Verzeichnis in ein Git-Repository und git beginnt mit der Verfolgung seines Inhalts:</p>
+<p>Neuen Ordner erstellen: 
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>mkdir<span class="w"> </span>simple-repo
+</code></pre></div></td></tr></table></div></p>
+<p>In den neuen Ordner wechseln (<code>cd</code> steht für "<strong>c</strong>hange <strong>d</strong>irectory"):
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>simple-repo
+</code></pre></div></td></tr></table></div></p>
+<p>Repository erstellen:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>init
+<span class="go">Initialized empty Git repository in /simple-repo/.git/</span>
+</code></pre></div></td></tr></table></div></p>
+<p>Git erstellt darin auch ein verstecktes Verzeichnis namens <code>.git</code>. In diesem Verzeichnis werden 
+alle Objekte und Referenzen gespeichert, die Git im Rahmen unseres Projektverlaufs erstellt und verwendet. </p>
+<p>Im Moment ist dieses Repository noch leer.</p>
+<h2 id="3-dateien-erstellen-und-zum-speichern-markieren">3. Dateien erstellen und zum speichern markieren<a class="headerlink" href="#3-dateien-erstellen-und-zum-speichern-markieren" title="Permanent link">&para;</a></h2>
+<p>Wir können nun Dateien im Ordner <code>simple-repo</code> erstellen. Erstellen wir z.B. die Datei <code>main.py</code>:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># my first python program</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hallo Welt&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Wir können nun mit dem Befehl <code>git status</code> sehen, dass git registiert, dass eine neue Datei im Ordner ist,
+diese Aber noch nicht versioniert wird:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code>$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+        main.py
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+</code></pre></div></td></tr></table></div>
+<p>Wir können nun sagen, dass wir die Datei in die nächste Version mit aufnehmen wollen, indem wir 
+es mit dem Befehl <code>git add main.py</code> dem Index hinzufügen. Wenn wir hier keine Rückmeldung erhalten
+ist alles gut gelaufen.</p>
+<p>Wenn wir dann erneut den Status erfragen, sehen wir nun, dass die Datei dem Index hinzugefügt wurde:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
+        new file:   main.py
+</code></pre></div></td></tr></table></div>
+<h3 id="31-ersten-commit-erstellen">3.1 Ersten Commit erstellen<a class="headerlink" href="#31-ersten-commit-erstellen" title="Permanent link">&para;</a></h3>
+<p>Wir können nun eine Versions unseres Projektes speichern, indem wir einen Commit erstellen mit dem Befehl
+<code>git commit</code>. Wenn wir das tun, landen wir im VIM Editor. Keine Panik🧘‍♀️🧘‍♂️</p>
+<p><img alt="img.png" src="../vim_editor_1.png" /></p>
+<p>VIM ist ein ausgefeilter Texteditor, der in der Konsole benutzt werden kann. Wir sind dazu aufgerufen
+hier die <strong>Commit-Message</strong> zu notieren. Das ist eine Nachricht, die beschreiben soll, was in dieser Projektversion
+neues passiert ist, im Vergleich zu der bisher genutzten Projektversion.</p>
+<p>Für uns gibt es bei Vim nur drei wichtige Befehle:</p>
+<ul>
+<li>Drücke <code>i</code>, um in den Insert-Modus zu kommen. Das erkennst du daran, dass ganz unten <code>-- INSERT --</code> erscheint. Du kannst jetzt im Text schreiben und mit den Pfeiltasten navigieren. Schreibe nun in die erste Zeile deine Commit-Message</li>
+</ul>
+<p><img alt="img.png" src="../vim_editor_2.png" /></p>
+<ul>
+<li>
+<p>Um den Insert-Modus zu verlassen dürcke <code>ESC</code>. Jetzt kannst du den Text nicht mehr bearbeiten.</p>
+</li>
+<li>
+<p>Gebe nun <code>:x</code> ein, um zu speichern und den Editor zu schließen. </p>
+</li>
+</ul>
+<p><img alt="img.png" src="../vim_editor_3.png" /></p>
+<p>Wir haben nun den commit erfolgreich erstellt und können diesen mit dem Befehl <code>git log</code> untersuchen:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code>$ git log
+commit f8e4d3fc8111a78da61a0ed28ec420eb9fb5aeb4 (HEAD -&gt; master)
+Author: Viktor Reichert &lt;viktor.reichert@qualidy.de&gt;
+Date:   Sat Feb 24 13:04:13 2024 +0100
+
+    main.py hinzugefügt
+</code></pre></div></td></tr></table></div></p>
+<p>Wir haben nun unsere erste Projektversion erstellt. Wir können diesen Zustand des Projektes zukünftig jederzeit
+wiederherstellen.</p>
+<h3 id="32-weitere-commits-erstellen">3.2 Weitere Commits erstellen.<a class="headerlink" href="#32-weitere-commits-erstellen" title="Permanent link">&para;</a></h3>
+<p>Wir können nun weitere Projektversionen erstellen. Dazu fügen wir neue Dateien hinzu oder ändern bestehende.
+Immer wenn wir das tun, können wir mit <code>git status</code> sehen, welche Änderungen nur im Working-Tree vorliegen
+und welche wir mit <code>git add</code> bereits dem Index hinzugefügt wurden und so in der nächsten Projektversion (dem nächsten
+Commit) dauerhaft persistiert werden.</p>
+<p>Wir können z.B. eine neue Datei <code>my_calculator.py</code> erstellen:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">multiply_all</span><span class="p">(</span><span class="n">my_list</span><span class="p">):</span>
+    <span class="n">product</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">faktor</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">:</span>
+        <span class="n">product</span> <span class="o">*=</span> <span class="n">faktor</span>
+    <span class="k">return</span> <span class="n">product</span>
+</code></pre></div></td></tr></table></div>
+<p>Wir können z.B. die Datei <code>main.py</code> erweitern:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1"># my first python program</span>
+<span class="kn">from</span> <span class="nn">my_calculator</span> <span class="kn">import</span> <span class="n">multiply_all</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hallo Welt&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">multiply_all</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]))</span>
+</code></pre></div></td></tr></table></div>
+<p>Mit <code>git status</code> wird uns nun gesagt, dass die neue Datei noch nicht versioniert wird und die zweite Datei 
+Modifizierungen aufweist, die noch nicht versioniert werden:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>$ git status
+On branch master
+Changes not staged for commit:
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)
+        modified:   main.py
+
+Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+        my_calculator.py
+
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+</code></pre></div></td></tr></table></div>
+<p>Wir können nun die Änderungen einzeln dem Index hinzufügen, indem wir <code>git add main.py</code> und <code>git add my_calculator.py</code>
+ausführen, oder wir lassen alles auf ein Mal mit dem Befehl <code>git add .</code> hinzufügen. Wir sehen dann mit <code>git status</code>,
+dass die Datein dem Index hinzugefügt wurden:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code>$ git add .
+$ git status
+On branch master
+Changes to be committed:
+  (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)
+        modified:   main.py
+        new file:   my_calculator.py
+</code></pre></div></td></tr></table></div>
+<p>Wir können nun einen Commit erstellen. Um etwas schneller zu sein und nicht wieder in VIM zu landen, können wir
+beim Befehlsaufruf direkt die Commit-Message mit angeben, indem wir das Flag <code>-m</code> mit einer Commit-Message
+hinzufügen. Etwa so:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>$ git commit -m &quot;added my_calculator with multiply_all method&quot;
+[master 58ea6a4] added my_calculator with multiply_all method
+ 2 files changed, 8 insertions(+)
+ create mode 100644 my_calculator.py
+</code></pre></div></td></tr></table></div>
+<p>Wir sehen nun, dass im <code>git log</code> zwei Commit auftauchen:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code>$ git log
+commit 58ea6a40de9de9370a47032e3637eaa77273448b (HEAD -&gt; master)
+Author: Viktor Reichert &lt;viktor.reichert@qualidy.de&gt;
+Date:   Sat Feb 24 13:26:47 2024 +0100
+
+    added my_calculator with multiply_all method
+
+commit f8e4d3fc8111a78da61a0ed28ec420eb9fb5aeb4
+Author: Viktor Reichert &lt;viktor.reichert@qualidy.de&gt;
+Date:   Sat Feb 24 13:04:13 2024 +0100
+
+    main.py hinzugefügt
+</code></pre></div></td></tr></table></div></p>
+<p>Mit dem Befehl <code>git log --all --oneline --graph</code> kannst du alle Commits in Kurzform sehen, die in diesem Projekt
+erstellt wurden. In dieser Ansicht kannst du mit den Pfeiltasten nach oben und unten navigieren und
+sie mit der Taste <code>q</code> verlassen.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>$ git log --all --oneline --graph
+* 58ea6a4 (HEAD -&gt; master) added my_calculator with multiply_all method
+* f8e4d3f main.py hinzugefügt
+</code></pre></div></td></tr></table></div>
+<p>Der Zeiger <code>HEAD</code> zeigt uns übrigens an, welche Projektversion wir derzeit als Ausgangspunkt unserer Arbeit betrachten.</p>
+<h2 id="4-zwischen-projektversionencommits-wechseln">4. Zwischen Projektversionen/Commits wechseln<a class="headerlink" href="#4-zwischen-projektversionencommits-wechseln" title="Permanent link">&para;</a></h2>
+<p>Um von einer Projektversion zur anderen zu wechseln, nutzen wir die Befehle <code>git switch</code> oder <code>git checkout</code>.</p>
+<p>Man gibt dann den <em>Hash</em> des Commits an oder einen <em>Tag</em> oder <em>Branch</em>, der auf den Commit zeigt.</p>
+<p>Der <strong>Hash</strong> eines Commits kann mit dem Befehl <code>git log</code> ermittelt werden
+und ist die lange Hexadezimalzahl in der ersten Zeile. In unserem Beispiel 
+wären das <code>58ea6a40d...</code> und <code>f8e4d3fc...</code>. Bei <code>git log --graph --oneline --all</code> sehen wir
+nur den Anfang von diesem Hash. Die ersten vier Zeichen eines Hash genügen normalerweise.</p>
+<p>Ein <strong>Tag</strong> ist eine dauerhafte Referenz auf einen Commit, der verwendet wird,
+um z.B. Releaseversionen zu kennzeichnen. Hier verwenden wir diese noch nicht.</p>
+<p>Ein <strong>Branch</strong> ist auch eine Referenz auf einen Tag, jedoch kann diese im Laufe der Zeit verschiedene
+Commits referenzieren. Der einzige Branch, den wir hier bisher vorliegen haben ist <code>master</code>.</p>
+<p>Wenn wir also auf den ersten Commit wecheln, können wir <code>git checkout f8e4</code> verwenden. Wir sehen dann,
+dass wir eine Warnung erhalten, dass wir im "'detached HEAD' state" sind, aber das ist erstmal
+nicht so schlimm. Wir sehen nämlich auch, dass wir den alten Projektzustand mit nur einer Datei
+wiederhergestellt haben.</p>
+<p><img alt="img.png" src="../commit_1.png" /></p>
+<p>Wenn wir dann zum aktuellen Projektstand zurückwechseln wollen, dann können wir das 
+über den Befehl <code>git checkout master</code>. Dann haben wir wieder beide Dateien.</p>
+<p><img alt="img.png" src="../commit_2.png" /></p>
+<details class="question" open="open">
+<summary>Fremdes Repository untersuchen</summary>
+<p>Lade <a href="../dateien/Bewerbung.zip">diesen Ordner herunter</a>.
+Er enthält ein Git-Repository. Untersuche es mit Hilfe des Befehls:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>git log --all [--oneline] --graph
+</code></pre></div></td></tr></table></div>
+<p>Beantworte folgende Fragen:</p>
+<ul>
+<li>Wie viele Commits gibt es?</li>
+<li>Wie viele Branches gibt es?</li>
+<li>Wie viele Tags gibt es?</li>
+</ul>
+<details class="info">
+<summary>Tipp</summary>
+<p>Denk daran, dass du das Repository zuerst entpacken und in das Verzeichnis wechseln musst, bevor du Git-Befehle ausführen kannst.</p>
+</details>
+<details class="success">
+<summary>Lösung</summary>
+<p>Um die Informationen zu erhalten, führe folgende Schritte aus:</p>
+<ol>
+<li>Entpacke die ZIP-Datei</li>
+<li>Öffne ein Terminal und navigiere in das entpackte Verzeichnis</li>
+<li>Führe den Befehl <code>git log --all --oneline --graph</code> aus</li>
+<li>Analysiere die Ausgabe:</li>
+<li>Jede Zeile, die mit einem * beginnt, repräsentiert einen Commit</li>
+<li>Branches werden in Klammern angezeigt, z.B. (HEAD -&gt; master)</li>
+<li>Tags werden ebenfalls in Klammern angezeigt, z.B. (tag: v1.0)</li>
+</ol>
+<p>Diese Aufgabe hilft dir, die Struktur und Geschichte eines Git-Repositories zu verstehen und wichtige Git-Befehle zur Analyse zu üben.</p>
+</details>
+</details>
+<details class="question" open="open">
+<summary>Zwischen Projektversionen wechseln</summary>
+<p>Verwende das Repository aus der vorherigen Aufgabe (Bewerbung.zip).</p>
+<ol>
+<li>Wechsle zwischen verschiedenen Projektversionen mit <code>git checkout</code> oder <code>git switch</code>.</li>
+<li>Springe zu mindestens einem Commit über den Hash, zu einem Tag und zu einem Branch.</li>
+<li>Untersuche die Unterschiede zwischen den Projektversionen.</li>
+</ol>
+<p>Beantworte folgende Fragen:</p>
+<ul>
+<li>Welche Unterschiede kannst du zwischen den verschiedenen Projektversionen erkennen?</li>
+<li>Inwiefern sind die Commit-Messages hilfreich, um zu verstehen, was in den jeweiligen Commits passiert ist?</li>
+<li>Welche Methode (Hash, Tag, Branch) findest du am einfachsten zu verwenden und warum?</li>
+</ul>
+<details class="success">
+<summary>Lösung</summary>
+<ol>
+<li>
+<p>Unterschiede zwischen Projektversionen:</p>
+<ul>
+<li>Änderungen im Inhalt von Dateien</li>
+<li>Hinzugefügte oder gelöschte Dateien</li>
+<li>Strukturelle Änderungen (z.B. Verschieben von Dateien)</li>
+</ul>
+</li>
+<li>
+<p>Nützlichkeit der Commit-Messages:</p>
+<ul>
+<li>Gute Commit-Messages sollten kurz und prägnant beschreiben, was geändert wurde</li>
+<li>Sie helfen, den Zweck und Kontext der Änderungen zu verstehen</li>
+<li>Qualität der Messages kann variieren (einige könnten informativer sein als andere)</li>
+</ul>
+</li>
+<li>
+<p>Methoden zum Wechseln zwischen Versionen:</p>
+<ul>
+<li>Hash: Präzise, aber schwer zu merken</li>
+<li>Tag: Einfach für wichtige Meilensteine oder Releases</li>
+<li>Branch: Praktisch für aktive Entwicklungslinien</li>
+</ul>
+</li>
+</ol>
+<pre class="mermaid"><code>gitGraph
+    commit id: "0f3c214"
+    commit id: "0fb8d7"
+    branch zeugnisse
+    checkout zeugnisse
+    commit id: "03ddaff"
+    commit id: "a5a60d4"
+    checkout main
+    merge zeugnisse id: "1842726"</code></pre>
+</details>
+</details>
+<details class="question" open="open">
+<summary>Hilfe zur Selbsthilfe</summary>
+<p>Untersuche, was der Befehl <code>git help</code> tut.</p>
+<p>Was passiert, wenn du die folgenden Befehle ausführst:
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>--help<span class="w"> </span>init
+<span class="gp">$ </span>git<span class="w"> </span><span class="nb">help</span><span class="w"> </span>init
+<span class="gp">$ </span>git<span class="w"> </span>init<span class="w"> </span>--help
+<span class="gp">$ </span>git<span class="w"> </span><span class="nb">help</span><span class="w"> </span>-g
+</code></pre></div></td></tr></table></div></p>
+<p>Erkläre, was die Bedeutung der verschiedenen Klammern bei Anzeigen von <code>git help</code> bedeuten.
+Welche Bedeutung haben</p>
+<ul>
+<li>die spitzen Klammern <code>&lt;...&gt;</code>?</li>
+<li>die eckigen Klammern <code>[..]</code>?</li>
+<li>die eckigen Klammern mit Pipes <code>[..|..|..]</code>?</li>
+<li>die runden Klammern mit Pipes <code>(..|..)</code>?</li>
+<li>Warum wird der untersuchte Befehl mehrfach bei "usage" aufgeführt?</li>
+</ul>
+<details class="success">
+<summary>Lösung</summary>
+<p>Der Befehl <code>git help</code> zeigt eine Übersicht der Git-Befehle und deren Verwendung an.</p>
+<p>Die ersten drei Befehle (<code>git --help init</code>, <code>git help init</code>, <code>git init --help</code>) rufen alle die Hilfe für den Befehl <code>init</code> auf und zeigen detaillierte Informationen zu diesem Befehl an.</p>
+<p><code>git help -g</code> zeigt eine Liste der verfügbaren Git-Anleitungen an.</p>
+<p>Bedeutung der Klammern in der Git-Hilfe:</p>
+<ul>
+<li>Spitze Klammern <code>&lt;...&gt;</code>: Platzhalter für erforderliche Inhalte, wie Branchnamen oder Dateipfade.</li>
+<li>Eckige Klammern <code>[..]</code>: Optionale Parameter, die verwendet werden können, aber nicht müssen.</li>
+<li>Eckige Klammern mit Pipes <code>[..|..|..]</code>: Optionale Parameter, von denen nur einer gewählt werden kann.</li>
+<li>Runde Klammern mit Pipes <code>(..|..)</code>: Parameter, von denen einer gewählt werden muss.</li>
+</ul>
+<p>Der untersuchte Befehl wird mehrfach bei "usage" aufgeführt, weil sich nur so in dieser Syntax alle möglichen Aufrufmöglichkeiten und Kombinationen von Optionen darstellen lassen.</p>
+</details>
+</details>
+<h2 id="5-was-speichert-git">5. Was speichert GIT?<a class="headerlink" href="#5-was-speichert-git" title="Permanent link">&para;</a></h2>
+<p>Wenn du ein Repository anlegst, wird ein versteckter Ordner <code>.git</code> angelegt. In diesem Ordner befindet sich
+das Repository. Normalerweise fasst man diesen Ordner niemals an, aber um git zu erlernen, ist es schön zu sehen,
+wo was gespeichert wird.</p>
+<p>Alle Projektdateien und Ordner, die git speichert, findet man im Ordner <code>.git/objects</code>.
+Es gibt vier Arten von Objekten in git:</p>
+<ul>
+<li>Blobs (Dateien mit Inhalt)</li>
+<li>Trees (Bildet Ordnerstrukturen ab. Hat Referenzen zu Blobs und Trees)</li>
+<li>Commits (Wird bei einem Commit erstellt, hat verschiedene Metainfos und Referenz zu einem Tree)</li>
+<li>Annotatet Tags (Referenziert eine dauerhaft einen Commit)</li>
+</ul>
+<p>Die Dateien sind in gehashter Form gespeichert. </p>
+<details class="question" open="open">
+<summary>Untersuche die Git-Objekte</summary>
+<p>Mit dem Befehl <code>git cat-file -p &lt;hash&gt;</code> und <code>git show &lt;hash&gt;</code> können die Inhalte der Dateien im
+Ordner <code>.git/objects</code> angezeigt werden. Untersuche das Repository von oben.
+Erstelle ein Bild, das zeigt, wie die Dateien voneinander abhängen.</p>
+<details class="success">
+<summary>Lösung</summary>
+<pre class="mermaid"><code>flowchart TD
+  C0["0f3c214&lt;br&gt;Commit"] --&gt;
+  T0["5ef8d03&lt;br&gt;Tree"] --Lebenslauf.txt--&gt;
+  B0["168730b&lt;br&gt;Blob&lt;br&gt;&lt;br&gt;Alter: 33 Jahre&lt;br&gt;Beruf: Boss&lt;br&gt;&lt;br&gt;Vorheriger Arbeitgeber: Geheim"] 
+
+  C1["0fb8da7&lt;br&gt;Commit"] --&gt; C0
+  C1 --&gt;
+  T1["012b7e8&lt;br&gt;Tree"] --Lebenslauf.txt--&gt; B0
+  T1 --Bewerbungsschreiben.txt--&gt;
+  B1["7e65d0f&lt;br&gt;Blob&lt;br&gt;&lt;br&gt;Sehr geeehrte Damen und Herren,&lt;br&gt;&lt;br&gt;warum ich der richtige für euch bin? Hier sind meine 3 besten Gründe:&lt;br&gt;&lt;br&gt;1. Ich bin der schönste&lt;br&gt;2. Ich bin der klügste&lt;br&gt;3. Ich bin, ehrlich gesagt, auch der demütigste."]
+
+  C2["03ddaff&lt;br&gt;Commit"] --&gt; C0
+  C2 --&gt;
+  T2["09cc0f2&lt;br&gt;Tree"] --Lebenslauf.txt--&gt; B0
+  T2 --Zeugnis.txt--&gt;
+  B2["641eef5&lt;br&gt;Blob&lt;br&gt;&lt;br&gt;Mathe: 1&lt;br&gt;Bio: 1&lt;br&gt;Latein: 5&lt;br&gt;Beauty: 1+&lt;br&gt;HSU: 2"]
+
+  C3["a5a60d4&lt;br&gt;Commit"] --&gt; C2
+  C3 --&gt;
+  T3["c8ba3ee&lt;br&gt;Tree"] --Lebenslauf.txt--&gt; B0
+  T3 --Zeugnis.txt--&gt;
+  B3["32f54f8&lt;br&gt;Blob&lt;br&gt;&lt;br&gt;Mathe: 1&lt;br&gt;Bio: 1&lt;br&gt;Latein: 5&lt;br&gt;Beauty: 1+&lt;br&gt;HSU: 2&lt;br&gt;&lt;br&gt;&lt;br&gt;Führerschein Klasse A und B"]
+
+
+  C4["1842726&lt;br/&gt;Commit"] --&gt; C3
+  C4 --&gt; C1
+  C4 --&gt;
+  T4["d276800&lt;br/&gt;Tree"] --Bewerbungsschreiben.txt--&gt; B1
+  T4 --Lebenslauf.txt--&gt; B0
+  T4 --Zeugnis.txt--&gt; B3
+
+  subgraph Commits
+  C0
+  C1
+  C2
+  C3
+  C4
+  end
+
+  subgraph Trees
+  T0
+  T1
+  T2
+  T3
+  T4
+  end
+
+  subgraph Blobs
+  B0
+  B1
+  B2
+  B3
+  end
+
+  subgraph Tags
+  Tag1["c96c504&lt;br&gt;Tag&lt;br&gt;Anfang"] --&gt; C0
+  end</code></pre>
+</details>
+</details>
+<h2 id="6-git-clone-kopiere-ein-externes-repository">6. git clone – Kopiere ein externes Repository<a class="headerlink" href="#6-git-clone-kopiere-ein-externes-repository" title="Permanent link">&para;</a></h2>
+<p>Manchmal existiert bereits ein Projekt und wir möchten es auf unseren eigenen Rechner laden
+(z.B. um mitzuwirken oder es einfach zu benutzen). 
+Zuerst müssen wir das vorhandene Repository lokal herunterladen.</p>
+<p>Der Befehl <code>git clone</code> kopiert das Repository in ein neues Verzeichnis:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/eugenp/tutorials.git
+<span class="go">Cloning into &#39;repo&#39;...</span>
+</code></pre></div></td></tr></table></div>
+<p>Wenn der Vorgang abgeschlossen ist, enthält das neu erstellte Verzeichnis alle Dateien, Commits, 
+Branches und den Verlauf des Projekts.</p>
+<p>Darüber hinaus ist das geklonte Repository bereits konfiguriert und mit der externen Quelle verbunden:</p>
+<pre class="mermaid"><code>flowchart LR
+    A[("💻&lt;br/&gt;local&lt;br/&gt;Repository")]
+    B[("🌐&lt;br/&gt;remote&lt;br/&gt;Repository")]
+    B --"git clone"--&gt; A</code></pre>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span><span class="nb">cd</span><span class="w"> </span>tutorials
+<span class="gp">$ </span>git<span class="w"> </span>remote<span class="w"> </span>-v
+<span class="go">origin  https://github.com/eugenp/tutorials.git (fetch)</span>
+<span class="go">origin  https://github.com/eugenp/tutorials.git (push)</span>
+</code></pre></div></td></tr></table></div>
+<p>Git verwendet diese links, um weitere Änderungen zu verwalten. Mehr dazu später.</p>
+<h2 id="7-git-workflow">7. Git Workflow<a class="headerlink" href="#7-git-workflow" title="Permanent link">&para;</a></h2>
+<p>Nun können wir die ersten Änderungen vornehmen. Aber bevor wir das tun, schauen wir uns an, 
+wie Git diese Änderungen verfolgt.</p>
+<p>Unser lokales Repository besteht aus drei verschiedenen Bäumen, die von Git verwaltet werden.</p>
+<p>Das erste ist das Arbeitsverzeichnis, das die aktuelle Version der Dateien enthält.</p>
+<p>Nachdem wir unsere Änderungen an den Dateien vorgenommen haben, 
+können wir die Dateien in den Index verschieben, der als Staging-Bereich fungiert. 
+Wir tun dies mit dem Befehl git add. </p>
+<p>Schließlich können wir unsere Änderungen mit dem Befehl „git commit“ anwenden 
+und im lokalen Repository speichern. Durch das Festschreiben der Änderungen wird der HEAD 
+des Repositorys aktualisiert, der immer auf das letzte von uns vorgenommene Festschreiben verweist.</p>
+<p>Diese drei Schritte werden verwendet, um die lokalen Änderungen beizubehalten. 
+Aber wie wir wissen, kann das Repository auch eine externe Quelle enthalten. 
+Der letzte Schritt besteht darin, beide Repositories zu synchronisieren und unsere Änderungen zu veröffentlichen.</p>
+<h2 id="8-anderungen-machen">8. Änderungen machen<a class="headerlink" href="#8-anderungen-machen" title="Permanent link">&para;</a></h2>
+<p>Nachdem wir nun wissen, wie das Tracking-System von Git funktioniert, 
+können wir unsere ersten Änderungen an unserem Repository vornehmen.</p>
+<h2 id="81-git-status-aktuelle-anderungen-anzeigen">8.1 git status – Aktuelle Änderungen anzeigen<a class="headerlink" href="#81-git-status-aktuelle-anderungen-anzeigen" title="Permanent link">&para;</a></h2>
+<p>Erstellen wir eine einfache Datei und fügen sie unserem Repository hinzu. 
+Anschließend führen wir den Befehl git status aus und analysieren seine Ausgabe:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span><span class="s2">&quot;Hello World&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>myfile.txt
+<span class="gp">$ </span>git<span class="w"> </span>status
+<span class="go">On branch master</span>
+<span class="go">Your branch is up to date with &#39;origin/master&#39;.</span>
+
+<span class="go">Untracked files:</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="go">    myfile.txt</span>
+</code></pre></div></td></tr></table></div>
+<p>Es wurde nichts zum Festschreiben hinzugefügt, aber es sind nicht erfasste Dateien vorhanden 
+(verwenden Sie „git add“, um sie zu verfolgen)</p>
+<p>Der Befehl gibt den aktuellen detaillierten Status unserer Änderungen aus.
+Der erste Teil zeigt, ob die lokalen und remote-Branches synchronisiert sind.</p>
+<p>Als nächstes zeigt die Ausgabe den Status des Working Trees – die Liste der aktuell geänderten
+Dateien mit ihrem Wartungsstatus. Wie wir sehen, befindet sich die Datei myfile.txt derzeit im
+Arbeitsverzeichnisbereich und wird von Git nicht erfasst.</p>
+<h2 id="82-git-add-verfolgen-sie-die-anderungen">8.2 git add – Verfolgen Sie die Änderungen<a class="headerlink" href="#82-git-add-verfolgen-sie-die-anderungen" title="Permanent link">&para;</a></h2>
+<p>Um mit der Verfolgung der Änderungen zu beginnen, müssen wir sie mithilfe des Befehls „git add“
+in den Index verschieben:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>myfile.txt
+<span class="gp">$ </span>git<span class="w"> </span>stage<span class="w"> </span>*
+</code></pre></div></td></tr></table></div>
+<p>Wir können mehrere Dateien gleichzeitig angeben, indem wir sie durch ein Leerzeichen trennen.
+Wir können alle Dateien auch mit dem Sternchen angeben.</p>
+<p>Alternativ können wir auch den Befehl git stage verwenden, der ein Synonym für den Befehl git add ist.</p>
+<p>Wir überprüfen den Status:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>status
+<span class="go">On branch master</span>
+<span class="go">Your branch is up to date with &#39;origin/master&#39;.</span>
+
+<span class="go">Changes to be committed:</span>
+<span class="go">  (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)</span>
+<span class="go">    new file:   myfile.txt</span>
+</code></pre></div></td></tr></table></div>
+<p>Git hat erfolgreich unsere Dateien zu erfasst.</p>
+<h2 id="83-git-restore-gitignore-verfolgen-sie-die-anderungen">8.3 Git Restore &amp; Gitignore – Verfolgen Sie die Änderungen<a class="headerlink" href="#83-git-restore-gitignore-verfolgen-sie-die-anderungen" title="Permanent link">&para;</a></h2>
+<p>Git ermöglicht das Entfernen von Dateien aus dem Index. Wenn wir unsere Änderungen versehentlich 
+dorthin verschoben haben und die Nachverfolgung vorübergehend deaktivieren möchten, verwenden wir Git Restore:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>restore<span class="w"> </span>-S<span class="w"> </span>myfile.txt
+<span class="gp">$ </span>git<span class="w"> </span>status
+<span class="go">On branch master</span>
+<span class="go">Your branch is up to date with &#39;origin/master&#39;.</span>
+
+<span class="go">Untracked files:</span>
+<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+<span class="go">    myfile.txt</span>
+</code></pre></div></td></tr></table></div>
+<p>Wir haben unsere Datei gerade noch einmal in den Arbeitsbereich verschoben und 
+sie von weiteren Commits ausgeschlossen, bis wir sie erneut bereitstellen. 
+Die Flag -S (–staged) weist Git an, nur den Index des Repositorys wiederherzustellen.</p>
+<p>Wir können Dateien auch dauerhaft ausschließen und ihre Nachverfolgung deaktivieren. 
+Dazu müssen wir eine .gitignore-Datei erstellen. 
+Diese Datei enthält Dateinamenmuster und wird auf alle Dateien im aktuellen Verzeichnis 
+und seinen untergeordneten Verzeichnissen angewendet. Bei allen weiteren Add-Aktionen werden Dateien 
+ignoriert, die diesen Mustern entsprechen.</p>
+<h2 id="84-git-commit-speichern-sie-die-anderungen">8.4 git commit – Speichern Sie die Änderungen<a class="headerlink" href="#84-git-commit-speichern-sie-die-anderungen" title="Permanent link">&para;</a></h2>
+<p>Machen wir die letzten Änderungen rückgängig und verschieben unsere Datei erneut in den Staging-Bereich:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>myfile.txt
+</code></pre></div></td></tr></table></div>
+<p>Jetzt ist es an der Zeit einen Commit durchführen.</p>
+<p>Der Commit ist ein Git-Objekt, das wie eine Momentaufnahme unseres Repositorys zu einem bestimmten Zeitpunkt ist.</p>
+<p>Um Änderungen zu übernehmen, verwenden wir den Befehl „git commit“:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;My first commit&quot;</span>
+<span class="go">[master 8451901] My first commit</span>
+<span class="go"> 1 file changed, 1 insertion(+)</span>
+<span class="go"> create mode 100644 myfile.txt</span>
+</code></pre></div></td></tr></table></div>
+<p>Wir haben gerade unseren ersten Commit lokal erstellt.</p>
+<p>Der Befehl „git commit“ enthält viele zusätzliche Optionen zum Ausführen komplexerer Vorgänge,
+die wir mit dem Befehl „git commit –help“ überprüfen können.</p>
+<p>Am nützlichsten ist das Flag -m, das eine Commit-Nachricht angibt, 
+die die im aktuellen Snapshot vorgenommenen Änderungen beschreibt.</p>
+<p>Lassen Sie uns abschließend den Status überprüfen:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>status
+<span class="go">On branch master</span>
+<span class="go">Your branch is ahead of &#39;origin/master&#39; by 1 commit.</span>
+<span class="go">  (use &quot;git push&quot; to publish your local commits)</span>
+
+<span class="go">nothing to commit, working tree clean</span>
+</code></pre></div></td></tr></table></div>
+<p>Nun enthält unser Working Tree keine zusätzlichen Änderungen, aber das lokale Repository enthält mehr Commits als seine externe Quelle. Um unsere Änderungen zu veröffentlichen, sollten wir daher lokale Änderungen mit dem Ursprung synchronisieren.</p>
+<h2 id="85-git-log-git-show-commits-prufen">8.5 git log &amp; git show – Commits prüfen<a class="headerlink" href="#85-git-log-git-show-commits-prufen" title="Permanent link">&para;</a></h2>
+<p>Sobald wir den Commit erstellt haben, können wir seine Details überprüfen. Commits enthalten viele zusätzliche Metadaten, wie den Autor, den Zeitstempel und mehr.</p>
+<p>Um die Liste der Commits des aktuellen Branchs auszudrucken, verwenden wir den Befehl git log:</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>log
+<span class="go">commit 845190154ed7a491a6143669c4ce88058fb93f8a (HEAD -&gt; master)</span>
+<span class="go">Author: ...</span>
+<span class="go">Date: ...</span>
+
+<span class="go">    My first commit</span>
+
+<span class="go">commit 9a1e11ec981b41e4b4b9c245a7a96cd6707f4705 (origin/master, origin/HEAD)</span>
+<span class="go">...</span>
+</code></pre></div></td></tr></table></div>
+Die Liste zeigt standardmäßig den Commit-Verlauf des aktuellen Branchs in umgekehrter chronologischer Reihenfolge an.</p>
+<p>Jeder Eintrag enthält die allgemeinen Metadaten wie die Commit-ID (eine eindeutige SHA-1-Prüfsumme), den Autor, das Datum und die angegebene Nachricht.</p>
+<p>Wenn wir uns eingehender mit einem einzelnen Commit befassen möchten, drucken wir dessen Details mit dem Befehl „git show“, gefolgt von der angeforderten Commit-ID:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>show<span class="w"> </span>845190154ed7a491a6143669c4ce88058fb93f8a
+<span class="go">commit 845190154ed7a491a6143669c4ce88058fb93f8a (HEAD -&gt; master)</span>
+<span class="go">Author: ...</span>
+<span class="go">Date:...</span>
+
+<span class="go">    My first commit</span>
+
+<span class="go">diff --git a/myfile.txt b/myfile.txt</span>
+<span class="go">new file mode 100644</span>
+<span class="go">index 0000000..557db03</span>
+<span class="go">--- /dev/null</span>
+<span class="go">+++ b/myfile.txt</span>
+<span class="go">@@ -0,0 +1 @@</span>
+<span class="go">+Hello World</span>
+</code></pre></div></td></tr></table></div>
+<p>Diesmal zeigt die Ausgabe auch die Unterschiede an, die durch das Commit im Vergleich zum vorherigen Snapshot mit dem Befehl „git diff“ entstanden sind.</p>
+<h2 id="86-git-stash-die-anderungen-auf-eis-legen">8.6 git stash – Die Änderungen auf Eis legen<a class="headerlink" href="#86-git-stash-die-anderungen-auf-eis-legen" title="Permanent link">&para;</a></h2>
+<p>Der Befehl „git stash“ speichert die von uns vorgenommenen Änderungen vorübergehend und stellt das Arbeitsverzeichnis wieder her, damit es mit dem HEAD-Commit übereinstimmt. Dadurch können wir schnell den Kontext wechseln und mit der Arbeit an etwas anderem beginnen.</p>
+<p>Erstellen wir eine weitere Datei und fügen sie dem Staging-Bereich hinzu. Danach führen wir den Git-Stash aus:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>touch<span class="w"> </span>myfile-2.txt<span class="p">;</span><span class="w"> </span>git<span class="w"> </span>add<span class="w"> </span>*
+<span class="gp">$ </span>git<span class="w"> </span>stash<span class="w"> </span>push
+<span class="go">Saved working directory and index state WIP on master: 8451901 My first commit</span>
+</code></pre></div></td></tr></table></div>
+<p>Versuchen wir nun, die Datei aufzulisten:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>ls<span class="w"> </span>myfile-2.txt
+
+<span class="go">ls: myfile-2.txt: No such file or directory</span>
+</code></pre></div></td></tr></table></div>
+<p>Wir können sehen, dass die Datei jetzt nicht vorhanden ist. Dies liegt daran, dass alle ausstehenden Änderungen aus dem Arbeitsverzeichnis entfernt und im Stash gespeichert wurden.</p>
+<p>Mit der Listenoption können wir alle gespeicherten Änderungen ausdrucken:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>stash<span class="w"> </span>list
+<span class="go">stash@{0}: WIP on master: 8451901 My first commit</span>
+</code></pre></div></td></tr></table></div>
+<p>Da wir keine Beschreibung angegeben haben, wird der Stash standardmäßig als „WIP am …“ aufgeführt. Mit dem Flag -m in der Befehlszeile können wir den Standardwert in eine aussagekräftigere Nachricht ändern.</p>
+<p>Um die Details zu überprüfen, verwenden wir die Show-Option:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>stash<span class="w"> </span>show
+<span class="go"> myfile-2.txt | 0</span>
+<span class="go"> 1 file changed, 0 insertions(+), 0 deletions(-)</span>
+</code></pre></div></td></tr></table></div>
+<p>Die Ausgabe gibt Informationen über Änderungen aus, die im neuesten Stash gespeichert sind.</p>
+<p>Wenn wir schließlich die Änderungen wiederherstellen möchten, verwenden wir die Pop-Option:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>stash<span class="w"> </span>pop
+<span class="go">...</span>
+<span class="gp">$ </span>ls<span class="w"> </span>myfile-2.txt<span class="w"> </span>
+<span class="go">myfile-2.txt</span>
+</code></pre></div></td></tr></table></div>
+<p>Wir haben gerade einen einzelnen Stash-Status aus der Stash-Liste entfernt und ihn über den aktuellen Status angewendet.</p>
+<h2 id="9-die-commit-historie-manipulieren">9. Die Commit-Historie manipulieren<a class="headerlink" href="#9-die-commit-historie-manipulieren" title="Permanent link">&para;</a></h2>
+<p>Nachdem wir nun gelernt haben, wie man Änderungen im Repository speichert, ändern wir zuvor gespeicherte Commits. In den folgenden Abschnitten werden wir die häufigsten Anwendungsfälle behandeln.</p>
+<h2 id="91-git-commit-amend-zusatzliche-anderungen-zum-commit-hinzufugen">9.1 git commit –amend – Zusätzliche Änderungen zum Commit hinzufügen<a class="headerlink" href="#91-git-commit-amend-zusatzliche-anderungen-zum-commit-hinzufugen" title="Permanent link">&para;</a></h2>
+<p>Angenommen, wir haben vergessen, beim Festschreiben einer Änderung eine Datei einzuschließen. Natürlich können wir zusätzlich zum letzten einen weiteren Commit erstellen, aber das könnte den Änderungsverlauf unübersichtlich machen.</p>
+<p>In solchen Fällen möchten wir möglicherweise, dass Git unseren letzten Commit neu schreibt und die Datei, die wir vergessen haben, mit der Option „Amend“ einbindet.</p>
+<p>Sehen wir uns den letzten Commit an:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>show<span class="w"> </span>--summary
+<span class="go">commit 845190154ed7a491a6143669c4ce88058fb93f8a (HEAD -&gt; master)</span>
+<span class="go">Author: ...</span>
+<span class="go">Date: ...</span>
+
+<span class="go">    My first commit</span>
+
+<span class="go"> create mode 100644 myfile.txt</span>
+</code></pre></div></td></tr></table></div>
+<p>Nachdem wir unsere Datei „my-file2.txt“ aus dem Stash entfernt haben, schreiben wir sie mit der Option „Amend“ fest:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>commit<span class="w"> </span>--amend
+<span class="go">[master 0ed9f03] My first commit</span>
+<span class="go"> 2 files changed, 1 insertion(+)</span>
+<span class="go"> create mode 100644 myfile-2.txt</span>
+<span class="go"> create mode 100644 myfile.txt</span>
+</code></pre></div></td></tr></table></div>
+<p>Wir sehen, dass Git die Datei zu unserem letzten Commit hinzugefügt und die Änderungen kombiniert hat.</p>
+<h2 id="92-git-rebase-commits-erneut-anwenden">9.2 git rebase – Commits erneut anwenden<a class="headerlink" href="#92-git-rebase-commits-erneut-anwenden" title="Permanent link">&para;</a></h2>
+<p>Eine fortgeschrittenere Technik zum Ändern von Commits ist der Befehl git rebase. Es wendet Commits aus dem Verlauf erneut auf eine andere Basis an, sodass wir sie im laufenden Betrieb ändern können.</p>
+<p>Wir erstellen zunächst einen weiteren Commit in unserem Repository:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>touch<span class="w"> </span>myfile-3.txt
+<span class="gp">$ </span>git<span class="w"> </span>add<span class="w"> </span>*
+<span class="gp">$ </span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;My second commit&quot;</span>
+</code></pre></div></td></tr></table></div>
+<p>Jetzt sollten wir zwei einzelne Commits haben – unseren ersten Commit und unseren zweiten Commit.</p>
+<p>Beginnen wir mit dem Rebase beider Commits:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>rebase<span class="w"> </span>-i<span class="w"> </span>HEAD~2
+</code></pre></div></td></tr></table></div>
+<p>Dadurch wird ein Editor geöffnet, in dem wir den Verlauf mithilfe von Befehlen bearbeiten können:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="go">pick 82d8635 My first commit</span>
+<span class="go">pick 6d58108 My second commit</span>
+
+<span class="gp"># </span>Rebase<span class="w"> </span>9a1e11e..82d8635<span class="w"> </span>onto<span class="w"> </span>9a1e11e<span class="w"> </span><span class="o">(</span><span class="m">2</span><span class="w"> </span>commands<span class="o">)</span>
+<span class="gp">#</span>
+<span class="gp"># </span>Commands:
+<span class="gp"># </span>p,<span class="w"> </span>pick<span class="w"> </span>&lt;commit&gt;<span class="w"> </span><span class="o">=</span><span class="w"> </span>use<span class="w"> </span>commit
+<span class="gp"># </span>r,<span class="w"> </span>reword<span class="w"> </span>&lt;commit&gt;<span class="w"> </span><span class="o">=</span><span class="w"> </span>use<span class="w"> </span>commit,<span class="w"> </span>but<span class="w"> </span>edit<span class="w"> </span>the<span class="w"> </span>commit<span class="w"> </span>message
+<span class="gp"># </span>e,<span class="w"> </span>edit<span class="w"> </span>&lt;commit&gt;<span class="w"> </span><span class="o">=</span><span class="w"> </span>use<span class="w"> </span>commit,<span class="w"> </span>but<span class="w"> </span>stop<span class="w"> </span><span class="k">for</span><span class="w"> </span>amending
+<span class="gp"># </span>s,<span class="w"> </span>squash<span class="w"> </span>&lt;commit&gt;<span class="w"> </span><span class="o">=</span><span class="w"> </span>use<span class="w"> </span>commit,<span class="w"> </span>but<span class="w"> </span>meld<span class="w"> </span>into<span class="w"> </span>previous<span class="w"> </span>commit
+<span class="gp"># </span>d,<span class="w"> </span>drop<span class="w"> </span>&lt;commit&gt;<span class="w"> </span><span class="o">=</span><span class="w"> </span>remove<span class="w"> </span>commit<span class="w"> </span>
+<span class="go">...</span>
+</code></pre></div></td></tr></table></div>
+<p>Oben sehen wir die Liste der Rebasing-Commits, gefolgt vom Manual. 
+Es ergeben sich hier viele Möglichkeiten: 
+Wir können die Reihenfolge ändern, indem wir die Zeilen vertauschen, 
+die Commit-Nachricht umformulieren, sie zu einer einzigen zusammenfassen, 
+einen einzelnen Commit bearbeiten oder sogar löschen. 
+Die Zeilen werden von oben nach unten angewendet.</p>
+<h2 id="93-git-reset-rollback-in-den-spezifischen-zustand">9.3 git reset – Rollback in den spezifischen Zustand<a class="headerlink" href="#93-git-reset-rollback-in-den-spezifischen-zustand" title="Permanent link">&para;</a></h2>
+<p>Manchmal möchten wir möglicherweise den aktuellen Status löschen und zu einem vergangenen Stand zurückkehren. Dazu verwenden wir die Git-Reset-Option:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>reset<span class="w"> </span>82d8635
+</code></pre></div></td></tr></table></div>
+<p>Es macht alle Commits nach dem angegebenen Commit rückgängig, behält Änderungen lokal bei und verschiebt sie in den Staging-Bereich. Wenn wir jedoch alle derzeitigen Änderungen verwerfen möchten, können wir das Flag –hard verwenden.</p>
+<h2 id="10-das-repository-mit-dem-remote-synchronisieren">10. Das Repository mit dem Remote synchronisieren<a class="headerlink" href="#10-das-repository-mit-dem-remote-synchronisieren" title="Permanent link">&para;</a></h2>
+<p>Nachdem wir bisher lokal am Repository gearbeitet haben, ist es nun endlich an der Zeit, unsere Änderungen zu veröffentlichen.
+Bevor wir sie hochladen, sollten wir immer unsere lokale Kopie mit der Remote synchronisieren, um Konflikte während der Veröffentlichung zu vermeiden.</p>
+<h2 id="101-git-fetch-referenzen-aktualisieren">10.1 git fetch – Referenzen aktualisieren<a class="headerlink" href="#101-git-fetch-referenzen-aktualisieren" title="Permanent link">&para;</a></h2>
+<p>Während wir unsere Änderungen umsetzen, haben andere möglicherweise Änderungen im gleichen Branch veröffentlicht. 
+Daher sollten wir sie überprüfen und mit unserem lokalen Repository synchronisieren.</p>
+<p>Der Befehl git fetch hilft uns dabei:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>fetch
+</code></pre></div></td></tr></table></div>
+<p>Dadurch werden Objekte und Referenzen aus dem Ursprungs-Repository heruntergeladen.</p>
+<p>Wir sollten beachten, dass diese Aktion niemals den aktuellen Working Tree ändert. Dies liegt daran, dass wir nur den aktualisierten Commit-Verlauf für unser Repository überprüfen können. Wenn wir ausstehende Änderungen feststellen, müssen wir weitermachen.</p>
+<h2 id="102-git-merge-eingehende-anderungen-anwenden">10.2 git merge – Eingehende Änderungen anwenden<a class="headerlink" href="#102-git-merge-eingehende-anderungen-anwenden" title="Permanent link">&para;</a></h2>
+<p>Wir müssen alle eingehenden Änderungen im selben Branch zusammenführen, bevor wir unseren Code veröffentlichen. Wenn wir dies nicht tun, könnte der Veröffentlichungsprozess fehlschlagen.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>merge<span class="w"> </span>origin/master
+</code></pre></div></td></tr></table></div>
+<p>Der Befehl git merge ist sehr mächtig. Er lädt alle neuen Änderungen aus der angegebenen Referenz herunter und kombiniert sie mit dem aktuellen Working Tree, indem er die richtige Zusammenführungsstrategie wählt. Viele Änderungen werden automatisch übernommen, auch wenn Änderungen an denselben Dateien vorhanden sind.</p>
+<p>Aber manchmal gibt es keine einfache Möglichkeit, Änderungen zusammenzuführen. In diesem Fall liegt ein Konflikt vor, den wir manuell lösen müssen, bevor wir fortfahren können. Wir müssen die betroffene Datei bearbeiten, eine endgültige Version vorbereiten und die Änderungen übernehmen.</p>
+<h2 id="103-git-pull-sofort-aktualisieren-und-anwenden">10.3 git pull – Sofort aktualisieren und anwenden<a class="headerlink" href="#103-git-pull-sofort-aktualisieren-und-anwenden" title="Permanent link">&para;</a></h2>
+<p>Der Befehl „git pull“ ist nichts anderes als die Kombination von „git fetch“ und „git merge“ in einem:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>pull<span class="w"> </span>origin/master
+</code></pre></div></td></tr></table></div>
+<p>Er überprüft einen bestimmten Branch auf die neuesten Änderungen und führt sie mit dem aktuellen Branch zusammen, genau wie dies bei Git Fetch und Git Merge der Fall ist. Dies ist die übliche Methode, um den aktuellen Branch zu aktualisieren.</p>
+<p>Darüber hinaus kann das Abrufen von Änderungen auch eine zusätzliche manuelle Aktion erfordern, um Konflikte zu lösen.</p>
+<h2 id="104-git-push-lokale-commits-veroffentlichen">10.4 git push – Lokale Commits veröffentlichen<a class="headerlink" href="#104-git-push-lokale-commits-veroffentlichen" title="Permanent link">&para;</a></h2>
+<p>Sobald wir unser lokales Repository synchronisiert und ausstehende Konflikte behoben haben, sind wir endlich soweit, unsere Commits zu veröffentlichen. Wir müssen das Remote-Ziel und den lokalen Branch auswählen.</p>
+<p>Führen wir den Befehl git push aus:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>master
+</code></pre></div></td></tr></table></div>
+<p>Dadurch wird der Master-Branch des Remote-Repositorys mit allen lokal vorgenommenen Commits aktualisiert.</p>
+<p>Abschließend überprüfen wir den Verlauf:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>log
+<span class="go">commit 6d5810884c3ce63ca08084959e3a21405a1187df (HEAD -&gt; master, origin/master, origin/HEAD)</span>
+<span class="go">Author: ...</span>
+<span class="go">Date: ...</span>
+<span class="go">    My second commit</span>
+</code></pre></div></td></tr></table></div>
+<p>Tadaaaa! Wir sind fertig! </p>
+<h2 id="11-branches">11. Branches<a class="headerlink" href="#11-branches" title="Permanent link">&para;</a></h2>
+<p>Branches werden verwendet, um voneinander isolierte Features zu entwickeln. Wir nutzen andere Branches für die Entwicklung und führen sie nach Fertigstellung wieder mit der Master-Branch zusammen.</p>
+<h2 id="111-git-branch-branches-verwalten">11.1 git branch – Branches verwalten<a class="headerlink" href="#111-git-branch-branches-verwalten" title="Permanent link">&para;</a></h2>
+<p>Um einen neuen Branch zu erstellen, geben wir einfach einen Namen an:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>new-branch
+</code></pre></div></td></tr></table></div>
+<p>Ein lokaler Branch ist für andere erst verfügbar, wenn wir ihn in das Remote-Repository veröffentlichen.</p>
+<p>Wir können nun den neu erstellten Zweig sehen, indem wir alle Branches auflisten:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>--list<span class="w"> </span>--all
+<span class="go">* master</span>
+<span class="go">  new-branch</span>
+<span class="go">  remotes/origin/HEAD -&gt; origin/master</span>
+<span class="go">  remotes/origin/master</span>
+</code></pre></div></td></tr></table></div>
+<p>Wenn wir einen lokalen Branch löschen möchten, führen wir Folgendes aus:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>new-branch
+</code></pre></div></td></tr></table></div>
+<h2 id="112-git-checkout-aktuellen-branch-andern">11.2 git checkout – Aktuellen Branch ändern<a class="headerlink" href="#112-git-checkout-aktuellen-branch-andern" title="Permanent link">&para;</a></h2>
+<p>Wenn wir den aktuellen Branch wechseln möchten, verwenden wir die Funktionen git checkout oder git switch:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="gp">$ </span>git<span class="w"> </span>switch<span class="w"> </span>new-branch
+<span class="go">Switched to branch &#39;new-branch&#39;</span>
+<span class="gp">$ </span>git<span class="w"> </span>checkout<span class="w"> </span>master
+<span class="go">Switched to branch &#39;master&#39;</span>
+</code></pre></div></td></tr></table></div>
+<p>Wir sind gerade mit beiden Befehlen vom Master zum New-Branch und dann wieder zurück zum Master gewechselt.</p>
+<p>Obwohl beide ähnlich funktionieren, ermöglicht der Befehl git switch lediglich das Wechseln von Zweigen. Im Gegensatz dazu ist der Git-Checkout ein komplexerer Befehl, der es uns ermöglicht, zusätzlich Dateien zu verwalten, Branches zurückzusetzen oder Dateien auf bestimmte Versionen zurückzusetzen.</p>
+<h2 id="12-fazit">12. Fazit<a class="headerlink" href="#12-fazit" title="Permanent link">&para;</a></h2>
+<p>In diesem Artikel haben wir alle Git-Grundlagen behandelt und die meisten gängigen Vorgänge besprochen, die jeder Entwickler bei der Arbeit mit Git kennen sollte. Durch praktische Beispiele haben wir gelernt, wie man mit diesem Versionskontrollsystem arbeitet.</p>
+<p>Wir begannen mit der Installation und Konfiguration von Git und erstellten dann das erste Repository. Danach haben wir einige Änderungen vorgenommen und gelernt, wie man den Commit-Verlauf ändert. Abschließend haben wir die Änderungen durch die Synchronisierung beider Repositories veröffentlicht und gelernt, wie man mit Git-Branches arbeitet.</p>
+<h2 id="aufgaben">Aufgaben:<a class="headerlink" href="#aufgaben" title="Permanent link">&para;</a></h2>
+<p>[320min]</p>
+<h3 id="1-branch-erzeugen">1. Branch erzeugen. 🌶️️<a class="headerlink" href="#1-branch-erzeugen" title="Permanent link">&para;</a></h3>
+<p>Auf dem Repository von gestern erzeuge einen eigenen Branch.
+Mache hier eine Änderung, commite sie und veröffentliche sie.</p>
+<h3 id="2-branches-zusammenfuhren">2. Branches zusammenführen. 🌶️️<a class="headerlink" href="#2-branches-zusammenfuhren" title="Permanent link">&para;</a></h3>
+<p>Führe deinen Branch mit dem master zusammen.
+Erzeuge danach zwei neue Branches. Auf jedem Banch erstellst du eine neue Datei mit unterschiedlichen Namen. Commite und veröffentliche.
+Führe beide Branches nacheinander zusammen.</p>
+<h3 id="3-ein-externes-repository-klonen">3. Ein externes Repository klonen 🌶️️🌶️️<a class="headerlink" href="#3-ein-externes-repository-klonen" title="Permanent link">&para;</a></h3>
+<p>Mache die Aufgabe wie oben aber provuziere einen Konflikt.</p>
+<h3 id="4-konflikt-auflosen">4. Konflikt auflösen. 🌶️️🌶️️<a class="headerlink" href="#4-konflikt-auflosen" title="Permanent link">&para;</a></h3>
+<p>Löse den Konflikt von oben auf einem Weg deiner Wahl auf.</p>
+<h3 id="5-provuziere-unterschiedliche-konflikte">5. Provuziere unterschiedliche Konflikte. 🌶️️🌶️️<a class="headerlink" href="#5-provuziere-unterschiedliche-konflikte" title="Permanent link">&para;</a></h3>
+<p>Erstelle unterschiedliche Konflikte und löse sie jeweils mit einer anderen Methode auf.</p>
+<h3 id="6-arbeitet-gemeinsam">6. Arbeitet gemeinsam. 🌶️️🌶️️<a class="headerlink" href="#6-arbeitet-gemeinsam" title="Permanent link">&para;</a></h3>
+<p>Einigt euch ein gemeinsames Projekt in einem Remote Repository zu erstellen. Dort sollen bestimmte Dateien enthalten sein.
+Bildet Arbeitsgruppen und erstellt je einen Branch pro Arbeitsgruppe.
+Erzeugt eigene Beiträge innerhalb der Branches. Commitet dann und löst Konflikte ggf auf. Veröffentlicht eure Commits.
+Führt nach möglichkeit alles wieder im Master zusammen und veröffentlicht.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../dateioperationen/dateioperationen/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Dateioperationen">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Dateioperationen
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../project/tic_tac_toe/" class="md-footer__link md-footer__link--next" aria-label="Next: Projekt">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Projekt
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 Qualidy GmbH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.kununu.com/de/qualidy" target="_blank" rel="noopener" title="www.kununu.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M311 86.3c12.3-12.7 12-32.9-.7-45.2s-32.9-12-45.2.7l-155.2 160L64 249V64c0-17.7-14.3-32-32-32S0 46.3 0 64v384c0 17.7 14.3 32 32 32s32-14.3 32-32V341l64.7-66.7 133 192c10.1 14.5 30 18.1 44.5 8.1s18.1-30 8.1-44.5L174.1 227.4z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://de.linkedin.com/company/qualidy" target="_blank" rel="noopener" title="de.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.google.com/search?sca_esv=7e6ba2047fcb60f3&uds=AMwkrPtyB8MsmozA4Lwzqy2G2HCu-abqzc6moOG48q3gP5dtjTRzC2Ws0eSwcyLXDfZNuYCrZ7ByIreHLG9th3vKLekPoVeey0tumAbet4cVLQRLzdRFhUbOGbnyp3xo1V0hzzaNmkCN&si=AKbGX_rcuucMgom2rba1cdwsvM2SVoIkP2btyqGMV4t0GuHIs4sGV_1tpuqR0YHG4Rzd9SdJcL-lW6E-2aJA5azZLTKkIOrZ2j2aWwoBkVbdEJ0o0GPcQhs%3D&q=Qualidy+GmbH+Rezensionen&sa=X&ved=2ahUKEwibsbnSgcmFAxXNQvEDHaVYCiAQ3PALegQIRxAF" target="_blank" rel="noopener" title="www.google.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.35 11.1h-9.17v2.73h6.51c-.33 3.81-3.5 5.44-6.5 5.44C8.36 19.27 5 16.25 5 12c0-4.1 3.2-7.27 7.2-7.27 3.09 0 4.9 1.97 4.9 1.97L19 4.72S16.56 2 12.1 2C6.42 2 2.03 6.8 2.03 12c0 5.05 4.13 10 10.22 10 5.35 0 9.25-3.67 9.25-9.09 0-1.15-.15-1.81-.15-1.81"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://qualidy.de" target="_blank" rel="noopener" title="qualidy.de" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M352 256c0 22.2-1.2 43.6-3.3 64H163.4c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64h185.3c2.2 20.4 3.3 41.8 3.3 64m28.8-64h123.1c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64m112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6 78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7 10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5 11.6 26 20.9 58.2 27 94.7m-209 0H18.6c30-74.1 93.6-130.9 172-151.6-25.5 34.2-45.3 87.7-55.3 151.6M8.1 192h123.1c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64m186.6 254.6c-11.6-26-20.9-58.2-27-94.6h176.6c-6.1 36.4-15.5 68.6-27 94.6-10.5 23.6-22.2 40.7-33.5 51.5-11.2 10.7-20.5 13.9-27.8 13.9s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6-78.4-20.7-142-77.5-172-151.6zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6 25.5-34.2 45.2-87.7 55.3-151.6h116.7z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tracking", "navigation.path", "navigation.top", "navigation.footer", "toc.follow", "toc.integrate", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="../../../javascripts/pytutor_button.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+      
+        <script src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+      
+    
+  </body>
+</html>
