@@ -27,6 +27,9 @@ nav:
       - Funktionen definieren: content/functions/functions.md
       - Parameter: content/functions/functions_with_parameters.md
       - Rückgabewerte: content/functions/functions_with_returns.md
+  - Projekt:
+      - content/project/tic_tac_toe.md
+      - content/project/wordle.md
   - Error Handling:
       - try-except: content/try_except/try_except.md
   - Module & Pakete: 
@@ -62,8 +65,6 @@ nav:
   - Dateioperationen: content/dateioperationen/dateioperationen.md
   - Versionskontrolle: 
     - Git: content/git/git.md
-  - Projekt: content/project/tic_tac_toe.md
-
 
 theme:
   name: material

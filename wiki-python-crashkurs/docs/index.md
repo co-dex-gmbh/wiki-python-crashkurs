@@ -25,7 +25,7 @@ hide:
 - [:material-list-status: **Unit Tests**](content/unit_tests/unit_tests.md)
 - [:material-file-document-outline: **Dateioperationen**](content/dateioperationen/dateioperationen.md)
 - [:material-git: **Versionskontrolle**](content/git/git.md)
-- [:material-nintendo-game-boy: **Projekt**](content/project/project.md)
+- [:material-nintendo-game-boy: **Projekt**](content/project/tic_tac_toe.md)
 <!-- - [:material-nintendo-game-boy: **Projekt**](content/project/tic_tac_toe.md)
 - [:simple-rocketdotchat: **Umgang mit KI**](content/ki/umgang.md) -->
 
