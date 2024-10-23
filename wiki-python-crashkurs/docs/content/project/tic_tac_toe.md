@@ -93,22 +93,22 @@ if __name__ == '__main__': # (13)!
 13. Diese beiden Codezeilen sorgen dafür, dass bei Ausführung der Datei das Programm gestartet wird.
 14. Das Spielbrett ist aus sicht des Computers eine Liste mit neun Elementen. Mithilfe der Methode `als_quadrat`, werden wir dieses Spielbrett später auf der Konsole als ein schönes Quadrat ausgeben. Um das Spielfeld beim Programmieren einfacher zu handhaben, ist es hier aber gut, es als eine einfache Liste zu speichern.
 
-Wir müssen in diesem Code vier Dinge ergänzen:
+<!-- Wir müssen in diesem Code vier Dinge ergänzen: -->
 
-{{ task(file="tasks/tictactoe_als_quadrat.yaml", collapsed=True) }}
+<!-- {{ task(file="tasks/tictactoe_als_quadrat.yaml", collapsed=True) }} -->
 
-{{ task(file="tasks/tictactoe_es_gibt_gewinner.yaml", collapsed=True) }}
+<!-- {{ task(file="tasks/tictactoe_es_gibt_gewinner.yaml", collapsed=True) }} -->
 
-{{ task(file="tasks/tictactoe_symbol_schreiben.yaml", collapsed=True) }}
+<!-- {{ task(file="tasks/tictactoe_symbol_schreiben.yaml", collapsed=True) }} -->
 
-{{ task(file="tasks/tictactoe_spielerwechsel.yaml", collapsed=True) }}
+<!-- {{ task(file="tasks/tictactoe_spielerwechsel.yaml", collapsed=True) }} -->
 
-Wenn wir alles richtig gemacht haben, kann so unsere Lösung aussehen:
+<!-- Wenn wir alles richtig gemacht haben, kann so unsere Lösung aussehen: -->
 
-??? tip "Komplette Lösung"
+<!-- ??? tip "Komplette Lösung" 
 
     ``` python hl_lines="18-20 27 31-38 42"
     --8<-- "goals/tictactoe.py"
-    ```
+    ```-->
 
-{{ youtube_video("https://www.youtube.com/embed/hYzRuiJe2yU?si=sea2B_bU1wx9yMz9") }}
+<!-- {{ youtube_video("https://www.youtube.com/embed/hYzRuiJe2yU?si=sea2B_bU1wx9yMz9") }} -->
