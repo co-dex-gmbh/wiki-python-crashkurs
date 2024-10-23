@@ -19,7 +19,6 @@ hide:
 - [:material-alert-octagon: **Error Handling**](content/try_except/try_except.md)
 - [:material-view-module: **Module & Pakete**](content/packages/moduls.md)
 - [:simple-virtualbox: **Virtuelle Umgebung**](content/_venv/_venv.md)
-- [:material-panda: **Pandas**](content/pandas/pandas.md)
 - [:material-chart-bar: **Plotting & Dashboards**](content/visualization/visualization.md)
 - [:fontawesome-solid-object-ungroup: **OOP**](content/oop/oop.md)
 - [:material-list-status: **Unit Tests**](content/unit_tests/unit_tests.md)
