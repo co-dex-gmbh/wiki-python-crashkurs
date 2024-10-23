@@ -1646,29 +1646,39 @@ Herzlichen Glückwunsch!
 <li>Diese beiden Codezeilen sorgen dafür, dass bei Ausführung der Datei das Programm gestartet wird.</li>
 <li>Das Spielbrett ist aus sicht des Computers eine Liste mit neun Elementen. Mithilfe der Methode <code>als_quadrat</code>, werden wir dieses Spielbrett später auf der Konsole als ein schönes Quadrat ausgeben. Um das Spielfeld beim Programmieren einfacher zu handhaben, ist es hier aber gut, es als eine einfache Liste zu speichern.</li>
 </ol>
-<p>Wir müssen in diesem Code vier Dinge ergänzen:</p>
-<details class="question">
-<summary>Implementiere <code>als_quadrat</code></summary>
-<p>Die Liste <code>spielbrett</code> soll auf der Konsole schön dargestellt werden.</p>
-<p><strong>Beispiele</strong></p>
-<p>Für die Liste <code>[0, 1, 2, 3, 4, 5, 6, 7, 8]</code>: </p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<!-- Wir müssen in diesem Code vier Dinge ergänzen: -->
+
+<!-- ??? question "Implementiere `als_quadrat`"
+
+    Die Liste `spielbrett` soll auf der Konsole schön dargestellt werden.
+
+    **Beispiele**
+
+    Für die Liste `[0, 1, 2, 3, 4, 5, 6, 7, 8]`: 
+
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>0 | 1 | 2
 3 | 4 | 5
 6 | 7 | 8
 </code></pre></div></td></tr></table></div>
-Für die Liste <code>["x", "o", 2, "x", 4, 5, 6, 7, "o"]</code>: </p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+    Für die Liste `["x", "o", 2, "x", 4, 5, 6, 7, "o"]`: 
+
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>x | o | 2
 x | 4 | 5
 6 | 7 | o
 </code></pre></div></td></tr></table></div>
-<p>Diese Darstellung wird in der Funktion <code>als_quadrat</code> erstellt. </p>
-<p>Mit <code>\n</code> kann in einem String ein Zeilenumbruch gesetzt werden.</p>
-<p>Implementieren Sie dies. Hier sind Unittest, mit denen sie überprüfen können, ob ihre Funktion richtig ist:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+
+
+    Diese Darstellung wird in der Funktion `als_quadrat` erstellt. 
+
+    Mit `\n` kann in einem String ein Zeilenumbruch gesetzt werden.
+
+    Implementieren Sie dies. Hier sind Unittest, mit denen sie überprüfen können, ob ihre Funktion richtig ist:
+
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1708,29 +1718,31 @@ x | 4 | 5
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-<details class="info">
-<summary>Tipp</summary>
-<p>Schreiben Sie die Tests in eine seperate Datei. Wenn alles funktiniert, kopieren sie die korrekte Implementierung. Das ist zwar nicht die feine englische Art, aber für den moment ok so.</p>
-</details>
-<details class="success">
-<summary>Lösung</summary>
-<details class="video">
-<summary>Lösungsvideo</summary>
-<p><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-    <iframe src="https://www.youtube.com/embed/-HLU3RETWS8?si=vaD2qmteDn9p-4S1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-</div></p>
-</details>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+
+    ??? info "Tipp"
+
+        Schreiben Sie die Tests in eine seperate Datei. Wenn alles funktiniert, kopieren sie die korrekte Implementierung. Das ist zwar nicht die feine englische Art, aber für den moment ok so.
+
+    ??? success "Lösung"
+
+        ??? video "Lösungsvideo"
+
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                <iframe src="https://www.youtube.com/embed/-HLU3RETWS8?si=vaD2qmteDn9p-4S1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+            </div>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">als_quadrat</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">):</span>
     <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
 </code></pre></div></td></tr></table></div>
-</details>
-</details>
-<details class="question">
-<summary>Implementiere <code>es_gibt_gewinner</code></summary>
-<p>Die Methode <code>es_gibt_gewinner</code> prüft, ob in irgendeiner Zeile, Spalte oder Diagonalen ein Symbol drei mal auftaucht.</p>
-<p>Hier sind ein Haufen Unittests, mit denen du die Korrektheit deiner Funktion prüfen kannst.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+         -->
+
+<!-- ??? question "Implementiere `es_gibt_gewinner`"
+
+    Die Methode `es_gibt_gewinner` prüft, ob in irgendeiner Zeile, Spalte oder Diagonalen ein Symbol drei mal auftaucht.
+
+    Hier sind ein Haufen Unittests, mit denen du die Korrektheit deiner Funktion prüfen kannst.
+
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1906,22 +1918,25 @@ x | 4 | 5
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-<details class="info">
-<summary>Tipp</summary>
-<p>Überlege dir zunächst, wie du für die erste Zeile prüften kannst, ob alle drei Symbole gleich sind.</p>
-<p>Überlege dir dann so eine Prüfung für jede Zeile, Spalte und Diagonale.</p>
-<p>Überlege dir dann, wie du diese Bedingungen verknüpfen kannst.</p>
-<p>Schreiben Sie die Tests in eine seperate Datei. Wenn alles funktiniert, kopieren sie die korrekte Implementierung. Das ist zwar nicht die feine englische Art, aber für den moment ok so.</p>
-</details>
-<details class="success">
-<summary>Lösung</summary>
-<details class="video">
-<summary>Lösungsvideo</summary>
-<p><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-    <iframe src="https://www.youtube.com/embed/TDYXZY49cBA?si=kfrH-gYu4_c9nSiS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-</div></p>
-</details>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+
+    ??? info "Tipp"
+
+        Überlege dir zunächst, wie du für die erste Zeile prüften kannst, ob alle drei Symbole gleich sind.
+
+        Überlege dir dann so eine Prüfung für jede Zeile, Spalte und Diagonale.
+
+        Überlege dir dann, wie du diese Bedingungen verknüpfen kannst.
+
+        Schreiben Sie die Tests in eine seperate Datei. Wenn alles funktiniert, kopieren sie die korrekte Implementierung. Das ist zwar nicht die feine englische Art, aber für den moment ok so.
+
+    ??? success "Lösung"
+
+        ??? video "Lösungsvideo"
+
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                <iframe src="https://www.youtube.com/embed/TDYXZY49cBA?si=kfrH-gYu4_c9nSiS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+            </div>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
@@ -1939,13 +1954,14 @@ x | 4 | 5
             <span class="ow">or</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span>
             <span class="ow">or</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span>
 </code></pre></div></td></tr></table></div>
-</details>
-</details>
-<details class="question">
-<summary>Implementiere <code>symbol_schreiben</code></summary>
-<p>In der Methode <code>symbol_schreiben</code> wird implementiert, wie ein neues Symbol auf das Spielfeld eingetragen wird.
-Implementieren Sie dies. Hier sind Unittest, mit denen sie überprüfen können, ob ihre Funktion richtig ist:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+         -->
+
+<!-- ??? question "Implementiere `symbol_schreiben`"
+
+    In der Methode `symbol_schreiben` wird implementiert, wie ein neues Symbol auf das Spielfeld eingetragen wird.
+    Implementieren Sie dies. Hier sind Unittest, mit denen sie überprüfen können, ob ihre Funktion richtig ist:
+
+    <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1997,51 +2013,50 @@ Implementieren Sie dies. Hier sind Unittest, mit denen sie überprüfen können,
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-<ol>
-<li>Der erste Test wird definiert.</li>
-<li>Das "leere" Spielfeld wird erstellt.</li>
-<li>Das Symbol wird festgelegt.</li>
-<li>Die Position wird festgelegt.</li>
-<li>Die erwartete Lösung wird definiert.</li>
-<li>Die Funktion wird ausgeführt.</li>
-<li>Nun wird geprüft, ob die liste <code>spielbrett</code> korrekt geändert wurde.</li>
-</ol>
-<details class="info">
-<summary>Tipp</summary>
-<p>Schreiben Sie die Tests in eine seperate Datei. Wenn alles funktiniert, kopieren sie die korrekte Implementierung. Das ist zwar nicht die feine englische Art, aber für den moment ok so.</p>
-</details>
-<details class="success">
-<summary>Lösung</summary>
-<details class="video">
-<summary>Lösungsvideo</summary>
-<p><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-    <iframe src="https://www.youtube.com/embed/zBFt2HOFDAw?si=bV0isnPBSSX3bqAv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-</div></p>
-</details>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+
+    1. Der erste Test wird definiert.
+    2. Das "leere" Spielfeld wird erstellt.
+    3. Das Symbol wird festgelegt.
+    4. Die Position wird festgelegt.
+    5. Die erwartete Lösung wird definiert.
+    6. Die Funktion wird ausgeführt.
+    7. Nun wird geprüft, ob die liste `spielbrett` korrekt geändert wurde.
+
+    ??? info "Tipp"
+
+        Schreiben Sie die Tests in eine seperate Datei. Wenn alles funktiniert, kopieren sie die korrekte Implementierung. Das ist zwar nicht die feine englische Art, aber für den moment ok so.
+
+    ??? success "Lösung"
+
+        ??? video "Lösungsvideo"
+
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                <iframe src="https://www.youtube.com/embed/zBFt2HOFDAw?si=bV0isnPBSSX3bqAv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+            </div>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">symbol_schreiben</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">symbol</span><span class="p">):</span>
     <span class="n">spielbrett</span><span class="p">[</span><span class="n">position</span><span class="p">]</span> <span class="o">=</span> <span class="n">symbol</span>
 </code></pre></div></td></tr></table></div>
-</details>
-</details>
-<details class="question">
-<summary>Implementiere den Spielerwechsel</summary>
-<p>Nach jedem Zug müssen <code>aktiver_spieler</code> und <code>nächster_spieler</code> wechseln.
-Dazu muss der Inhalt der Variablen getauscht werden.
-Fügen Sie den Code in die Vorlage ein.</p>
-<details class="info">
-<summary>Tipp</summary>
-<p>Schauen Sie sich Übungsaufgabe <em>Variableninhalte tauschen</em> an.</p>
-</details>
-<details class="success">
-<summary>Lösung</summary>
-<details class="video">
-<summary>Lösungsvideo</summary>
-<p><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-    <iframe src="https://www.youtube.com/embed/1sWNBpwFT80?si=WBguQvqMHmEqyfci" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-</div></p>
-</details>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+         -->
+
+<!-- ??? question "Implementiere den Spielerwechsel"
+
+    Nach jedem Zug müssen `aktiver_spieler` und `nächster_spieler` wechseln.
+    Dazu muss der Inhalt der Variablen getauscht werden.
+    Fügen Sie den Code in die Vorlage ein.
+
+    ??? info "Tipp"
+
+        Schauen Sie sich Übungsaufgabe _Variableninhalte tauschen_ an.
+
+    ??? success "Lösung"
+
+        ??? video "Lösungsvideo"
+
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                <iframe src="https://www.youtube.com/embed/1sWNBpwFT80?si=WBguQvqMHmEqyfci" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+            </div>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -2079,330 +2094,176 @@ Fügen Sie den Code in die Vorlage ein.</p>
     <span class="nb">print</span><span class="p">(</span><span class="n">als_quadrat</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Herzlichen Glückwunsch!&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-</details>
-</details>
-<p>Wenn wir alles richtig gemacht haben, kann so unsere Lösung aussehen:</p>
-<details class="tip">
-<summary>Komplette Lösung</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
-<span class="normal">  2</span>
-<span class="normal">  3</span>
-<span class="normal">  4</span>
-<span class="normal">  5</span>
-<span class="normal">  6</span>
-<span class="normal">  7</span>
-<span class="normal">  8</span>
-<span class="normal">  9</span>
-<span class="normal"> 10</span>
-<span class="normal"> 11</span>
-<span class="normal"> 12</span>
-<span class="normal"> 13</span>
-<span class="normal"> 14</span>
-<span class="normal"> 15</span>
-<span class="normal"> 16</span>
-<span class="normal"> 17</span>
-<span class="normal"> 18</span>
-<span class="normal"> 19</span>
-<span class="normal"> 20</span>
-<span class="normal"> 21</span>
-<span class="normal"> 22</span>
-<span class="normal"> 23</span>
-<span class="normal"> 24</span>
-<span class="normal"> 25</span>
-<span class="normal"> 26</span>
-<span class="normal"> 27</span>
-<span class="normal"> 28</span>
-<span class="normal"> 29</span>
-<span class="normal"> 30</span>
-<span class="normal"> 31</span>
-<span class="normal"> 32</span>
-<span class="normal"> 33</span>
-<span class="normal"> 34</span>
-<span class="normal"> 35</span>
-<span class="normal"> 36</span>
-<span class="normal"> 37</span>
-<span class="normal"> 38</span>
-<span class="normal"> 39</span>
-<span class="normal"> 40</span>
-<span class="normal"> 41</span>
-<span class="normal"> 42</span>
-<span class="normal"> 43</span>
-<span class="normal"> 44</span>
-<span class="normal"> 45</span>
-<span class="normal"> 46</span>
-<span class="normal"> 47</span>
-<span class="normal"> 48</span>
-<span class="normal"> 49</span>
-<span class="normal"> 50</span>
-<span class="normal"> 51</span>
-<span class="normal"> 52</span>
-<span class="normal"> 53</span>
-<span class="normal"> 54</span>
-<span class="normal"> 55</span>
-<span class="normal"> 56</span>
-<span class="normal"> 57</span>
-<span class="normal"> 58</span>
-<span class="normal"> 59</span>
-<span class="normal"> 60</span>
-<span class="normal"> 61</span>
-<span class="normal"> 62</span>
-<span class="normal"> 63</span>
-<span class="normal"> 64</span>
-<span class="normal"> 65</span>
-<span class="normal"> 66</span>
-<span class="normal"> 67</span>
-<span class="normal"> 68</span>
-<span class="normal"> 69</span>
-<span class="normal"> 70</span>
-<span class="normal"> 71</span>
-<span class="normal"> 72</span>
-<span class="normal"> 73</span>
-<span class="normal"> 74</span>
-<span class="normal"> 75</span>
-<span class="normal"> 76</span>
-<span class="normal"> 77</span>
-<span class="normal"> 78</span>
-<span class="normal"> 79</span>
-<span class="normal"> 80</span>
-<span class="normal"> 81</span>
-<span class="normal"> 82</span>
-<span class="normal"> 83</span>
-<span class="normal"> 84</span>
-<span class="normal"> 85</span>
-<span class="normal"> 86</span>
-<span class="normal"> 87</span>
-<span class="normal"> 88</span>
-<span class="normal"> 89</span>
-<span class="normal"> 90</span>
-<span class="normal"> 91</span>
-<span class="normal"> 92</span>
-<span class="normal"> 93</span>
-<span class="normal"> 94</span>
-<span class="normal"> 95</span>
-<span class="normal"> 96</span>
-<span class="normal"> 97</span>
-<span class="normal"> 98</span>
-<span class="normal"> 99</span>
-<span class="normal">100</span>
-<span class="normal">101</span>
-<span class="normal">102</span>
-<span class="normal">103</span>
-<span class="normal">104</span>
-<span class="normal">105</span>
-<span class="normal">106</span>
-<span class="normal">107</span>
-<span class="normal">108</span>
-<span class="normal">109</span>
-<span class="normal">110</span>
-<span class="normal">111</span>
-<span class="normal">112</span>
-<span class="normal">113</span>
-<span class="normal">114</span>
-<span class="normal">115</span>
-<span class="normal">116</span>
-<span class="normal">117</span>
-<span class="normal">118</span>
-<span class="normal">119</span>
-<span class="normal">120</span>
-<span class="normal">121</span>
-<span class="normal">122</span>
-<span class="normal">123</span>
-<span class="normal">124</span>
-<span class="normal">125</span>
-<span class="normal">126</span>
-<span class="normal">127</span>
-<span class="normal">128</span>
-<span class="normal">129</span>
-<span class="normal">130</span>
-<span class="normal">131</span>
-<span class="normal">132</span>
-<span class="normal">133</span>
-<span class="normal">134</span>
-<span class="normal">135</span>
-<span class="normal">136</span>
-<span class="normal">137</span>
-<span class="normal">138</span>
-<span class="normal">139</span>
-<span class="normal">140</span>
-<span class="normal">141</span>
-<span class="normal">142</span>
-<span class="normal">143</span>
-<span class="normal">144</span>
-<span class="normal">145</span>
-<span class="normal">146</span>
-<span class="normal">147</span>
-<span class="normal">148</span>
-<span class="normal">149</span>
-<span class="normal">150</span>
-<span class="normal">151</span>
-<span class="normal">152</span>
-<span class="normal">153</span>
-<span class="normal">154</span>
-<span class="normal">155</span>
-<span class="normal">156</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">unittest</span>
+         -->
+
+<!-- Wenn wir alles richtig gemacht haben, kann so unsere Lösung aussehen: -->
+
+<!-- ??? tip "Komplette Lösung" 
+
+    ``` python hl_lines="18-20 27 31-38 42"
+    import unittest
 
 
-<span class="k">def</span> <span class="nf">gameloop</span><span class="p">():</span>
-    <span class="n">spielbrett</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+    def gameloop():
+        spielbrett = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 
-    <span class="n">aktiver_spieler</span> <span class="o">=</span> <span class="s1">&#39;x&#39;</span>
-    <span class="n">nächster_spieler</span> <span class="o">=</span> <span class="s1">&#39;o&#39;</span>
+        aktiver_spieler = 'x'
+        nächster_spieler = 'o'
 
-    <span class="k">while</span> <span class="ow">not</span> <span class="n">es_gibt_gewinner</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">als_quadrat</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">))</span>
+        while not es_gibt_gewinner(spielbrett):
+            print(als_quadrat(spielbrett))
 
-        <span class="n">position</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Spieler </span><span class="si">{</span><span class="n">aktiver_spieler</span><span class="si">}</span><span class="s2">, wo willst du setzen? &quot;</span><span class="p">))</span>
+            position = int(input(f"Spieler {aktiver_spieler}, wo willst du setzen? "))
 
-        <span class="n">symbol_schreiben</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">aktiver_spieler</span><span class="p">)</span>
+            symbol_schreiben(spielbrett, position, aktiver_spieler)
 
-        <span class="c1"># Wechsle Spieler</span>
-<span class="hll">        <span class="n">zwischenspeicher</span> <span class="o">=</span> <span class="n">aktiver_spieler</span>
-</span><span class="hll">        <span class="n">aktiver_spieler</span> <span class="o">=</span> <span class="n">nächster_spieler</span>
-</span><span class="hll">        <span class="n">nächster_spieler</span> <span class="o">=</span> <span class="n">zwischenspeicher</span>
-</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">als_quadrat</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Herzlichen Glückwunsch!&quot;</span><span class="p">)</span>
+            # Wechsle Spieler
+            zwischenspeicher = aktiver_spieler
+            aktiver_spieler = nächster_spieler
+            nächster_spieler = zwischenspeicher
 
-
-<span class="k">def</span> <span class="nf">als_quadrat</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">):</span>
-<span class="hll">    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="si">{</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="si">}</span><span class="s2"> | </span><span class="si">{</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
-</span>
-
-<span class="k">def</span> <span class="nf">es_gibt_gewinner</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">):</span>
-<span class="hll">    <span class="k">return</span> <span class="p">(</span><span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-</span><span class="hll">            <span class="ow">or</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
-</span><span class="hll">            <span class="ow">or</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span>
-</span><span class="hll">            <span class="ow">or</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>
-</span><span class="hll">            <span class="ow">or</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>
-</span><span class="hll">            <span class="ow">or</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span>
-</span><span class="hll">            <span class="ow">or</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span>
-</span><span class="hll">            <span class="ow">or</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">==</span> <span class="n">spielbrett</span><span class="p">[</span><span class="mi">6</span><span class="p">])</span>
-</span>
-
-<span class="k">def</span> <span class="nf">symbol_schreiben</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">symbol</span><span class="p">):</span>
-<span class="hll">    <span class="n">spielbrett</span><span class="p">[</span><span class="n">position</span><span class="p">]</span> <span class="o">=</span> <span class="n">symbol</span>
-</span>
-
-<span class="k">class</span> <span class="nc">TestAlsQuadrat</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">test_als_quadrat_0</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">spielbrett</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
-        <span class="n">erwartet</span> <span class="o">=</span> <span class="s2">&quot;0 | 1 | 2</span><span class="se">\n</span><span class="s2">3 | 4 | 5</span><span class="se">\n</span><span class="s2">6 | 7 | 8&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">als_quadrat</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">),</span> <span class="n">erwartet</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">test_als_quadrat_1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">spielbrett</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">]</span>
-        <span class="n">erwartet</span> <span class="o">=</span> <span class="s2">&quot;x | o | 2</span><span class="se">\n</span><span class="s2">x | 4 | 5</span><span class="se">\n</span><span class="s2">6 | 7 | o&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">als_quadrat</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">),</span> <span class="n">erwartet</span><span class="p">)</span>
+        print(als_quadrat(spielbrett))
+        print(f"Herzlichen Glückwunsch!")
 
 
-<span class="k">class</span> <span class="nc">TestEsGibtGewinner</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">test_es_gibt_gewinner_alles_leer</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">spielbrett</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span>
-                      <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span>
-                      <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">es_gibt_gewinner</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">))</span>
-
-    <span class="k">def</span> <span class="nf">test_es_gibt_gewinner_erste_zug</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">spielbrett</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span>
-                      <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span>
-                      <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">es_gibt_gewinner</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">))</span>
-
-    <span class="k">def</span> <span class="nf">test_es_gibt_gewinner_zweiter_zug</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">spielbrett</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span>
-                      <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span>
-                      <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">es_gibt_gewinner</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">))</span>
-
-    <span class="k">def</span> <span class="nf">test_es_gibt_gewinner_dritter_zug</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">spielbrett</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span>
-                      <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span>
-                      <span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">es_gibt_gewinner</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">))</span>
-
-    <span class="k">def</span> <span class="nf">test_es_gibt_gewinner_zeile_0</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">spielbrett</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-                      <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span>
-                      <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">es_gibt_gewinner</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">))</span>
-
-    <span class="k">def</span> <span class="nf">test_es_gibt_gewinner_zeile_1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">spielbrett</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span>
-                      <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span>
-                      <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">es_gibt_gewinner</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">))</span>
-
-    <span class="k">def</span> <span class="nf">test_es_gibt_gewinner_zeile_2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">spielbrett</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span>
-                      <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span>
-                      <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">es_gibt_gewinner</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">))</span>
-
-    <span class="k">def</span> <span class="nf">test_es_gibt_gewinner_spalte_0</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">spielbrett</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span>
-                      <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span>
-                      <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">es_gibt_gewinner</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">))</span>
-
-    <span class="k">def</span> <span class="nf">test_es_gibt_gewinner_spalte_1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">spielbrett</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span>
-                      <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span>
-                      <span class="mi">6</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">es_gibt_gewinner</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">))</span>
-
-    <span class="k">def</span> <span class="nf">test_es_gibt_gewinner_spalte_2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">spielbrett</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-                      <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-                      <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">es_gibt_gewinner</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">))</span>
-
-    <span class="k">def</span> <span class="nf">test_es_gibt_gewinner_diagonale_links_nach_rechts</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">spielbrett</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span>
-                      <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span>
-                      <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">es_gibt_gewinner</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">))</span>
-
-    <span class="k">def</span> <span class="nf">test_es_gibt_gewinner_diagonale_rechts_nach_links</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">spielbrett</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-                      <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span>
-                      <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">es_gibt_gewinner</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">))</span>
-
-    <span class="k">def</span> <span class="nf">test_es_gibt_gewinner_unentschieden</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">spielbrett</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span>
-                      <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span>
-                      <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="n">es_gibt_gewinner</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">))</span>
-
-<span class="k">class</span> <span class="nc">TestSymbolSchreiben</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">test_symbol_schreiben_0</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">spielbrett</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
-        <span class="n">symbol</span> <span class="o">=</span> <span class="s2">&quot;x&quot;</span>
-        <span class="n">position</span> <span class="o">=</span> <span class="mi">4</span>
-        <span class="n">erwartet</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
-        <span class="n">symbol_schreiben</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">symbol</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">,</span> <span class="n">erwartet</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">test_symbol_schreiben_1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">spielbrett</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">]</span>
-        <span class="n">symbol</span> <span class="o">=</span> <span class="s2">&quot;o&quot;</span>
-        <span class="n">position</span> <span class="o">=</span> <span class="mi">2</span>
-        <span class="n">erwartet</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">]</span>
-        <span class="n">symbol_schreiben</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">symbol</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">spielbrett</span><span class="p">,</span> <span class="n">erwartet</span><span class="p">)</span>
+    def als_quadrat(spielbrett):
+        return f"{spielbrett[0]} | {spielbrett[1]} | {spielbrett[2]}\n{spielbrett[3]} | {spielbrett[4]} | {spielbrett[5]}\n{spielbrett[6]} | {spielbrett[7]} | {spielbrett[8]}"
 
 
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="c1"># unittest.main() # kommentar entfernen, um Methoden zu testen</span>
-    <span class="n">gameloop</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
-</details>
-<details class="video">
-<summary>Video</summary>
-<p><div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-    <iframe src="https://www.youtube.com/embed/hYzRuiJe2yU?si=sea2B_bU1wx9yMz9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-</div></p>
-</details>
+    def es_gibt_gewinner(spielbrett):
+        return (spielbrett[0] == spielbrett[1] == spielbrett[2]
+                or spielbrett[3] == spielbrett[4] == spielbrett[5]
+                or spielbrett[6] == spielbrett[7] == spielbrett[8]
+                or spielbrett[0] == spielbrett[3] == spielbrett[6]
+                or spielbrett[1] == spielbrett[4] == spielbrett[7]
+                or spielbrett[2] == spielbrett[5] == spielbrett[8]
+                or spielbrett[0] == spielbrett[4] == spielbrett[8]
+                or spielbrett[2] == spielbrett[4] == spielbrett[6])
+
+
+    def symbol_schreiben(spielbrett, position, symbol):
+        spielbrett[position] = symbol
+
+
+    class TestAlsQuadrat(unittest.TestCase):
+        def test_als_quadrat_0(self):
+            spielbrett = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+            erwartet = "0 | 1 | 2\n3 | 4 | 5\n6 | 7 | 8"
+            self.assertEqual(als_quadrat(spielbrett), erwartet)
+
+        def test_als_quadrat_1(self):
+            spielbrett = ["x", "o", 2, "x", 4, 5, 6, 7, "o"]
+            erwartet = "x | o | 2\nx | 4 | 5\n6 | 7 | o"
+            self.assertEqual(als_quadrat(spielbrett), erwartet)
+
+
+    class TestEsGibtGewinner(unittest.TestCase):
+        def test_es_gibt_gewinner_alles_leer(self):
+            spielbrett = [0, 1, 2,
+                          3, 4, 5,
+                          6, 7, 8]
+            self.assertEqual(False, es_gibt_gewinner(spielbrett))
+
+        def test_es_gibt_gewinner_erste_zug(self):
+            spielbrett = [0, "x", 2,
+                          3, 4, 5,
+                          6, 7, 8]
+            self.assertEqual(False, es_gibt_gewinner(spielbrett))
+
+        def test_es_gibt_gewinner_zweiter_zug(self):
+            spielbrett = [0, "x", 2,
+                          3, "o", 5,
+                          6, 7, 8]
+            self.assertEqual(False, es_gibt_gewinner(spielbrett))
+
+        def test_es_gibt_gewinner_dritter_zug(self):
+            spielbrett = [0, "x", 2,
+                          3, "o", 5,
+                          6, "x", 8]
+            self.assertEqual(False, es_gibt_gewinner(spielbrett))
+
+        def test_es_gibt_gewinner_zeile_0(self):
+            spielbrett = ["x", "x", "x",
+                          "o", "o", 5,
+                          6, 7, 8]
+            self.assertEqual(True, es_gibt_gewinner(spielbrett))
+
+        def test_es_gibt_gewinner_zeile_1(self):
+            spielbrett = ["x", "x", "o",
+                          "o", "o", "o",
+                          6, 7, 8]
+            self.assertEqual(True, es_gibt_gewinner(spielbrett))
+
+        def test_es_gibt_gewinner_zeile_2(self):
+            spielbrett = [0, "x", "o",
+                          "x", "o", "o",
+                          "x", "x", "x"]
+            self.assertEqual(True, es_gibt_gewinner(spielbrett))
+
+        def test_es_gibt_gewinner_spalte_0(self):
+            spielbrett = ["x", 1, 2,
+                          "x", 4, 5,
+                          "x", 7, 8]
+            self.assertEqual(True, es_gibt_gewinner(spielbrett))
+
+        def test_es_gibt_gewinner_spalte_1(self):
+            spielbrett = [0, "o", 2,
+                          3, "o", 5,
+                          6, "o", 8]
+            self.assertEqual(True, es_gibt_gewinner(spielbrett))
+
+        def test_es_gibt_gewinner_spalte_2(self):
+            spielbrett = [0, 1, "x",
+                          3, 4, "x",
+                          6, 7, "x"]
+            self.assertEqual(True, es_gibt_gewinner(spielbrett))
+
+        def test_es_gibt_gewinner_diagonale_links_nach_rechts(self):
+            spielbrett = ["x", 1, 2,
+                          3, "x", 5,
+                          6, 7, "x"]
+            self.assertEqual(True, es_gibt_gewinner(spielbrett))
+
+        def test_es_gibt_gewinner_diagonale_rechts_nach_links(self):
+            spielbrett = [0, 1, "x",
+                          3, "x", 5,
+                          "x", 7, 8]
+            self.assertEqual(True, es_gibt_gewinner(spielbrett))
+
+        def test_es_gibt_gewinner_unentschieden(self):
+            spielbrett = ["x", "o", "x",
+                          "x", "x", "o",
+                          "o", "x", "o"]
+            self.assertEqual(False, es_gibt_gewinner(spielbrett))
+
+    class TestSymbolSchreiben(unittest.TestCase):
+        def test_symbol_schreiben_0(self):
+            spielbrett = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+            symbol = "x"
+            position = 4
+            erwartet = [0, 1, 2, 3, "x", 5, 6, 7, 8]
+            symbol_schreiben(spielbrett, position, symbol)
+            self.assertEqual(spielbrett, erwartet)
+
+        def test_symbol_schreiben_1(self):
+            spielbrett = ["x", "o", 2, "x", 4, 5, 6, 7, "o"]
+            symbol = "o"
+            position = 2
+            erwartet = ["x", "o", "o", "x", 4, 5, 6, 7, "o"]
+            symbol_schreiben(spielbrett, position, symbol)
+            self.assertEqual(spielbrett, erwartet)
+
+
+    if __name__ == '__main__':
+        # unittest.main() # kommentar entfernen, um Methoden zu testen
+        gameloop()
+    ```-->
+
+<!-- ??? video "Video"
+
+    <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+        <iframe src="https://www.youtube.com/embed/hYzRuiJe2yU?si=sea2B_bU1wx9yMz9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+    </div> -->
 
 
 
