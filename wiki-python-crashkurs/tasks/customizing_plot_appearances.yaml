@@ -1,0 +1,34 @@
+title: "Anpassung des Plot-Erscheinungsbildes"
+question: |
+  Erstelle einen Plot der quadratischen Funktion f(x) = x^2 für x-Werte von -5 bis 5.
+  Passe den Plot wie folgt an:
+
+    - Verwende eine Figurengröße von 8x6
+    - Setze den Plot-Stil auf 'seaborn'
+    - Benutze eine blaue Linie mit einer Dicke von 2
+    - Füge Gitterlinien hinzu
+    - Setze die x-Achsengrenzen auf [-6, 6] und die y-Achsengrenzen auf [0, 30]
+
+solution: |
+  ```python
+  import matplotlib.pyplot as plt
+  import numpy as np
+
+  plt.style.use('seaborn')
+  plt.figure(figsize=(8, 6))
+
+  x = np.linspace(-5, 5, 100)
+  y = x**2
+
+  plt.plot(x, y, 'b-', linewidth=2)
+  plt.title("Quadratic Function")
+  plt.xlabel("x")
+  plt.ylabel("f(x)")
+  plt.grid(True)
+  plt.xlim(-6, 6)
+  plt.ylim(0, 30)
+
+  plt.show()
+  ```
+
+tip: "Denk daran, plt.figure() vor dem Plotten zu verwenden um die Figurengröße zu setzen."

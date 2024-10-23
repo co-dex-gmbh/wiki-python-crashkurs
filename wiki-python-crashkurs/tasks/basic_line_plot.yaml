@@ -1,0 +1,26 @@
+title: "Einfaches Liniendiagramm"
+question: |
+  Erstelle ein Liniendiagramm mit Matplotlib unter Verwendung der folgenden Daten:
+  ```python
+  x = [1, 2, 3, 4, 5]
+  y = [2, 4, 6, 8, 10]
+  ```
+  
+  Füge einen Titel "Mein erstes Diagramm", eine x-Achsen-Beschriftung "X-Achse" und eine y-Achsen-Beschriftung "Y-Achse" hinzu.
+  Verwende eine rote gestrichelte Linie mit kreisförmigen Markierungen.
+
+tip: "Denk daran, die Kurzschreibweise 'ro--' für rote Kreise mit gestrichelten Linien zu verwenden."
+
+solution: |
+  ```python
+  import matplotlib.pyplot as plt
+
+  x = [1, 2, 3, 4, 5]
+  y = [2, 4, 6, 8, 10]
+
+  plt.plot(x, y, 'ro--')
+  plt.title("My First Plot")
+  plt.xlabel("X-axis")
+  plt.ylabel("Y-axis")
+  plt.show()
+  ```

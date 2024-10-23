@@ -528,3 +528,11 @@ Jetzt muss man jedoch die Abstände anpassen damit der y-Achsen Titel genug Plat
 - Verstehe die Terminologie, was ist ein Figure, Axes und Axis
 - Lerne nicht alle Parameter auswendig, siehe in der Dokumentation nach
 
+## Aufgaben
+
+{{ task(file="tasks/basic_line_plot.yaml") }}
+
+{{ task(file="tasks/multiple_lines_plot.yaml") }}
+
+{{ task(file="tasks/customizing_plot_appearances.yaml") }}
+
