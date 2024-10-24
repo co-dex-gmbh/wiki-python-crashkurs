@@ -11,7 +11,7 @@ question: |
   Wenn die quadratische Zufallszahl kleiner oder gleich `my_bet` ist,
   soll `faktor * my_bet` returned werden, andernfalls `0`.
 
-  Der Spieler verliert also alles, falls die Zufallszahl kleiner als sein gebot ist (was mit höherem Risiko (`faktor`) exponentiell wahrscheinlicher wird).
+  Der Spieler verliert also alles, falls die Zufallszahl größer als sein gebot ist (was mit höherem Risiko (`faktor`) exponentiell wahrscheinlicher wird).
 solution: |
   ``` { .python .pytutor_button }
   def bet_under_squares(my_bet, faktor):
