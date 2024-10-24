@@ -1596,26 +1596,26 @@ Fahrenheit in Celsius umrechnet und umgekehrt:</p>
 <span class="n">celsius_equivalent</span> <span class="o">=</span> <span class="n">TemperatureConverter</span><span class="o">.</span><span class="n">fahrenheit_to_celsius</span><span class="p">(</span><span class="n">fahrenheit_temp</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">fahrenheit_temp</span><span class="si">}</span><span class="s2"> Grad Fahrenheit entsprechen </span><span class="si">{</span><span class="n">celsius_equivalent</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> Grad Celsius.&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<details class="question" open="open">
-<summary>Statische Methoden für String-Operationen</summary>
-<p>Implementiere eine Klasse <code>StringUtil</code> mit folgenden statischen Methoden:
-1. <code>count_words(string)</code>: Zählt die Anzahl der Wörter in einem String.
-2. <code>count_vowels(string)</code>: Zählt die Vokale in einem String (Tipp: Nutze <code>sum</code> und List-Comprehension).
-3. <code>is_palindrome(string)</code>: Prüft, ob ein Wort ein Palindrom ist (z.B. "Otto", unabhängig von Groß-/Kleinschreibung).
-4. <code>count_substring(substring, string)</code>: Zählt, wie oft <code>substring</code> in <code>string</code> vorkommt (z.B. "ana" kommt 2 mal in "Banana" vor).</p>
-<p>Jede Methode soll mit einem Docstring und mindestens 3 Doctests versehen werden.</p>
-<details class="info">
-<summary>Tipp</summary>
-<ul>
-<li><code>count_words</code>: Nutze <code>split()</code> und <code>len()</code>.</li>
-<li><code>count_vowels</code>: Verwende <code>in</code> für String-Vergleiche.</li>
-<li><code>is_palindrome</code>: Nutze String-Slicing zum Umdrehen.</li>
-<li><code>count_substring</code>: Die <code>find()</code>-Methode hat zusätzliche Parameter.</li>
-</ul>
-</details>
-<details class="success">
-<summary>Lösung</summary>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<!-- ???+ question "Statische Methoden für String-Operationen"
+
+    Implementiere eine Klasse `StringUtil` mit folgenden statischen Methoden:
+    1. `count_words(string)`: Zählt die Anzahl der Wörter in einem String.
+    2. `count_vowels(string)`: Zählt die Vokale in einem String (Tipp: Nutze `sum` und List-Comprehension).
+    3. `is_palindrome(string)`: Prüft, ob ein Wort ein Palindrom ist (z.B. "Otto", unabhängig von Groß-/Kleinschreibung).
+    4. `count_substring(substring, string)`: Zählt, wie oft `substring` in `string` vorkommt (z.B. "ana" kommt 2 mal in "Banana" vor).
+
+    Jede Methode soll mit einem Docstring und mindestens 3 Doctests versehen werden.
+
+    ??? info "Tipp"
+
+        - `count_words`: Nutze `split()` und `len()`.
+        - `count_vowels`: Verwende `in` für String-Vergleiche.
+        - `is_palindrome`: Nutze String-Slicing zum Umdrehen.
+        - `count_substring`: Die `find()`-Methode hat zusätzliche Parameter.
+
+    ??? success "Lösung"
+
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -1755,11 +1755,11 @@ Fahrenheit in Celsius umrechnet und umgekehrt:</p>
     <span class="kn">import</span> <span class="nn">doctest</span>
     <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
-<p>Diese Lösung implementiert die <code>StringUtil</code>-Klasse mit den geforderten statischen Methoden.
-Jede Methode enthält einen Docstring mit Erklärung und mindestens drei Doctests.
-Die Implementierungen nutzen effiziente Python-Techniken wie List Comprehensions und die <code>find()</code>-Methode.</p>
-</details>
-</details>
+
+        Diese Lösung implementiert die `StringUtil`-Klasse mit den geforderten statischen Methoden.
+        Jede Methode enthält einen Docstring mit Erklärung und mindestens drei Doctests.
+        Die Implementierungen nutzen effiziente Python-Techniken wie List Comprehensions und die `find()`-Methode. -->
+
 <h2 id="klassenmethoden">Klassenmethoden<a class="headerlink" href="#klassenmethoden" title="Permanent link">&para;</a></h2>
 <details class="video">
 <summary>Video</summary>
