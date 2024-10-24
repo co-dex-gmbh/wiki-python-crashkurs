@@ -37,7 +37,7 @@ celsius_equivalent = TemperatureConverter.fahrenheit_to_celsius(fahrenheit_temp)
 print(f"{fahrenheit_temp} Grad Fahrenheit entsprechen {celsius_equivalent:.2f} Grad Celsius.")
 ```
 
-{{ task(file="tasks/oop_static_methods_1.yaml") }}
+<!-- {{ task(file="tasks/oop_static_methods_1.yaml") }} -->
 
 ## Klassenmethoden
 

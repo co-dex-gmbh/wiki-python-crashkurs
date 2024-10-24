@@ -28,7 +28,7 @@ solution: |
           if not money:
               break
       else:
-          print(f"Du hast {money} gewonnen")
+          print(f"Du hast besitzt jetzt {money}€")
           return
 
       print("Leider alles verzockt")
