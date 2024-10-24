@@ -1649,7 +1649,7 @@ gewürfelt werden. Importiere und nutze dazu die Funktion <code>random_squares</
 <p>Um den späteren Spielern unseres Casino-Games das Geld aus der Tasche zu ziehen müssen wir jetzt die Gewinnbedingung setzen.
 Wenn die quadratische Zufallszahl kleiner oder gleich <code>my_bet</code> ist,
 soll <code>faktor * my_bet</code> returned werden, andernfalls <code>0</code>.</p>
-<p>Der Spieler verliert also alles, falls die Zufallszahl kleiner als sein gebot ist (was mit höherem Risiko (<code>faktor</code>) exponentiell wahrscheinlicher wird).</p>
+<p>Der Spieler verliert also alles, falls die Zufallszahl größer als sein gebot ist (was mit höherem Risiko (<code>faktor</code>) exponentiell wahrscheinlicher wird).</p>
 <details class="success">
 <summary>Lösung</summary>
 <div class="pytutor_button highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
