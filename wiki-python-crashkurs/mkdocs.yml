@@ -54,6 +54,7 @@ nav:
   - Dateioperationen: content/dateioperationen/dateioperationen.md
   - Versionskontrolle: 
     - Git: content/git/git.md
+  - Fortgeschrittene Projekte:
 
 theme:
   name: material

@@ -25,16 +25,19 @@ Erweitere das Spiel um folgende Funktionen:
 ### Aufgabe 3: Rundenbasiertes Kampfsystem
 
 Implementiere ein einfaches rundenbasiertes Kampfsystem. Spieler und Monster teilen sich mindestens folgende drei Attribute:
+
 a. Lebenspunkte: Sinken diese auf 0 ist ein Kämpfer besiegt und hat den Kampf verloren.
 b. Angriffskraft: Hier wird der Schaden an den Lebenspunkten des Gegners bei einem Angriff festgehalten.
 c. Trefferwahrscheinlichkeit: Hier wird die Wahrscheinlichkeit angegeben, mit der ein Kämpfer bei einem Angriff trifft.
 
-Ablauf des Kampfes:
+#### Ablauf des Kampfes:
+
 a. Wer beginnt:
 Wer den Kampf beginnt wird anhand der ATK-Punkte der Kämpfer bestimmt. Hierzu wird die ATK vom Spieler und vom Monster addiert. Anschließend wird eine Zufallszahl, die zwischen 1 und dieser Summe liegt, ermittelt. Sollte diese Zufallszahl größer als die ATK vom Spieler sein fängt das Monster an und sollte sie kleiner sein, fängt der Spieler an.
 
 b. Spielerrunde:
 Sobald der Spieler an der Reihe ist, soll er mehrere Auswahlmöglichkeiten haben:
+
 i. Flucht - Der Spieler versucht zu fliehen.
 Wenn der Spieler Flucht auswählt, soll seine Fluchtwahrscheinlichkeit jedes Mal neu berechnet werden. Die Fluchtwahrscheinlichkeit berechnet sich aus einer zufälligen Zahl zwischen 0 und 50% plus 15% pro Fluchtversuch. Somit hat der Spieler eine steigende Fluchtwahrscheinlichkeit bei aufeinanderfolgenden Fluchtversuchen. Sollte er erfolgreich geflohen sein ist der Kampf beendet ansonsten ist das Monster an der Reihe.
 ii. Item - Der Spieler benutzt ein Item.
@@ -42,7 +45,7 @@ Standardmäßig hat ein Spieler nur das Item Heiltrank. Beim Benutzen eines Heil
 iii. Angriff - Der Spieler greift an.
 Sollte ein Spieler angreifen wählen, wird zunächst mithilfe der Trefferwahrscheinlichkeit berechnet, ob er trifft. Wenn der Spieler mit seinem Angriff erfolgreich ist, werden die ATK-Punkte des Spielers von den Lebenspunkten des Monsters abgezogen. Abhängig von der errechneten Trefferwahrscheinlichkeit wird auf die ATK-Punkte ein Bonus/Malus berechnet. Hierfür soll eine sinnvolle Berechnung implementiert werden.
 
-c. Die Monsterrunde läuft analog zur Spielerrunde. Für die jeweiligen Aktionen (Flucht, Item und Angriff) sollen sinnvolle Wahrscheinlichkeiten implementiert werden.
+c. Die Monsterrunde läuft analog zur Spielerrunde. Für die jeweiligen Aktionen (Flucht, Angriff) sollen sinnvolle Wahrscheinlichkeiten implementiert werden.
 
 ### Aufgabe 4: Start und Ende
 
@@ -75,7 +78,6 @@ Sollte ein Spieler Spezialangriff wählen soll er, je nach Klasse, die Auswahl z
 1. Füge eine Minimap hinzu, die den erkundeten Teil des Dungeons anzeigt.
 2. Implementiere ein Inventarfenster.
 3. Erstelle ein Kampfinterface für Begegnungen mit Monstern.
-4. Füge Soundeffekte und einfache Animationen hinzu.
 
 ### Aufgabe 9: Erweiterungen
 

@@ -75,6 +75,7 @@ question: |
 
   ```python
   from unittest import TestCase
+  import unittest
 
 
   class FormsTest(TestCase):
@@ -200,6 +201,9 @@ question: |
           with self.assertRaises(NotImplementedError):
               f = Form()
               f.umfang()
+
+  if __name__ == "__main__":
+      unittest.main()
   ```
 
 solution: |
