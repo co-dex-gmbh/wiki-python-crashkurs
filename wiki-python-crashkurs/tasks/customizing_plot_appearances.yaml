@@ -4,7 +4,7 @@ question: |
   Passe den Plot wie folgt an:
 
     - Verwende eine Figurengröße von 8x6
-    - Setze den Plot-Stil auf 'seaborn'
+    - Setze den Plot-Stil auf 'seaborn-v0_8-darkgrid'
     - Benutze eine blaue Linie mit einer Dicke von 2
     - Füge Gitterlinien hinzu
     - Setze die x-Achsengrenzen auf [-6, 6] und die y-Achsengrenzen auf [0, 30]
@@ -14,7 +14,7 @@ solution: |
   import matplotlib.pyplot as plt
   import numpy as np
 
-  plt.style.use('seaborn')
+  plt.style.use('seaborn-v0_8-darkgrid')
   plt.figure(figsize=(8, 6))
 
   x = np.linspace(-5, 5, 100)
