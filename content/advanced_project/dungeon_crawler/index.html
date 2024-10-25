@@ -1506,22 +1506,22 @@
 <li>Erstelle verschiedene Levels mit steigender Schwierigkeit.</li>
 </ol>
 <h3 id="aufgabe-3-rundenbasiertes-kampfsystem">Aufgabe 3: Rundenbasiertes Kampfsystem<a class="headerlink" href="#aufgabe-3-rundenbasiertes-kampfsystem" title="Permanent link">&para;</a></h3>
-<p>Implementiere ein einfaches rundenbasiertes Kampfsystem. Spieler und Monster teilen sich mindestens folgende drei Attribute:
-a. Lebenspunkte: Sinken diese auf 0 ist ein Kämpfer besiegt und hat den Kampf verloren.
+<p>Implementiere ein einfaches rundenbasiertes Kampfsystem. Spieler und Monster teilen sich mindestens folgende drei Attribute:</p>
+<p>a. Lebenspunkte: Sinken diese auf 0 ist ein Kämpfer besiegt und hat den Kampf verloren.
 b. Angriffskraft: Hier wird der Schaden an den Lebenspunkten des Gegners bei einem Angriff festgehalten.
 c. Trefferwahrscheinlichkeit: Hier wird die Wahrscheinlichkeit angegeben, mit der ein Kämpfer bei einem Angriff trifft.</p>
-<p>Ablauf des Kampfes:
-a. Wer beginnt:
+<h4 id="ablauf-des-kampfes">Ablauf des Kampfes:<a class="headerlink" href="#ablauf-des-kampfes" title="Permanent link">&para;</a></h4>
+<p>a. Wer beginnt:
 Wer den Kampf beginnt wird anhand der ATK-Punkte der Kämpfer bestimmt. Hierzu wird die ATK vom Spieler und vom Monster addiert. Anschließend wird eine Zufallszahl, die zwischen 1 und dieser Summe liegt, ermittelt. Sollte diese Zufallszahl größer als die ATK vom Spieler sein fängt das Monster an und sollte sie kleiner sein, fängt der Spieler an.</p>
 <p>b. Spielerrunde:
-Sobald der Spieler an der Reihe ist, soll er mehrere Auswahlmöglichkeiten haben:
-i. Flucht - Der Spieler versucht zu fliehen.
+Sobald der Spieler an der Reihe ist, soll er mehrere Auswahlmöglichkeiten haben:</p>
+<p>i. Flucht - Der Spieler versucht zu fliehen.
 Wenn der Spieler Flucht auswählt, soll seine Fluchtwahrscheinlichkeit jedes Mal neu berechnet werden. Die Fluchtwahrscheinlichkeit berechnet sich aus einer zufälligen Zahl zwischen 0 und 50% plus 15% pro Fluchtversuch. Somit hat der Spieler eine steigende Fluchtwahrscheinlichkeit bei aufeinanderfolgenden Fluchtversuchen. Sollte er erfolgreich geflohen sein ist der Kampf beendet ansonsten ist das Monster an der Reihe.
 ii. Item - Der Spieler benutzt ein Item.
 Standardmäßig hat ein Spieler nur das Item Heiltrank. Beim Benutzen eines Heiltranks werden die Lebenspunkte eines Spielers um 50% seiner Gesamtlebenspunkte erhöht. Anschließend ist seine Runde beendet.
 iii. Angriff - Der Spieler greift an.
 Sollte ein Spieler angreifen wählen, wird zunächst mithilfe der Trefferwahrscheinlichkeit berechnet, ob er trifft. Wenn der Spieler mit seinem Angriff erfolgreich ist, werden die ATK-Punkte des Spielers von den Lebenspunkten des Monsters abgezogen. Abhängig von der errechneten Trefferwahrscheinlichkeit wird auf die ATK-Punkte ein Bonus/Malus berechnet. Hierfür soll eine sinnvolle Berechnung implementiert werden.</p>
-<p>c. Die Monsterrunde läuft analog zur Spielerrunde. Für die jeweiligen Aktionen (Flucht, Item und Angriff) sollen sinnvolle Wahrscheinlichkeiten implementiert werden.</p>
+<p>c. Die Monsterrunde läuft analog zur Spielerrunde. Für die jeweiligen Aktionen (Flucht, Angriff) sollen sinnvolle Wahrscheinlichkeiten implementiert werden.</p>
 <h3 id="aufgabe-4-start-und-ende">Aufgabe 4: Start und Ende<a class="headerlink" href="#aufgabe-4-start-und-ende" title="Permanent link">&para;</a></h3>
 <p>Bei Spielbeginn soll der Name Ihres Spiels (frei wählbar) und der Text „Zum Start Enter drücken“ angezeigt werden. Nach betätigen der Enter-Taste soll der rundenbasierte Kampf mit dem Monster starten. Nach dem Sieg oder der Niederlage des Spielers soll eine passende Ausgabe auf der Konsole erfolgen und der Spieler soll folgende Möglichkeiten bekommen:
 - Spiel beenden – Beendet das Spiel und somit die Anwendung vollständig
@@ -1545,7 +1545,6 @@ iv. Spezialangriff - Klassenspezifische Spezialangriffe können ausgewählt werd
 <li>Füge eine Minimap hinzu, die den erkundeten Teil des Dungeons anzeigt.</li>
 <li>Implementiere ein Inventarfenster.</li>
 <li>Erstelle ein Kampfinterface für Begegnungen mit Monstern.</li>
-<li>Füge Soundeffekte und einfache Animationen hinzu.</li>
 </ol>
 <h3 id="aufgabe-9-erweiterungen">Aufgabe 9: Erweiterungen<a class="headerlink" href="#aufgabe-9-erweiterungen" title="Permanent link">&para;</a></h3>
 <ol>

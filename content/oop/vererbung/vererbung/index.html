@@ -2053,7 +2053,12 @@ der Klasse <code>Elektroauto</code> überschrieben wird.</p>
 <span class="normal">123</span>
 <span class="normal">124</span>
 <span class="normal">125</span>
-<span class="normal">126</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span>
+<span class="kn">import</span> <span class="nn">unittest</span>
 
 
 <span class="k">class</span> <span class="nc">FormsTest</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
@@ -2179,6 +2184,9 @@ der Klasse <code>Elektroauto</code> überschrieben wird.</p>
         <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">NotImplementedError</span><span class="p">):</span>
             <span class="n">f</span> <span class="o">=</span> <span class="n">Form</span><span class="p">()</span>
             <span class="n">f</span><span class="o">.</span><span class="n">umfang</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 <details class="success">
 <summary>Lösung</summary>
