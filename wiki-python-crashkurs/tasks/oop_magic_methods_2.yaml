@@ -14,36 +14,42 @@ question: |
   und diese neuen Tests ebenfalls bestehen:
 
   ```python
-  def test_mul_0(self):
-      self.assertEqual(Punkt(1, 2) * 4, Punkt(4, 8))
+  import unittest
 
-  def test_mul_1(self):
-      self.assertEqual(Punkt(0, 0) * 4, Punkt(0, 0))
+  class PunktTest(unittest.TestCase):
+      def test_mul_0(self):
+          self.assertEqual(Punkt(1, 2) * 4, Punkt(4, 8))
 
-  def test_mul_2(self):
-      self.assertEqual(Punkt(1, 4) * 0, Punkt(0, 0))
+      def test_mul_1(self):
+          self.assertEqual(Punkt(0, 0) * 4, Punkt(0, 0))
 
-  def test_mul_3(self):
-      self.assertEqual(Punkt(3, -2) * -1, Punkt(-3, 2))
+      def test_mul_2(self):
+          self.assertEqual(Punkt(1, 4) * 0, Punkt(0, 0))
 
-  def test_mul_4(self):
-      self.assertEqual(Punkt(3.5, 0.5) * 2, Punkt(7, 1))
+      def test_mul_3(self):
+          self.assertEqual(Punkt(3, -2) * -1, Punkt(-3, 2))
 
-  def test_mul_5(self):
-      self.assertEqual(Punkt(0.1, 0.2) * 1.5, Punkt(0.15, 0.3))
+      def test_mul_4(self):
+          self.assertEqual(Punkt(3.5, 0.5) * 2, Punkt(7, 1))
 
-  def test_mul_6(self):
-      a = Punkt(2, 1)
-      a *= 0.2
-      self.assertEqual(a, Punkt(0.4, 0.2))
+      def test_mul_5(self):
+          self.assertEqual(Punkt(0.1, 0.2) * 1.5, Punkt(0.15, 0.3))
+
+      def test_mul_6(self):
+          a = Punkt(2, 1)
+          a *= 0.2
+          self.assertEqual(a, Punkt(0.4, 0.2))
       
-  def test_mul_7(self):
-      with self.assertRaises(TypeError):
-          Punkt(2, 1) * "Hallo"
+      def test_mul_7(self):
+          with self.assertRaises(TypeError):
+              Punkt(2, 1) * "Hallo"
           
-  def test_sub_3(self):
-      with self.assertRaises(TypeError):
-          Punkt(2, 1) - 1
+      def test_sub_3(self):
+          with self.assertRaises(TypeError):
+              Punkt(2, 1) - 1
+
+  if __name__ == "__main__":
+      unittest.main()
   ```
 
 tip: |

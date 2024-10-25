@@ -10,9 +10,9 @@ question: |
   Die folgenden Tests sollen nach der Implementierung erfolgreich sein:
 
   ```python
-  from unittest import TestCase
+  import unittest
 
-  class PunktTest(TestCase):
+  class PunktTest(unittest.TestCase):
       def test_read_0(self):
           a = Punkt(2, 1)
           self.assertEqual(2, a[0])
@@ -68,6 +68,9 @@ question: |
           a = Punkt(2, 1)
           with self.assertRaises(IndexError):
               a[-3] = 4
+
+  if __name__ == "__main__":
+      unittest.main()
   ```
 
 tip: |

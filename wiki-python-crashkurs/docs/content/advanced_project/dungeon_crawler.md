@@ -8,7 +8,7 @@ In diesem fortgeschrittenen Projekt werden wir einen Dungeon Crawler entwickeln.
 
 Erstelle eine Datei namens `dungeon_crawler.py` und implementiere die folgenden Funktionen:
 
-1. `create_dungeon(width, height)`: Erstellt ein zufälliges Dungeon als 2D-Liste.
+1. `create_dungeon(width, height)`: Erstellt ein zufälliges Dungeon (Labyrinth) als 2D-Liste.
 2. `print_dungeon(dungeon, player_pos)`: Gibt das Dungeon in der Konsole aus.
 3. `move_player(dungeon, player_pos, direction)`: Bewegt den Spieler in die angegebene Richtung.
 4. `main_game_loop()`: Hauptschleife des Spiels, die Benutzereingaben verarbeitet und das Spiel steuert.

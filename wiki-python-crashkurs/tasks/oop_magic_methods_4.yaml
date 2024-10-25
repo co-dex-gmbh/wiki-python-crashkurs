@@ -15,7 +15,6 @@ question: |
   ```python
   import unittest
 
-
   class PersonTest(unittest.TestCase):
       def setUp(self):
           self.anton_alt = Person("Anton", 65)
@@ -73,6 +72,8 @@ question: |
           with self.assertRaises(TypeError):
               self.assertTrue(self.jut_jung in self.jutta_jung)
 
+  if __name__ == "__main__":
+      unittest.main()
   ```
 
 tip: |

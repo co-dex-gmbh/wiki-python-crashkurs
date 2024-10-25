@@ -9,10 +9,9 @@ question: |
   Wenn alles richtig implementiert wurde, müsste dieser Test funktionieren:
 
   ```python
-  from unittest import TestCase
+  import unittest
 
-
-  class PunktTest(TestCase):
+  class PunktTest(unittest.TestCase):
 
       def test_equality_0(self):
           self.assertEqual(Punkt(1, 2), Punkt(1, 2))
@@ -39,6 +38,9 @@ question: |
       def test_sub_3(self):
           with self.assertRaises(TypeError):
               Punkt(3, 2) - 4
+
+  if __name__ == "__main__":
+      unittest.main()
   ```
 
 tip: |
