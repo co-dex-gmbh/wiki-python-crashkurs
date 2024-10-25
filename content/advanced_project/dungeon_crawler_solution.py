@@ -40,21 +40,41 @@ class Monster:
     hit_chance: float = 0.8
     exp_value: int = 50  # Base exp value
     
-    def drop_item(self) -> Optional[Item]:
-        """Generate random item drop based on monster level"""
-        if random.random() < 0.3:  # 30% drop chance
-            if self.level >= 10:
+    def drop_item(self) -> Tuple[Optional[Item], int]:
+        """Generate random item drop and gold based on monster level"""
+        # Always drop gold
+        gold = random.randint(10 * self.level, 25 * self.level)
+        
+        # Calculate equipment drop chance based on level
+        equipment_chance = min(0.1, 0.02 + (self.level * 0.008))  # Starts at 2%, increases by 0.8% per level, caps at 10%
+        
+        # 30% chance for potion
+        potion_drop = None
+        if random.random() < 0.3:
+            potion_drop = random.choice(ITEM_DROPS["common"])
+            if potion_drop.item_type == ItemType.CONSUMABLE:
+                print(f"\nThe monster dropped a potion!")
+                return potion_drop, gold
+        
+        # Check for equipment drop
+        if random.random() < equipment_chance:
+            # Higher level monsters have better chance for better equipment
+            rarity_roll = random.random() + (self.level * 0.05)  # +5% per level
+            if rarity_roll > 0.9:
                 dropped_item = random.choice(ITEM_DROPS["rare"])
                 print(f"\nThe monster dropped a rare item: {dropped_item.name}!")
-                return dropped_item
-            elif self.level >= 5:
+                return dropped_item, gold
+            elif rarity_roll > 0.7:
                 dropped_item = random.choice(ITEM_DROPS["uncommon"])
                 print(f"\nThe monster dropped an uncommon item: {dropped_item.name}!")
-                return dropped_item
-            dropped_item = random.choice(ITEM_DROPS["common"])
-            print(f"\nThe monster dropped a common item: {dropped_item.name}!")
-            return dropped_item
-        return None
+                return dropped_item, gold
+            else:
+                dropped_item = random.choice(ITEM_DROPS["common"])
+                print(f"\nThe monster dropped a common item: {dropped_item.name}!")
+                return dropped_item, gold
+                
+        print(f"\nThe monster dropped {gold} gold!")
+        return None, gold
 
 @dataclass
 class Player:
@@ -73,6 +93,7 @@ class Player:
     level: int = 1
     exp: int = 0
     exp_to_next_level: int = 100
+    gold: int = 0
     
     def __post_init__(self):
         if self.inventory is None:
@@ -220,7 +241,8 @@ class Player:
     def show_inventory(self):
         """Display inventory and equipment"""
         print("\n=== INVENTORY ===")
-        print("Consumables:")
+        print(f"Gold: {self.gold}")
+        print("\nConsumables:")
         for item, count in self.inventory.items():
             print(f"- {item}: {count}")
             
@@ -340,6 +362,7 @@ def print_dungeon(dungeon: List[List[str]], player_pos: Tuple[int, int], player:
     print(f"Mana: {player.mana}/{player.max_mana}")
     print(f"Attack: {player.attack}")
     print(f"Defense: {player.defense}")
+    print(f"Gold: {player.gold}")
     print("\nInventory:")
     for item, count in player.inventory.items():
         print(f"{item}: {count}")
@@ -419,7 +442,8 @@ def combat(player: Player, difficulty: int) -> bool:
                 exp_gained = monster.exp_value
                 player.gain_exp(exp_gained)
                 print(f"You defeated the monster and gained {exp_gained} experience!")
-                dropped_item = monster.drop_item()
+                dropped_item, gold = monster.drop_item()
+                player.gold += gold
                 if dropped_item:
                     if dropped_item.item_type == ItemType.CONSUMABLE:
                         if dropped_item.name == "Health Potion":
@@ -472,9 +496,11 @@ def move_player(dungeon: List[List[str]], player_pos: Tuple[int, int],
         else:
             return (x, y), "GAME OVER"
     elif dungeon[new_y][new_x] == TREASURE:
+        gold_found = random.randint(20, 50) * difficulty
+        player.gold += gold_found
         player.inventory["health_potion"] = player.inventory.get("health_potion", 0) + 1
         dungeon[new_y][new_x] = FLOOR
-        return (new_x, new_y), "You found a health potion!"
+        return (new_x, new_y), f"You found a health potion and {gold_found} gold!"
     elif dungeon[new_y][new_x] == EXIT:
         choice = input("You found the exit! Do you want to [d]escend to the next floor or [e]scape the dungeon? ").lower()
         if choice == 'd':
@@ -494,6 +520,7 @@ def show_stats(player: Player):
     print(f"Total damage taken: {player.damage_taken}")
     print(f"Remaining HP: {player.hp}/{player.max_hp}")
     print(f"Remaining Mana: {player.mana}/{player.max_mana}")
+    print(f"Gold collected: {player.gold}")
     print(f"Potions remaining: {player.inventory.get('health_potion', 0)}")
 
 def main_game_loop():
