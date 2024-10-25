@@ -2,14 +2,15 @@ import random
 from typing import Tuple, List, Dict, Optional
 from dataclasses import dataclass
 from enum import Enum
+import wcwidth
 
 # Dungeon elements
 WALL = "█"
-FLOOR = "·"
-PLAYER = "P" 
-MONSTER = "M"
-TREASURE = "T"
-EXIT = "E"
+FLOOR = " "
+PLAYER = "👤" 
+MONSTER = "💀"
+TREASURE = "💰"
+EXIT = "🚪"
 
 class ItemType(Enum):
     WEAPON = "Weapon"
@@ -169,17 +170,17 @@ class Player:
 
         # Increase stats based on class
         if self.player_class == PlayerClass.WARRIOR:
-            self.max_hp += 20
-            self.attack += 3
+            self.max_hp += 15
+            self.attack += 2
             self.defense += 2
             self.max_mana += 5
         elif self.player_class == PlayerClass.MAGE:
-            self.max_hp += 10
-            self.attack += 2
+            self.max_hp += 5
+            self.attack += 3
             self.defense += 1
             self.max_mana += 20
         elif self.player_class == PlayerClass.ROGUE:
-            self.max_hp += 15
+            self.max_hp += 10
             self.attack += 2
             self.defense += 1
             self.max_mana += 10
@@ -193,9 +194,9 @@ class Player:
         print(f"Max HP: {max_hp}, Attack: {attack}, Defense: {defense}, Max Mana: {max_mana}")
             
     def use_potion(self):
-        """Use health potion to heal 50% of max HP"""
+        """Use health potion to heal 30% of max HP"""
         if self.inventory.get("health_potion", 0) > 0:
-            heal_amount = int(self.max_hp * 0.5)
+            heal_amount = int(self.max_hp * 0.3)
             self.hp = min(self.max_hp, self.hp + heal_amount)
             self.inventory["health_potion"] -= 1
             return True
@@ -313,8 +314,8 @@ def create_dungeon(width: int, height: int, difficulty: int = 1) -> List[List[st
     dungeon = create_maze(width, height)
     
     # Add monsters and treasures along the paths
-    monster_chance = 0.08 * difficulty
-    treasure_chance = 0.12 / difficulty
+    monster_chance = 0.06 * difficulty
+    treasure_chance = 0.02 * difficulty
     
     for y in range(height):
         for x in range(width):
@@ -344,15 +345,20 @@ def create_dungeon(width: int, height: int, difficulty: int = 1) -> List[List[st
     
     return dungeon
 
-def print_dungeon(dungeon: List[List[str]], player_pos: Tuple[int, int], player: Player) -> None:
-    """Prints the current state of the dungeon and player stats."""
-    # Print dungeon
+def print_element(element: str) -> None:
+    """Print element with correct spacing based on its Unicode width"""
+    width = wcwidth.wcswidth(element)
+    padding = " " * (2 - width) if width < 2 else ""
+    print(f"{element}{padding}", end="")
+
+def print_dungeon(dungeon: List[List[str]], player_pos: Tuple[int, int], player: 'Player') -> None:
+    """Prints the current state of the dungeon with correct spacing."""
     for y in range(len(dungeon)):
         for x in range(len(dungeon[0])):
             if (x, y) == player_pos:
-                print(PLAYER, end=' ')
+                print_element(PLAYER)
             else:
-                print(dungeon[y][x], end=' ')
+                print_element(dungeon[y][x])
         print()
         
     # Print player stats
@@ -565,6 +571,7 @@ def main_game_loop():
         print(f"{MONSTER}=Monster, {TREASURE}=Treasure, {EXIT}=Exit\n")
         
         game_result = ""
+        game_state = {"dungeon": dungeon, "player": player, "player_pos": player_pos, "floor": floor}
         
         while True:  # Individual game loop
             print(f"\nFloor {floor}")
@@ -573,6 +580,9 @@ def main_game_loop():
             action = input("\nWhat would you like to do? ").lower()
             
             if action == 'q':
+                resume = input("Do you want to [r]esume or [q]uit? ").lower()
+                if resume == 'r':
+                    continue
                 game_result = "quit"
                 break
                 
@@ -626,4 +636,3 @@ def main_game_loop():
 
 if __name__ == "__main__":
     main_game_loop()
-
