@@ -82,4 +82,4 @@ solution: |
   2. `__sub__`: Die Subtraktion wird nun durch Addition und Multiplikation implementiert.
   3. `__mul__`: Diese neue Methode ermöglicht die Skalierung eines Punktes mit einer Zahl.
 
-  Alle Methoden prüfen den Typ des übergebenen Objekts, um TypeErrors zu vermeiden.
+  Die Methoden prüfen den Typ des übergebenen Objekts, um TypeErrors zu vermeiden.

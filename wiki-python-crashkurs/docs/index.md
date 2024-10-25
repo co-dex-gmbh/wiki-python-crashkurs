@@ -25,7 +25,7 @@ hide:
 - [:material-file-document-outline: **Dateioperationen**](content/dateioperationen/dateioperationen.md)
 - [:material-git: **Versionskontrolle**](content/git/git.md)
 - [:material-nintendo-game-boy: **Projekt**](content/project/tic_tac_toe.md)
-<!-- - [:material-nintendo-game-boy: **Fortgeschrittene Projekte**](content/advanced_project/dungeon_crawler.md) -->
+- [:material-nintendo-game-boy: **Fortgeschrittene Projekte**](content/advanced_project/dungeon_crawler.md)
 <!-- - [:material-nintendo-game-boy: **Projekt**](content/project/tic_tac_toe.md)
 - [:simple-rocketdotchat: **Umgang mit KI**](content/ki/umgang.md) -->
 

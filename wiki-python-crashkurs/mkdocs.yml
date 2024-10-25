@@ -54,7 +54,8 @@ nav:
   - Dateioperationen: content/dateioperationen/dateioperationen.md
   - Versionskontrolle: 
     - Git: content/git/git.md
-
+  - Fortgeschrittenes Projekt:
+    - content/advanced_project/dungeon_crawler.md
 
 theme:
   name: material

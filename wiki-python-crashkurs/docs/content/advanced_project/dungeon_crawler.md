@@ -19,8 +19,9 @@ Erweitere das Spiel um folgende Funktionen:
 
 1. Füge Schätze und Monster zum Dungeon hinzu.
 2. Implementiere ein einfaches Kampfsystem.
-3. Füge eine Inventarfunktion für den Spieler hinzu.
-4. Erstelle verschiedene Levels mit steigender Schwierigkeit.
+3. Implementiere ein Levelaufstiegsystem für den Spieler.
+4. Füge eine Inventarfunktion für den Spieler hinzu.
+5. Erstelle verschiedene Levels mit steigender Schwierigkeit.
 
 ### Aufgabe 3: Rundenbasiertes Kampfsystem
 
@@ -75,15 +76,12 @@ Sollte ein Spieler Spezialangriff wählen soll er, je nach Klasse, die Auswahl z
 
 ### Aufgabe 8: Erweiterte GUI-Funktionen
 
-1. Füge eine Minimap hinzu, die den erkundeten Teil des Dungeons anzeigt.
-2. Implementiere ein Inventarfenster.
-3. Erstelle ein Kampfinterface für Begegnungen mit Monstern.
+1. Implementiere ein Inventarfenster.
+2. Erstelle ein Kampfinterface für Begegnungen mit Monstern.
 
 ### Aufgabe 9: Erweiterungen
 
 1. Implementiere einen Speicher- und Lademechanismus für Spielstände.
-2. Füge verschiedene Charakterklassen mit unterschiedlichen Fähigkeiten hinzu.
-3. Erstelle ein Levelaufstiehsystem für den Spielercharakter.
 4. Implementiere einen Dungeon-Generator, der prozedural verschiedene Dungeonlayouts erstellt.
 
 Viel Spaß beim Programmieren deines Dungeon Crawlers!
