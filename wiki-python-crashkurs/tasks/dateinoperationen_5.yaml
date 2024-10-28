@@ -1,7 +1,7 @@
 title: Binäres Lesen von Dateien
 question: |
   Erstelle ein Programm, das die Dateien "beispiel.txt" und "mein_passwort.png" mit den Modi `r`, `rt` und `rb` öffnet und liest. 
-  Gib für jeden Modus und jede Datei aus, ob das Lesen erfolgreich war oder ob ein Fehler aufgetreten ist.
+  Gib für jeden Modus und jede Datei aus, ob das Lesen erfolgreich war oder ob ein Fehler aufgetreten ist. [Lade die Datei `mein_passwort.png` herunter🔽](mein_passwort.png)
   
   ```python
   # Vervollständige den Code hier
