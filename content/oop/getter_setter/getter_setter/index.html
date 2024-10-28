@@ -1341,17 +1341,6 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Getter & Setter
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1361,34 +1350,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#schonheit-mit-dekoratoren" class="md-nav__link">
-    <span class="md-ellipsis">
-      Schönheit mit Dekoratoren
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -1747,9 +1708,12 @@ aber die Änderungen an <code>age</code> in Wirklichkeit an <code>_age</code> we
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">from</span> <span class="nn">unittest</span> <span class="kn">import</span> <span class="n">TestCase</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">unittest</span>
 
-<span class="k">class</span> <span class="nc">StudentTest</span><span class="p">(</span><span class="n">TestCase</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">StudentTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">test_durchschnitt</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertAlmostEqual</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">durchschnitt</span><span class="p">)</span>
@@ -1757,6 +1721,9 @@ aber die Änderungen an <code>age</code> in Wirklichkeit an <code>_age</code> we
     <span class="k">def</span> <span class="nf">test_durchschnitt_property</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">s</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">assertRaises</span><span class="p">(</span><span class="ne">AttributeError</span><span class="p">,</span> <span class="nb">setattr</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="s2">&quot;durchschnitt&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 <details class="info">
 <summary>Tipp</summary>
@@ -1849,7 +1816,10 @@ Erstelle die Properties so, dass immer <code>diameter = 2 * radius</code> gilt.<
 <span class="normal">20</span>
 <span class="normal">21</span>
 <span class="normal">22</span>
-<span class="normal">23</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">unittest</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kn">import</span> <span class="nn">unittest</span>
 
 <span class="k">class</span> <span class="nc">KreisTest</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">test_no_negativ_radius</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -1872,6 +1842,9 @@ Erstelle die Properties so, dass immer <code>diameter = 2 * radius</code> gilt.<
 
     <span class="k">def</span> <span class="nf">test_multiply_kreis_with_negativ_number</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="o">...</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">unittest</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 <p>Implementierung der Klasse:
 Überlege dir, wie viele Attribute es tatsächlich brauch, um
@@ -1882,7 +1855,8 @@ Für das Multiplizieren nutze <code>__mul__</code>.</p>
 <summary>Lösung</summary>
 <p><details><summary>Lösung Tests</summary>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3mH44DRp4Eo?si=S0jMli8t9yiXE5_c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-<pre><code>import unittest</p>
+<pre><code>
+import unittest</p>
 <p>class KreisTest(unittest.TestCase):
     def test_no_negativ_radius(self):
         kreis = Kreis(-5)
@@ -1914,10 +1888,7 @@ Für das Multiplizieren nutze <code>__mul__</code>.</p>
 <span class="normal">24</span>
 <span class="normal">25</span>
 <span class="normal">26</span>
-<span class="normal">27</span>
-<span class="normal">28</span>
-<span class="normal">29</span>
-<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code>def test_no_negativ_radius_from_setting(self):
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code>def test_no_negativ_radius_from_setting(self):
     kreis = Kreis(5)
     kreis.diameter = -3
     self.assertEqual(kreis.diameter, 0)
@@ -1944,10 +1915,11 @@ def test_multiply_kreis_with_positiv_number(self):
 def test_multiply_kreis_with_negativ_number(self):
     kreis = Kreis(5) * -3
     self.assertEqual(kreis.diameter, 0)
-
-# Es können noch Tests hinzugefügt werden, die prüfen,
-# dass die richtigen Exceptions geworfen werden.
 </code></pre></div></td></tr></table></div>
+<p>if <strong>name</strong> == "<strong>main</strong>":
+    unittest.main()</p>
+<h1 id="es-konnen-noch-tests-hinzugefugt-werden-die-prufen">Es können noch Tests hinzugefügt werden, die prüfen,<a class="headerlink" href="#es-konnen-noch-tests-hinzugefugt-werden-die-prufen" title="Permanent link">&para;</a></h1>
+<h1 id="dass-die-richtigen-exceptions-geworfen-werden">dass die richtigen Exceptions geworfen werden.<a class="headerlink" href="#dass-die-richtigen-exceptions-geworfen-werden" title="Permanent link">&para;</a></h1>
 <p></code></pre>
 </details></p>
 <p><details><summary>Lösung Implementierung der Klasse</summary>
