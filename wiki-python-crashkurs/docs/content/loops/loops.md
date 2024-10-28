@@ -72,7 +72,6 @@ print(f'Finaler Wert: {zahl}.')
 
 ## Aufgaben
 
-[//]: # ([35min])
 
 ### 1. Summe von 1 bis 100 
 Nutze eine while-Schleife, die die Zahlen 1, 2, 3, ... usw. so lange addiert, bis die Summe größer als 100 ist.
@@ -137,8 +136,6 @@ for element in sequenz:
 - `sequenz`: Die Sequenz, über die iteriert wird (z. B. eine Liste, ein Tupel, eine Zeichenkette oder eine range, auf die wir gleich eingehen werden).
 
 ## Aufgaben
-
-[//]: # ([35min])
 
 ### 1. Zählen 
 Schreibe eine `for`-Schleife, die die Zahlen von 1 bis 10 ausgibt.
