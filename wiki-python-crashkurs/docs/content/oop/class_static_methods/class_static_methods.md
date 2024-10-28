@@ -101,26 +101,3 @@ class Date:
 print(Date.from_string("1990-07-10"))
 ```
 
-
-```python
-class Date:
-    def __init__(self, year, month, day):
-        self.year = year
-        self.month = month
-        self.day = day
-
-    @classmethod
-    def from_string(cls, string):
-        """
-        Erstellt ein String der Form 'YYYY-MM-DD' ein Date.
-        
-        >>> print(Date.from_string("1990-07-10"))
-        10.07.1990
-        """
-        year, month, day = string.split("-")
-        return cls(year, month, day)
-
-    def __str__(self):
-        return f"{self.day}.{self.month}.{self.year}"
-```
-
