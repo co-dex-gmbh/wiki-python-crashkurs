@@ -9,9 +9,9 @@ question: |
   Die folgenden Tests sollen nach der Implementierung erfolgreich sein:
 
   ```python
-  from unittest import TestCase
+  import unittest
 
-  class StudentTest(TestCase):
+  class StudentTest(unittest.TestCase):
       def test_durchschnitt(self):
           s = Student(1, 2, 3)
           self.assertAlmostEqual(2.0, s.durchschnitt)
@@ -19,6 +19,9 @@ question: |
       def test_durchschnitt_property(self):
           s = Student(1, 2, 3)
           self.assertRaises(AttributeError, setattr, s, "durchschnitt", 5)
+
+  if __name__ == "__main__":
+      unittest.main()
   ```
 
 tip: |
